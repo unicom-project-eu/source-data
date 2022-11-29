@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Absolut första försöket --> 
+<!-- Diklofenak Orifarm 25 mg enterotablett ASPnr 2003-0435-->
+<!--  Penny Lindström Carmanius   2022-06-22 -->
+<!-- Referenser:
+Entry 1, MedicinalProductDefiniton: 234cca74-0c56-4943-b6f6-55ac56d8f7a6         ersätts av DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef      DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef
+Entry 2, RegulatedAuthorities: cabd0e0b-7431-4018-87dc-b3ae72872d9f              ersätts av DiklofenakOrifarm25Enterotablett-SE-PLC-RegAutho          DiklofenakOrifarm25Enterotablett-SE-PLC-RegAutho
+Entry 3, AdministrableProductDefinition: bfe251b9-10d8-4545-9384-3bf739081151    ersätts av DiklofenakOrifarm25Enterotablett-SE-PLC-AdminProdDef  DiklofenakOrifarm25Enterotablett-SE-PLC-AdminProdDef
+Entry 4, PackageProductDefinition: 8e3a6d8f-5bc5-4cf8-bff0-3e95ee898471          ersätts av DiklofenakOrifarm25Enterotablett-SE-PLC-PackProdDef        DiklofenakOrifarm25Enterotablett-SE-PLC-PackProdDef
+Entry 5, ManufacturedItemDefinition: 4864cdca-f0b3-47d8-a602-04c601c98b5b        ersätts av DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef      DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef
+Entry 6, Ingredient: 41ae06ab-9780-4f1e-8c10-9693f38eacc7                        ersätts av DiklofenakOrifarm25Enterotablett-SE-PLC-Ingredient                      DiklofenakOrifarm25Enterotablett-SE-PLC-Ingredient -->
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction"/>
+  <entry>
+    <!-- <fullUrl value="urn:uuid:234cca74-0c56-4943-b6f6-55ac56d8f7a6" />   -->
+    <resource>
+      <MedicinalProductDefinition>
+        <!-- Här börjar läkemedelsprodukten -->
+        <id value="DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef"/>
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <!-- ska detta bara stå här  eller? -->
+          <valueCoding>
+            <system
+              value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073667"/>
+            <!-- Lade in id för enterotablett -->
+            <display value="Gastro-resistant tablet"/>
+            <!-- Enterotablett översatt till engelska via Teams-filen som Johan fixat med läkemedelsformer -->
+            <!-- Gastro-resistant coated tablet har blivit non-current så det blir det här nu -->
+          </valueCoding>
+        </extension>
+
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100002342-00019694"/>
+          <!-- Johan kollar upp siffrorna innan MT-numret -->
+        </identifier>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="1048"/>
+          <!-- johan dubbelkollar, om vi ens behöver ha det. -->
+        </identifier>
+
+        <domain>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <!-- 12 på slutet betyder humantbruk, bör bli samma kod hela tiden om vi bara håller på med humanaLM. Ligger i listan domain -->
+            <!-- Inte ändrat, endast för humant bruk -->
+            <display value="Human use"/>
+          </coding>
+        </domain>
+
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+          </coding>
+        </status>
+
+        <indication
+          value="Diklofenak Orifarm 25 mg enterotablett är indicerat för behandling av nedanstående och är avsedd för vuxna och barn över 6 år.
+Reumatoid artrit.
+Juvenil reumatoid artrit.
+Artros.
+Mb. Bechterew.
+Dysmenorré utan organisk orsak.		"/>
+        <!-- Har fyllt i enligt FAss -->
+
+
+
+        <legalStatusOfSupply>
+          <!-- Receptbelagt eller receptfritt? -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <!-- Diklofenak 25 mg enterotablett är receptbelagt. -->
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+
+
+        <classification>
+          <coding>
+            <!-- här börjar ATC-koden -->
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <!-- spor lista Anatomical classification system, human läkemedel -->
+            <code value="100000096906"/>
+            <!-- kod för ATC-kod inskriven-->
+            <display value="M01AB05"/>
+            <!-- ATC-kod för diklofenak inskriven -->
+          </coding>
+        </classification>
+
+        <!-- ÄNDRINGAR HÄR!!! -->
+        <!-- <comprisedOf> -->
+        <!-- <reference value="ManufacturedItemDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef" />  -->
+        <!-- </comprisedOf> -->
+        <!-- SLUTET AV ÄNDRINGARNA -->
+
+        <name>
+          <productName value="Diklofenak Orifarm 25 mg enterotablett"/>
+          <!-- Namn inskrivet -->
+          <namePart>
+            <part value="Diklofenak Orifarm"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000003"/>
+                <!-- inskrivet som scientific name (slutar på 3) -->
+                <display value="Scientific name part"/>
+                <!-- Inskrivet -->
+              </coding>
+            </type>
+          </namePart>
+
+
+          <namePart>
+            <!-- Styrkan -->
+            <part value="25 mg"/>
+            <!-- Inskrivet -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/>
+                <display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+
+
+          <namePart>
+            <!-- Läkemedelsformen -->
+            <part value="enterotablett"/>
+            <!-- inskrivet -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/>
+                <!-- Koden är samma hela tiden, säger bara att vi tittar på Pharmaceutical dose part -->
+                <display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <!-- Land, alltid Sverige -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <!-- Antar att det här redan är klart så jag ändrar inte -->
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+                <!-- Alltid svenska -->
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <!-- Johan tror detta finns för att FHIR ska fungera -->
+      <url value="MedicinalProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef"/>
+    </request>
+  </entry>
+  <!-- Här slutar medicinal product delen. -->
+
+
+  <entry>
+    <!-- Vid entry börjar en ny bit -->
+    <!-- Har gjort ny kod: cabd0e0b-7431-4018-87dc-b3ae72872d9f-->
+    <!-- <fullUrl value="urn:uuid:cabd0e0b-7431-4018-87dc-b3ae72872d9f" />  -->
+    <resource>
+      <RegulatedAuthorization>
+        <id value="DiklofenakOrifarm25Enterotablett-SE-PLC-RegAutho"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <!-- dokument om vad ett godkännande nr är för något -->
+          <value value="19694"/>
+          <!-- MT-numret inlagt för diklofenak orifarm 25 mg -->
+        </identifier>
+        <subject>
+          <reference
+            value="MedicinalProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef"/>
+          <!-- Numret hör till diklofenak orifarm 25 mg  -->
+        </subject>
+
+
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <!-- Regulatory entitelment type, dokument som myndighet skickar ut. Marketing authorization (tillåtelse att sälja produkten) -->
+            <code value="220000000061"/>
+            <!-- kommer altid vara denna kod, alltd Marketing authorization för oss -->
+            <display value="Marketing Authorisation"/>
+            <!-- Finns inget annat än M.A som är relevant för oss -->
+          </coding>
+        </type>
+
+        <!-- Antar att ingenting ska ändras här, diklofenak tillhör ju inte en av de krångliga substanserna -->
+        <region>
+          <!-- I vilken region gäller det här godkännandet i? Bör Står EU här om det är en EU godkänd produkt (t ex insulin eller monoklonala antikroppar) -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+
+
+        <status>
+          <!-- Vi ska ju bara ha såna som är giltiga så den här biten bör vara likadan för alla -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+
+
+        <!-- Oklart vad detta är -->
+        <statusDate value="2005-05-27"/>
+        <!-- Ändrade den till diklofenak orifarm 25 mg datumet -->
+        <!-- Oklart vad detta är -->
+
+
+        <!-- MAH -->
+        <holder>
+          <!-- här står det vilket företag som äger produkten -->
+          <identifier>
+            <system value="https://spor.ema.europa.eu/v1/locations"/>
+            <value value="LOC-100005206"/>
+            <!-- <display value="Orifarm Generics A/S"/>
+             Namnet på företaget som är MAH inlagt-->
+          </identifier>
+        </holder>
+        <case>
+          <type>
+            <!-- ISO name: (fixed value) -->
+            <coding>
+              <!-- ISO name: (fixed value) -->
+              <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+              <!-- ISO name: (fixed value) -->
+              <code value="dateOfFirstAuthorisation"/>
+              <display value="First Authorisation"/>
+            </coding>
+          </type>
+
+          <dateDateTime value="2005-05-27"/>
+          <!-- Endast detta datum behöver ändras - datum för när produkten först blev godkänd. Övrig kod inom <case> är alltid samma. -->
+
+        </case>
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/DiklofenakOrifarm25Enterotablett-SE-PLC-RegAutho"/>
+      <!-- Oklart om den måste vara såhär. Godkännande nr är här. La in MT-nr för diklofenak  -->
+    </request>
+  </entry>
+
+
+  <entry>
+    <!-- <fullUrl value="urn:uuid:bfe251b9-10d8-4545-9384-3bf739081151" /> -->
+    <resource>
+      <AdministrableProductDefinition>
+        <id value="DiklofenakOrifarm25Enterotablett-SE-PLC-AdminProdDef"/>
+        <!-- ÄNDRINGAR HÄR!!! -->
+        <status value="active"/>
+        <formOf>
+          <reference
+            value="MedicinalProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef"/>
+          <!-- Refererar till ID för produkten. -->
+          <!-- lagt in min kod -->
+        </formOf>
+        <!-- SLUTET AV ÄNDRINGARNA -->
+
+        <administrableDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073667"/>
+            <!-- ändrat till gastro numret -->
+            <display value="Gastro-resistant tablet"/>
+          </coding>
+        </administrableDoseForm>
+
+
+        <!-- Referens till den/de tillverkade enheter som man framställer det bruksfärdiga läkemedlet från. -->
+        <producedFrom>
+          <reference
+            value="ManufacturedItemDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef"/>
+          <!-- refererat till manufactured item -->
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073619"/>
+              <!-- oral tablett tar oralt -->
+              <display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-AdminProdDef"/>
+      <!-- ändrade som ovan -->
+    </request>
+  </entry>
+
+
+  <entry>
+    <!-- <fullUrl value="urn:uuid:8e3a6d8f-5bc5-4cf8-bff0-3e95ee898471" />  -->
+    <resource>
+      <PackagedProductDefinition>
+        <id value="DiklofenakOrifarm25Enterotablett-SE-PLC-PackProdDef"/>
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="100"/>
+            <!-- lade in antal tabletter i paketet -->
+            <unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+            <!-- Lad ein kod för tablett -->
+            <!-- Ska det vara blister eller tablett här? -->
+          </valueQuantity>
+        </extension>
+        <!-- ÄNDRINGAR HÄR!!! -->
+        <packageFor>
+          <reference
+            value="MedicinalProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef"/>
+          <!-- ändrat till min kod för MedicalproductDefinition -->
+        </packageFor>
+        <!-- SLUTET AV ÄNDRINGARNA -->
+
+
+        <description value="Blister, 100 tabletter">
+          <!-- Såhär har jag skrivit på "förpackningbeskrivning" i tabellen i excel. Ska det vara så? Ska det vara i singular? -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/>
+              <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->
+              <display value="Swedish"/>
+              <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->
+            </valueCoding>
+          </extension>
+        </description>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/>
+              <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->
+              <display value="Sweden"/>
+              <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <!-- Han satte in koden 100000072075 (No data provided i spor) så ändrade koden som står för "Marketed" eftersom vi håller på med marketerd  -->
+              <display value="Marketed"/>
+              <!-- inte ändrat, antar att det alltid ska stå såhär -->
+            </coding>
+          </status>
+          <dateRange>
+            <start/>
+            <!-- vi kommer nog inte kunna hitta det här, låt stå -->
+          </dateRange>
+        </marketingStatus>
+        <package>
+
+          <!-- ytterförpackningen -->
+
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+          <quantity value="1"/>
+          <!-- Alltid 1, låt stå -->
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/>
+              <display value="Cardboard"/>
+            </coding>
+          </material>
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+          <!-- Ytterförpackningen slut -->
+
+
+          <!-- Andra förpacknignen som ligger i boxen beskriven ovan -->
+          <package>
+            <!-- ISO name: /MedicinProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073496"/>
+                <display value="Blister"/>
+              </coding>
+            </type>
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+            <quantity value="10"/>
+            <!-- Har antagit 10 blisterkartor med 10 tabletter i varje eftersom det finns andra förpackningar (ej marknadsförda) som är t ex 30 tabletter. Multipeln borde vara 10 liksom -->
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+            <!-- Kolla I MINE om det står någontung om antal blisterkartor -->
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003222"/>
+                <display value="PolyVinyl Chloride"/>
+              </coding>
+            </material>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003225"/>
+                <display value="PolyVinylidene Chloride"/>
+              </coding>
+            </material>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/>
+                <display value="Aluminium"/>
+              </coding>
+            </material>
+
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef"/>
+                  <!-- Contained item måste finnas i innersta nivån -->
+                </reference>
+              </item>
+              <amount>
+                <value value="100"/>
+                <unit value="Tablet"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                <code value="200000002152"/>
+              </amount>
+            </containedItem>
+          </package>
+        </package>
+        <!-- Andra förpackningen slutar här -->
+
+
+        <!-- här kan man ha en tredje nivå om det behövs-->
+
+
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-PackProdDef"/>
+    </request>
+  </entry>
+
+
+  <entry>
+    <!-- <fullUrl value="urn:uuid:4864cdca-f0b3-47d8-a602-04c601c98b5b" />   -->
+    <resource>
+      <ManufacturedItemDefinition>
+        <!-- förklarar det maskinen spottar ut och den har Lmform och units of presentation-->
+        <id value="DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef"/>
+        <!-- NPL-id-SE-ManItem001 (eller andra siffror) -->
+        <status value="active"/>
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073667"/>
+            <!-- Gasto-resistant tablet. -->
+            <display value="Gastro-resistant tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+            <!-- skriv tablett -->
+            <!-- Ögondroppar/inhalator (pre-filled)/spruta osv är caontained och manufactured item och unit of presentation och har bara en ytterförpckning (1 nivå) -->
+            <display value="Tablet"/>
+          </coding>
+        </unitOfPresentation>
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef"/>
+    </request>
+  </entry>
+
+
+  <entry>
+    <!-- <fullUrl value="urn:uuid:41ae06ab-9780-4f1e-8c10-9693f38eacc7" />  -->
+    <resource>
+      <Ingredient>
+        <id value="DiklofenakOrifarm25Enterotablett-SE-PLC-Ingredient"/>
+        <status value="active"/>
+        <!-- inklippt från Losec -->
+        <!-- ÄNDRINGAR HÄR!!! -->
+        <for>
+          <!-- Hette tidigare <valueReference> -->
+          <reference
+            value="MedicinalProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-MedProdDef"/>
+          <!-- Referera till produkten. -->
+          <!-- Ändrat till min kod -->
+        </for>
+        <!-- Hette tidigare </valueReference> -->
+
+        <for>
+          <!-- Denna referens fanns inte tidigare. -->
+          <reference
+            value="ManufacturedItemDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-ManItemDef"/>
+          <!-- Referera till tillverkad enhet. -->
+          <!-- Ändrat till min kod för manufactured item -->
+        </for>
+
+        <for>
+          <!-- Denna referens fanns inte tidigare. -->
+          <reference
+            value="AdministrableProductDefinition/DiklofenakOrifarm25Enterotablett-SE-PLC-AdminProdDef"/>
+          <!-- Referera till bruksfärdigt läkemedel. -->
+          <!-- Refererat till min kod för administrableproductdefinition -->
+        </for>
+        <!-- SLUTET AV ÄNDRINGARNA -->
+
+        <role>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000092272"/>
+                <!-- hittad på eutct.eudra.org -->
+                <display value="Diclofenac sodium"/>
+              </coding>
+            </concept>
+          </code>
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+          <strength>
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+            <presentationRatio>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+              <numerator>
+                <value value="25"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/>
+              </numerator>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002152"/>
+              </denominator>
+            </presentationRatio>
+
+
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength -->
+            <referenceStrength>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000092798"/>
+                    <display value="diclofenac"/>
+                  </coding>
+                </concept>
+              </substance>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+              <strengthRatio>
+                <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+                <numerator>
+                  <value value="20.7"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+                <denominator>
+                  <value value="1"/>
+                  <unit value="tablet"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/DiklofenakOrifarm25Enterotablett-SE-PLC-Ingredient"/>
+    </request>
+  </entry>
+
+</Bundle>

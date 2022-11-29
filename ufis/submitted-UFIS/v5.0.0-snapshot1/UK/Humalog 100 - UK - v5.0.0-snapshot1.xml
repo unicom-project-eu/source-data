@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- product name-->
+<!-- author date -->
+<Bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <id value="241f0c57-0281-46f9-b6a7-c709b8f19f01"/>
+  <type value="transaction"/>
+  <entry>
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="JMJ-Humalog-Kwikpen-product-example"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/medicinal-product-type"/>
+            <code value="MedicinalProduct"/>
+            <display value="Medicinal Product"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000025915"/>
+            <code value="200000025916"/>
+            <display value="Authorised Medicinal Product"/>
+          </coding>
+        </type>
+        <domain>
+          <coding>
+            <system value="http://hl7.org/fhir/medicinal-product-domain"/>
+            <code value="Human"/>
+            <display value="Human use"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+        <status>
+          <coding>
+            <system value="http://hl7.org/fhir/publication-status"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </status>
+        <statusDate value="2022-04-27"/>
+        <!--<route>
+  <coding>
+   <system value="https://standardterms.edqm.eu/"/>
+   <code value="20066000"/>
+    <display value="Subcutaneous use"/>
+  </coding>
+   <coding>
+   <system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+   <code value="1000000132895"/>
+   <display value="Subcutaneous use"/>
+  </coding>
+ </route> -->
+        <legalStatusOfSupply>
+          <coding>
+            <system value="http://hl7.org/fhir/legal-status-of-supply"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+        <classification>
+          <coding>
+            <system value="https://www.whocc.no/atc_ddd_index/"/>
+            <code value="A10AB04"/>
+            <display value="insulin lispro"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000094002"/>
+            <display value="insulin lispro"/>
+          </coding>
+        </classification>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="urn:iso:std:iso:3166"/>
+              <code value="GB"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000556"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="xx"/>
+              <code value="xx"/>
+              <display value="xx"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+          <dateRange>
+            <start value="1996-04-30"/>
+          </dateRange>
+        </marketingStatus>
+        <name>
+          <productName value="Humalog 100 units/ml KwikPen, solution for injection in a pre-filled pen"/>
+        </name>
+        <!--<package>
+          <package>
+            <reference value="PackagedProductDefinition/JMJ-Humalog-Kwikpen-package"/>
+          </package>
+        </package>-->
+      </MedicinalProductDefinition>
+      
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="MedicinalProductDefinition/JMJ-Humalog-Kwikpen-product-example"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <RegulatedAuthorization>
+        <id value="JMJ-Humalog-UK-authorisation-example"/>
+        <subject>
+          <reference value="MedicinalProductDefinition/JMJ-Humalog-Kwikpen-product-example"/>
+        </subject>
+        <type>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072055"/>
+            <code value="100000072062"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+        <region>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000556"/>
+            <display value="United Kingdom of Great Britain and Northern Irelan"/>
+          </coding>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/iso3166-1edition2"/>
+            <code value="GBR"/>
+            <display value="United Kingdom of Great Britain and Northern Ireland"/>
+          </coding>
+        </region>
+        <status>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+        <statusDate value="2006-03-30"/>
+        <holder>
+          <display value="Eli Lilly Nederland B.V"/>
+        </holder>
+        <regulator>
+          <display value="Medicines and Healthcare products Regulatory Agency"/>
+        </regulator>
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/JMJ-Humalog-UK-authorisation-example"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="JMJ-Humalog-Kwikpen-manufacturedItem-example"/>
+        <status value="active"/>
+        <manufacturedDoseForm>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="11201000"/>
+            <display value="Solution for injection"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073863"/>
+            <display value="Solution for injection"/>
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="15037000"/>
+            <display value="Pen"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002135"/>
+            <display value="Pen"/>
+          </coding>
+        </unitOfPresentation>
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/JMJ-Humalog-Kwikpen-manufacturedItem-example"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <Ingredient>
+        <id value="JMJ-Humalog-ingredient-example"/>
+        <status value="active"/>
+        <for>
+          <reference value="JMJ-Humalog-Kwikpen-manufacturedItem-example"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000090248"/>
+                <display value="insulin lispro"/>
+              </coding>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="412210000"/>
+                <display value="insulin lispro (substance)"/>
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="300"/>
+                <unit value="unit"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="unit"/>
+              </numerator>
+              <denominator>
+                <value value="3"/>
+                <unit value="mL"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="MilliLiter"/>
+              </denominator>
+            </presentationRatio>
+            <concentrationRatio>
+              <numerator>
+                <value value="100"/>
+                <unit value="unit"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="unit"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="mL"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="MilliLiter"/>
+              </denominator>
+            </concentrationRatio>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/JMJ-Humalog-ingredient-example"/>
+    </request>
+  </entry>
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="JMJ-Humalog-Kwikpen-package"/>
+        <name value="Humalog 100 units/ml KwikPen, solution for injection in a pre-filled pen; pack of 5 3ml pens"/>
+        <packageFor>
+          <reference value="MedicinalProductDefinition/JMJ-Humalog-Kwikpen-product-example"/>
+        </packageFor>
+        <status>
+          <coding>
+            <system value="http://hl7.org/fhir/publication-status"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </status>
+        <statusDate value="2022-04-27"/>
+        <containedItemQuantity>
+          <value value="5"/>
+        </containedItemQuantity>
+        <legalStatusOfSupply>
+          <code>
+          <coding>
+            <system value="http://hl7.org/fhir/legal-status-of-supply"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+          </code>
+        </legalStatusOfSupply>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="urn:iso:std:iso:3166"/>
+              <code value="GB"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000556"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="xx"/>
+              <code value="xx"/>
+              <display value="xx"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+          <dateRange>
+            <start value="1996-04-30"/>
+          </dateRange>
+        </marketingStatus>
+        <package>
+          <type>
+            <coding>
+              <system value="http://hl7.org/fhir/ValueSet/packaging-type"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+          <quantity value="1"/>
+          <containedItem>
+            <item>
+              <reference>
+                <reference value="ManufacturedItemDefinition/JMJ-Humalog-Kwikpen-manufacturedItem-example"
+                />
+              </reference>
+            </item>
+            <amount>
+              <value value="4"/>
+              <unit value="mL"/>
+              <system value="http://unitsofmeasure.org"/>
+              <code value="MilliLiter"/>
+            </amount>
+          </containedItem>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/JMJ-Humalog-Kwikpen-package"/>
+    </request>
+  </entry>
+</Bundle>

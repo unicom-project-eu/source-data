@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- product name-->
+<!-- author date -->
+<Bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <id value="241f0c57-0281-46f9-b6a7-c709b8f19f01"/>
+  <type value="transaction"/>
+  <entry>
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="JMJ-Monuril-product-example"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/medicinal-product-type"/>
+            <code value="MedicinalProduct"/>
+            <display value="Medicinal Product"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000025915"/>
+            <code value="200000025916"/>
+            <display value="Authorised Medicinal Product"/>
+          </coding>
+        </type>
+        <domain>
+          <coding>
+            <system value="http://hl7.org/fhir/medicinal-product-domain"/>
+            <code value="Human"/>
+            <display value="Human use"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+        <status>
+          <coding>
+            <system value="http://hl7.org/fhir/publication-status"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </status>
+        <statusDate value="2022-02-21"/>
+        
+ <route>
+  <coding>
+   <system value="https://standardterms.edqm.eu/"/>
+   <code value="20053000"/>
+   <display value="Oral use"/>
+  </coding>
+   <coding>
+   <system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+   <code value="100000073619"/>
+   <display value="Oral use"/>
+  </coding>
+ </route>
+        <legalStatusOfSupply>
+          <coding>
+            <system value="http://hl7.org/fhir/legal-status-of-supply"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+        <classification>
+          <coding>
+            <system value="https://www.whocc.no/atc_ddd_index/"/>
+            <code value="J01XX01"/>
+            <display value="fosfomycin"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000096354"/>
+            <display value="fosfomycin"/>
+          </coding>
+        </classification>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="urn:iso:std:iso:3166"/>
+              <code value="GB"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000556"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="xx"/>
+              <code value="xx"/>
+              <display value="xx"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+          <dateRange>
+            <start value="1994-03-18"/>
+          </dateRange>
+        </marketingStatus>
+        <name>
+          <productName value="Monuril 3g granules for oral solution"/>
+        </name>
+        <!-- <package>
+          <package>
+            <reference value="PackagedProductDefinition/JMJ-Monuril-UK-package" />
+          </package>
+        </package> -->
+      </MedicinalProductDefinition>
+      
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="MedicinalProductDefinition/JMJ-Monuril-product-example"/>
+    </request>
+  </entry>
+  <!-- _______________________________________________________ -->
+  <entry>
+    <resource>
+      <RegulatedAuthorization>
+        <id value="JMJ-Monuril-UK-authorisation-example"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+          <value value="PL 31654/0006"/>
+        </identifier>
+        <subject>
+          <reference value="MedicinalProductDefinition/JMJ-Monuril-product-example"/>
+        </subject>
+        <type>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072055"/>
+            <code value="100000072062"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+        <region>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000556"/>
+            <display value="United Kingdom of Great Britain and Northern Irelan"/>
+          </coding>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/iso3166-1edition2"/>
+            <code value="GBR"/>
+            <display value="United Kingdom of Great Britain and Northern Ireland"/>
+          </coding>
+        </region>
+        <status>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+        <statusDate value="2021-05-17"/>
+        <holder>
+          <!-- <reference value="Organization/JMJ-Zambon-UK"/> -->
+          <display value="Zambon UK Limited (formerly Profile Pharma)"/>
+        </holder>
+        <regulator>
+          <!-- <reference value="Organization/JMJ-MHRA"/> -->
+          <display value="Medicines and Healthcare products Regulatory Agency"/>
+        </regulator>
+      </RegulatedAuthorization>
+      
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/JMJ-Monuril-UK-authorisation-example"/>
+    </request>
+  </entry>
+  <!-- _______________________________________________________ -->
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="JMJ-Monuril-UK-package"/>
+        <name value="Monuril 3g granules for solution; pack of 1 sachet"/>
+        <packageFor>
+          <reference value="MedicinalProductDefinition/JMJ-Monuril-product-example"/>
+        </packageFor>
+        <status>
+          <coding>
+            <system value="http://hl7.org/fhir/publication-status"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </status>
+        <statusDate value="2022-02-21"/>
+        <containedItemQuantity>
+          <value value="1"/>
+        </containedItemQuantity>
+        <legalStatusOfSupply>
+          <code>
+          <coding>
+            <system value="http://hl7.org/fhir/legal-status-of-supply"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+          </code>
+        </legalStatusOfSupply>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="urn:iso:std:iso:3166"/>
+              <code value="GB"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000556"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="xx"/>
+              <code value="xx"/>
+              <display value="xx"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+          <dateRange>
+            <start value="1994-03-18"/>
+            
+          </dateRange>
+        </marketingStatus>
+        <package>
+          <type>
+            <coding>
+              <system value="http://hl7.org/fhir/ValueSet/packaging-type"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+          <quantity value="1"/>
+          <containedItem>
+            <item>
+              <reference>
+                <reference value="ManufacturedItemDefinition/JMJ-Monuril-UK-manufacturedItem-example"/>
+              </reference>
+            </item>
+          </containedItem>
+        </package>
+      </PackagedProductDefinition>
+      
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/JMJ-Monuril-UK-package"/>
+    </request>
+  </entry>
+  <!-- _______________________________________________________ -->
+  <entry>
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="JMJ-Monuril-UK-manufacturedItem-example"/>
+        <status value="active"/>
+        <manufacturedDoseForm>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="10112000"/>
+            <display value="Granules for oral solution"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073365"/>
+            <display value="Granules for oral solution"/>
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="15045000"/>
+            <display value="Sachet"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002143"/>
+            <display value="Sachet"/>
+          </coding>
+        </unitOfPresentation>
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/JMJ-Monuril-UK-manufacturedItem-example"/>
+    </request>
+  </entry>
+  <!-- _______________________________________________________ -->
+  <entry>
+    <resource>
+      <Ingredient>
+        <id value="JMJ-Monuril-ingredient-example"/>
+        <status value="active"/>
+        <for> 
+          <reference value="JMJ-Monuril-UK-manufacturedItem-example"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000098972"/>
+                <display value="fosfomycin trometamol"/>
+              </coding>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="108721005"/>
+                <display value="fosfomycin tromethamine (substance)"/>
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="5.631"/>
+                <unit value="g"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="g"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="Sachet"/>
+                <system value="https://standardterms.edqm.eu/"/>
+                <code value="15045000"/>
+                <!-- <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+         <code value="200000002143"/>
+         <display value="Sachet"/> -->
+              </denominator>
+            </presentationRatio>
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000091596"/>
+                    <display value="fosfomycin"/>
+                  </coding>
+                  <coding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="372534005"/>
+                    <display value="fosfomycin (substance)"/>
+                  </coding>
+                </concept>
+              </substance>
+              
+              <strengthRatio>
+                <numerator>
+                  <value value="3"/>
+                  <unit value="g"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="g"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="Sachet"/>
+                  <system value="https://standardterms.edqm.eu/"/>
+                  <code value="15045000"/>
+                  <!-- <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+         <code value="200000002143"/>
+         <display value="Sachet"/> -->
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/JMJ-Monuril-ingredient-example"/>
+    </request>
+  </entry>
+  <!-- _______________________________________________________ -->
+  <entry>
+    <resource>
+      <Ingredient>
+        <id value="JMJ-Monuril-adminProduct-ingredient-example"/>
+        <status value="active"/>
+        <for> 
+          <reference value="JMJ-Monuril-AdminProduct-example"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000091596"/>
+                <display value="fosfomycin"/>
+              </coding>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="372534005"/>
+                <display value="fosfomycin (substance)"/>
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="3"/>
+                <unit value="g"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="g"/>
+              </numerator>
+              <denominator> 
+                <value value="250"/> 
+                <unit value="ml"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="ml"/>
+              </denominator> 
+            </presentationRatio>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/JMJ-Monuril-adminProduct-ingredient-example"/>
+    </request>
+  </entry>
+  <!-- _______________________________________________________ -->
+  <entry>
+    <resource>
+      <AdministrableProductDefinition xmlns="http://hl7.org/fhir"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/fhir-all.xsd">
+        <id value="JMJ-Monuril-AdminProduct-example"/>
+        <identifier>
+          <system value="https://who-umc.org/phpid"/>
+          <value value="0xE857DA811B4A6F3BD57810C45D2EA1ED"/>
+        </identifier>
+        <status value="active"/>
+        <formOf>
+          <reference value="ManufacturedItemDefinition/JMJ-Monuril-product-example"/>
+        </formOf>
+        <administrableDoseForm>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="10105000"/>
+            <display value="Oral Solution"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="100000073646"/>
+            <display value="Oral Solution"/>
+          </coding>
+        </administrableDoseForm>
+        <producedFrom>
+          <reference value="ManufacturedItemDefinition/JMJ-Monuril-UK-manufacturedItem-example"/>
+        </producedFrom>
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="https://standardterms.edqm.eu/"/>
+              <code value="20053000"/>
+              <display value="Oral use"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073619"/>
+              <display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="AdministrableProductDefinition/JMJ-Monuril-AdminProduct-example"/>
+    </request>
+  </entry>
+</Bundle>

@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Voxra 300 mg modified-release tablet--> 
+<!-- Bersabel Sirak-->
+<!-- Follows the 5.0 standard--> 
+
+<!-- Referenser: 
+    Entry 1: Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition
+	Entry 2: Voxra-300mg-Tablet-SE-BS-RegulatedAuthorization
+	Entry 3: Voxra-300mg-Tablet-SE-BS-AdministrableProductDef
+	Entry 4: Voxra-300mg-Tablet-SE-BS-PackagedProductDefinition
+	Entry 5: Voxra-300mg-Tablet-SE-BS-PackagedProductDefinition-02
+	Entry 6: Voxra-300mg-Tablet-SE-BS-ManufacturedItemDefinition
+	Entry 7: Voxra-300mg-Tablet-SE-BS-Ingredient-->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+	<resource>
+	  <MedicinalProductDefinition>
+		<id value="Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition"/> 
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073668"/>
+			<display value="Modified-release tablet"/> 
+          </valueCoding>
+        </extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>
+			<value value="SE-100000307-00023492"/> <!-- SE-organisation number-MT number and before the MT number put enough zeros for it to be 8 numbers in total-->
+		</identifier>
+
+        <!-- ISO name: /MedicinalProduct/EURDId -->
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="461"/>
+		</identifier>
+
+         <domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use"/>
+		  </coding>
+		 </domain>
+		 
+        <status>
+		  <coding> 
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+			<code value="200000005004" />
+			<display value="Current"/>
+		  </coding>
+		</status>
+
+        <!-- Indication from SmPC/Fass--> 
+		<indication value="Voxra är indicerat för behandling av egentlig depression."/>
+
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084"/> <!-- either 100000072076 (not subject to medical prescription), 100000072084 (subject to medical prescription), 200000002239 (some pack sizes)"--> 
+			<display value="Medicinal product subject to medical prescription"/>
+		  </coding>
+		</legalStatusOfSupply>
+
+        <classification>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000097705"/> <!-- code for ATC code --> 
+			<display value="N06AX12"/> <!-- ATC code--> 
+		  </coding>
+		</classification>
+
+    <name> <!--Product name-->
+	  <productName value="Voxra 300 mg tablett med modifierad frisättning"/>
+
+		<namePart> <!-- Produkt name from EIRA-->
+			<part value="Voxra"/> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000002"/> <!-- or 220000000003 which is scientific name part--> 
+				<display value="Invented name part"/>
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Strength-->
+			<part value="300 mg"/> <!-- strength and unit for example 10 mg--> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000004" />
+				<display value="Strength part"/>   
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Pharmaceutical dose form--> 
+		  <part value="Tablett med modifierad frisättning"/>
+		  <type>
+		    <coding>
+			  <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+			  <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>              
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>                
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>               
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+
+    <request>
+      <method value="PUT" /> 
+      <url value="MedicinalProductDefinition/Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition" />
+    </request>
+  </entry>
+
+
+  <entry>
+      <resource>
+
+        <RegulatedAuthorization>
+		<id value="Voxra-300mg-Tablet-SE-BS-RegulatedAuthorization"/>
+          <identifier>
+            <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+            <value value="23492" /> <!-- MT-number-->
+		  </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </subject>
+
+        <type>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+			<code value="220000000061" />
+			<display value="Marketing Authorisation"/>
+		  </coding>
+        </type>
+		
+		<region>
+		  <coding> 
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/>
+          </coding>
+        </region>
+
+		<status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" />
+			<display value="Valid"/>
+          </coding>
+        </status>
+		
+		
+		<statusDate value="2007-03-02" /> <!-- Date of first authorization--> 
+		
+		<!-- MAH -->
+        <holder>
+		  <identifier>
+		      <system value="https://spor.ema.europa.eu/v1/locations" />
+			  <value value="LOC-100000549" /> <!-- location ID-->
+		  </identifier>
+          <display value="GlaxoSmithKline AB" /> <!-- MAH name--> 
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="2007-03-02"/>   <!-- Date of first authorization--> 
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Voxra-300mg-Tablet-SE-BS-RegulatedAuthorization" />
+    </request>
+  </entry>
+
+ <entry>
+    <resource>
+
+	  <AdministrableProductDefinition>
+		<id value="Voxra-300mg-Tablet-SE-BS-AdministrableProductDef"/>
+		<status value="active"/>
+
+        <formOf> 
+          <reference value="MedicinalProductDefinition/Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </formOf>
+
+        <administrableDoseForm>  <!-- Pharmaceutical dose form can be different from the administrable dose form--> 
+		  <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073668" />
+			<display value="Modified-release tablet"/>  
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference value="ManufacturedItemDefinition/Voxra-300mg-Tablet-SE-BS-ManufacturedItemDefinition" /> 
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073619" /> 
+			<display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Voxra-300mg-Tablet-SE-BS-AdministrableProductDef" />
+    </request>
+  </entry>
+  
+  <!-- First package starts here-->
+  
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="Voxra-300mg-Tablet-SE-BS-PackagedProductDefinition"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="30" /> 
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Burk, 30 tabletter">
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- Don't write unknown, write it like this instead--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Package layer 1 (the outer layer)-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Package layer 2--> 
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073497"/>
+				<display value="Bottle"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="1"/> 
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003215"/>
+						<display value="High Density PolyEthylene"/>
+					</coding>
+				</material> 
+
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/Voxra-300mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="30" />  
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> 
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/Voxra-300mg-Tablet-SE-BS-PackagedProductDefinition" />
+    </request>
+  </entry>
+  <!-- Package ends here--> 
+  
+  <!-- Second package starts here-->
+  
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="Voxra-300mg-Tablet-SE-BS-PackagedProductDefinition-02"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="90" /> 
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Burk, 90 (3x30) tabletter">
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- Don't write unknown, write it like this instead--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Package layer 1 (the outer layer)-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Package layer 2--> 
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073497"/>
+				<display value="Bottle"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="3"/> 
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003215"/>
+						<display value="High Density PolyEthylene"/>
+					</coding>
+				</material> 
+
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/Voxra-300mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="30" />  
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> 
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/Voxra-300mg-Tablet-SE-BS-PackagedProductDefinition-02" />
+    </request>
+  </entry>
+  <!-- Package ends here-->
+  
+ <entry>
+    <resource>
+	<ManufacturedItemDefinition>
+		<id value="Voxra-300mg-Tablet-SE-BS-ManufacturedItemDefinition"/>
+		<status value="active" />
+
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />   <!-- Pharmaceutical Dose Form -->
+            <code value="100000073668" /> 
+			<display value="Modified-release tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />   <!-- Units of Presentation -->
+            <code value="200000002152" /> 
+			<display value="Tablet"/> 
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Voxra-300mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+    </request>
+  </entry>
+  
+  <entry>
+    <resource>
+      <Ingredient>
+	  <id value="Voxra-300mg-Tablet-SE-BS-Ingredient" />
+	  <status value="active" />
+	 
+          <for> 
+            <reference value="MedicinalProductDefinition/Voxra-300mg-Tablet-SE-BS-MedicinalProductDefinition" /><!-- Referera till produkten. -->
+          </for>
+		  
+		  <for> 
+            <reference value="ManufacturedItemDefinition/Voxra-300mg-Tablet-SE-BS-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> 
+		  
+          <for> 
+            <reference value="AdministrableProductDefinition/Voxra-300mg-Tablet-SE-BS-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> 
+		
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>            
+          </coding>
+        </role>
+		
+        <substance>
+          <code> 
+		   <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />
+              <code value="100000090431" />     
+				<display value="Bupropion hydrochloride"/>             
+            </coding>
+		   </concept>
+          </code>
+		  
+		    <strength>
+			
+              <presentationRatio>
+                    <numerator>
+                      <value value="300" /> 
+					    <comparator>
+					      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+					         <valueCoding>
+							   <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							    <code value="100000000049"/>
+							    <display value="equal to"/>
+						     </valueCoding>
+						  </extension>
+						</comparator>
+						<unit value="milligram(s)"/> <!-- term for unit-->
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                        <code value="100000110655" /> <!--ID for unit-->
+					 </numerator>
+                    <denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>  <!-- term for unit--> 
+                      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                      <code value="200000002152" /> <!-- ID for unit-->            
+                    </denominator>
+              </presentationRatio>
+
+			  <referenceStrength> 
+			    <substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000088891"/> <!-- ID for active substance-->
+							<display value="Bupropion"/> <!-- term for active substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+					<value value="260.4"/> <!-- How much pure substance the salt is equal to --> 
+					<comparator>
+						<extension url="http://ema.europa.eu/fhir/extension/comparator">
+							<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+								<code value="100000000049"/>
+								<display value="equal to"/>
+							</valueCoding>
+						</extension>
+					</comparator>
+					<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655"/>
+					</numerator>
+					<denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>
+                      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                      <code value="200000002152" />                     
+                    </denominator>
+				  </strengthRatio>
+				</referenceStrength>
+			  </strength>
+			</substance>
+		  </Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Voxra-300mg-Tablet-SE-BS-Ingredient"/> 
+		</request>
+	</entry>
+
+	</Bundle>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<!--  -->
+				<id value="Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073863"/>
+						<display value="Solution for injection"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<!-- Fake number -->
+					<value value="0000000021"/>
+				</identifier>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100001754-11270"/>
+				</identifier>
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+					<coding>
+						<system value="http://hl7.org/fhir/publication-status"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</status>
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<additionalMonitoringIndicator>
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="True"/>
+						<display value="True"/>
+					</coding>
+				</additionalMonitoringIndicator>
+				<classification>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<code value="100000097196"/>
+						<display value="Lidocaine"/>
+					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<code value="N01BB02"/>
+						<display value="Lidocaine"/>
+					</coding>
+				</classification>
+				<name>
+					<productName value="Lidocaine-Grindeks, 20 mg/ml süstelahus"/>
+					<namePart>
+						<part value="Lidocaine-Grindeks"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="20 mg/ml"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="süstelahus"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<countryLanguage>
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+		
+			<url value="MedicinalProductDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-RA"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="410503"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MPD"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<statusDate value="2013-03-28"/>
+				<holder>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100001754"/>
+					</identifier>
+					<display value="AS GRINDEKS"/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073863"/>
+						<display value="Solution for injection"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002164"/>
+						<display value="Ampoule"/>
+					</coding>
+				</unitOfPresentation>
+				<producedFrom>
+					<reference value="ManufacturedItemDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MID"/>
+				</producedFrom>
+				<!--Infolehes Ravimit võib manustada intravenoosselt, intramuskulaarselt, subkutaanselt või epiduraalselt. But in Samtrack there is only two-->
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073572"/>
+							<display value="Epidural use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073600"/>
+							<display value="Intramuscular use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073863"/>
+						<display value="Solution for injection"/>
+					</coding>
+				</manufacturedDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002164"/>
+						<display value="Ampoule"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<id value="Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-I"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-APD"/>
+				</for>
+				<!-- -->
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<!-- 100000139489	Lidocaine hydrochloride -->
+				<substance>
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000153042"/>
+								<display value="LIDOCAINE HYDROCHLORIDE"/>
+							</coding>
+						</concept>
+					</code>
+					<strength>
+						<presentationRatio>
+							<numerator>
+								<value value="100"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="Ampoule "/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002164"/>
+							</denominator>
+						</presentationRatio>
+						<concentrationRatio>
+					
+							<numerator>
+								<value value="20"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+							<denominator>
+								<value value="1"/>
+								<unit value="millilitre(s) "/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110662"/>
+							</denominator>
+						</concentrationRatio>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-I"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-PPD-1018774"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="1"/>
+						<unit value="Ampoule "/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002164"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100001754-11270-1018774"/>
+				</identifier>
+				<packageFor>
+	
+					<reference value="MedicinalProductDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MPD"/>
+				</packageFor>
+				<!-- In SamTrack on Glass type I was listed.  -->
+				<description value="5 ml klaasampullid, 5 ampulli alusel. 2 alust pakendis. 
+Pakendi suurus: 10 ampulli.">
+				
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<package>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073490"/>
+								<display value="Ampoule"/>
+							</coding>
+						</type>
+						<quantity value="10"/>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003203"/>
+								<display value="Glass"/>
+							</coding>
+						</material>
+						<containedItem>
+							<item>
+								<reference>
+								<reference value="ManufacturedItemDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-MID"/>
+								</reference>
+							</item>
+							<amount>
+								<value value="1"/>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Lidocaine-Grindeks-100mg1ml-sol-for-injection-EE-PPD-1018774"/>
+		</request>
+	</entry>
+</Bundle>

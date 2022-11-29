@@ -1,0 +1,807 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Fragmin® 2500 IE Solution for injection in pre-filled syringe. ASP-nr: 1986-0215 -->
+<!-- Isabelle Skog 2022-06-29 -->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+<type value="transaction" />
+
+<!-- ENTRY 1 = MedicinalProductDefinition -->
+<entry>
+  <resource>
+  <MedicinalProductDefinition> <!-- Beskriver läkemedelsprodukten -->
+  <id value="Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition"/> <!-- Unik kod ENTRY 1. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+	
+	<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> <!-- Anger läkemedelsformen för det godkända läkemedlet -->
+    <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000007" /> <!-- SPOR-lista "Combined term" -->
+        <code value="100000074047" /> <!-- Kod läkemedelsform -->
+	    <display value="Solution for injection in pre-filled syringe"/> <!-- Textbeskrivning läkemedelsform -->
+    </valueCoding>
+    </extension>
+	
+	<identifier> <!-- MpID -->
+	    <system value="http://ema.europa.eu/fhir/mpId"/>      
+		<value value="SE-100001390-00010755"/> <!-- SE+siffror ORG-id+000MT-nummer (totalt 8 siffror MT-nummer) -->   
+	</identifier>
+	
+	<identifier> <!-- EURD-ID -->
+		<system value="http://ema.europa.eu/fhir/eurdId"/>
+		<value value="922"/> <!-- Kod från EURD-lista för substansen -->
+	</identifier>  
+
+    <domain> <!-- Anger om läkemedlet är för Human Use eller Veterinary Use -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> <!-- SPOR-lista "Domain" -->
+        <code value="100000000012" />          <!-- Kod. 100000000012 = H. 100000000013 = V. 100000000014 = H&V. -->
+        <display value="Human use"/>		   <!-- Textbeskrivning "X Use" -->
+    </coding>
+    </domain>
+	
+	<status> <!-- Anger om filen är akutell eller ej. Alltid Current -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> <!-- SPOR-lista "Record Status" -->
+        <code value="200000005004" /> <!-- Kod. 200000005004 = Current -->
+        <display value="Current"/> <!-- Alltid Current -->         
+    </coding>
+    </status>
+
+    <!-- Anger läkemedlets indikation på svenska. Hämtas från FASS/SPmC --> <indication value="Behandling av akut djup ventrombos och lungemboli när trombolytisk behandling eller 
+kirurgi inte är aktuell.
+Trombosprofylax-antikoagulation vid extrakorporeal cirkulation under hemodialys och 
+hemofiltration.
+Trombosprofylax vid kirurgi.
+Profylax till patienter med kraftigt ökad risk för venös tromboembolism och som är tillfälligt 
+immobiliserade pga akut sjukdomstillstånd som t ex hjärtinsufficiens, andningsinsufficiens, 
+allvarlig infektion.
+Instabil kranskärlssjukdom (instabil angina och icke Q-vågsinfarkt). 
+Cancerpatienter: Behandling och sekundärprevention av djup ventrombos och lungemboli."/>
+	
+	<legalStatusOfSupply>   <!-- Anger receptkrav för läkemedlet -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072051" /> <!-- SPOR-lista "Legal Status for the Supply" -->
+        <code value="100000072084" />     <!-- Kod. -->
+        <display value="Medicinal product subject to medical prescription"/> <!-- Textbeskrivning -->
+            <!-- Receptstatus koder+textbeskrivning:
+			100000072076 = Medicinal product not subject to medical prescription
+			100000072084 = Medicinal product subject to medical prescription
+			200000002239 = Medicinal product subject to medical prescription exempt for some pack sizes -->            
+    </coding>
+    </legalStatusOfSupply>
+	
+	<classification> <!-- Anger ATC-kod -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000116677" />    <!-- SPOR-lista "Anatomical Therapeutic Chemical classification system - Human" eller "Anatomical Therapeutic Chemical classification system - Veterinary" -->
+        <code value="100000093533" /> <!-- Kod 100000093533 = HUM. 100000116677 = VET. -->
+        <display value="B01AB04"/> <!-- Ange ATC-kod. Hämtas från EIRA -->            
+    </coding>
+    </classification>
+	
+	<!-- <comprisedOf>
+		<reference value="ManufacturedItemDefinition/Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition" />   <Referens till ENTRY 5 = ManufacturedItemDefinition>
+	</comprisedOf> -->
+	
+	<name> <!-- Produktens namn. Delas upp i nameparts -->
+	  <productName value="Fragmin® 2500 IE Injektionsvätska, lösning i förfylld spruta" /> <!-- Hela produktnamnet. Namn+styrka+läkemedelsform. Hämtas från EIRA -->
+	
+	  <namePart> <!-- Produktnamn från EIRA -->
+      <part value="Fragmin®" />
+        <type>
+        <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+            <code value="220000000002" /> <!-- Kod. 220000000002 = Invented name part. 220000000003 = Scientific name part -->
+			<display value="Invented name part"/> <!-- Tetbeskrivning "Invented name part" eller "Scientifici name part" -->
+        </coding>
+        </type>
+      </namePart>
+	  
+	  <namePart> <!-- Styrka. Alla läkemedel har ej styrka -->
+      <part value="2500 IE" /> <!-- Angiven styrka. Hämtas från EIRA -->
+        <type>
+        <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+            <code value="220000000004" /> <!-- Kod. Alltid 220000000004 = Strengt part -->
+		    <display value="Strength part"/>  <!-- Alltid Strength part -->            
+        </coding>
+       </type>
+       </namePart>
+	   
+	   <namePart> <!-- Läkemedelsform -->
+       <part value="Injektionsvätska, lösning i förfylld spruta" /> <!-- Anger läkemedelsform. Hämtas från EIRA -->
+        <type>
+         <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+            <code value="220000000005" /> <!-- Kod. 220000000005 = Pharmaceutical dose form part -->
+			<display value="Pharmaceutical dose form part"/> <!-- Listnamn läkemedelsform. T.ex Pharmaceutical dose form part -->           
+        </coding>
+        </type>
+       </namePart> 
+	   
+	   <countryLanguage> <!-- Anger land och språk -->
+        <country> <!-- Anger land -->
+         <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+            <code value="100000000535" /> <!-- 100000000535 = Kingdom of Sweden -->
+			<display value="Sweden"/> <!-- Alltid Sweden -->               
+         </coding>
+        </country>
+        <language> <!-- Anger språk -->
+         <coding>  <!-- Alltid Svenska -->
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- SPOR-lista "Language" -->
+            <code value="100000072288" /> <!--  100000072288 = Swedish -->
+			<display value="Swedish"/> <!-- Alltid Swedish -->              
+         </coding>
+        </language>
+       </countryLanguage>
+	</name>	
+	
+  </MedicinalProductDefinition>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="MedicinalProductDefinition/Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition" />
+    </request>
+</entry>
+<!-- END ENTRY 1 -->
+
+
+<!-- ENTRY 2 = RegulatedAuthorization -->
+<entry>
+  <resource>
+  <RegulatedAuthorization> <!-- RegulatedAuthorization är godkännandet -->
+  <id value="Fragmin-2500IE-Solution-SE-IS-RegulatedAuthorization"/> <!-- Unik kod ENTRY 2. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+  
+    <identifier> <!-- Anger MT-nummer -->
+        <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+		<value value="10755" /> <!-- MT-nummer för produkt. Hämtas ur EIRA -->
+	</identifier>
+	  <subject>
+          <reference value="MedicinalProductDefinition/Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+      </subject>
+	  
+	<type> <!-- Anger att detta är ett läkemedel som fått ett godkännande. -->
+	<coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/220000000060" /> <!-- SPOR-lista "Regulatory Entitlement Type" -->
+        <code value="220000000061" /> <!-- Kod. Alltid 220000000061 = Marketing Authorisation -->
+		<display value="Marketing Authorisation"/> <!-- Alltid Marketing Authorisation -->
+    </coding>
+    </type>
+	
+	<region> <!-- Anger vilken region godkännandet gäller i -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+        <code value="100000000535" /> <!-- 100000000535 = Kingdom of Sweden -->
+		<display value="Sweden"/> <!-- Alltid Sweden -->
+    </coding>
+    </region>
+	
+	<status> <!-- Anger godkännandestatus -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> <!-- SPOR-lista "Regulatory Entitlement Status" -->
+        <code value="100000072099" /> <!-- Alltid 100000072099 = Valid -->
+		<display value="Valid"/> <!-- Alltid Valid -->
+    </coding>
+    </status>
+	     <statusDate value="1988-03-18" /> <!-- Godkännandedatum (första) för produkten -->
+	
+	<holder> <!-- Anger MAH -->
+        <identifier>
+			<system value="https://spor.ema.europa.eu/v1/locations"/>
+			<value value="LOC-100006423"/> <!-- LOC-ID för företag. Hämtas från EMA: https://spor.ema.europa.eu/omswi/#/searchOrganisations -->
+		</identifier>
+        <display value="Pfizer AB" />   <!-- Namn på företaget som är MAH -->
+    </holder>
+	
+	<case> <!-- Anger (första) godkännandedatum -->
+	<type>
+	  <coding>
+		<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+		<code value="dateOfFirstAuthorisation"/>
+		<display value="First Authorisation"/>
+	  </coding>
+	</type>
+	    <dateDateTime value="1988-03-18"/> <!-- Datum (första) godkännande -->
+	</case>
+		
+  </RegulatedAuthorization>
+  </resource>
+     <request>
+        <method value="PUT" />
+        <url value="RegulatedAuthorization/Fragmin-2500IE-Solution-SE-IS-RegulatedAuthorization" /> 
+      </request>
+</entry>
+<!-- END ENTRY 2 -->
+
+
+<!-- ENTRY 3 = AdministrableProductDefinition -->
+<entry>
+  <resource>
+  <AdministrableProductDefinition> <!-- Beskriver läkemedlet i bruksfärdig (administrerad) form --> 
+  <id value="Fragmin-2500IE-Solution-SE-IS-AdministrableProductDefinition"/> <!-- Unik kod ENTRY 3. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+  <status value="active"/>
+		<formOf>
+           <reference value="MedicinalProductDefinition/Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+        </formOf>
+		
+	<administrableDoseForm> <!-- Anger läkemedelsform för bruksfärdigt läkemedel -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> <!-- SPOR-lista "Pharmaceutical Dose Form" -->
+        <code value="100000073863" /> <!-- Kod -->
+		<display value="Solution for injection"/> <!-- Textbeskrivning bruksfärdig läkemedelsform -->        
+    </coding>
+    </administrableDoseForm>
+	
+	<producedFrom>
+		<reference value="ManufacturedItemDefinition/Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition" /> <!-- Referens till ENTRY 5 = ManufacturedItemDefinition (alla entry) -->
+	</producedFrom>
+	
+	<routeOfAdministration> <!-- Administreringsväg(ar). Hämtas från EIRA -->
+    <code>
+     <coding> <!-- Administreringsväg 1 -->
+        <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> <!-- SPOR-lista "Routes and Methods of Administration" -->
+        <code value="100000073611" /> <!-- Kod -->
+		<display value="Intravenous use"/> <!-- Textbeskrivning -->   
+     </coding>
+     <coding> <!-- Administreringsväg 2 -->
+        <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> <!-- SPOR-lista "Routes and Methods of Administration" -->
+        <code value="100000073633" /> <!-- Kod -->
+		<display value="Subcutaneous use"/> <!-- Textbeskrivning -->   
+     </coding>
+     <coding> <!-- Administreringsväg 3 -->
+        <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> <!-- SPOR-lista "Routes and Methods of Administration" -->
+        <code value="100000075556" /> <!-- Kod -->
+		<display value="Extracorporeal use"/> <!-- Textbeskrivning -->   
+     </coding>
+    </code>
+    </routeOfAdministration>
+		
+  </AdministrableProductDefinition>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Fragmin-2500IE-Solution-SE-IS-AdministrableProductDefinition" /> 
+    </request>
+ </entry>
+ <!-- END ENTRY 3 -->
+ 
+ 
+ <!-- ENTRY 4.1 = PackagedProductDefinition -->
+<entry> <!-- Förpackning 1: Förfylld spruta, 10 st -->
+  <resource>
+   <PackagedProductDefinition> <!-- Beskriver vi allt om en förpackning -->
+   <id value="Fragmin-2500IE-Solution-SE-IS-PackagedProductDefinition01"/> <!-- Unik kod ENTRY 4.1. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+	 
+	<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity"> <!-- Anger containedItem = "innersta enhet man kan ta i" -->
+    <valueQuantity>
+        <value value="1" /> <!-- Antal containedItem -->
+		<unit value="Syringe"/> <!-- Textbeskrivning containedItem -->
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista "Units of Presentation" -->
+        <code value="200000002150" /> <!-- Kod containedItem -->
+    </valueQuantity>
+    </extension>
+	   <packageFor>
+          <reference value="MedicinalProductDefinition/Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+       </packageFor>
+	   
+	<description value="Förfylld spruta, 10 st"> <!-- Förpackningsbeskrivning. Hämtas från EIRA -->
+    <extension url="http://ema.europa.eu/fhir/extension/language">
+    <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- SPOR-lista "Languages" -->
+        <code value="100000072288" /> <!-- Kod. Alltid 100000072288 = Swedish -->
+		<display value="Swedish"/> <!-- Textbeskrivning språk. Alltid Swedish -->          
+    </valueCoding>
+    </extension>
+    </description>
+	
+	<marketingStatus> <!-- Beskriver försäljningstillstånd i avsett land (Sverige) -->
+      <country> <!-- Anger land där man har försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+          <code value="100000000535" /> <!-- Kod. 100000000535 = Kingdom of Sweden -->
+		  <display value="Sweden"/> <!-- Alltid Sweden -->             
+      </coding>
+      </country>
+      <status> <!-- Anger status för försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- SPOR-lista "Marketing Status" -->
+          <code value="100000072083" /> <!-- Kod. 100000072083 = Marketed -->
+	      <display value="Marketed"/> <!-- Alltid Marketed -->         
+       </coding>
+       </status>
+          <dateRange>
+            <start /> <!-- Vi har inte information om när marknadsföring började och slutade. Låt stå som "unknown". -->
+          </dateRange>
+    </marketingStatus>
+	
+	<package> <!-- Förpackningsnivå 1 (ytterförpackning) -->
+	  <type> <!-- Anger förpackningstyp -->
+	  <coding>
+		<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		<code value="100000073498"/> <!-- Kod -->
+		<display value="Box"/> <!-- Textbeskrivning -->
+	  </coding>
+	  </type>
+	     <quantity value="1"/> <!-- Antal ytterförpackning -->
+	  
+	  <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	  <coding>
+		 <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		 <code value="200000003529"/> <!-- Kod -->
+		 <display value="Cardboard"/> <!-- Textbeskrivning -->
+	  </coding>
+	  </material>
+	  
+	      <package> <!-- Förpackningsnivå 2 -->
+		   <type> <!-- Anger förpackningstyp -->
+	       <coding>
+		      <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		      <code value="100000174066"/> <!-- Kod -->
+		      <display value="Unit-dose blister"/> <!-- Textbeskrivning -->
+	       </coding>
+	       </type>
+	          <quantity value="10"/> <!-- Antal andra förpackning -->
+	  
+	       <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	       <coding>
+		      <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		      <code value="200000003208"/> <!-- Kod -->
+		      <display value="Plastic"/> <!-- Textbeskrivning -->
+	       </coding>
+	       </material>
+		   
+		      <package> <!-- Förpackningsnivå 3 -->
+			   <type> <!-- Anger förpackningstyp -->
+	           <coding>
+		          <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		          <code value="100000073544"/> <!-- Kod -->
+		          <display value="Pre-filled syringe"/> <!-- Textbeskrivning -->
+	            </coding>
+	            </type>
+	               <quantity value="1"/> <!-- Antal tredje förpackning -->
+	  
+	           <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	           <coding>
+		          <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		          <code value="200000003203"/> <!-- Kod -->
+		          <display value="Glass"/> <!-- Textbeskrivning -->
+	           </coding>
+	           </material>
+		   
+		           <containedItem> <!-- containedItem = "innersta enhet man kan ta i" -->
+			         <item> 
+					 <reference>
+				          <reference value="ManufacturedItemDefinition/Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition" /> <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+			         </reference> 
+					 </item>
+			         <amount> <!-- Beskriver containedItem. Amount+unit of presentation -->
+				          <value value="1" />
+						  <unit value="Syringe"/>    <!-- Textbeskrivning containedItem -->  
+				          <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista 200000000014 = "Units of presentation" eller 100000110633 = "Units of measurement" -->
+				          <code value="200000002150" /> <!-- Kod -->        
+			         </amount>
+			         </containedItem>
+			  
+		      </package> <!-- Slut förpackningsnivå 3 -->
+	     </package> <!-- Slut förpackningsnivå 2 -->
+	</package> <!-- Slut förpackningsnivå 1 (ytterförpackning) -->
+  </PackagedProductDefinition>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Fragmin-2500IE-Solution-SE-IS-PackagedProductDefinition01" />
+    </request>
+</entry>
+<!-- END ENTRY 4.1 -->
+
+<!-- ENTRY 4.2 = PackagedProductDefinition -->
+<entry> <!-- Förpackning 2: Förfylld spruta, 100 st -->
+  <resource>
+   <PackagedProductDefinition> <!-- Beskriver vi allt om en förpackning -->
+   <id value="Fragmin-2500IE-Solution-SE-IS-PackagedProductDefinition02"/> <!-- Unik kod ENTRY 4.2. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+	 
+	<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity"> <!-- Anger containedItem = "innersta enhet man kan ta i" -->
+    <valueQuantity>
+        <value value="1" /> <!-- Antal containedItem -->
+		<unit value="Syringe"/> <!-- Textbeskrivning containedItem -->
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista "Units of Presentation" -->
+        <code value="200000002150" /> <!-- Kod containedItem -->   
+    </valueQuantity>
+    </extension>
+	   <packageFor>
+          <reference value="MedicinalProductDefinition/Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+       </packageFor>
+	   
+	<description value="Förfylld spruta, 100 st"> <!-- Förpackningsbeskrivning. Hämtas från EIRA -->
+    <extension url="http://ema.europa.eu/fhir/extension/language">
+    <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- SPOR-lista "Languages" -->
+        <code value="100000072288" /> <!-- Kod. Alltid 100000072288 = Swedish -->
+		<display value="Swedish"/> <!-- Textbeskrivning språk. Alltid Swedish -->          
+    </valueCoding>
+    </extension>
+    </description>
+	
+	<marketingStatus> <!-- Beskriver försäljningstillstånd i avsett land (Sverige) -->
+      <country> <!-- Anger land där man har försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+          <code value="100000000535" /> <!-- Kod. 100000000535 = Kingdom of Sweden -->
+		  <display value="Sweden"/> <!-- Alltid Sweden -->             
+      </coding>
+      </country>
+      <status> <!-- Anger status för försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- SPOR-lista "Marketing Status" -->
+          <code value="100000072083" /> <!-- Kod. 100000072083 = Marketed -->
+	      <display value="Marketed"/> <!-- Alltid Marketed -->         
+       </coding>
+       </status>
+          <dateRange>
+            <start /> <!-- Vi har inte information om när marknadsföring började och slutade. Låt stå som "unknown". -->
+          </dateRange>
+    </marketingStatus>
+	
+	<package> <!-- Förpackningsnivå 1 (ytterförpackning) -->
+	  <type> <!-- Anger förpackningstyp -->
+	  <coding>
+		<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		<code value="100000073498"/> <!-- Kod -->
+		<display value="Box"/> <!-- Textbeskrivning -->
+	  </coding>
+	  </type>
+	     <quantity value="1"/> <!-- Antal ytterförpackning -->
+	  
+	  <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	  <coding>
+		 <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		 <code value="200000003529"/> <!-- Kod -->
+		 <display value="Cardboard"/> <!-- Textbeskrivning -->
+	  </coding>
+	  </material>
+	  
+	      <package> <!-- Förpackningsnivå 2 -->
+		   <type> <!-- Anger förpackningstyp -->
+	       <coding>
+		      <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		      <code value="100000174066"/> <!-- Kod -->
+		      <display value="Unit-dose blister"/> <!-- Textbeskrivning -->
+	       </coding>
+	       </type>
+	          <quantity value="100"/> <!-- Antal andra förpackning -->
+	  
+	       <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	       <coding>
+		      <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		      <code value="200000003208"/> <!-- Kod -->
+		      <display value="Plastic"/> <!-- Textbeskrivning -->
+	       </coding>
+	       </material>
+		   
+		      <package> <!-- Förpackningsnivå 3 -->
+			   <type> <!-- Anger förpackningstyp -->
+	           <coding>
+		          <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		          <code value="100000073544"/> <!-- Kod -->
+		          <display value="Pre-filled syringe"/> <!-- Textbeskrivning -->
+	            </coding>
+	            </type>
+	               <quantity value="1"/> <!-- Antal tredje förpackning -->
+	  
+	           <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	           <coding>
+		          <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		          <code value="200000003203"/> <!-- Kod -->
+		          <display value="Glass"/> <!-- Textbeskrivning -->
+	           </coding>
+	           </material>
+		   
+		           <containedItem> <!-- containedItem = "innersta enhet man kan ta i" -->
+			         <item> <reference>
+				          <reference value="ManufacturedItemDefinition/Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition" /> <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+			         </reference> </item>
+			         <amount> <!-- Beskriver containedItem. Amount+unit of presentation -->
+				          <value value="1" />
+						  <unit value="Syringe"/>    <!-- Textbeskrivning containedItem -->  
+				          <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista 200000000014 = "Units of presentation" eller 100000110633 = "Units of measurement" -->
+				          <code value="200000002150" /> <!-- Kod -->       
+			         </amount>
+			         </containedItem>
+			  
+		      </package> <!-- Slut förpackningsnivå 3 -->
+	     </package> <!-- Slut förpackningsnivå 2 -->
+	</package> <!-- Slut förpackningsnivå 1 (ytterförpackning) -->
+  </PackagedProductDefinition>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Fragmin-2500IE-Solution-SE-IS-PackagedProductDefinition02" />
+    </request>
+</entry>
+<!-- END ENTRY 4.2 -->
+
+<!-- ENTRY 4.3 = PackagedProductDefinition -->
+<entry> <!-- Förpackning 2: Förfylld spruta, 2 st -->
+  <resource>
+   <PackagedProductDefinition> <!-- Beskriver vi allt om en förpackning -->
+   <id value="Fragmin-2500IE-Solution-SE-IS-PackagedProductDefinition03"/> <!-- Unik kod ENTRY 4.3. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+	 
+	<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity"> <!-- Anger containedItem = "innersta enhet man kan ta i" -->
+    <valueQuantity>
+        <value value="1" /> <!-- Antal containedItem -->
+		<unit value="Syringe"/> <!-- Textbeskrivning containedItem -->
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista "Units of Presentation" -->
+        <code value="200000002150" /> <!-- Kod containedItem -->    
+    </valueQuantity>
+    </extension>
+	   <packageFor>
+          <reference value="MedicinalProductDefinition/Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+       </packageFor>
+	   
+	<description value="Förfylld spruta, 2 st"> <!-- Förpackningsbeskrivning. Hämtas från EIRA -->
+    <extension url="http://ema.europa.eu/fhir/extension/language">
+    <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- SPOR-lista "Languages" -->
+        <code value="100000072288" /> <!-- Kod. Alltid 100000072288 = Swedish -->
+		<display value="Swedish"/> <!-- Textbeskrivning språk. Alltid Swedish -->          
+    </valueCoding>
+    </extension>
+    </description>
+	
+	<marketingStatus> <!-- Beskriver försäljningstillstånd i avsett land (Sverige) -->
+      <country> <!-- Anger land där man har försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+          <code value="100000000535" /> <!-- Kod. 100000000535 = Kingdom of Sweden -->
+		  <display value="Sweden"/> <!-- Alltid Sweden -->             
+      </coding>
+      </country>
+      <status> <!-- Anger status för försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- SPOR-lista "Marketing Status" -->
+          <code value="100000072083" /> <!-- Kod. 100000072083 = Marketed -->
+	      <display value="Marketed"/> <!-- Alltid Marketed -->         
+       </coding>
+       </status>
+          <dateRange>
+            <start /> <!-- Vi har inte information om när marknadsföring började och slutade. Låt stå som "unknown". -->
+          </dateRange>
+    </marketingStatus>
+	
+	<package> <!-- Förpackningsnivå 1 (ytterförpackning) -->
+	  <type> <!-- Anger förpackningstyp -->
+	  <coding>
+		<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		<code value="100000073498"/> <!-- Kod -->
+		<display value="Box"/> <!-- Textbeskrivning -->
+	  </coding>
+	  </type>
+	     <quantity value="1"/> <!-- Antal ytterförpackning -->
+	  
+	  <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	  <coding>
+		 <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		 <code value="200000003529"/> <!-- Kod -->
+		 <display value="Cardboard"/> <!-- Textbeskrivning -->
+	  </coding>
+	  </material>
+	  
+	      <package> <!-- Förpackningsnivå 2 -->
+		   <type> <!-- Anger förpackningstyp -->
+	       <coding>
+		      <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		      <code value="100000174066"/> <!-- Kod -->
+		      <display value="Unit-dose blister"/> <!-- Textbeskrivning -->
+	       </coding>
+	       </type>
+	          <quantity value="2"/> <!-- Antal andra förpackning -->
+	  
+	       <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	       <coding>
+		      <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		      <code value="200000003208"/> <!-- Kod -->
+		      <display value="Plastic"/> <!-- Textbeskrivning -->
+	       </coding>
+	       </material>
+		   
+		      <package> <!-- Förpackningsnivå 3 -->
+			   <type> <!-- Anger förpackningstyp -->
+	           <coding>
+		          <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		          <code value="100000073544"/> <!-- Kod -->
+		          <display value="Pre-filled syringe"/> <!-- Textbeskrivning -->
+	            </coding>
+	            </type>
+	               <quantity value="1"/> <!-- Antal tredje förpackning -->
+	  
+	           <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	           <coding>
+		          <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		          <code value="200000003203"/> <!-- Kod -->
+		          <display value="Glass"/> <!-- Textbeskrivning -->
+	           </coding>
+	           </material>
+		   
+		           <containedItem> <!-- containedItem = "innersta enhet man kan ta i" -->
+			         <item> 
+					 <reference>
+				          <reference value="ManufacturedItemDefinition/Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition" /> <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+			         </reference> 
+					 </item>
+			         <amount> <!-- Beskriver containedItem. Amount+unit of presentation -->
+				          <value value="1" />
+						  <unit value="Syringe"/>    <!-- Textbeskrivning containedItem --> 
+				          <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista 200000000014 = "Units of presentation" eller 100000110633 = "Units of measurement" -->
+				          <code value="200000002150" /> <!-- Kod -->
+			         </amount>
+			         </containedItem>
+			  
+		      </package> <!-- Slut förpackningsnivå 3 -->
+	     </package> <!-- Slut förpackningsnivå 2 -->
+	</package> <!-- Slut förpackningsnivå 1 (ytterförpackning) -->
+  </PackagedProductDefinition>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Fragmin-2500IE-Solution-SE-IS-PackagedProductDefinition03" />
+    </request>
+</entry>
+<!-- END ENTRY 4.3 -->
+ 
+ 
+<!-- ENTRY 5 = ManufacturedItemDefinition -->
+<entry>
+  <resource>
+  <ManufacturedItemDefinition> <!-- Beskriver förpackad enhet(er) -->
+  <id value="Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition"/> <!-- Unik kod ENTRY 5. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+	 <status value="active"/>
+	 
+	<manufacturedDoseForm> <!-- Marknadsförd läkemedelsform = läkemedelsform "på hyllan" -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> <!-- SPOR-lista = "Pharmaceutical Dose Form" -->
+        <code value="100000073863" /> <!-- Kod -->
+		<display value="Solution for injection"/> <!-- Textbeskrivning läkemedelsform -->         
+    </coding>
+    </manufacturedDoseForm>
+	
+	<unitOfPresentation> <!-- Beskriver containedItem -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/> <!-- SPOR-lista = "Units of Presentation" -->
+        <code value="200000002150" />
+		<display value="Syringe"/>
+    </coding>
+    </unitOfPresentation>
+
+  </ManufacturedItemDefinition>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition" />
+    </request>
+</entry>
+<!-- END ENTRY 5 -->
+
+<!-- ENTRY 6 = Ingredient -->
+<entry>
+  <resource>
+  <Ingredient> <!-- Beskriver beståndsdel(ar) -->
+  <id value="Fragmin-2500IE-Solution-SE-IS-Ingredient"/> <!-- Unik kod ENTRY 6. Produktnamn-styrka-läkemedelsform-SE-IS-resource0X -->
+  <status value="active"/>
+   
+    <for>
+      <reference value="MedicinalProductDefinition/Fragmin-2500IE-Solution-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+    </for>
+	<for>
+	  <reference value="ManufacturedItemDefinition/Fragmin-2500IE-Solution-SE-IS-ManufacturedItemDefinition" /> <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+    </for>
+    <for>
+      <reference value="AdministrableProductDefinition/Fragmin-2500IE-Solution-SE-IS-AdministrableProductDefinition" /> <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+	</for>
+		
+	<role> <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> <!-- SPOR-lista "Ingredient Role" -->
+        <code value="100000072072" /> <!-- Kod. 100000072072 = Active -->
+		<display value="Active"/> <!-- Textbeskrivning. API = Active -->            
+    </coding>
+    </role>
+	
+	<substance> <!-- Beskriver API (ev salt av substans) -->
+	<code>
+	<concept>
+    <coding>
+        <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+        <code value="100000091301" />     
+		<display value="dalteparin sodium"/>              
+    </coding>
+     </concept>
+	 </code>
+	   
+	   <strength> <!-- m -->
+		 <concentrationRatio> <!-- Flytande form = concentration. Fast form = presentation -->
+		 
+		   <numerator>
+    <!-- Anger X i "X per Y" -->
+    <extension url="http://terminology.hl7.org/CodeSystem/v3-NullFlavor">
+        <valueQuantity />
+        <!-- Aktiv beståndsdel mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+        <!-- <short value="QS"/> -->
+    </extension> 
+    <comparator>
+            <!-- Anger aktiv motsvarande. "Aktiv beståndsdel X, Aktiv motsvarande Y" -->
+            <extension
+                url="http://ema.europa.eu/fhir/extension/comparator">
+                <valueCoding>
+                    <system
+                      value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                    <!-- SPOR-lista "Quantity Operator" -->
+                    <code value="100000165006"/>
+                    <!-- Kod. 100000000049 = equal to -->
+                    <display value="quantity sufficient"/>
+                    <!-- Textbeskrivning -->
+                </valueCoding>
+            </extension>
+        </comparator>
+        <unit value="international unit(s)"/>
+        <!-- Textbeskrivning enhet -->
+        <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+        <!-- SPOR-lista "Units of Measurement" -->
+        <code value="100000110671"/>
+        <!-- Kod -->
+</numerator>
+		   <denominator> <!-- Anger Y i "X per Y" -->
+               <value value="1" /> <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+			   <unit value="millilitre(s)"/> <!-- Textbeskrivning -->  
+               <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> <!-- SPOR-lista "Units of Measurement" -->
+               <code value="100000110662" /> <!-- Kod -->              
+           </denominator>
+	     </concentrationRatio>
+		 
+   <referenceStrength> <!-- Referensstyrka (substans till saltet om API=salt). Hämtas från EIRA "Aktiv motsvarande" --> 
+       <!-- Kan finnas flera referenceStrength. Gör en <referenceStrength></referenceStrength> för varje -->
+       <!-- Obligatorisk. Om ej finns duplicera API -->
+	<substance> <!-- "Grundsubstans" --> <!-- API = Dalteparin sodium. Grundsubstans = Dalteparin -->
+	<concept>
+	<coding>
+		<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+		<code value="100000127573"/> <!-- EUTCT-ID. Hämtas från: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+		<display value="dalteparin"/>
+	</coding>
+	</concept>
+	</substance>
+	
+	<strengthRatio>
+	    <numerator> <!-- Anger X i "X per Y" -->
+		       <value value="2500" /> <!-- Aktiv motsvarande mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+                  <comparator> <!-- Anger aktiv motsvarande. "Aktiv beståndsdel X, Aktiv motsvarande Y" -->
+			      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+			      <valueCoding>
+			          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- SPOR-lista "Quantity Operator" -->
+				      <code value="100000000049"/> <!-- Kod. 100000000049 = equal to -->
+				      <display value="equal to"/> <!-- Textbeskrivning -->
+			      </valueCoding>
+			      </extension>
+			      </comparator>
+			   <unit value="international unit(s)"/> <!-- Textbeskrivning enhet -->
+			   <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> <!-- SPOR-lista "Units of Measurement" -->
+               <code value="100000110671" /> <!-- Kod -->
+	    </numerator>
+		   <denominator> <!-- Anger Y i "X per Y" -->
+               <value value="1" /> <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+               <unit value="unit(s)"/> <!-- Textbeskrivning -->  
+			   <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> <!-- SPOR-lista "Units of Measurement" -->
+               <code value="100000110756" /> <!-- Kod -->              
+           </denominator>
+	</strengthRatio>
+   </referenceStrength>
+		 
+	   </strength>
+	</substance>
+	
+  </Ingredient>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Fragmin-2500IE-Solution-SE-IS-Ingredient" />
+    </request>
+</entry>
+<!-- END ENTRY 6 -->
+ 
+</Bundle>

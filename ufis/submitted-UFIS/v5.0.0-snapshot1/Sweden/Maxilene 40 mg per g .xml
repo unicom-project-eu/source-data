@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Maxilene 40 mg/g -->
+<!-- Alva Jonsson, Sweden  -->
+<!-- Started 2022-07-07, last change 2022-07-07-->
+<!-- follows the 5.0 standard-->
+<!---->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Maxilene-40mg-cream-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Maxilene-40mg-cream-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Maxilene-40mg-cream-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                Maxilene-40mg-cream-SE-AJ-PackagedProductDefinition
+Entry 5, ManufacturedItemDefinition:               Maxilene-40mg-cream-SE-AJ-ManufacturedItemDefinition
+Entry 6, Ingredient:                               Maxilene-40mg-cream-SE-AJ-Ingredient                       -->
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction" /><!--Fixed Value-->
+  
+  <entry><!-- Entry 1: Medicinal product definition--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+	  
+		<id value="Maxilene-40mg-cream-SE-AJ-MedicinalProductDefinition" />
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> 
+		<!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+			<code value="100000073712" />
+			<display value="Cream" />
+		  </valueCoding>
+		</extension>
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100016626-00050469"/>
+								<!-- Format: SE-xxxxxxxxx-yyyyyyyy. --><!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+
+		</identifier>
+
+		<identifier>  <!-- EURD-ID-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="10933"/> 
+			<!--lidocaine (topical use)-->
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use" />
+		  </coding>
+		</domain>
+		
+		<status> 
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+			<code value="200000005004" />
+			<display value="Current" /><!--term for status-->
+		  </coding>
+		</status>
+		
+		<indication value="Lokalanestetikum för topikal användning avsett för kutan ytanestesi inför:
+
+venkanylering eller venpunktion på vuxna och barn som är minst en månad gamla
+
+administrering av smärtsamma topikala behandlingar på större intakta hudytor då det är lämpligt att använda ett topikalt bedövningsmedel, endast på vuxna" /> 
+<!--Indication taken from SmPC--><!-- impossible to define language here-->
+
+		
+		<legalStatusOfSupply>
+		<!-- subject to medcial prescription or not, type of prescription-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="200000002239" />
+			<display value="Medicinal product subject to prescription exempt for some pack sizes" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		<!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000095332" />
+			<display value="D04AB01" />
+			<!--lidocaine-->
+		  </coding>
+		</classification>
+		
+		<!-- CHANGE(S) HERE!!! 2022-06-23--> <!--commented out for now-->
+		<!--<comprisedOf>--> <!-- refers to the manufactured item(s) that the product is compromised of--> <!--Several references possible, how?-->
+			<!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+			<!--<reference value="ManufacturedItemDefinition/Maxilene-40mg-cream-SE-AJ-ManufacturedItemDefinition" /> -->  <!-- refers to manufactured item(s) -->
+		<!--</comprisedOf>-->
+		<!-- END OF CHANGE(S)!!! 2022-06-23--> <!--commented out for now-->
+		
+		<name>
+		
+		  <productName value="Maxilene 40 mg/g Kräm" />
+		  <!-- full name, in swedish  Name+ strength+ form-->
+		  
+		  <namePart>
+		    <part value="Maxilene" />
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000002" />
+				<display value="Invented Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+          <namePart>
+            <part value="40 mg/g" />
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000004" />
+				<display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Kräm" />
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage>
+            <country> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" /> 
+				<display value="Swedish"/> 
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/Maxilene-40mg-cream-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- Entry 1: Medicinal product definition--><!--STARTED-->
+
+
+
+
+  <entry>  <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	  
+	  <id value="Maxilene-40mg-cream-SE-AJ-RegulatedAuthorization"/>
+	  
+        <identifier> 
+		<!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="50469" /> 
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/Maxilene-40mg-cream-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+            <code value="220000000061" /> 
+			<display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region> 
+		<!-- region where document is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/> 
+          </coding>
+        </region>
+
+        <status> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" /> 
+			<display value="Valid"/>
+          </coding>
+        </status>
+
+        <statusDate value="2015-12-16" /> 
+		<!-- date of first authorisation--><!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+		
+
+        <holder>
+		<!-- MAH, marketing authorisation holder-->
+		
+			<identifier> 
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100025420"/>
+			</identifier>
+		
+          <display value="Ferndale Laboratories Limited" /> 
+		  <!-- name of MAH--> <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="2015-12-16"/>  
+			<!-- date of first authorisation, found in eira -->
+		</case>
+		
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Maxilene-40mg-cream-SE-AJ-RegulatedAuthorization" /> 
+    </request>
+  </entry> <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+
+
+
+  <entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="Maxilene-40mg-cream-SE-AJ-AdministrableProductDefinition"/>
+		
+		<status value="active"/>
+
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/Maxilene-40mg-cream-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+
+
+        <administrableDoseForm>
+		<!--pharmaceutical dose form for the administrable product-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> 
+            <code value="100000073712" /> 
+			<display value="Cream"/>
+          </coding>
+        </administrableDoseForm>
+
+		<producedFrom> 
+			<reference value="ManufacturedItemDefinition/Maxilene-40mg-cream-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+		
+        <routeOfAdministration>
+		<!--route of administration-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> 
+              <code value="100000073566" />
+			 <display value="Cutaneous use"/> 
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Maxilene-40mg-cream-SE-AJ-AdministrableProductDefinition" /> 
+    </request>
+  </entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+
+
+
+
+  <entry>  <!-- Entry 4: Packaged Product definition--><!--Tube 30 g--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition> 
+	  <!--Tube 1 x 30 g-->
+		<id value="Maxilene-40mg-cream-SE-AJ-PackagedProductDefinition"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />
+			<unit value="tube"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" /> 
+          </valueQuantity>
+        </extension>
+		
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Maxilene-40mg-cream-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		
+        <description value="Tub, 1 x 30 g"> 
+		<!-- insert how the package is marketed in sweden-->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			  <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		<!-- if the package is marketed, or not, and why not-->
+		
+          <country> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+			  <display value="Sweden"/> 
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/> 
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+		
+		  <type> 
+		  <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+			  <code value="100000073498"/>
+			  <display value="Box"/> 
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		  <!-- material of packaging--> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="3"/>
+                     <unit value="Year"/>
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" />
+                  </periodDuration>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+
+            </shelfLifeStorage>
+
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073561"/>
+				        <display value="Tube"/> 
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/> 
+			  
+				    <material>
+					<!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003200"/>
+					    <display value="Aluminium"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Maxilene-40mg-cream-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="30" /> 
+						  <unit value="gram(s)"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110654" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+					
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Maxilene-40mg-cream-SE-AJ-PackagedProductDefinition" />
+    </request>
+  </entry> <!-- Entry 4: Packaged Product definition--><!--STARTED-->
+  
+  
+  <entry> <!--Entry 5: Manufactured item definition--><!--STARTED-->
+  <!--several entries allowed--> 
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="Maxilene-40mg-cream-SE-AJ-ManufacturedItemDefinition"/>
+
+		<status value="active" />
+		
+        <manufacturedDoseForm> 
+		<!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073712" />
+			<display value="Cream"/>
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation> 
+		<!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" /> 
+			<display value="Tube"/>
+          </coding>
+        </unitOfPresentation>
+		
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Maxilene-40mg-cream-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- Entry 5: Manufactured item definition--><!--STARTED-->
+
+
+
+
+
+
+
+  <entry><!-- Entry 6: Ingredient --><!--Lidocaine--><!--STARTED-->
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--Lidocaine-->
+	  
+	  <id value="Maxilene-40mg-cream-SE-AJ-Ingredient"/>
+
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Maxilene-40mg-cream-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Maxilene-40mg-cream-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionMaxilene-40mg-cream-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+        <role>
+		<!--the role of the substance-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" /> 
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />
+              <code value="100000091713" />
+				<display value="Lidocaine"/>
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength>
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="40" /> 
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/>
+							<display value="equal to"/>
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" /> 
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="gram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110654" />
+              </denominator>
+            </concentrationRatio>
+            
+     		<referenceStrength>
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000091713"/>
+							<display value="Lidocaine"/>
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="40"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" />
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="gram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110654" />
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Maxilene-40mg-cream-SE-AJ-Ingredient" />
+    </request>
+  </entry><!--Entry 6: Ingredient--><!--STARTED-->
+
+
+</Bundle>

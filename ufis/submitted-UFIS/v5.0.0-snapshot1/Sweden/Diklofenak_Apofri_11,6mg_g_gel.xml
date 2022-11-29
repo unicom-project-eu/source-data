@@ -1,0 +1,583 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- -Diklofenak Apofri 11,6 mg/g gel- ASPnr 2011-1070 -->
+<!--  Penny Lindström Carmanius   Datum 2022-06-28 -->
+<!-- Referenser:
+Entry 1, MedicinalProductDefiniton: 69139143-0946-4cf4-bba4-28efee4037ff            ersätts av DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities: 61674ebc-89bd-4e18-a34c-5331ce20ea79                 ersätts av DiklofenakApofri116gel-SE-PLC-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition: 3b2bb3ac-9911-4689-a9b7-2b03df5384b4       ersätts av DiklofenakApofri116gel-SE-PLC-AdministrableProductDefinition
+Entry 4:1 100 g, PackageProductDefinition: 2574effa-7ad4-4836-b672-7f3069a60f07     ersätts av DiklofenakApofri116gel-SE-PLC-PackageProductDefinition01
+Entry 4:2 60 g, PackageProductDefinition: a941ec31-f068-4002-b274-2c15b0ba7e7b      ersätts av DiklofenakApofri116gel-SE-PLC-PackageProductDefinition02
+Entry 5, ManufacturedItemDefinition: 1e2b736b-2f1d-421a-97ee-75e1ce2a4591           ersätts av DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition
+Entry 6, Ingredient: a75afe85-9e16-4bd5-9180-90a8cf6309cd                           ersätts av DiklofenakApofri116gel-SE-PLC-Ingredient -->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+    <!-- <fullUrl value="urn:uuid: 69139143-0946-4cf4-bba4-28efee4037ff" />  -->
+    <resource>
+      <MedicinalProductDefinition>  
+		<id value="DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition"/>  
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">  
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008" />
+            <code value="100000073726" />   <!-- Kod för läkemedelsform, hämtas Johans Teamsfil eller Spor --> 
+			<display value="Gel"/>  <!-- Läkemedelsformen på engelska översatt till engelska via Teams-filen som Johan fixat --> 
+          </valueCoding>
+        </extension>
+		
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>  
+			<value value="SE-100002708-00046780"/>   <!-- Formatet ska vara SE-xxxxxxxxx-yyyyyyyy. --> <!-- xx hittas i spor ORG.Nr, yy ska vara 8 nummer där sista ska vara MT-nr och fylls på framme med 0:or så det blir 8 siffror -->
+																<!-- xxxxxxxxx ska vara nio siffror som identifierar den ORGANISATION som äger rättigheterna till produkten. -->
+																<!-- yyyyyyyy ska vara MT-numret där man lagt till nollor först så att det bli åtta siffror långt. --> <!-- LOC-100002215 -->
+		</identifier>
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="10342"/>  <!-- Nr för substansen som återfinns i EURD-listan som finns i Unicom-mappen -->
+		</identifier>        
+		<domain>  <!-- Om läkemedlet är för djur eller människa -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+            <code value="100000000012" />  <!-- Låt stå, vi håller bara på med LM för humant bruk--> 
+         	<display value="Human use"/> <!-- Låt stå -->
+          </coding>
+        </domain>
+		
+		        <status> <!-- Är vårt dokument klart eller inte. Vi kör bara current -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+            <code value="200000005004" /> <!-- Låt stå -->
+         	<display value="Current"/>  <!-- Låt stå -->          
+          </coding>
+        </status>
+		
+		<indication value=" Diklofenak Apofri 11.6 mg/g gel används för symtomatisk behandling av lokala smärttillstånd av lätt till måttlig intensitet i samband med muskel och ledskador, t.ex. sportskador. För användning av vuxna och barn över 14 år."/>  <!-- Fylls i enligt Fass eller SmPC från läkemedelssök. Kan vara i listform eller flytande text, lång eller kort. Skriv gärna om den är avsedd för vuxna och barn.--> <!-- T ex: Diklofenak Orifarm 50 mg enterotablett är indicerat för behandling av nedanstående och är avsedd för vuxna och barn som väger mer än 50 kg.
+Reumatoid artrit.
+Juvenil reumatoid artrit.
+Artros.
+Mb. Bechterew.
+Dysmenorré utan organisk orsak -->
+
+		
+		<legalStatusOfSupply>  <!-- Receptbelat eller receptfritt --> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />  
+            <code value="100000072076" />  <!-- Kod för receptfritt (100000072076), receptbelagt (100000072084)-->
+         	<display value="Medicinal product not subject to medical prescription"/>   <!-- Receptfritt eller receptbelagt i textform: Medicinal product not subject to medical prescription eller Medicinal product subject to medical prescription -->          
+          </coding>
+        </legalStatusOfSupply>
+		
+        <classification>
+          <coding>  
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />  
+            <code value="100000097012" />  <!-- Kod för ATC-kod från spor lista Anatomical Therapeutic Classification system - Human  -->
+         	<display value="M02AA15"/>  <!-- ATC-kod för läkemedlet -->           
+          </coding>
+        </classification>
+		
+		<!-- <comprisedOf> -->
+			<!-- <reference value="ManufacturedItemDefinition/DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition" />    -->
+		<!-- </comprisedOf> -->
+		
+		
+				<!-- Produktens namn delas upp i olika name parts-->
+		<name>
+          <productName value="Diklofenak Apofri 11.6 mg/g gel" />  <!-- Fullständigt namn på svenska --> 
+		  
+          <namePart> <!-- Produktnamnet -->
+            <part value="Diklofenak Apofri" />  <!-- Produktnamnet, t ex Diklofenak Orifarm -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000003" />  <!-- Kod för Scientific name part(220000000003) t ex Diklofenak Orifarm eller Invented name part(220000000002) t ex Alvedon. -->
+				<display value="Scientific name part"/>   <!-- Scientific name part eller Invented name part -->            
+              </coding>
+            </type>
+          </namePart>  
+		  
+		  <namePart>  <!-- Styrkan -->   
+            <part value="11.6 mg/g" /> <!-- Styrkan på produkten t ex 50 mg -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000004" /> <!-- Låt stå -->
+				<display value="Strength part"/>   <!-- Låt stå -->           
+              </coding>
+            </type>
+          </namePart>
+		  
+          <namePart>  <!-- Läkemedelsformen -->
+            <part value="gel" />  <!-- T ex enterotablett, svenska -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000005" />  <!-- Låt stå -->
+				<display value="Pharmaceutical dose form part"/> <!-- Låt stå -->             
+              </coding>
+            </type>
+          </namePart> 
+		  
+		  
+            <countryLanguage>
+            <country>
+              <coding>  
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" /> <!-- Låt stå. Alltid Sverige --> 
+				<display value="Sweden"/>  <!-- Låt stå -->              
+              </coding>
+            </country>
+            <language>
+              <coding> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" /> <!-- Låt stå -->
+				<display value="Swedish"/>   <!-- Låt stå, alltid svenska -->            
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+	<request>
+      <method value="PUT" />  
+      <url value="MedicinalProductDefinition/DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition" />
+    </request>
+  </entry>  
+  
+  
+  
+    <entry>  
+    <!--<fullUrl value="urn:uuid: 61674ebc-89bd-4e18-a34c-5331ce20ea79" />   --> 
+    <resource>
+      <RegulatedAuthorization>
+	  <id value="DiklofenakApofri116gel-SE-PLC-RegulatedAuthorization"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />  
+          <value value="46780" />  <!-- MT-numret inlagt för godkännandet --> 
+        </identifier>
+        <subject>
+          <reference value="MedicinalProductDefinition/DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition" />  <!-- Guidkoden för MedicalProductDefinition  -->  
+        </subject>
+		
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />  
+            <code value="220000000061" />  <!-- Låt stå. Vi kommer bara hålla på med marknadsförda produkter -->
+			<display value="Marketing Authorisation"/>   <!-- Låt stå --> 
+          </coding>
+        </type>
+		
+		<region>  <!-- I vilken region gäller det här godkännandet i? Bör Står EU här om det är en EU godkänd produkt (t ex insulin eller monoklonala antikroppar). Men i de allra flesta fallen lär det stå Sverige -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" /> <!-- Låt stå -->
+			<display value="Sweden"/>   <!-- Låt stå -->        
+          </coding>
+        </region>
+		
+        <status>  <!-- Vi ska ju bara ha såna som är giltiga  --> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" /> <!-- Låt stå -->
+			<display value="Valid"/>   <!-- Låt stå -->         
+          </coding>
+        </status>
+
+        <statusDate value="2012-09-27" />  <!-- Johan kollar upp varför datumet för första godkännandet står två gånger --> 
+		
+		
+        <holder>  <!-- Här står det vilket företag som äger produkten (MAH) -->
+		
+          <identifier>    
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100002215"/> <!-- EIRA-> korrespondadress -> Spor -> organisations -> organisationsnamn -> kolla vilket location ID som stämmer överens med korrespondadressen -->
+		  </identifier>
+			
+          <display value="Apofri AB" />  <!-- Namnet på företaget som är MAH --> 
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="2012-09-27"/>    <!-- Endast detta datum behöver ändras - datum för när produkten först blev godkänd. Övrig kod inom <case> är alltid samma. -->
+		</case>
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/DiklofenakApofri116gel-SE-PLC-RegulatedAuthorization" />  <!-- MT-nr för den godkända produkten -->
+    </request>
+  </entry>
+  
+  
+     <entry>
+    <!-- <fullUrl value="urn:uuid:3b2bb3ac-9911-4689-a9b7-2b03df5384b4" />  -->
+    <resource>
+      <AdministrableProductDefinition>
+		<id value="DiklofenakApofri116gel-SE-PLC-AdministrableProductDefinition"/>   <!-- NPLid-SE-PharmProd01 (eller andra siffror om man återanvänder)--> 
+		<status value="active"/>
+		<formOf> 
+          <reference value="MedicinalProductDefinition/DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition" />      <!-- MedicalProductDefinition --> 
+        </formOf> 
+        <administrableDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073726" /> <!-- Koden för produktens administrerbara läkemedelsform, finns i Johans Teams-fil -->  
+			<display value="Gel"/>  <!-- Den administrerbara läkemedelsformen i text, finns i Johans Teams-fil -->          
+          </coding>
+        </administrableDoseForm>
+		<producedFrom> <!-- Skapa flera <producedFrom>-element om det är flera olika tillverkade enheter som ska blandas -->
+			<reference value="ManufacturedItemDefinition/DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition" /> <!-- Guidkoden För ManufacturedItem -->
+		</producedFrom>
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073566" /> <!-- Kod för administreringssätt -->
+			<display value="Cutaneous use"/>   <!-- Administreringssätt  klartext, engelska -->          
+            </coding>
+          </code>
+        </routeOfAdministration>
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/DiklofenakApofri116gel-SE-PLC-AdministrableProductDefinition" /> <!-- Ändrat som ovan -->
+	  </request>
+  </entry>
+  
+  
+  <!-- Förpackningsavsnittet börjar här -->
+  
+  <!-- 1:a förpackningen av produkten börjar här --> <!-- 100 g diklofenak apofri gel -->
+  
+  <!-- Beskrivningen av vad förpackningen innehåller i sin helhet -->
+  <entry>
+    <!-- <fullUrl value="urn:uuid:2574effa-7ad4-4836-b672-7f3069a60f07" />  -->
+    <resource>
+    <PackagedProductDefinition>
+		<id value="DiklofenakApofri116gel-SE-PLC-PackageProductDefinition01"/>   <!-- NPL pack-id, olika för olika förpackningar av samma produkt -->   
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />  <!-- Antal enheter i förpackningen, t ex 100 (för 100 st tabletter i en förpackning) -->
+			<unit value="Tube"/>  <!-- Fritext för hur enheten presenteras, t ex som tablett, engelska --> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" />  <!-- Kod för vad enheten är (t ex tablett), units of presentation -->         
+          </valueQuantity>
+        </extension>
+        <packageFor> 
+          <reference value="MedicinalProductDefinition/DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition" />    <!-- Guidkod för MedicalProductDefinition -->
+        </packageFor> 
+        <description value="Tub, 100 g">  <!-- Kopiera Förpackningsbeskrivningen, svenska (t ex Blister, 100 tabletter) -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />  <!-- Låt koden stå, visar att vi skriver på svenska -->
+			<display value="Swedish"/>    <!-- Låt stå -->       
+            </valueCoding>
+          </extension>
+        </description>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> <!-- Låt stå -->
+				<display value="Sweden"/>    <!-- Låt stå -->          
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />  <!-- Låt stå, vi håller bara på med Marketed grejer -->
+				<display value="Marketed"/>   <!-- Låt stå -->           
+            </coding>
+          </status>
+          <dateRange>
+            <start/>  <!-- vi kommer nog inte kunna hitta det här, låt stå till Johan säger något annat -->
+          </dateRange>
+        </marketingStatus>
+        <package> 
+		
+		
+		<!-- Ytterförpackningen (t ex kartong) -->
+			<type>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+					<code value="100000073498"/>  <!-- Koden för typ av ytterförpackningen (t ex 100000073498 för Box) -->
+					<display value="Box"/>  <!-- Fritext för typ av ytterförpackning (t ex Box), engelska -->
+				</coding>
+			</type>
+			<quantity value="1"/>  <!-- Alltid 1, låt stå -->
+			<material>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="200000003529"/>  <!-- Kod för material på ytterförpackning (t ex 200000003529 för Cardboard) -->
+					<display value="Cardboard"/>  <!-- Fritext för material på ytterförpackningen, engelska -->
+				</coding>
+			</material>
+		<!-- Slut på beskrivning av ytterförpackningen -->
+		
+	
+				<containedItem> <!-- Om det endast finns ytterförpackning kommer contained item behöva flytta upp till innerförpackningen-->
+					<item>
+					<reference>
+					  <reference value="ManufacturedItemDefinition/DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition" /> <!-- Guidkod för ManufacturedItem -->
+					</reference>
+					</item>
+					<amount>
+					  <value value="1" /> <!-- Hur många enheter är contained item (t ex 100 för 100 st tabletter i en blisterkarta, eller 1 för en ögonsdroppsflaska) -->
+					  <unit value="Tube"/>   <!-- Frtext (T ex Tablet för tablett), engelska -->          
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002156" />  <!-- Kod för enheten i units of presentation (t ex 200000002152 för tablett, något man kan hålla i).-->
+					</amount>  
+				  </containedItem>
+			</package>
+	</PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/DiklofenakApofri116gel-SE-PLC-PackageProductDefinition01" />
+    </request>
+  </entry>
+<!-- Första förpackningen av produkten slutar här. Hela package avsnittet kan kopieras och en ny entrykod görs om det finns flera förpackningar för en produkt -->
+
+
+
+  
+  <!-- 2:a förpackningen av produkten börjar här --> <!-- 60 g diklofenak apofri gel -->
+  
+  <!-- Beskrivningen av vad förpackningen innehåller i sin helhet -->
+  <entry>
+    <!-- <fullUrl value="urn:uuid:a941ec31-f068-4002-b274-2c15b0ba7e7b" />   -->
+    <resource>
+      <PackagedProductDefinition>
+		<id value="DiklofenakApofri116gel-SE-PLC-PackageProductDefinition02"/>   <!-- NPL pack-id, olika för olika förpackningar av samma produkt -->   
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />  <!-- Antal enheter i förpackningen, t ex 100 (för 100 st tabletter i en förpackning) -->
+			<unit value="Tube"/>  <!-- Fritext för hur enheten presenteras, t ex som tablett, engelska -->          
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" />  <!-- Kod för vad enheten är (t ex tablett), units of presentation -->
+          </valueQuantity>
+        </extension>
+        <packageFor> 
+          <reference value="MedicinalProductDefinition/DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition" />    <!-- Guidkod för MedicalProductDefinition -->
+        </packageFor> 
+        <description value="Tub, 60 g">  <!-- Kopiera Förpackningsbeskrivningen, svenska (t ex Blister, 100 tabletter) -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />  <!-- Låt koden stå, visar att vi skriver på svenska -->
+			<display value="Swedish"/>    <!-- Låt stå -->       
+            </valueCoding>
+          </extension>
+        </description>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> <!-- Låt stå -->
+				<display value="Sweden"/>    <!-- Låt stå -->          
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />  <!-- Låt stå, vi håller bara på med Marketed grejer -->
+				<display value="Marketed"/>   <!-- Låt stå -->           
+            </coding>
+          </status>
+          <dateRange>
+            <start/>  <!-- vi kommer nog inte kunna hitta det här, låt stå till Johan säger något annat -->
+          </dateRange>
+        </marketingStatus>
+        <package> 
+		
+		
+		<!-- Ytterförpackningen (t ex kartong) -->
+			<type>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+					<code value="100000073498"/>  <!-- Koden för typ av ytterförpackningen (t ex 100000073498 för Box) -->
+					<display value="Box"/>  <!-- Fritext för typ av ytterförpackning (t ex Box), engelska -->
+				</coding>
+			</type>
+			<quantity value="1"/>  <!-- Alltid 1, låt stå -->
+			<material>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="200000003529"/>  <!-- Kod för material på ytterförpackning (t ex 200000003529 för Cardboard) -->
+					<display value="Cardboard"/>  <!-- Fritext för material på ytterförpackningen, engelska -->
+				</coding>
+			</material>
+		<!-- Slut på beskrivning av ytterförpackningen -->
+		
+	
+				<containedItem> <!-- Om det endast finns ytterförpackning kommer contained item behöva flytta upp till innerförpackningen-->
+					<item>
+					<reference>
+					  <reference value="ManufacturedItemDefinition/DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition" /> <!-- Guidkod för ManufacturedItem -->
+					</reference>
+					</item>
+					<amount>
+					  <value value="1" /> <!-- Hur många enheter är contained item (t ex 100 för 100 st tabletter i en blisterkarta, eller 1 för en ögonsdroppsflaska) -->
+					  <unit value="Tube"/>   <!-- Frtext (T ex Tablet för tablett), engelska -->          
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002156" />  <!-- Kod för enheten i units of presentation (t ex 200000002152 för tablett, något man kan hålla i).-->
+					</amount>  
+				  </containedItem>
+			</package>
+		</PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/DiklofenakApofri116gel-SE-PLC-PackageProductDefinition02" />
+    </request>
+  </entry>
+<!-- Första förpackningen av produkten slutar här. Hela package avsnittet kan kopieras och en ny entrykod görs om det finns flera förpackningar för en produkt -->
+
+
+  <entry>
+    <!-- <fullUrl value="urn:uuid:1e2b736b-2f1d-421a-97ee-75e1ce2a4591" />  -->
+    <resource>
+      <ManufacturedItemDefinition> <!-- förklarar det maskinen spottar ut och den har Lmform och units of presentation-->
+		<id value="DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition"/>   
+        <status value="active"/>  
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073726" />  <!-- Kod för läkemedelsform (ej formen som är redo för administrering), återfinns i Johans Teams-fil-->
+			<display value="Gel"/>  <!-- Fritext för läkemedelsform, engelska --> 
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" /> <!-- Ögondroppar/inhalator (pre-filled)/spruta osv är caontained/manufactured item och unit of presentation och har bara en ytterförpckning (1 nivå) -->
+			<display value="Tube"/>  
+          </coding>
+        </unitOfPresentation>
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition" />
+    </request>
+  </entry>
+  
+  
+  <entry>
+    <!-- <fullUrl value="urn:uuid:a75afe85-9e16-4bd5-9180-90a8cf6309cd" /> --> 
+    <resource>
+      <Ingredient>
+	  <id value="DiklofenakApofri116gel-SE-PLC-Ingredient"/>
+	  <status value="active"/>
+	  <!-- inklippt från Losec -->
+          <for> 
+            <reference value="MedicinalProductDefinition/DiklofenakApofri116gel-SE-PLC-MedicinalProductDefinition" /> <!-- Guidkod för MedicinalProductDefinition --> 
+          </for> 
+		  
+		  <for> 
+		    <reference value="ManufacturedItemDefinition/DiklofenakApofri116gel-SE-PLC-ManufacturedItemDefinition" /> <!-- Guidkod för ManufacturedItemDefinition --> 
+		  </for>
+
+		  <for> 
+		    <reference value="AdministrableProductDefinition/DiklofenakApofri116gel-SE-PLC-AdministrableProductDefinition" /> <!-- Guidkod för AdministrableProductDefinition. --> 
+		  </for>
+            <role>
+               <coding>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+                  <code value="100000072072"/> <!-- Låt stå -->
+                  <display value="Active"/> <!-- Låt stå -->
+               </coding>
+            </role>
+            <substance>
+               <code>
+			   <concept>
+                  <coding>
+                     <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                     <code value="100000091074"/> <!-- Kod för den aktiva substansen (saltform) hittas på eutct.eudra.org -->
+                     <display value="Diclofenac diethylamine"/> <!-- Namn utskrivet på den aktiva substansen, engelska -->
+                  </coding>
+				  </concept>
+               </code>
+               <strength>
+
+
+				  <!-- Concentration, ta bort om presentation passar bättre -->
+			<concentrationRatio>
+            <numerator>
+            <value value="11.6" /> <!-- Styrka i konc, 5,7 (mg) -->
+			<comparator>
+			 <extension url="http://ema.europa.eu/fhir/extension/comparator">
+			  <valueCoding>
+                 <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+				 <code value="100000000049"/> <!-- Låt stå -->
+				 <display value="equal to"/>
+				</valueCoding>
+			   </extension>
+		      </comparator>
+		      <unit value="milligram(s)"/> <!-- Enheten i fritext, engelska -->
+		      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+              <code value="100000110655" /> <!-- Kod för enheten /t ex 100000110655 för milligram(s)-->
+             </numerator>
+              <denominator>
+                <value value="1" /> <!-- 1 betyder här typ per 1 bla bla. T ex per 1 ml (om det står ml och dt är typ en injektionsvätska), lär ofta vara 1  -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                <code value="100000110654" /> <!-- Kod för enheten (t ex 100000110662 för millilitre(s) -->
+				<unit value="gram(s)"/>   <!-- Enheten i fritext -->                  
+              </denominator>
+            </concentrationRatio>
+				  
+				  <!-- Även om den aktiva subtansen är sin moderform (inte ett salt) ska man ha med referencestrength, kopiera bara. Referencestregnth måste vara med -->
+                  <referenceStrength>
+                     <substance>
+					 <concept>
+                        <coding>
+                           <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                           <code value="100000092798"/> <!-- Kod för den aktiva substansen (moderformen) hittas på eutct.eudra.org -->
+                           <display value="diclofenac"/> <!-- Den aktiva substansen utskriven i fritext, engelska -->
+                        </coding>
+						</concept>
+                     </substance>
+                     <strengthRatio>
+                        <numerator>
+                           <value value="9"/> <!-- Motsvarande innehåll av den aktiva substansen i sin moderform, återfinns på EIRA -->
+                           <comparator>
+                                <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                                    <valueCoding>
+                                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                        <code value="100000000049"/> <!-- Låt stå -->
+                                        <display value="equal to"/>
+                                    </valueCoding>
+                                </extension>
+                            </comparator>
+                           <unit value="milligram(s)"/> <!-- Enhet på motsvarande innehåll -->
+                           <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                           <code value="100000110655"/> <!-- Kod för enhet av motsvarande innehåll -->
+                        </numerator>
+                        <denominator>
+                           <value value="1"/> <!-- Igen per enhet. Kommer nog oftast stå 1, så det blir per 1 tablett eller per 1 inhalering typ -->
+                           <unit value="gram(s)"/> <!-- Per enhet -->
+                           <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                           <code value="100000110654"/> <!-- Koden för enheten -->
+                        </denominator>
+                     </strengthRatio>
+                  </referenceStrength>
+               </strength>
+            </substance>
+         </Ingredient>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="Ingredient/DiklofenakApofri116gel-SE-PLC-Ingredient"/>
+      </request>
+   </entry>
+           
+</Bundle>

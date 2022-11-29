@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ventilastin Novolizer 100 mikrogram/dos inhalationspulver. ASPnr 2006-1125 -->
+<!--  Penny Lindström Carmanius   2022-06-23 -->
+<!-- Referenser:
+VentilastinNovolizer100mginhalationspulver-SE-PLC-MedProdDef
+VentilastinNovolizer100mginhalationspulver-SE-PLC-RegAutho
+VentilastinNovolizer100mginhalationspulver-SE-PLC-AdminiProdDef
+VentilastinNovolizer100mginhalationspulver-SE-PLC-PackProdDef01
+VentilastinNovolizer100mginhalationspulver-SE-PLC-PackProdDef02 
+VentilastinNovolizer100mginhalationspulver-SE-PLC-ManuItemDef
+VentilastinNovolizer100mginhalationspulver-SE-PLC-Ingredient -->
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+    <!-- <fullUrl value="urn:uuid:" />  -->
+    <resource>
+	
+	
+      <MedicinalProductDefinition>  <!-- Här börjar läkemedelsprodukten -->
+		<id value="VentilastinNovolizer100mginhalationspulver-SE-PLC-MedProdDef"/>  <!-- NPL nummer för produkten, kopierade in från excel -->
+    <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">  
+      <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008" />
+        <code value="100000073839" />   <!-- Inhalationspulver -->
+	      <display value="Inhalation powder"/>  <!-- Inhalationspulver översatt till engelska via Teams-filen som Johan fixat med läkemedelsformer --> 
+      </valueCoding>
+    </extension>
+	
+		
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>  
+			<value value="SE-100001594-00012324"/>  <!-- EJJJ! Inte ändrat eftersom jag inte vet om det här ska vara med eller inte -->
+		</identifier>
+		<!-- ISO name: /MedicinalProduct/EURDId -->
+		<!-- 'Salbutamolsulfat -->
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="10330"/>  <!-- Hittade inget nr för endast salbutamol, bara levosalbutamol, salbutamol -->
+		</identifier>        
+		<!-- Har ej ändrat -->
+		
+		
+		<domain>  <!-- intern snack om det är för människa eller för djur -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+            <code value="100000000012" />  <!-- 12 på slutet betyder humantbruk, bör bli samma kod hela tiden om vi bara håller på med humanaLM. Ligger i listan domain --> <!-- Inte ändrat, endast för humant bruk -->
+         	<display value="Human use"/>
+          </coding>
+        </domain>
+		
+		<!-- Inte ändrat något -->
+        <!-- Talar om om dokumentet som vi använder nu är färdigt eller ett utkast eller om det ligger på en server om LM:et inte är godkänt längre. Vi kör bara current. -->
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+            <code value="200000005004" />
+         	<display value="Current"/>            
+          </coding>
+        </status>
+		<!-- inte ändrat något -->	
+		
+		
+		<!-- Indikation från SmPC -->
+		<indication value="Ventilastin Novolizer 100 mikrogram/dos, inhalationspulver är godkänt för vuxna, ungdomar och barn mellan 6 och 12 år.
+Symtomatisk behandling av tillstånd med åtföljande reversibel luftvägsobstruktion, t.ex. astma eller kroniskt obstruktiv lungsjukdom (KOL) med en betydande reversibilitetskomponent.
+Förebyggande av astmaanfall som utlöses av ansträngning eller exponering för allergen."/>  <!-- Har fyllt i enligt FAss, vet inte riktigt hur jag ska formulera det om barn under 4 år. Det står liksom att säkerhetsdata inte riktigt finns osv. -->
+      	
+		<legalStatusOfSupply>  <!-- Receptbelat eller receptfritt? --> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />  
+            <code value="100000072084" />  <!-- Ventilastin är receptbelagd, låt stå. -->
+         	<display value="Medicinal product subject to medical prescription"/>   <!-- Låt stå, samma anlednig som ovan -->          
+          </coding>
+        </legalStatusOfSupply>
+		
+		
+		<classification>
+          <coding>  <!-- här börjar ATC-koden -->
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />  <!-- spor lista Anatomical classification system, human läkemedel -->
+            <code value="100000098065" />  <!-- kod för ATC-kod inskriven-->
+         	<display value="R03AC02"/>  <!-- ATC-kod för salbutamol inskriven -->           
+          </coding>
+        </classification>
+		
+		<!-- ÄNDRINGAR HÄR!!! -->  <!-- EJJJ! Det här har Hugh tagit bort (satt som kommentar) -->
+		<!-- SÅ HÄR TROR JOHAN ATT VI SKA LÄNKA FRÅN PRODUKTEN TILL TILLVERKAD ENHET -->
+		<!-- <comprisedOf> -->
+			<!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+			<!-- <reference value="urn:uuid:66c27672-6fa3-4804-90ae-5e7b95e6b453" />   -->
+		<!-- </comprisedOf> -->
+		<!-- SLUTET AV ÄNDRINGARNA -->
+		
+		
+		
+        <name>
+          <productName value="Ventilastin Novolizer 100 mikrogram/dos inhalationspulver" />  <!-- Namn inskrivet --> 
+          <namePart>  
+            <part value="Ventilastin Novolizer" />  
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000002" />  <!-- inskrivet som scientific name (slutar på 3) -->
+				<display value="Invented name part"/>   <!-- Inskrivet -->            
+              </coding>
+            </type>
+          </namePart>  
+		  
+		  
+		  <namePart>  <!-- Styrkan -->   
+            <part value="100 mikrogram/dos" /> <!-- Inskrivet -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000004" />
+				<display value="Strength part"/>   <!-- Lät stå kvar. Fortfarande en del av namngivningen .-->           
+              </coding>
+            </type>
+          </namePart>
+		  
+		  
+          <namePart>  <!-- Läkemedelsformen -->
+            <part value="inhalationspulver" />  <!-- inskrivet -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000005" />  <!-- Koden är samma hela tiden, säger bara att vi tittar på Pharmaceutical dose part -->
+				<display value="Pharmaceutical dose form part"/>              
+              </coding>
+            </type>
+          </namePart>   
+		  
+		  
+		  <!-- inte ändrat någonting, tror inte att det behövs -->
+          <countryLanguage>
+            <country>
+              <coding>  <!-- Land, alltid Sverige --> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />  <!-- Antar att det här redan är klart så jag ändrar inte -->
+				<display value="Sweden"/>                
+              </coding>
+            </country>
+            <language>
+              <coding> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>   <!-- Alltid svenska -->            
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+	<!-- Inte ändrat någonting, tror inte det behövs -->
+	
+	
+	<!-- Inte ändrat någonting, vet inte vad detta är -->
+	<request>
+      <method value="PUT" />  <!-- Johan tror detta finns för att FHIR ska fungera --> 
+      <url value="MedicinalProductDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-MedProdDef" />
+    </request>
+  </entry>  <!-- Här slutar medicinal product delen. -->
+  <!-- Inte ändrat någontig, vet inte vad detta är -->
+  
+  
+  <entry>  <!-- Vid entry börjar en ny bit -->  
+    <!-- <fullUrl value="urn:uuid:" />   -->   
+    <resource>
+      <RegulatedAuthorization>
+	   <id value="VentilastinNovolizer100mginhalationspulver-SE-PLC-RegAutho"/> 
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />  <!-- dokument om vad ett godkännande nr är för något --> 
+          <value value="24458" />  <!-- MT-numret inlagt --> 
+        </identifier>
+        <subject>
+          <reference value="MedicinalProductDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-MedProdDef" />  <!-- EJJJ!  -->  
+        </subject>
+		
+
+<!-- Inte ändrat någonting, behövs inte ändras -->
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />  <!-- Regulatory entitelmen type, dokument som myndighet skickar ut. Marketing authorization (tillåtelse att sälja produkten) -->
+            <code value="220000000061" />  <!-- kommer altid vara denna kod, alltd Marketing authorization för oss -->
+			<display value="Marketing Authorisation"/>            <!-- Finns inget annat än M.A som är relevant för oss --> 
+          </coding>
+        </type>
+		<!-- Inte ändrat någonting, det behövs inte -->
+		
+		<!-- Antar att ingenting ska ändras här, salbutamol tillhör ju inte en av de krångliga substanserna -->
+		<region>  <!-- I vilken region gäller det här godkännandet i? Bör Står EU här om det är en EU godkänd produkt (t ex insulin eller monoklonala antikroppar) -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/>           
+          </coding>
+        </region>
+		<!-- Antar att ingenting ska ändras här -->
+		
+		
+  <!-- Antar att ingenting ska ändras här heller -->
+        <status>  <!-- Vi ska ju bara ha såna som är giltiga så den här biten bör vara likadan för alla --> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" />
+			<display value="Valid"/>            
+          </coding>
+        </status>
+		<!-- Antar att ingenting ska ändras här -->
+		
+		
+		<!-- Oklart vad detta är -->
+        <statusDate value="2008-02-15" />  <!-- Johan kollar upp varför den står två gånger --> <!-- Ändrade den till Airmoir datumet -->
+		<!-- Oklart vad detta är -->
+
+		
+		
+		<!-- MAH -->
+        <holder>  <!-- här står det vilket företag som äger produkten -->
+			<identifier>    <!-- Med ett <identifier>-element. -->
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100001591"/>
+			</identifier>
+          <display value="Meda AB" />  <!-- Namnet på företaget som är MAH inlagt--> 
+        </holder>
+		<case>
+			<type>
+				<!-- ISO name: (fixed value) -->
+				<coding>
+					<!-- ISO name: (fixed value) -->
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<!-- ISO name: (fixed value) -->
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/DateOfFirstAuthorisation -->
+			<dateDateTime value="2008-02-15"/>    <!-- Endast detta datum behöver ändras - datum för när produkten först blev godkänd. Övrig kod inom <case> är alltid samma. -->
+					
+		</case>
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/VentilastinNovolizer100mginhalationspulver-SE-PLC-RegAutho" />  <!-- Oklart om den måste vara såhär. Godkännande nr är här. EJJJ!  -->
+    </request>
+  </entry>
+  
+  
+  <entry>
+    <!-- <fullUrl value="urn:uuid:" /> -->
+    <resource>
+      <AdministrableProductDefinition>
+		<id value="VentilastinNovolizer100mginhalationspulver-SE-PLC-AdminiProdDef"/>   <!-- NPLid-SE-PharmProd01 (eler andra siffror om man återanvänder) för produkten följt av siffror--> <!-- EJJJ! --> 
+    <status value="active"/>
+        <!-- ÄNDRINGAR HÄR!!! -->
+		<formOf> <!-- Hette tidigare <Subject> -->
+          <reference value="MedicinalProductDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-MedProdDef" />      <!-- Refererar till ID för produkten. --> <!-- EJJJ! -->
+        </formOf> <!-- Hette tidigare </Subject> -->
+		<!-- SLUTET AV ÄNDRINGARNA -->
+        <administrableDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073839" /> 
+			<display value="Inhalation powder"/>         
+          </coding>
+        </administrableDoseForm>
+		<!-- ÄNDRINGAR HÄR!!! -->
+		<!-- Referens till den/de tillverkade enheter som man framställer det bruksfärdiga läkemedlet från. -->
+		<producedFrom>
+			<reference value="ManufacturedItemDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-ManuItemDef" /> <!-- EJJJ! -->
+		</producedFrom>
+		<!-- SLUTET AV ÄNDRINGARNA -->
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073584" /> <!-- Användning för inhalering -->
+			<display value="Inhalation use"/>             
+            </coding>
+          </code>
+        </routeOfAdministration>
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-AdminiProdDef" /> <!-- EJJJ! -->
+    </request>
+  </entry>
+  
+  
+  <!-- Kasett 1 x 200 doser (refill) börjar här. En av två förpackningar -->
+   <entry>
+    <!-- <fullUrl value="urn:uuid:" />   -->
+    <resource>
+      <PackagedProductDefinition>
+		<id value="VentilastinNovolizer100mginhalationspulver-SE-PLC-PackProdDef"/>   <!-- La in NPL pack id -->   
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />
+            <unit value="Cartridge"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002114" /> <!-- Det som passade allra bäst --> <!-- kollade på instruktionsfilm på youtube och då kallade de kasetten för cartridge så tänker anta att det är det rätta -->
+          </valueQuantity>
+        </extension>
+       
+	   <!-- ÄNDRINGAR HÄR!!! -->
+        <packageFor> <!-- Hette tidigare <subject>. -->
+          <reference value="MedicinalProductDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-MedProdDef" />     <!-- Borde denna peka på produkten förpackningen tillhör? --> <!-- kod för MedicalProductdefinition --> <!-- EJJJ! -->
+        </packageFor> <!-- Hette tidigare </subject> -->
+		<!-- SLUTET AV ÄNDRINGARNA -->
+	   
+        <description value="Kasett 1 x 200 doser (refill)">  <!-- Såhär har jag skrivit på "förpackningbeskrivning" i tabellen i excel. Ska det vara så? Ska det vara i singular? -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />  <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->
+			<display value="Swedish"/>    <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->       
+            </valueCoding>
+          </extension>
+        </description>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->
+				<display value="Sweden"/>    <!-- Inte ändrat, antar att man ska låta det stå såhär om man skriver på svenska -->          
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />  <!-- Han satte in koden 100000072075 (No data provided i spor) så ändrade koden som står för "Marketed" eftersom vi håller på med marketerd  -->
+				<display value="Marketed"/>   <!-- inte ändrat, antar att det alltid ska stå såhär -->           
+            </coding>
+          </status>
+          <dateRange>
+            <start/>
+          </dateRange>
+        </marketingStatus>
+		
+		
+        <package> 
+		<!-- ytterförpackningen -->
+		<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType --> <!-- Ytterförpackningen --> 
+			<type>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+					<code value="100000073498"/>  <!-- I produktspecifikationen står det att en kasett är förpackad i en behållare försluten med aluminiumfolie. På bilder på google kan man se en kartong om inhalator är med också, tänker anta att det är kartong här också -->
+					<display value="Box"/>  
+				</coding>
+			</type>
+			<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+			<quantity value="1"/>  <!-- Alltid 1, låt stå -->
+			<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+			<material>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="200000003529"/>  <!-- Inte ändrat, kollat upp att det stämmer -->
+					<display value="Cardboard"/>  <!-- Inte ändrat, kollat upp att det stämmer -->
+				</coding>
+			</material>
+			<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+		<!-- Ytterförpackningen -->
+		
+		
+		<!-- EJJJ! kommer inte ändra något här förens jag vet hur jag gör med behållaren -->
+		
+                  <containedItem> 
+					<item>
+					  <reference>
+					    <reference value="ManufacturedItemDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-ManuItemDef"/>  <!-- Contained item måste finnas i innersta nivån, 66c27672-6fa3-4804-90ae-5e7b95e6b453 -->
+					  </reference>
+					</item>
+					<amount>
+					  <value value="1" />
+						<unit value="Cartridge"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002114" />          
+					</amount>  
+				  </containedItem>
+		</package>
+		</PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-PackProdDef" />
+    </request>
+  </entry>
+  
+  
+  <entry>
+    <!-- <fullUrl value="urn:uuid:66c27672-6fa3-4804-90ae-5e7b95e6b453" />   -->
+    <resource>
+      <ManufacturedItemDefinition> <!-- förklarar det maskinen spottar ut och den har Lmform och units of presentation-->
+		<id value="VentilastinNovolizer100mginhalationspulver-SE-PLC-ManuItemDef"/>   <!-- NPL-id-SE-ManItem001 (eller andra siffror) -->   
+        <status value="active"/> 
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073839" />  <!-- Byter ut mot min --> 
+			<display value="Inhalation powder"/>            
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002114" />  
+			<display value="Cartridge"/>  
+          </coding>
+        </unitOfPresentation>
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/VentilastinNovolizer100mginhalationspulver-SE-PLC-ManuItemDef" />
+    </request>
+  </entry>
+  
+  <!-- EJJJ! slut på att jag inte kommer ändra något -->
+  
+  
+  
+  <entry>
+    <!-- <fullUrl value="urn:uuid:b475c346-c3a1-4a14-a56a-fda37f7b6c42" /> --> 
+    <resource>
+      <Ingredient>
+        <id value="VentilastinNovolizer100mginhalationspulver-SE-PLC-Ingredient"/> <!-- EJJJ! -->
+        <status value="active"/>
+	  
+	  <!-- inklippt från Losec -->
+	  <!--<extension url="http://ema.europa.eu/fhir/extension/subject"> --> <!-- ser annorlunda ut än i hevicain, ingredientsubject osv -->
+             <!-- ÄNDRINGAR HÄR!!! -->
+          <for> <!-- Hette tidigare <valueReference> -->
+            <reference value="VentilastinNovolizer100mginhalationspulver-SE-PLC-MedProdDef" />		<!-- Referera till produkten. --> <!-- EJJJ! -->
+          </for> <!-- Hette tidigare </valueReference> -->
+		  
+		  <for> <!-- Denna referens fanns inte tidigare. -->
+		    <reference value="VentilastinNovolizer100mginhalationspulver-SE-PLC-ManuItemDef" />		<!-- Referera till tillverkad enhet. --> <!-- EJJJ! -->
+		  </for>
+
+		  <for> <!-- Denna referens fanns inte tidigare. -->
+		    <reference value="VentilastinNovolizer100mginhalationspulver-SE-PLC-AdminiProdDef" />		<!-- Referera till bruksfärdigt läkemedel. --> <!-- EJJJ! -->
+		  </for>
+		<!-- SLUTET AV ÄNDRINGARNA -->
+           <!-- </extension> -->
+            <role>
+               <coding>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+                  <code value="100000072072"/> <!-- klart -->
+                  <display value="Active"/>
+               </coding>
+            </role>
+            <substance><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Substance -->
+               <code>
+                 <concept>
+                  <coding>
+                     <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                     <code value="100000090564"/> <!-- hittad på eutct.eudra.org -->
+                     <display value="Salbutamol sulfate"/>
+                  </coding>
+                 </concept>
+               </code>
+               <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+               <strength><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+                  <presentationRatio> <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+                     <numerator>
+                        <value value="120"/> <!-- Fixat -->
+                        <comparator>
+                            <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                                <valueCoding>
+                                    <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                    <code value="100000000049"/> <!-- vad är detta? -->
+                                    <display value="equal to"/>
+                                </valueCoding>
+                            </extension>
+                        </comparator>
+                        <unit value="microgram(s)"/>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                        <code value="100000110656"/>
+                     </numerator>
+                     <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+                     <denominator>
+                        <value value="1"/> <!--Tänkte att man kunde ha en 1:a här och sedan under skriva dose med sin kod men den är non_current, hur gör jag då? -->
+                        <unit value="Actuation"/> <!-- ej ändrat, tänker att det är samma för ventilastin osm för Airomir. Står mg (eller mikrogram för ventilastin) /dos på båda så.-->
+                        <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                        <code value="200000002163"/> <!-- ej ändrat -->
+                     </denominator>
+                  </presentationRatio>
+				  
+				  
+				  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength -->
+                  <referenceStrength><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+                     <substance>
+                       <concept>
+                         <coding>
+                           <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                           <code value="100000091629"/> <!-- fixat -->
+                           <display value="salbutamol"/>
+                        </coding>
+                       </concept>
+                     </substance>
+                     <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+                     <strengthRatio><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+                        <numerator>
+                           <value value="100"/>
+                           <comparator>
+                                <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                                    <valueCoding>
+                                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                        <code value="100000000049"/> <!-- igen, vad är detta? -->
+                                        <display value="equal to"/>
+                                    </valueCoding>
+                                </extension>
+                            </comparator>
+                           <unit value="microgram(s)"/>
+                           <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                           <code value="100000110656"/>
+                        </numerator>
+                        <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+                        <denominator>
+                           <value value="1"/>
+                           <unit value="Actuation"/>
+                           <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                           <code value="200000002163"/>
+                        </denominator>
+                     </strengthRatio>
+                  </referenceStrength>
+               </strength>
+            </substance>
+         </Ingredient>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="Ingredient/VentilastinNovolizer100mginhalationspulver-SE-PLC-Ingredient"/>
+      </request>
+   </entry>
+</Bundle>

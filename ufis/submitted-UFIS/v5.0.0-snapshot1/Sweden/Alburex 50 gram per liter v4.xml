@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Alburex 50g/l-->
+<!-- Alva Jonsson -->
+<!-- Started 2022-06-22, latest edit 2022-06-29-->
+<!-- follows the 5.0 standard-->
+<!-- all packages done-->
+<!--all entries as finished as they can be at the moment.-->
+<!--special precautions for storage added, guessed -->
+
+<!-- Referenser:
+Entry 1, MedicinalProductDefinition: 6ee137ce-e761-43d0-a538-fc18214b518b       repalced with Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities: 166e2c4e-9342-42b5-99a8-2754ec722246             replaced with Alburex-50g-L-Solution-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition: fb91f956-645d-424a-9dcc-8484aa5c2665   replaced with Alburex-50g-L-Solution-SE-AJ-AdministrableProductDefinition
+Entry 4, PackageProductDefinition: 78c924ea-dba3-40ec-b36e-f34e78430fd8         replaced with Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition01..02
+Entry 5, ManufacturedItemDefinition: 66c27672-6fa3-4804-90ae-5e7b95e6b453       replaced with Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01 .. 02
+Entry 6, Ingredient: b475c346-c3a1-4a14-a56a-fda37f7b6c42                       replaced with Alburex-50g-L-Solution-SE-AJ-Ingredient                       -->
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction"/>
+
+  <entry>
+    <!--Medicinal product definition,started-->
+    <!--always one entry only-->
+    <fullUrl value="urn:uuid:6ee137ce-e761-43d0-a538-fc18214b518b"/>
+    <!--new id generated:6ee137ce-e761-43d0-a538-fc18214b518b-->
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"/>
+        
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <!-- pharmacutical dose form-->
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073870"/>
+            <!--ID-->
+            <display value="solution for infusion"/>
+            <!--text-->
+          </valueCoding>
+        </extension>
+
+        <identifier>
+          <!-- FHIR identifier-->
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100000398-00050242"/>
+          <!-- SE-numbers from ORGID-000MTnr-->
+        </identifier>
+
+        <identifier>
+          <!-- EURD- ID-->
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="10836"/>
+          <!-- human serum albumin (medical dilution)-->
+        </identifier>
+
+        <domain>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+          </coding>
+        </status>
+        <indication
+          value="Återställande och upprätthållande av cirkulerande blodvolym vid volymbrist och när användning av en kolloid är lämpligt.
+Val av albumin istället för en artificiell kolloid kan göras med hänsyn till patientens kliniska tillstånd och aktuella behandlingsrekommendationer."/>
+        <!-- indcation taken from SmPC-->
+
+
+        <legalStatusOfSupply>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+
+        <classification>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000094427"/>
+            <display value="B05AA01"/>
+            <!-- albumin-->
+          </coding>
+        </classification>
+
+        <!--CHANGE(S) HERE!!! 2022-06-23-->
+        <!-- <comprisedOf> -->
+        <!--  <reference value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01" /> -->
+        <!-- refers to manufactured item 250 -->
+        <!-- </comprisedOf> -->
+
+        <!-- <compromisedOf> -->
+        <!--  <reference value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02" /> -->
+        <!-- Refers to manufactured item. 500 -->
+        <!-- </compromisedOf> -->
+
+        <!--END OF CHANGE(S) !!! 2022-06-23-->
+
+        <name>
+          <productName value="Alburex 50 g/l infusionsvätska, lösning"/>
+          <namePart>
+            <part value="Alburex"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000002"/>
+                <display value="Invented Name Part"/>
+                <!-- alburex has to be invented and not scientific-->
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="50 g/l"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/>
+                <display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="infusionsvätska, lösning"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/>
+                <display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+
+        </name>
+
+
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"/>
+    </request>
+  </entry>
+  <!--Medicinal product definition, started-->
+
+
+
+
+  <entry>
+    <!--Regulated marketing authorisation, started-->
+    <!--always one entry only-->
+    <fullUrl value="urn:uuid:55d42830-dee1-48dd-8fa5-a164be420d34"/>
+    <!--new id generated:55d42830-dee1-48dd-8fa5-a164be420d34-->
+    <resource>
+
+      <RegulatedAuthorization>
+        <id value="Alburex-50g-L-Solution-SE-AJ-RegulatedAuthorization"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <value value="50242"/>
+          <!--MT-->
+        </identifier>
+
+        <subject>
+          <reference
+            value="MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to medicinalproductdefinition -->
+        </subject>
+
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <code value="220000000061"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+
+        <statusDate value="2014-03-28"/>
+
+        <holder>
+          <identifier>
+            <system value="https://spor.ema.europa.eu/v1/locations"/>
+            <value value="LOC-100004673"/>
+          </identifier>
+          <display value="CSL Behring GmBH"/>
+        </holder>
+
+        <case>
+          <type>
+            <coding>
+              <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+              <code value="dateOfFirstAuthorisation"/>
+              <display value="First Authorisation"/>
+            </coding>
+          </type>
+
+          <dateDateTime value="2014-03-28"/>
+          <!-- date of first authorisation, found in eira -->
+        </case>
+
+      </RegulatedAuthorization>
+
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/Alburex-50g-L-Solution-SE-AJ-RegulatedAuthorization"/>
+      
+    </request>
+  </entry>
+  <!-- end of Regulated marketing authorisation-->
+  <!--level of progress-->
+
+
+
+  <entry>
+    <!-- start of Administrable product definition-->
+    <!--level of progress-->
+    <!--technically there could be several entries for administrable products, but it is unlikely that we encounter such products at this stage of the project. powder that can be mixed with both salt water and sterile water vill need two-->
+    <fullUrl value="urn:uuid:8a6162a6-0ac1-4774-9061-796604babc72"/>
+    <!--new id generated:8a6162a6-0ac1-4774-9061-796604babc72-->
+    <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <AdministrableProductDefinition>
+
+        <id value="Alburex-50g-L-Solution-SE-AJ-AdministrableProductDefinition"/>
+       
+        <status value="active"/>
+        <!--CHANGE(S) HERE!!! 2022-06-23-->
+        <formOf>
+          <!-- previously <Subject> -->
+          <reference
+            value="MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal product definition-->
+        </formOf>
+        <!-- previously </Subject> -->
+        <!--END OF CHANGE(S) !!! 2022-06-23-->
+
+        <administrableDoseForm>
+          <!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073870"/>
+            <display value="solution for infusion"/>
+          </coding>
+        </administrableDoseForm>
+
+        <!--CHANGE(S) HERE!!! 2022-06-23-->
+        <producedFrom>
+          <reference
+            value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"/>
+          <!-- refers to manufactured item 250ml-->
+        </producedFrom>
+
+        <producedFrom>
+          <reference
+            value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"/>
+          <!-- Refers to manufactured item. 500ml -->
+        </producedFrom>
+
+        <!--END OF CHANGE(S) !!! 2022-06-23-->
+
+        <routeOfAdministration>
+          <!--route of administration-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073611"/>
+              <display value="Intravenous use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/Alburex-50g-L-Solution-SE-AJ-AdministrableProductDefinition"/>
+      
+    </request>
+  </entry>
+  <!--Administrable product definition, started-->
+
+
+
+
+  <entry>
+    <!--Packaged Product definition, started-->
+    <!--this entry is for the 250 ml bottle-->
+    <!-- one entry per package, several entries allowed-->
+    <fullUrl value="urn:uuid:532b1a24-9fad-41c6-9ed6-1428ebc2b620"/>
+    <!-- new id generated: 532b1a24-9fad-41c6-9ed6-1428ebc2b620-->
+    <resource>
+
+      <PackagedProductDefinition>
+        <!--injektionsflaska 250 ml-->
+        <id value="Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition01"/>
+
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1"/>
+            <!--this quantity seems a bit arbitary, we can make it up as long as it has a bit of logic in it and makes it fairly easy for the general person to understand how much the entire package contains-->
+            <unit value="Vial"/>
+            <!-- vial seems to be the correct term for this type of packaging, no better term exists. No distinction between infusion and injection in terms of terms, even though distinctions exist in other areas-->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <!--units of presentation-->
+            <code value="200000002158"/>
+          </valueQuantity>
+        </extension>
+
+        <!--CHANGE(S) HERE!!! 2022-06-23-->
+        <packageFor>
+          <!-- previously <subject>. -->
+          <reference
+            value="MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"/>
+          <!-- refers to medicinalproductdefinition -->
+        </packageFor>
+        <!-- previously </subject> -->
+        <!--END OF CHANGE(S) !!! 2022-06-23-->
+
+
+        <description value="injektionsflaska, 250 ml">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <!--entire bit about swedish is correct-->
+              <code value="100000072288"/>
+              <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <!--There seems to be no need to use the long name, e.g. kingdom of sweden-->
+              <code value="100000000535"/>
+              <display value="Sweden"/>
+            </coding>
+          </country>
+
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <!--hevicain code wrong, correct here-->
+              <display value="Marketed"/>
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/>
+            <!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+
+        <package>
+          <!--outer packaging start-->
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+
+          <quantity value="1"/>
+          <!--always one, according to the standard. Boxes are easy, plastic film not so much-->
+
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/>
+              <display value="Cardboard"/>
+            </coding>
+          </material>
+
+          <!--should we add this, ask JOhan-->
+          <shelfLifeStorage>
+            <type>
+              <!--I guess this bit will always look like this-->
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="2"/>
+              <unit value="year"/>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073410"/>
+                <display value="Do not store above 25 °C"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073420"/>
+                <display value="Do not freeze"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <!--should we add this, ask JOhan-->
+          </shelfLifeStorage>
+
+          <package>
+            <!--I put the vial here until there is clarification on how it should be defined-->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073563"/>
+                <display value="Vial"/>
+              </coding>
+            </type>
+
+            <quantity value="1"/>
+
+            <material>
+              <!--one material only, stopper and whatever the other thing was called are more difficult to define as they would have to de defined as separate layers of packaging due to having their own codes, but we cant define wether they are inside or outside the vial, and they can't be put as individual layers inside layer one as that would indicate that they lie separately in the box, not connected to the glass vial which would be very incorrect-->
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003205"/>
+                <display value="Glass type II"/>
+              </coding>
+            </material>
+
+            <containedItem>
+              <!-- Always inside the innermost layer of packaging, whatever that layer is-->
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"/>
+                  <!-- refers to manufactureditem 250-->
+                </reference>
+              </item>
+
+              <amount>
+                <value value="250"/>
+                <unit value="Millilitre(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110662"/>
+              </amount>
+
+            </containedItem>
+          </package>
+          <!--end of inner package-->
+        </package>
+        <!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="PackagedProductDefinition/Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition01"/>
+    </request>
+  </entry>
+  <!--Packaged Product definition, started-->
+
+  <entry>
+    <!--Packaged Product definition, started-->
+    <!-- 500 ml package-->
+    <fullUrl value="urn:uuid:09cd9f0f-7ed1-4036-aadb-4c32d368fe45"/>
+    <!-- new id generated: 09cd9f0f-7ed1-4036-aadb-4c32d368fe45-->
+    <resource>
+      <PackagedProductDefinition>
+        <!-- 500 ml bottle-->
+        <id value="Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition02"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1"/>
+            <unit value="Vial"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002158"/>
+
+          </valueQuantity>
+        </extension>
+
+        <!--CHANGE(S) HERE!!! 2022-06-23-->
+        <packageFor>
+          <!-- previously <subject>. -->
+          <reference
+            value="MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"/>
+          <!-- refers to medicinalproductdefinition -->
+        </packageFor>
+        <!-- previously </subject> -->
+        <!-- END OF CHANGE(S) !!! 2022-06-23-->
+
+        <description value="injektionsflaska, 500 ml">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/>
+              <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/>
+              <display value="Sweden"/>
+            </coding>
+          </country>
+
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/>
+          </dateRange>
+        </marketingStatus>
+
+        <package>
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+
+          <quantity value="1"/>
+
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/>
+              <display value="Cardboard"/>
+            </coding>
+          </material>
+
+          <!--should we add this, ask JOhan-->
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="2"/>
+              <unit value="year"/>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073410"/>
+                <display value="Do not store above 25 °C"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073420"/>
+                <display value="Do not freeze"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <!--should we add this, ask JOhan-->
+          </shelfLifeStorage>
+
+          <package>
+            <!-- if we exclude this bit and only defines it as a contained item + manufactured item we can't define the material of the vial anymore, which I guess is something we want to do-->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073563"/>
+                <display value="Vial"/>
+              </coding>
+            </type>
+
+            <quantity value="1"/>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003205"/>
+                <display value="Glass type II"/>
+              </coding>
+            </material>
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"/>
+                  <!-- refers to manufactureditem 500-->
+                </reference>
+              </item>
+
+              <amount>
+                <value value="500"/>
+                <unit value="Millilitre(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110662"/>
+              </amount>
+
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="PackagedProductDefinition/Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition02"/>
+    </request>
+  </entry>
+  <!--Packaged Product definition, started-->
+
+
+
+  <entry>
+    <!--manufactured item definition, started-->
+    <!--250 ml-->
+    <!--several entries allowed-->
+    <fullUrl value="urn:uuid:e4695861-3bcf-411b-b57e-0585a96ebacd"/>
+    <!-- new id generated: e4695861-3bcf-411b-b57e-0585a96ebacd-->
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"/>
+        
+
+        <status value="active"/>
+
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <!--pharmaceutical dose form-->
+            <code value="100000073870"/>
+            <display value="Solution for infusion"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <!-- <manufactureditemquantity>
+			<value value="250" />
+			<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+			<code value="100000110662" />
+			<display value="Millilitre(s)"/>
+		</manufactureditemquantity> -->
+
+        <unitOfPresentation>
+          <coding>
+            <!-- <value value="1" /> -->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <!--unit of presentation-->
+            <code value="200000002158"/>
+            <display value="Vial"/>
+          </coding>
+        </unitOfPresentation>
+
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"
+      />
+    </request>
+  </entry>
+  <!--manufactured item definition, started-->
+
+
+
+  <entry>
+    <!--manufactured item definition, started-->
+    <!--500-->
+    <!--several entries allowed-->
+    <fullUrl value="urn:uuid:8cf29912-91d0-4454-ae9c-137bfd414b34"/>
+    <!-- new id generated: 8cf29912-91d0-4454-ae9c-137bfd414b34-->
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"/>
+       
+
+        <status value="active"/>
+
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <!--pharmaceutical dose form-->
+            <code value="100000073870"/>
+            <display value="Solution for infusion"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <!-- this is a test
+		<manufactureditemquantity>
+			<value value="500" />
+			<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+			<code value="100000110662" />
+			<display value="Millilitre(s)"/>
+		</manufactureditemquantity> end of test-->
+
+        <unitOfPresentation>
+          <coding>
+            <!-- <value value="1" /> -->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <!--unit of presentation-->
+            <code value="200000002158"/>
+            <display value="Vial"/>
+          </coding>
+        </unitOfPresentation>
+
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"
+      />
+    </request>
+  </entry>
+  <!--manufactured item definition, started-->
+
+
+
+  <entry>
+    <!--ingredient, started-->
+    <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <fullUrl value="urn:uuid:29e944f8-ff1c-430c-9268-55e903ac4561"/>
+    <!-- new id generated: 29e944f8-ff1c-430c-9268-55e903ac4561-->
+    <resource>
+      <Ingredient>
+        <id value="Alburex-50g-L-Solution-SE-AJ-Ingredient"/>
+        <status value="active"/>
+        <!--<extension url="http://ema.europa.eu/fhir/extension/ingredientSubject"> -->
+
+
+        <!--CHANGE(S) HERE!!! 2022-06-23-->
+        <for>
+          
+          <reference
+            value="MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to medicinalproductdefinition-->
+        </for>
+        <!-- Hette tidigare </valueReference> -->
+
+        <for>
+          
+          <reference
+            value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"/>
+          <!-- Refers to manufactured item. 250 -->
+        </for>
+
+        <for>
+          <reference
+            value="ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"/>
+          <!-- Refers to manufactured item. 500 -->
+        </for>
+
+        <for>
+          
+          <reference
+            value="AdministrableProductDefinition/Alburex-50g-L-Solution-SE-AJ-AdministrableProductDefinition"/>
+          <!-- Refers to administrable product. -->
+        </for>
+
+        <!--END OF CHANGE(S) !!! 2022-06-23-->
+        <!-- </extension> -->
+
+
+
+        <role>
+          <!--always the active substance, as for now-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+
+        <substance>
+          <!--the substance-->
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000089024"/>
+                <display value="human serum albumin"/>
+              </coding>
+            </concept>
+          </code>
+
+          <strength>
+
+            <concentrationRatio>
+              <!--how much substance there is-->
+              <!--Can be substituted with a presentation element, see losec example-->
+              <!--general rule; liqiud: concentration ; solid or pre-filled single use syringe: presentation-->
+              <numerator>
+                <value value="50"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="gram(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110654"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="litre(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110661"/>
+              </denominator>
+            </concentrationRatio>
+
+            <referenceStrength>
+              <!--how much "pure" substance the substance is equal too, think transformation, effect in the body-->
+              <!--ARES in eira-->
+              <!-- according to the standard there has to be exactly one reference strength, even though the substance is itself and not a salt. Copy paste then. Exclude other eventual salts, only "mother substance"-->
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000089024"/>
+                    <display value="human serum albumin"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="50"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="gram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110654"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="litre(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110661"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/Alburex-50g-L-Solution-SE-AJ-Ingredient"/>
+    </request>
+  </entry>
+  <!--ingredient, started-->
+
+
+</Bundle>

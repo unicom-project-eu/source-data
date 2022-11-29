@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v4.6.0/fhir-all.xsd">
+	<id value="3cd22840-f332-4445-852b-14a325d32da1"/>
+	<type value="transaction"/>
+	<entry>
+		<resource>
+			<MedicinalProductDefinition xmlns="http://hl7.org/fhir">
+				<!-- Id assigned manually. This will not be overwritten by the server, so must be careful and avoid id-collisions-->
+				<id value="CanifugCremolum-EE"/>
+				<!-- MPID = country code + MAH LOC code + med prod ID-->
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000008"/>
+						<code value="100000173972"/>
+						<display value="Cream + pessary"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/MPID"/>
+					<value value="EE-100004795-00002222"/>
+				</identifier>
+				<!-- PMSId -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<value value="12345-canifugcremolum-ee"/>
+				</identifier>
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+
+				<classification>
+					<!-- Using RMS code for ATC. What would be the display name?-->
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<code value="100000095693"/>
+						<display value="clotrimazole G01AF02"/>
+					</coding>
+				</classification>
+
+				<name>
+					<productName
+						value="Canifug Cremolum, 100 mg + 10mg/g, vaginaalsuposiidid + kreem"/>
+					<namePart>
+						<part value="Canifug Cremolum"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="100 mg + 10mg/g"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="vaginaalsuposiidid + kreem"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+
+					<countryLanguage>
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<!-- Rutt: Long or short name? -->
+								<display value="Estonia"/>
+							</coding>
+						</country>
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+
+				<!-- Package reference-->
+				<package>
+					<package>
+						<reference value="PackagedProductDefinition/CanifugCremolum-EE-Package001"/>
+					</package>
+				</package>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/CanifugCremolum-EE"/>
+		</request>
+	</entry>
+
+	<entry>
+		<resource>
+			<RegulatedAuthorization xmlns="http://hl7.org/fhir">
+				<id value="CanifugCremolum-EE-MarketingAuthorisation"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="366201"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/CanifugCremolum-EE"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Estonia"/>
+					</coding>
+				</region>
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<statusDate value="2017-12-06"/>
+
+				<!-- organisation code-->
+				<holder>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100004795"/>
+					</identifier>
+					<!--Can I use the display value here and it is clear that it is the display value for the identifier above?-->
+					<!-- HG: can't use an & in here, replaced with and -->
+					<display value="Dr. August Wolff GmbH and Co. KG Arzneimittel"/>
+				</holder>
+
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/CanifugCremolum-EE-MarketingAuthorisation"/>
+		</request>
+	</entry>
+
+
+	<entry>
+		<resource>
+			<PackagedProductDefinition xmlns="http://hl7.org/fhir">
+				<id value="CanifugCremolum-EE-Package001"/>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100004795-00002222-001"/>
+				</identifier>
+				<description
+					value="Alu/PE-fooliumist valmistatud ribapakend, mis on asetatud väliskarpi. Kreem on alumiiniumtuubis ja omakorda pappkarbis. Kombineeritud pakend sisaldab: 6 vaginaalsuposiiti ja 20 g kreemi."/>
+				<!-- Pack size? See IG Ch2 p 126-->
+
+				<!--   outer packaging   -->
+				<package>
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!--   top level, so this can only ever be 1, but it is optional   -->
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+
+
+					<!--   inner packaging 1: strip of 6 pessaries  -->
+					<package>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073559"/>
+								<display value="Strip"/>
+							</coding>
+						</type>
+						<quantity value="1"/>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003214"/>
+								<display value="PolyEthylene"/>
+							</coding>
+						</material>
+
+						<!--			<shelfLifeStorage>
+				<type>
+					<coding>
+						<system value="http://ema.europa.eu/example/shelfLifeTypePlaceHolder"/>
+						<code value="ShelfLifeofPackagedMedicinalProduct"/>
+					</coding>
+				</type>
+				<periodDuration>
+					<value value="3"/>
+					<unit value="a"/>
+				</periodDuration>
+				<specialPrecautionsForStorage>
+					<coding>
+						<system value="http://ema.europa.eu/example/specialprecautionsforstorage"/>
+						<code value="none"/>
+					</coding>
+				</specialPrecautionsForStorage>
+			</shelfLifeStorage>
+-->
+						<containedItem>
+							<item>
+								<reference>
+									<reference
+										value="ManufacturedItemDefinition/CanifugCremolum-EE-ManItem002"
+									/>
+								</reference>
+							</item>
+							<amountInteger value="6"/>
+							<!--<amount>
+					<value value="6"/>
+				</amount>
+				-->
+						</containedItem>
+					</package>
+
+					<!-- Inner package 2: 20 mg tube in a smaller cardboard box-->
+					<package>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073498"/>
+								<display value="Box"/>
+							</coding>
+						</type>
+
+						<quantity value="1"/>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003529"/>
+								<display value="Cardboard"/>
+							</coding>
+						</material>
+
+						<!--Tube of creme inside the box -->
+						<package>
+							<type>
+								<coding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+									<code value="100000073561"/>
+									<display value="Tube"/>
+								</coding>
+							</type>
+							<quantity value="1"/>
+							<material>
+								<coding>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+									<code value="200000003200"/>
+									<display value="Aluminium"/>
+								</coding>
+							</material>
+
+							<containedItem>
+								<item>
+									<reference>
+										<reference
+											value="ManufacturedItemDefinition/CanifugCremolum-EE-ManItem001"
+										/>
+									</reference>
+								</item>
+								<!-- Is this the correct way to define the size of creme tube?-->
+								<amountQuantity>
+									<value value="20"/>
+									<unit value="gram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110654"/>
+								</amountQuantity>
+							</containedItem>
+						</package>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/CanifugCremolum-EE-Package001"/>
+		</request>
+	</entry>
+
+
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition xmlns="http://hl7.org/fhir">
+				<id value="CanifugCremolum-EE-ManItem001"/>
+
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073712"/>
+						<display value="Cream"/>
+					</coding>
+				</manufacturedDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002156"/>
+						<display value="Tube"/>
+					</coding>
+				</unitOfPresentation>
+				<ingredient>
+					<reference>
+						<reference value="Ingredient/CanifugCremolum-Ingredient-1"/>
+					</reference>
+				</ingredient>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/CanifugCremolum-EE-ManItem001"/>
+		</request>
+	</entry>
+
+
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition xmlns="http://hl7.org/fhir">
+				<id value="CanifugCremolum-EE-ManItem002"/>
+
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073815"/>
+						<display value="Pessary"/>
+					</coding>
+				</manufacturedDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002137"/>
+						<display value="Pessary"/>
+					</coding>
+				</unitOfPresentation>
+				<ingredient>
+					<reference>
+						<reference value="Ingredient/CanifugCremolum-Ingredient-2"/>
+					</reference>
+				</ingredient>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/CanifugCremolum-EE-ManItem002"/>
+		</request>
+	</entry>
+
+
+	<entry>
+		<resource>
+			<Ingredient xmlns="http://hl7.org/fhir">
+				<id value="CanifugCremolum-Ingredient-1"/>
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+
+				<substance>
+					<code>
+						<!--CodeableReference can be either CodeableConcept (= coding in xml) or a reference (to another resource). Concept-tag marks the codeableConcept and "coding" is the first part of CodeableConcept-->
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000092074"/>
+								<display value="CLOTRIMAZOLE"/>
+							</coding>
+						</concept>
+					</code>
+					<strength>
+						<concentrationRatio>
+
+							<numerator>
+								<value value="10"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="gram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110654"/>
+							</denominator>
+
+						</concentrationRatio>
+						<!-- Reference strength repeats the strength above-->
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/CanifugCremolum-Ingredient-1"/>
+		</request>
+	</entry>
+
+	<entry>
+		<resource>
+			<Ingredient xmlns="http://hl7.org/fhir">
+				<id value="CanifugCremolum-Ingredient-2"/>
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+
+				<substance>
+					<code>
+						<!--CodeableReference can be either CodeableConcept (= coding in xml) or a reference (to another resource). Concept-tag marks the codeableConcept and "coding" is the first part of CodeableConcept-->
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000092074"/>
+								<display value="Clotrimazole"/>
+							</coding>
+						</concept>
+					</code>
+					<strength>
+						<presentationRatio>
+
+							<numerator>
+								<value value="100"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="Pessary"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002137"/>
+							</denominator>
+
+						</presentationRatio>
+
+						<!-- According to PMS IG reference strength is mandatory if available in the document (see EU ISO IDMP IG Ch 2. p 176; Ch 8. p28) -->
+						<referenceStrength>
+							<substance>
+								<concept>
+									<coding>
+										<system
+											value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000092074"/>
+										<display value="Clotrimazole"/>
+									</coding>
+								</concept>
+							</substance>
+							<strengthRatio>
+								<numerator>
+									<value value="100"/>
+									<comparator>
+										<extension
+											url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<denominator>
+									<value value="1"/>
+									<unit value="Pessary"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002137"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/CanifugCremolum-Ingredient-2"/>
+		</request>
+	</entry>
+
+
+	<entry>
+		<resource>
+			<AdministrableProductDefinition xmlns="http://hl7.org/fhir">
+				<id value="clotrimazole-cream-10mg-g"/>
+				<!--
+	<identifier>
+		<system value="http://ema.europa.eu/example/phpididentifiersets"/>
+		<value value="{PhPID}"/>
+	</identifier>
+	-->
+				<!--Link to MedicinalProductDefinition. = formOf -->
+				<subject>
+					<reference value="CanifugCremolum-EE"/>
+				</subject>
+
+				<!--Reference not present in EMA IG. It's supposed to show which man items produce the final administrable product  
+	<producedFrom>
+		<reference value="CanifugCremolum-EE-ManItem001"/>
+	</producedFrom>
+	-->
+
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073712"/>
+						<display value="Cream"/>
+					</coding>
+				</administrableDoseForm>
+
+				<!-- No PHP UoP in this case -->
+
+				<ingredient>
+					<reference value="Ingredieent/CanifugCremolum-Ingredient-1"/>
+				</ingredient>
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<!--For combination products, it will take a lot of time to get the routes of administration automatically right for Ph products. This would be "vaginal use" if taken from our registry. -->
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073566"/>
+							<display value="Cutaneous use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/clotrimazole-cream-10mg-g"/>
+		</request>
+	</entry>
+
+
+	<entry>
+		<resource>
+			<AdministrableProductDefinition xmlns="http://hl7.org/fhir">
+				<id value="clotrimazole-pessary-100mg"/>
+				<!--
+	<identifier>
+		<system value="http://ema.europa.eu/example/phpididentifiersets"/>
+		<value value="{PhPID}"/>
+	</identifier>
+	-->
+				<!--Link to MedicinalProductDefinition = formOf-->
+				<subject>
+					<reference value="MedicinalProductDefinition/CanifugCremolum-EE"/>
+				</subject>
+
+				<!--Reference not present in EMA IG. It's supposed to show which man items produce the final administrable product  
+	<producedFrom>
+		<reference value="CanifugCremolum-EE-ManItem002"/>
+	</producedFrom>
+	-->
+
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073815"/>
+						<display value="Pessary"/>
+					</coding>
+				</administrableDoseForm>
+
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002137"/>
+						<display value="Pessary"/>
+					</coding>
+				</unitOfPresentation>
+
+				<ingredient>
+					<reference value="Ingredient/CanifugCremolum-Ingredient-2"/>
+				</ingredient>
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073639"/>
+							<display value="Vaginal use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/clotrimazole-pessary-100mg"/>
+		</request>
+	</entry>
+
+</Bundle>

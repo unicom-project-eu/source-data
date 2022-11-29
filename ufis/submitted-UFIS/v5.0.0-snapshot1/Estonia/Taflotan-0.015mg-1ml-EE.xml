@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073759"/>
+						<display value="Eye drops, solution "/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<!-- Fake PMS ID -->
+					<value value="0000000000031"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/MPID -->
+				<!-- country code + MAH code + med prod ID (ravimikaardi nr)-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100003380-34660"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/Domain -->
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+					<coding>
+						<system value="http://hl7.org/fhir/publication-status"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/LegalStatusOfSupply -->
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<!-- ISO name: /MedicinalProduct/AdditionalMonitoringIndicator -->
+				<additionalMonitoringIndicator>
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="False"/>
+						<display value="False"/>
+					</coding>
+				</additionalMonitoringIndicator>
+				<!-- ISO name: /MedicinalProduct/ProductClassification -->
+				<classification>
+					<!-- ISO name: /MedicinalProduct/ProductClassification/CodeSystem -->
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<!-- ISO name: /MedicinalProduct/ProductClassification/Value -->
+						<code value="100000098531"/>
+						<display value="Tafluprost"/>
+					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<code value="S01EE05"/>
+						<display value="Tafluprost "/>
+					</coding>
+				</classification>
+				<!-- ISO name: /MedicinalProduct/MedicinalProductName -->
+				<name>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/FullName -->
+					<productName value="Taflotan, 15 mikrogrammi/ml silmatilgad, lahus"/>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/InventedNamePart -->
+					<namePart>
+						<part value="Taflotan"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/StrengthPart -->
+					<namePart>
+						<part value="15 mikrogrammi/ml"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/PharmaceuticalDoseFormPart -->
+					<namePart>
+						<part value="silmatilgad, lahus"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language -->
+					<countryLanguage>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Country -->
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Language -->
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Taflotan-0.015mg-1ml-eye-drops-solution-EE-RA"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationNumber -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="963218"/>
+				</identifier>
+				<subject>
+					<reference value="Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/Country -->
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatus -->
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="100000072099"/>
+						<display value="Valid"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatusDate -->
+				<statusDate value="2018-04-03"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation -->
+				<holder>
+					<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation/Identifier -->
+					<!-- LOC-id  -->
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100003380"/>
+					</identifier>
+					<display value="Santen Oy"/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Taflotan-0.015mg-1ml-eye-drops-solution-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Taflotan-0.015mg-1ml-eye-drops-solution-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073759"/>
+						<display value="Eye drops, solution"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002121"/>
+						<display value="Drop"/>
+					</coding>
+				</unitOfPresentation>
+				<producedFrom>
+					<reference value="ManufacturedItemDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"/>
+				</producedFrom>
+				<routeOfAdministration>
+					<!-- ISO name: /MedicinalProduct/PharmaceuticalProduct/RouteOfAdministration/RouteOfAdministration -->
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073617"/>
+							<display value="Ocular use "/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073759"/>
+						<display value="Eye drops, solution"/>
+					</coding>
+				</manufacturedDoseForm>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/UnitOfPresentation -->
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002111"/>
+						<display value="Bottle"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<id value="Taflotan-0.015mg-1ml-eye-drops-solution-EE-I"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-APD"/>
+				</for>
+				<!-- -->
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000115886"/>
+								<display value="Tafluprost"/>
+							</coding>
+						</concept>
+					</code>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+					<strength>
+						<presentationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="0.45"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="microgram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110656"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="Drop"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002121"/>
+							</denominator>
+						</presentationRatio>
+					</strength>
+					<strength>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+						<concentrationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="15"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="microgram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110656"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="millilitre(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110662"/>
+							</denominator>
+						</concentrationRatio>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength -->
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Taflotan-0.015mg-1ml-eye-drops-solution-EE-I"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Taflotan-0.015mg-1ml-eye-drops-solution-EE-PPD-1753703"/>
+				<!-- Pack size-->
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="1"/>
+						<unit value="Bottle"/>
+			
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002111"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-EE-100003380-34660-1753703"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"/>
+				</packageFor>
+				<description value="Läbipaistvad väikese tihedusega polüetüleenpudelid (LDPE) valge Aptari tilgutiga (polüetüleen, polüpropüleen, tsükliline olefiin-kopolümeer), mis on kaetud sinise polüetüleenkorgiga. Iga pudel  sisaldab 3 ml, 5 ml või 7 ml lahust.">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073497"/>
+								<display value="Bottle"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<quantity value="1"/>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003203"/>
+								<display value="Glass"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="3"/>
+								<unit value="millilitre(s) "/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110662"/>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-PPD-1753703"/>
+		</request>
+	</entry>
+</Bundle>

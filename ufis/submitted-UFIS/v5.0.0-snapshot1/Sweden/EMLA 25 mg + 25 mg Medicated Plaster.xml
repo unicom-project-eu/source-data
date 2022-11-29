@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--EMLA 25 mg/ 25 mg Medicated Plaster-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-06, last change 2022-07-06-->
+<!-- follows the 5.0 standard-->
+<!--This is a combination of substances, but the pharmaceutical dose form felt relevant enough to take a small step outside of the priority list-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     EMLA-2525-Plaster-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           EMLA-2525-Plaster-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                EMLA-2525-Plaster-SE-AJ-PackagedProductDefinition01 (2 plasters)
+Entry 5, PackagedProductDefinition:                EMLA-2525-Plaster-SE-AJ-PackagedProductDefinition02 (20 plasters)
+Entry 6, ManufacturedItemDefinition:               EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition
+Entry 7, Ingredient:                               EMLA-2525-Plaster-SE-AJ-Ingredient01 (Lidocaine)
+Entry 8, Ingredient:                               EMLA-2525-Plaster-SE-AJ-Ingredient02 (Prilocaine)                      -->
+
+
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction"/>
+  <!--Fixed Value-->
+
+
+
+  <entry>
+    <!-- Entry 1: Medicinal product definition-->
+    <!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+
+        <id value="EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <!-- pharmaceutical dose form of the product-->
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073714"/>
+            <display value="Medicated plaster"/>
+          </valueCoding>
+        </extension>
+
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100001718-00011834"/>
+          <!-- Format: SE-xxxxxxxxx-yyyyyyyy. -->
+          <!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+        </identifier>
+
+        <identifier>
+          <!-- EURD-ID-->
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="1867"/>
+          <!--lidocaine / prilocaine ( not centrally authorised product)-->
+        </identifier>
+
+        <domain>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+          </coding>
+        </status>
+
+        <indication
+          value="Emla plåster används vid:
+• Ytanestesi av intakt hud i samband med:
+o nålstick, t.ex. vid inläggning av perifer venkateter eller vid blodprovstagning
+o ytliga kirurgiska ingrepp,
+hos vuxna och den pediatriska populationen"/>
+        <!--indication taken from SmPC-->
+        <!-- impossible to define language here-->
+
+
+        <legalStatusOfSupply>
+          <!-- subject to medcial prescription or not, type of prescription-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="200000002239"/>
+            <display
+              value="Medicinal product subject to medical prescription exempt for some pack sizes"/>
+          </coding>
+        </legalStatusOfSupply>
+
+        <classification>
+          <!-- ATC code-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000097205"/>
+            <display value="N01BB20"/>
+            <!--combinations-->
+          </coding>
+        </classification>
+
+
+        <name>
+
+          <productName value="EMLA 25 mg/25 mg Medicinskt plåster"/>
+          <!-- full name (in swedish)  Name+ strength+ form-->
+
+          <namePart>
+            <part value="EMLA"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000002"/>
+                <display value="Invented Name Part"/>
+                <!--I assume that EMLA is an invented name-->
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="25 mg/25 mg"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/>
+                <display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Medicinskt plåster"/>
+            <!-- pharmaceutical dose form in swedish, as stated in the name-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/>
+                <display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+
+        </name>
+
+
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+    </request>
+  </entry>
+  <!-- Entry 1: Medicinal product definition-->
+  <!--STARTED-->
+
+
+
+  <entry>
+    <!-- Entry 2: Regulated marketing authorisation-->
+    <!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization>
+        <!--Z needed here, am eng.-->
+
+        <id value="EMLA-2525-Plaster-SE-AJ-RegulatedAuthorization"/>
+
+        <identifier>
+          <!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <value value="11834"/>
+        </identifier>
+
+        <subject>
+          <reference
+            value="MedicinalProductDefinition/EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type>
+          <!-- shows that this product is approved-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <code value="220000000061"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region>
+          <!-- region where document is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+
+        <status>
+          <!-- wether or not the ducoment is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+
+        <statusDate value="1993-05-28"/>
+        <!-- date of first authorisation-->
+        <!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+
+        <holder>
+          <!-- MAH, marketing authorisation holder-->
+
+          <identifier>
+            <system value="https://spor.ema.europa.eu/v1/locations"/>
+            <value value="LOC-100001575"/>
+          </identifier>
+
+          <display value="Aspen Pharma Trading Limited"/>
+          <!-- name of MAH-->
+          <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+        <case>
+          <type>
+            <coding>
+              <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+              <code value="dateOfFirstAuthorisation"/>
+              <display value="First Authorisation"/>
+            </coding>
+          </type>
+
+          <dateDateTime value="1993-05-28"/>
+          <!-- date of first authorisation-->
+        </case>
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/EMLA-2525-Plaster-SE-AJ-RegulatedAuthorization"/>
+    </request>
+  </entry>
+  <!-- Entry 2: Regulated marketing authorisation-->
+  <!--STARTED-->
+
+
+
+
+  <entry>
+    <!-- Entry 3: Administrable product definition-->
+    <!--STARTED-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <AdministrableProductDefinition>
+
+        <id value="EMLA-2525-Plaster-SE-AJ-AdministrableProductDefinition"/>
+
+        <status value="active"/>
+
+        <formOf>
+          <!-- previously <Subject> -->
+          <reference
+            value="MedicinalProductDefinition/EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </formOf>
+        <!-- previously </Subject> -->
+
+        <administrableDoseForm>
+          <!--This has to be the plaster, because you do nothing to change it before application-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073714"/>
+            <display value="Medicated plaster"/>
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference
+            value="ManufacturedItemDefinition/EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition"/>
+          <!-- refers to manufactured item(s)-->
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073566"/>
+              <display value="Cutaneous use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/EMLA-2525-Plaster-SE-AJ-AdministrableProductDefinition"
+      />
+    </request>
+  </entry>
+  <!-- Entry 3: Administrable product definition-->
+  <!--STARTED-->
+
+
+
+
+  <entry>
+    <!-- Entry 4: Packaged Product definition01-->
+    <!--2 x 1 plasters-->
+    <!--STARTED-->
+    <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+        <!--2x1 plasters-->
+        <id value="EMLA-2525-Plaster-SE-AJ-PackagedProductDefinition01"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="2"/>
+            <unit value="Plaster"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002140"/>
+          </valueQuantity>
+        </extension>
+
+        <packageFor>
+          <!--previously <subject>-->
+          <reference
+            value="MedicinalProductDefinition/EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+          <!-- refers to Medicinal Product Definition -->
+        </packageFor>
+        <!--previously </subject>-->
+
+        <description value="Påse, 2 x 1 plåster">
+          <!-- might not be true, but it is what it is right now-->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/>
+              <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus>
+          <!-- if the package is marketed, or not, and why not-->
+
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/>
+              <display value="Sweden"/>
+            </coding>
+          </country>
+
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/>
+            <!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+
+        <package>
+          <!--outermost packaging layer start-->
+
+          <type>
+            <!-- type of packaging-->
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+
+          <quantity value="1"/>
+
+
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/>
+              <display value="Cardboard"/>
+            </coding>
+          </material>
+
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="2"/>
+              <unit value="Year"/>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073411"/>
+                <display value="Do not store above 30 °C"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073420"/>
+                <display value="Do not freeze"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073419"/>
+                <display value="Do not refrigerate"/>
+              </coding>
+            </specialPrecautionsForStorage>
+          </shelfLifeStorage>
+
+          <!--<package>-->
+          <!--package layer two-->
+          <!--this might exist and be some kind of bag-->
+          <!--<type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				  <code value="xxxxxxxxxxxx"/>
+				  <display value="term for packaging"/>
+				</coding>
+			  </type>-->
+
+          <!--<quantity value="x"/>-->
+          <!-- insert number of packages in this level-->
+
+          <!--<material>
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="xxxxxxxxxxxx"/>
+					<display value="term for material"/>
+				  </coding>
+				</material>-->
+
+          <package>
+            <!--innermost packaging layer-->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073550"/>
+                <display value="Single-dose container"/>
+              </coding>
+            </type>
+
+            <quantity value="2"/>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003208"/>
+                <display value="Plastic"/>
+              </coding>
+            </material>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/>
+                <display value="Aluminium"/>
+              </coding>
+            </material>
+
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition"/>
+                  <!-- refers to Manufactured Item-->
+                </reference>
+              </item>
+
+              <amount>
+                <!-- previously <amountQuantity>-->
+                <value value="1"/>
+                <unit value="plaster"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002140"/>
+              </amount>
+              <!-- previously </amountQuantity>-->
+            </containedItem>
+
+          </package>
+          <!--end of innermost package-->
+          <!--</package>-->
+          <!-- endof package layer two-->
+        </package>
+        <!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/EMLA-2525-Plaster-SE-AJ-PackagedProductDefinition01"/>
+    </request>
+  </entry>
+  <!-- Entry 4: Packaged Product definition01-->
+  <!--STARTED-->
+
+
+
+
+  <entry>
+    <!-- Entry 5: Packaged Product definition02-->
+    <!--20 x 1 plasters-->
+    <!--STARTED-->
+    <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+        <!--20 x 1 plasters-->
+        <id value="EMLA-2525-Plaster-SE-AJ-PackagedProductDefinition02"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="20"/>
+            <unit value="Plaster"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002140"/>
+          </valueQuantity>
+        </extension>
+
+        <packageFor>
+          <!--previously <subject>-->
+          <reference
+            value="MedicinalProductDefinition/EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+          <!-- refers to Medicinal Product Definition -->
+        </packageFor>
+        <!--previously </subject>-->
+
+        <description value="Påse, 20 x 1 plåster">
+          <!-- this is taken from EIRA, and might or might not be correct at all-->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/>
+              <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus>
+          <!-- if the package is marketed, or not, and why not-->
+
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/>
+              <display value="Sweden"/>
+            </coding>
+          </country>
+
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/>
+            <!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+
+        <package>
+          <!--outermost packaging layer start-->
+
+          <type>
+            <!-- type of packaging-->
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+
+          <quantity value="1"/>
+
+
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/>
+              <display value="Cardboard"/>
+            </coding>
+          </material>
+
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="2"/>
+              <unit value="Year"/>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073411"/>
+                <display value="Do not store above 30 °C"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073420"/>
+                <display value="Do not freeze"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073419"/>
+                <display value="Do not refrigerate"/>
+              </coding>
+            </specialPrecautionsForStorage>
+          </shelfLifeStorage>
+
+          <!--<package>-->
+          <!--package layer two-->
+          <!--this might exist and be some kind of bag-->
+          <!--<type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				  <code value="xxxxxxxxxxxx"/>
+				  <display value="term for packaging"/>
+				</coding>
+			  </type>-->
+
+          <!--<quantity value="x"/>-->
+          <!-- insert number of packages in this level-->
+
+          <!--<material>
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="xxxxxxxxxxxx"/>
+					<display value="term for material"/>
+				  </coding>
+				</material>-->
+
+          <package>
+            <!--innermost packaging layer-->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073550"/>
+                <display value="Single-dose container"/>
+              </coding>
+            </type>
+
+            <quantity value="20"/>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003208"/>
+                <display value="Plastic"/>
+              </coding>
+            </material>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/>
+                <display value="Aluminium"/>
+              </coding>
+            </material>
+
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition"/>
+                  <!-- refers to Manufactured Item-->
+                </reference>
+              </item>
+
+              <amount>
+                <!-- previously <amountQuantity>-->
+                <value value="1"/>
+                <unit value="plaster"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002140"/>
+              </amount>
+              <!-- previously </amountQuantity>-->
+            </containedItem>
+
+          </package>
+          <!--end of innermost package-->
+          <!--</package>-->
+          <!-- endof package layer two-->
+        </package>
+        <!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/EMLA-2525-Plaster-SE-AJ-PackagedProductDefinition02"/>
+    </request>
+  </entry>
+  <!-- Entry 5: Packaged Product definition02-->
+  <!--STARTED-->
+
+
+
+
+  <entry>
+    <!--Entry 6: Manufactured item definition-->
+    <!--STARTED-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition"/>
+
+        <status value="active"/>
+
+        <manufacturedDoseForm>
+          <!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073714"/>
+            <display value="Medicated plaster"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation>
+          <!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002140"/>
+            <display value="plaster"/>
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition"/>
+    </request>
+  </entry>
+  <!-- Entry 6: Manufactured item definition-->
+  <!-- STARTED-->
+
+
+
+
+  <entry>
+    <!-- Entry 7: Ingredient 01-->
+    <!--Lidocaine-->
+    <!--STARTED-->
+    <!--several entries allowed, one per ingredient-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+        <!--lidocaine-->
+
+        <id value="EMLA-2525-Plaster-SE-AJ-Ingredient01"/>
+
+        <status value="active"/>
+
+        <for>
+          <!--previously <valueReference> -->
+          <reference
+            value="MedicinalProductDefinition/EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </for>
+        <!--previously <valueReference> -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="ManufacturedItemDefinition/EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition"/>
+          <!--refers to Manufactured Item-->
+        </for>
+        <!--new addition -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="AdministrableProductDefinitionEMLA-2525-Plaster-SE-AJ-AdministrableProductDefinition"/>
+          <!--refers to Administrable product-->
+        </for>
+        <!--new addition -->
+
+        <role>
+          <!--the role of the substance-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000091713"/>
+                <display value="lidocaine"/>
+              </coding>
+            </concept>
+          </code>
+
+          <strength>
+            <!--strength of the substance-->
+
+
+            <presentationRatio>
+              <numerator>
+                <value value="25"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="plaster"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002140"/>
+              </denominator>
+            </presentationRatio>
+
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000091713"/>
+                    <display value="lidocaine"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="25"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="plaster"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002140"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/EMLA-2525-Plaster-SE-AJ-Ingredient01"/>
+    </request>
+  </entry>
+  <!--Entry 7: Ingredient01-->
+  <!--STARTED-->
+
+
+
+
+
+  <entry>
+    <!-- Entry 8: Ingredient 02-->
+    <!--Prilocaine-->
+    <!--STARTED-->
+    <!--several entries allowed, one per ingredient-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+        <!--Prilocaine-->
+
+        <id value="EMLA-2525-Plaster-SE-AJ-Ingredient02"/>
+
+        <status value="active"/>
+
+        <for>
+          <!--previously <valueReference> -->
+          <reference
+            value="MedicinalProductDefinition/EMLA-2525-Plaster-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </for>
+        <!--previously <valueReference> -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="ManufacturedItemDefinition/EMLA-2525-Plaster-SE-AJ-ManufacturedItemDefinition"/>
+          <!--refers to Manufactured Item-->
+        </for>
+        <!--new addition -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="AdministrableProductDefinitionEMLA-2525-Plaster-SE-AJ-AdministrableProductDefinition"/>
+          <!--refers to Administrable product-->
+        </for>
+        <!--new addition -->
+
+
+        <role>
+          <!--the role of the substance-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+
+        <substance>
+          <!--name the substance in the drug-->
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000092015"/>
+                <display value="Prilocaine"/>
+              </coding>
+            </concept>
+          </code>
+
+          <strength>
+            <!--strength of the substance-->
+
+
+            <presentationRatio>
+              <numerator>
+                <value value="25"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="plaster"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002140"/>
+              </denominator>
+            </presentationRatio>
+
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000092015"/>
+                    <display value="Prilocaine"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="25"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="plaster"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002140"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/EMLA-2525-Plaster-SE-AJ-Ingredient02"/>
+    </request>
+  </entry>
+  <!--Entry 8: Ingredient02-->
+  <!--STARTED-->
+
+
+</Bundle>

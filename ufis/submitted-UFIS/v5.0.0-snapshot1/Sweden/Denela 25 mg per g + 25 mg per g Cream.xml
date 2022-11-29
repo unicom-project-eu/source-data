@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Denela 25mg/g + 25mg/g cream-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-08, last change 2022-07-08-->
+<!-- follows the 5.0 standard-->
+<!--The only issue will be the cover thingys, waiting for Austria-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Denela-2525-Cream-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Denela-2525-Cream-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Denela-2525-Cream-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                Denela-2525-Cream-SE-AJ-PackagedProductDefinition01
+Entry 5, PackagedProductDefinition:                Denela-2525-Cream-SE-AJ-PackagedProductDefinition02
+Entry 6, ManufacturedItemDefinition:               Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition
+Entry 7, Ingredient:                               Denela-2525-Cream-SE-AJ-Ingredient01 (lidocaine)
+Entry 8, Ingredient:                               Denela-2525-Cream-SE-AJ-Ingredient02  (prilocaine)                     -->
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction" /><!--Fixed Value-->
+  
+  
+  
+  
+  <entry><!-- Entry 1: Medicinal product definition--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+	  
+		<id value="Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" />
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+		<!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+			<code value="100000073712" /> 
+			<display value="Cream" />
+		  </valueCoding>
+		</extension>
+		
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100001110-00050703"/>  
+						<!-- Format: SE-xxxxxxxxx-yyyyyyyy. --><!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+		</identifier>
+		
+		<identifier>  <!-- EURD-ID-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="1867"/>  
+			<!--lidocaine / prilocaine-->
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use" />
+		  </coding>
+		</domain>
+		
+		<status> 
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> 
+			<code value="200000005004" />
+			<display value="Current" />
+		  </coding>
+		</status>
+		
+		<indication value="Denela är avsedd för:
+Ytanestesi av huden i samband med:
+nålstick och injektioner, t.ex. vid inläggning av perifer venkateter eller vid blodprovstagning eller vaccination;
+ytliga kirurgiska ingrepp, t.ex. laserbehandling eller hårborttagning
+hos vuxna och den pediatriska populationen
+Ytanestesi av genitalslemhinnan, t.ex. före ytliga kirurgiska ingrepp eller före lokalbedövning hos vuxna och ungdomar ≥12 år.
+Ytanestesi av bensår för att underlätta mekanisk rengöring/debridering endast hos vuxna." /> 
+<!--indication taken from SmPC--><!-- impossible to define language here-->
+
+		
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084" />
+			<display value="Medicinal product subject to prescription" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		<!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000097205" />
+			<display value="N01BB20" />
+			<!--combinations-->
+		  </coding>
+		</classification>
+
+		<name> 
+		
+		  <productName value="Denela 25 mg/g + 25 mg/g Kräm" />
+		  <!-- full name, in swedish  Name+ strength+ form-->
+		  
+		  <namePart>
+		    <part value="Denela" /> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+				<code value="220000000002" /> 
+				<display value="Invented Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+          <namePart>
+            <part value="25 mg/g + 25 mg/g" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000004" />
+				<display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Kräm" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> 
+                <code value="100000000535" />
+				<display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- Entry 1: Medicinal product definition--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry>  <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	  
+	  <id value="Denela-2525-Cream-SE-AJ-RegulatedAuthorization"/>
+	  
+        <identifier> 
+		<!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="50703" />
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+            <code value="220000000061" /> 
+			<display value="Marketing Authorisation"/> 
+          </coding>
+        </type>
+
+        <region> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> 
+            <code value="100000000535" /> 
+			<display value="Sweden"/> 
+          </coding>
+        </region>
+
+        <status> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> 
+            <code value="100000072099" /> 
+			<display value="Valid"/> 
+          </coding>
+        </status>
+
+        <statusDate value="2014-06-26" /> 
+		<!-- date of first authorisation--><!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+		
+
+        <holder> 
+		<!-- MAH, marketing authorisation holder-->
+
+			<identifier> 
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100003164"/>
+			</identifier>
+          <display value="Teva BV" /> 
+		  <!-- name of MAH--> <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+
+			<dateDateTime value="2014-06-26"/>  
+			<!-- date of first authorisation-->
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Denela-2525-Cream-SE-AJ-RegulatedAuthorization" /> 
+    </request>
+  </entry> <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  
+  
+  
+  
+  <entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+ 
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />--> 
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="Denela-2525-Cream-SE-AJ-AdministrableProductDefinition"/> 
+		
+		<status value="active"/>
+
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+		
+
+        <administrableDoseForm>
+		<!--pharmaceutical dose form for the administrable product-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> 
+            <code value="100000073712" /> 
+			<display value="Cream"/> 
+          </coding>
+        </administrableDoseForm>
+
+		<producedFrom> 
+			<reference value="ManufacturedItemDefinition/Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+
+        <routeOfAdministration>
+		<!--route of administration-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073566" />
+			 <display value="Cutaneous use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Denela-2525-Cream-SE-AJ-AdministrableProductDefinition" /> 
+    </request>
+  </entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry>  <!-- Entry 4: Packaged Product definition01--><!--Tube, 5 x 5 g--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+	  <!--Tube 5x5 g + 12 occlusive dressings-->
+		<id value="Denela-2525-Cream-SE-AJ-PackagedProductDefinition01"/> 
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="5" />
+			<unit value="Tube"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" /> 
+          </valueQuantity>
+        </extension>
+		
+
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+
+		
+        <description value="Tub, 5 x 5 g (med 12 täckförband)">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			  <display value="Swedish"/> 
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		<!-- if the package is marketed, or not, and why not-->
+		
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/> 
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" /> 
+			  <display value="Marketed"/>
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+		
+		  <type> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+			  <code value="100000073498"/>
+			  <display value="Box"/>
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+                <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="2"/>
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" /> 
+                  </periodDuration>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073410"/>
+                        <display value="Do not store above 25 °C"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>				  
+
+            </shelfLifeStorage>
+			   
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073561"/>
+				        <display value="Tube"/> 
+				      </coding>
+			        </type>
+			  
+			        <quantity value="5"/> 
+			  
+				    <material> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					    <code value="200000003200"/>
+					    <display value="Aluminium"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="5" /> 
+						  <unit value="gram(s)"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110654" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Denela-2525-Cream-SE-AJ-PackagedProductDefinition01" />
+    </request>
+  </entry> <!-- Entry 4: Packaged Product definition01--><!--STARTED-->
+  
+  
+  
+  
+  <entry>  <!-- Entry 5: Packaged Product definition02--><!--Tube, 30 g--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+	  <!--Tube, 30 g-->
+		<id value="Denela-2525-Cream-SE-AJ-PackagedProductDefinition02"/> 
+
+		
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />
+			<unit value="Tube"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" /> 
+          </valueQuantity>
+        </extension>
+		
+
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+
+		
+        <description value="Tub, 30g">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			  <display value="Swedish"/> 
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		<!-- if the package is marketed, or not, and why not-->
+		
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/> 
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" /> 
+			  <display value="Marketed"/>
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+		
+		  <type> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+			  <code value="100000073498"/>
+			  <display value="Box"/>
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+                <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="2"/>
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" /> 
+                  </periodDuration>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073410"/>
+                        <display value="Do not store above 25 °C"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>				  
+
+            </shelfLifeStorage>
+			   
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073561"/>
+				        <display value="Tube"/> 
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/> 
+			  
+				    <material> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					    <code value="200000003200"/>
+					    <display value="Aluminium"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="30" /> 
+						  <unit value="gram(s)"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110654" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Denela-2525-Cream-SE-AJ-PackagedProductDefinition02" />
+    </request>
+  </entry> <!-- Entry 5: Packaged Product definition02--><!--NOT STARTED-->
+  
+  
+  
+  
+  <entry> <!--Entry 6: Manufactured item definition--><!--STARTED-->
+  <!--several entries allowed--> <!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition"/>
+		
+		<status value="active" />
+
+        <manufacturedDoseForm> 
+		<!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073712" /> 
+			<display value="Cream"/>
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation> 
+		<!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" />
+			<display value="Tube"/>
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- Entry 6: Manufactured item definition--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry><!-- Entry 7: Ingredient 01--><!--Lidocaine--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--lidocaine-->
+	  
+	  <id value="Denela-2525-Cream-SE-AJ-Ingredient01"/>
+	  
+
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionDenela-2525-Cream-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000091713" /> 
+				<display value="Lidocaine"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength>
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="25" />
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							<code value="100000000049"/>
+							<display value="equal to"/> 
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" /> 
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="gram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110654" /> 
+              </denominator>
+            </concentrationRatio>
+
+            
+     		<referenceStrength>
+				<substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000091713"/> 
+							<display value="lidocaine"/>
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="25"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" /> 
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="gram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110654" />
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Denela-2525-Cream-SE-AJ-Ingredient01" />
+    </request>
+  </entry><!--Entry 7: Ingredient01--><!--STARTED-->
+  
+  
+  
+  
+  <entry><!-- Entry 8: Ingredient 02--><!--Prilocaine--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+	  <!--Prilocaine-->
+	  
+	  <id value="Denela-2525-Cream-SE-AJ-Ingredient02"/>
+	  
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Denela-2525-Cream-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Denela-2525-Cream-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionDenela-2525-Cream-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000092015" /> 
+				<display value="Prilocaine"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength>
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="25" />
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							<code value="100000000049"/>
+							<display value="equal to"/> 
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" /> 
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="gram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110654" /> 
+              </denominator>
+            </concentrationRatio>
+
+            
+     		<referenceStrength>
+				<substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000092015"/> 
+							<display value="Prilocaine"/>
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="25"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" /> 
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="gram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110654" />
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Denela-2525-Cream-SE-AJ-Ingredient02" />
+    </request>
+  </entry><!--Entry 8: Ingredient02--><!--STARTED-->
+  
+  
+  
+  
+</Bundle>

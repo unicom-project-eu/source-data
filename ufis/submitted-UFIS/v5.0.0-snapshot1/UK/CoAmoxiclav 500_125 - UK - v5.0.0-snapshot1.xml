@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Co-amoxiclav-->
+<!--  Julie Glover   2022-03-15 -->
+<Bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <id value="241f0c57-0281-46f9-b6a7-c709b8f19f01"/>
+  <type value="transaction"/>
+  <entry>
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="JMJ-Co-amoxiclav-product-example"/>
+        <type>
+          <coding>
+            <system value="http://hl7.org/fhir/medicinal-product-type"/>
+            <code value="MedicinalProduct"/>
+            <display value="Medicinal Product"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000025915"/>
+            <code value="200000025916"/>
+            <display value="Authorised Medicinal Product"/>
+          </coding>
+        </type>
+        <domain>
+          <coding>
+            <system value="http://hl7.org/fhir/medicinal-product-domain"/>
+            <code value="Human"/>
+            <display value="Human use"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+        <status>
+          <coding>
+            <system value="http://hl7.org/fhir/publication-status"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </status>
+        <statusDate value="2022-02-21"/>
+        <!-- this is a R5 attribute
+ <route>
+  <coding>
+    <system value="https://standardterms.edqm.eu/"/>
+    <code value="20053000"/>
+    <display value="Oral use"/>
+  </coding>
+   <coding>
+    <system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+    <code value="100000073619"/>
+    <display value="Oral use"/>
+  </coding>
+ </route>
+ -->
+        <legalStatusOfSupply>
+          <coding>
+            <system value="http://hl7.org/fhir/legal-status-of-supply"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+        <classification>
+          <coding>
+            <system value="https://www.whocc.no/atc_ddd_index/"/>
+            <code value="J01CR02"/>
+            <display value="amoxicillin and beta-lactamase inhibitor"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000096162"/>
+            <display value="amoxicillin and beta-lactamase inhibitor"/>
+          </coding>
+        </classification>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="urn:iso:std:iso:3166"/>
+              <code value="GB"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000556"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="xx"/>
+              <code value="xx"/>
+              <display value="xx"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+          <dateRange>
+            <start value="2009-03-25"/>
+          </dateRange>
+
+        </marketingStatus>
+        <name>
+          <productName value="Co-amoxiclav 500 mg/125 mg film-coated tablets"/>
+        </name>
+
+        <!-- <package>
+          <package>
+            <reference value="https://ppl.azure-api.net/ppl02/PackagedProductDefinition/JMJ-Co-amoxiclav-package-example"/>
+          </package>
+        </package> -->
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="MedicinalProductDefinition/JMJ-Co-amoxiclav-product-example"/>
+    </request>
+  </entry>
+
+  <entry>
+    <resource>
+      <RegulatedAuthorization>
+        <id value="JMJ-Co-amoxiclav-authorisation-example"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+          <value value="la-la-la-la"/>
+        </identifier>
+        <subject>
+          <reference value="MedicinalProductDefinition/JMJ-Co-amoxiclav-product-example"/>
+        </subject>
+        <type>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072055"/>
+            <code value="100000072062"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+        <region>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000556"/>
+            <display value="United Kingdom of Great Britain and Northern Ireland"/>
+          </coding>
+          <coding>
+            <system value="http://terminology.hl7.org/CodeSystem/iso3166-1edition2"/>
+            <code value="GBR"/>
+            <display value="United Kingdom of Great Britain and Northern Ireland"/>
+          </coding>
+        </region>
+        <status>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+        <statusDate value="2021-03-25"/>
+        <holder>
+          <display value="Reference for Aurobindo Pharma - Milpharm Ltd"/>
+        </holder>
+        <regulator>
+          <display value="Reference for Medicines and Healthcare products Regulatory Agency"/>
+        </regulator>
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/JMJ-Co-amoxiclav-authorisation-example"/>
+    </request>
+  </entry>
+
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="JMJ-Co-amoxiclav-package-example"/>
+        <name
+          value="Co-amoxiclav 500 mg/125 mg film-coated tablets Milpharm Limited; pack of 21 tablets"/>
+        <packageFor>
+          <reference value="ManufacturedItemDefinition/JMJ-Co-amoxiclav-product-example"/>
+        </packageFor>
+        <status>
+          <coding>
+            <system value="http://hl7.org/fhir/publication-status"/>
+            <code value="active"/>
+            <display value="Active"/>
+          </coding>
+        </status>
+        <statusDate value="2022-02-21"/>
+        <containedItemQuantity>
+          <value value="21"/>
+        </containedItemQuantity>
+        <legalStatusOfSupply>
+          <code>
+            <coding>
+              <system value="http://hl7.org/fhir/legal-status-of-supply"/>
+              <code value="100000072084"/>
+              <display value="Medicinal product subject to medical prescription"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+              <code value="100000072084"/>
+              <display value="Medicinal product subject to medical prescription"/>
+            </coding>
+          </code>
+        </legalStatusOfSupply>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="urn:iso:std:iso:3166"/>
+              <code value="GB"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000556"/>
+              <display value="United Kingdom of Great Britain and Northern Ireland"/>
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="xx"/>
+              <code value="xx"/>
+              <display value="xx"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+          <dateRange>
+            <start value="2009-03-25"/>
+          </dateRange>
+        </marketingStatus>
+        <package>
+          <type>
+            <coding>
+              <system value="http://hl7.org/fhir/ValueSet/packaging-type"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+          <quantity value="1"/>
+          <package>
+            <type>
+              <coding>
+                <system value="http://hl7.org/fhir/ValueSet/packaging-type"/>
+                <code value="100000073496"/>
+                <display value="Blister"/>
+              </coding>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073496"/>
+                <display value="Blister"/>
+              </coding>
+            </type>
+            <quantity value="3"/>
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/JMJ-Co-amoxiclav-manufacturedItem-example"/>
+                </reference>
+              </item>
+              <!--    x tablets in the blister pack    -->
+              <!-- <amountInteger value="x"/> -->
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/JMJ-Co-amoxiclav-package-example"/>
+    </request>
+  </entry>
+
+  <entry>
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="JMJ-Co-amoxiclav-manufactured-item-example"/>
+        <status value="active"/>
+        <manufacturedDoseForm>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="10221000"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="15054000"/>
+            <display value="Tablet"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+            <display value="Tablet"/>
+          </coding>
+        </unitOfPresentation>
+        <!--
+        <ingredient>
+          <reference>
+            <reference value="Ingredient/JMJ-Co-amoxiclav-ingredient-example"/>
+          </reference>
+        </ingredient>
+        <ingredient>
+          <reference>
+            <reference value="Ingredient/JMJ-Co-amoxiclav-ingredient-example-2"/>
+          </reference>
+        </ingredient>-->
+      </ManufacturedItemDefinition>
+
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/JMJ-Co-amoxiclav-manufactured-item-example"/>
+    </request>
+  </entry>
+
+  <entry>
+    <resource>
+      <Ingredient>
+        <id value="JMJ-Co-amoxiclav-ingredient-example"/>
+        <status value="active"/>
+        <for>
+          <reference value="JMJ_Co-amoxiclav_manufactured_item_example"/>
+        </for>
+        <for>
+          <reference value="JMJ_Co-amoxiclav_AdminProduct_example"/>
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000092629"/>
+                <display value="amoxicillin trihydrate"/>
+              </coding>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="96068000"/>
+                <display value="amoxicillin trihydrate (substance)"/>
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="574"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="Tablet"/>
+                <system value="https://standardterms.edqm.eu/"/>
+                <code value="15054000"/>
+                <!--      <coding>
+       <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+       <code value="200000002152"/>
+       <display value="Tablet"/>
+      </coding> 
+      -->
+              </denominator>
+            </presentationRatio>
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000091596"/>
+                    <display value="amoxicillin (anhydrous)"/>
+                  </coding>
+                  <coding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="785686003"/>
+                    <display value="amoxicillin anhydrous (substance)"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="500"/>
+                  <unit value="mg"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="Tablet"/>
+                  <system value="https://standardterms.edqm.eu/"/>
+                  <code value="15054000"/>
+                  <!-- <coding>
+         <display value="Tablet"/>
+         <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+         <code value="200000002152"/>
+         <display value="Tablet"/>
+       </coding>
+       -->
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+          </strength>
+        </substance>
+      </Ingredient>
+
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/JMJ-Co-amoxiclav-ingredient-example"/>
+    </request>
+  </entry>
+
+  <entry>
+    <resource>
+      <Ingredient>
+        <id value="JMJ-Co-amoxiclav-ingredient-example-2"/>
+        <status value="active"/>
+        <for> 
+          <reference value="JMJ-Co-amoxiclav-manufactured-item-example" />
+        </for>
+        <role>
+          <coding>
+            <system value="http://hl7.org/fhir/ingredient-role"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000093061"/>
+                <display value="potassium clavunate"/>
+              </coding>
+              <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="395938000"/>
+                <display value="clavunate potassium (substance)"/>
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="298"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="Tablet"/>
+                <system value="https://standardterms.edqm.eu/"/>
+                <code value="15054000"/>
+                <!--      <coding>
+       <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+       <code value="200000002152"/>
+       <display value="Tablet"/>
+      </coding> 
+      -->
+              </denominator>
+            </presentationRatio>
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000089842"/>
+                    <display value="clavulanic acid"/>
+                  </coding>
+                  <coding>
+                    <system value="http://snomed.info/sct"/>
+                    <code value="395939008"/>
+                    <display value="clavulanic acid (substance)"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="125"/>
+                  <unit value="mg"/>
+                  <system value="http://unitsofmeasure.org"/>
+                  <code value="mg"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="Tablet"/>
+                  <system value="https://standardterms.edqm.eu/"/>
+                  <code value="15054000"/>
+                  <!-- <coding>
+         <display value="Tablet"/>
+         <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+         <code value="200000002152"/>
+         <display value="Tablet"/>
+       </coding>
+       -->
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+          </strength>
+        </substance>
+      </Ingredient>
+
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/JMJ-Co-amoxiclav-ingredient-example-2"/>
+    </request>
+  </entry>
+
+  <entry>
+    <resource>
+      <AdministrableProductDefinition>
+        <id value="JMJ-Co-amoxiclav-AdminProduct-example"/>
+        <status value="active"/>
+        <formOf>
+          <reference value="ManufacturedItemDefinition/JMJ-Co-amoxiclav-product-example"/>
+        </formOf>
+        <administrableDoseForm>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="10221000"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </administrableDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="https://standardterms.edqm.eu/"/>
+            <code value="15054000"/>
+            <display value="Tablet"/>
+          </coding>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+            <display value="Tablet"/>
+          </coding>
+        </unitOfPresentation>
+        <producedFrom>
+          <reference value="ManufacturedItemDefinition/JMJ-Co-amoxiclav-manufactured-item-example"/>
+        </producedFrom>
+        <!--
+        <ingredient>
+          <reference value="Ingredient/JMJ-Co-amoxiclav-ingredient-example"/>
+        </ingredient>
+        <ingredient>
+          <reference value="Ingredient/JMJ-Co-amoxiclav-ingredient-example-2"/>
+        </ingredient>
+        -->
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="https://standardterms.edqm.eu/"/>
+              <code value="20053000"/>
+              <display value="Oral use"/>
+            </coding>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073619"/>
+              <display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+      </AdministrableProductDefinition>
+
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="AdministrableProductDefinition/JMJ-Co-amoxiclav-AdminProduct-example"/>
+    </request>
+  </entry>
+
+</Bundle>

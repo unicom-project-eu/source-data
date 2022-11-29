@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<!--Fixed value-->
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="Enalapril-Vitabalans-5mg-Tablet-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073664"/>
+						<display value="Tablet"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<!-- LOC ID was in Samtrack II ML192 and nothing in EMA, for dif. addres, there was LOC-ID, LOC-100053536 Hameenlinna Lautatarhankatu 4, LOC-100005946 Hameenlinna Varastokatu 7-9  -->
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-ML192-23517"/>
+				</identifier>
+				<domain>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+				</status>
+				<legalStatusOfSupply>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<classification>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<code value="100000095104"/>
+						<display value="Enalapril "/>
+					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<code value="C09AA02"/>
+						<display value="Enalapril"/>
+					</coding>
+				</classification>
+				<name>
+					<productName value="Enalapril Vitabalans, 5 mg tabletid"/>
+					<namePart>
+						<part value="Enalapril Vitabalans"/>
+						<type>
+							<coding>
+								<system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented Name Part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="5 mg"/>
+						<type>
+							<coding>
+								<system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="tabletid"/>
+						<type>
+							<coding>
+								<system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<countryLanguage>
+						<country>
+							<coding>
+								<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<language>
+							<coding>
+								<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Enalapril-Vitabalans-5mg-Tablet-EE-RA"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+					<value value="633909"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MPD"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<region>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<statusDate value="2013-03-28"/>
+				<!--Marketing authorisation holder -->
+				<holder>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-ML192"/>
+					</identifier>
+					<display value="Vitabalans Oy"/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Enalapril-Vitabalans-5mg-Tablet-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Enalapril-Vitabalans-5mg-Tablet-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself-->
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073664"/>
+						<display value="Tablet"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+				<producedFrom>
+					<!-- refers to the manufactured items that the administrable dose form consists of-->
+					<reference value="ManufacturedItemDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MID"/>
+				</producedFrom>
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073619"/>
+							<display value="Oral use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Enalapril-Vitabalans-5mg-Tablet-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073664"/>
+						<display value="Tablet"/>
+					</coding>
+				</manufacturedDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<id value="Enalapril-Vitabalans-5mg-Tablet-EE-I"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-APD"/>
+				</for>
+				<role>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<code>
+						<concept>
+							<coding>
+								<system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+								<code value="100000091343"/>
+								<display value="Enalapril maleate"/>
+							</coding>
+						</concept>
+					</code>
+					<!--strength of the substance-->
+					<strength>
+						<presentationRatio>
+							<!--general rule; liquid: concentration strength; solid or pre-filled single use syringe: presentation strength-->
+							<numerator>
+								<value value="5"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<!-- EMA list of quantity operators-->
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="Tablet"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Enalapril-Vitabalans-5mg-Tablet-EE-I"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Enalapril-Vitabalans-5mg-Tablet-EE-PPD-1359918"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="30"/>
+						<unit value="Tablet"/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-ML192-23517-1359918"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MPD"/>
+				</packageFor>
+				<description value="28, 30, 56, 60, 98, 100 tabletti blistris (Al/Al).">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<package>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!--  EMA Implementation Guide: If the same packaged medicinal product contains different configurations (e.g. Medicinal Product 
+ABC 500mg 30 tablets contained in either 2 blisters of 15 tablets each or 3 blisters of 10 tablets per 
+blister) which are not defined in the terms of the marketing authorisation or packaged description, 
+Package item (container) quantity at the level of the immediate packaging is to be left blank -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<item>
+								<reference>
+									<reference value="ManufacturedItemDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="30"/>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-PPD-1359918"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Enalapril-Vitabalans-5mg-Tablet-EE-PPD-1359952"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="100"/>
+						<unit value="tablets"/>
+						<!--units of presentation-->
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-ML192-23517-1359952"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MPD"/>
+				</packageFor>
+				<description value="28, 30, 56, 60, 98, 100 tabletti blistris (Al/Al).">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<package>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<reference>
+									<reference value="ManufacturedItemDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-MID"/>
+								</reference>
+							</item>
+							<amount>
+								<value value="100"/>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Enalapril-Vitabalans-5mg-Tablet-EE-PPD-1359952"/>
+		</request>
+	</entry>
+</Bundle>

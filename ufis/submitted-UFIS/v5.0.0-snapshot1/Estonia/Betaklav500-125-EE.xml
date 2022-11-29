@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<id value="betaklav500-125-EE-bundle"/>	
+	<type value="transaction"/>
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<!-- Not yet clear how will we generate this number -->
+					<value value="0000000000006"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/MPID -->
+				<!-- country code + MAH code + med prod ID (ravimikaardi nr)-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100009540-30722"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/Domain -->
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<!-- In Swedish example there was EMA list, but we added Fhir 5.0 publication status list -->
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+					<coding>
+						<!-- We should use FHIR status? -->
+						<system value="http://hl7.org/fhir/publication-status"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/LegalStatusOfSupply -->
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<!-- ISO name: /MedicinalProduct/AdditionalMonitoringIndicator -->
+				<additionalMonitoringIndicator>
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="False"/>
+						<display value="False"/>
+					</coding>
+				</additionalMonitoringIndicator>
+				<!-- ISO name: /MedicinalProduct/ProductClassification -->
+				<classification>
+					<!-- ISO name: /MedicinalProduct/ProductClassification/CodeSystem -->
+					<!-- FHIR extra mapping info: CodeSystem maps to system of Value attribute-->
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<!-- ISO name: /MedicinalProduct/ProductClassification/Value -->
+						<code value="100000096162"/>
+						<!-- Rutt: SPOR term name does not include ATC code J01CR02, but just text  -->
+						<display value="amoxicillin and beta-lactamase inhibitor"/>
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<!-- ISO name: /MedicinalProduct/ProductClassification/Value -->
+						<code value="100000096162"/>
+						<display value="J01CR02"/>
+					</coding>
+				</classification>
+				<!-- ISO name: /MedicinalProduct/MedicinalProductName -->
+				<name>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/FullName -->
+					<productName value="Betaklav, 500 mg/125 mg õhukese polümeerikattega tabletid"/>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/InventedNamePart -->
+					<namePart>
+						<part value="Betaklav"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/StrengthPart -->
+					<namePart>
+						<part value="500mg/125mg"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/PharmaceuticalDoseFormPart -->
+					<namePart>
+						<part value="õhukese polümeerikattega tabletid"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language -->
+					<countryLanguage>
+						<!-- We should use ISO country and language codes instead of SPOR invention-->
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Country -->
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<!-- Rutt: Long or short name? -->
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Language -->
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<!--  -->
+			<url value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-RA"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationNumber -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="879415"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/Country -->
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatus -->
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<!-- Rutt: Is it going to be a problem that we have a variety of ways to express "valid"? -->
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatusDate -->
+				<statusDate value="2021-02-03"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation -->
+				<holder>
+					<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation/Identifier -->
+					<!-- Rutt: Name or LOC-id or both? -->
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100009540"/>
+					</identifier>
+					<display value="KRKA, d.d., Novo mesto"/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Betaklav-500mg-125mg-Film-coated-tablet-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+				<!-- Does this produsedFrom will stay here or not? -->
+				<producedFrom>
+					<reference value="ManufacturedItemDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+				</producedFrom>
+				<!-- Altova did not liked that unit of pres is here -->
+				<!--The presentation type in which this item is given to a patient. e.g. for a spray - 'puff' (as in 'contains 100 mcg per puff'), or for a liquid - 'vial' (as in 'contains 5 ml per vial')-->
+				<routeOfAdministration>
+					<!-- ISO name: /MedicinalProduct/PharmaceuticalProduct/RouteOfAdministration/RouteOfAdministration -->
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073619"/>
+							<display value="Oral use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</coding>
+				</manufacturedDoseForm>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/UnitOfPresentation -->
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<!-- id value in the end has Substance code (in the form that it is in the medicine) from https://iris.ema.europa.eu/substances/ -->
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-I-100000092629"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-APD"/>
+				</for>
+				<!-- -->
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Substance -->
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000092629"/>
+								<display value="AMOXICILLIN TRIHYDRATE"/>
+							</coding>
+						</concept>
+					</code>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+					<strength>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+						<presentationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="573.892"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+							<denominator>
+								<value value="1"/>
+								<unit value="tablet"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength -->
+						<referenceStrength>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+							<substance>
+								<concept>
+									<coding>
+										<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000091596"/>
+										<display value="Amoxicillin"/>
+									</coding>
+								</concept>
+							</substance>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+							<strengthRatio>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+								<numerator>
+									<value value="500"/>
+									<comparator>
+										<extension url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+								<denominator>
+									<value value="1"/>
+									<unit value="tablet"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002152"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Betaklav-500mg-125mg-Film-coated-tablet-EE-I-100000092629"/>
+		</request>
+	</entry>
+	<entry>
+		<!-- id value in the end has Substance code (in the form that it is in the medicine) from https://iris.ema.europa.eu/substances/ -->
+		<resource>
+			<Ingredient>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-I-100000093061"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-APD"/>
+				</for>
+				<!-- -->
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Substance -->
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000093061"/>
+								<display value="POTASSIUM CLAVULANATE"/>
+							</coding>
+						</concept>
+					</code>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+					<strength>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+						<presentationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="151.915"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+							<denominator>
+								<value value="1"/>
+								<unit value="tablet"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+						<referenceStrength>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+							<substance>
+								<concept>
+									<coding>
+										<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000089842"/>
+										<display value="CLAVULANIC ACID"/>
+									</coding>
+								</concept>
+							</substance>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+							<strengthRatio>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+								<numerator>
+									<value value="125"/>
+									<comparator>
+										<extension url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+								<denominator>
+									<value value="1"/>
+									<unit value="tablet"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002152"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Betaklav-500mg-125mg-Film-coated-tablet-EE-I-100000093061"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-PPD-1635117"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="10"/>
+						<!--units of presentation-->
+						<unit value="tablet"/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<!-- PCID: MPID + package code (+ a or b, if one package code would have several PCIDs because of different package material) -->
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100009540-30722-1635117"/>
+				</identifier>
+				<packageFor>
+					<!-- Here are differences also in estonian and Swedish example -->
+					<reference value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				</packageFor>
+				<!-- In Estonian? -->
+				<description value="Ribapakend (Al/Al) 10 õhukese polümeerikattega tabletti karbis">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<!-- Differences in Estonian and Swedish example are we repeating ourselves?-->
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- Rutt: Estonia doesn't have the data carrier id -->
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073559"/>
+								<display value="Strip"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<quantity value="1"/>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<!-- Rutt: two layers, both aluminium -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<!-- Rutt: viide manufacturedItemDefinitionile -->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="10"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-PPD-1635117"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-PPD-1635207"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="500"/>
+						<!--units of presentation-->
+						<unit value="tablet"/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100009540-30722-1635207"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				</packageFor>
+				<!-- Now in Estonian? -->
+				<description value="Ribapakend (Al/Al) 500 õhukese polümeerikattega tabletti karbis">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- Rutt: Estonia doesn't have the data carrier id -->
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073559"/>
+								<display value="Strip"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<quantity value="1"/>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<!-- Rutt: two layers, both aluminium -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<!-- Rutt: viide manufacturedItemDefinitionile -->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="500"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-PPD-1635207"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Betaklav-500mg-125mg-Film-coated-tablet-EE-PPD-1635139"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="14"/>
+						<!--units of presentation-->
+						<unit value="tablet"/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100009540-30722-1635139"/>
+				</identifier>
+				<packageFor>
+					<!-- Here are differences also in estonian and Swedish example -->
+					<reference value="MedicinalProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MPD"/>
+				</packageFor>
+				<!-- Now in Estonian? -->
+				<description value="Blisterpakend (OPA/Al/PVC foil/Al foil) 14 õhukese polümeerikattega tabletti karbis">
+					<!-- Does this url stays? -->
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<!-- Differences in Estonian and Swecish example are we repeating ourselves?-->
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- Rutt: Estonia doesn't have the data carrier id -->
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<quantity value="1"/>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003210"/>
+								<display value="OPA"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PVC"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="14"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Betaklav-500mg-125mg-Film-coated-tablet-EE-PPD-1635139"/>
+		</request>
+	</entry>
+</Bundle>

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="Anafranil-25mg-Coated-tablet-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073380"/>
+						<display value="Coated tablet"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<!-- Fake PMS ID -->
+					<value value="0000000000009"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/MPID -->
+				<!-- country code + MAH code + med prod ID (ravimikaardi nr)-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100030936-13289"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/Domain -->
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+					<coding>
+						<!-- We should use FHIR status -->
+						<system value="http://hl7.org/fhir/publication-status"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/LegalStatusOfSupply -->
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<!-- ISO name: /MedicinalProduct/AdditionalMonitoringIndicator -->
+				<additionalMonitoringIndicator>
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="False"/>
+						<display value="False"/>
+					</coding>
+				</additionalMonitoringIndicator>
+				<!-- ISO name: /MedicinalProduct/ProductClassification -->
+				<classification>
+					<!-- ISO name: /MedicinalProduct/ProductClassification/CodeSystem -->
+					<!-- FHIR extra mapping info: CodeSystem maps to system of Value attribute-->
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<code value="100000097655"/>
+						<display value="Clomipramine"/>
+					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<!-- ISO name: /MedicinalProduct/ProductClassification/Value -->
+						<code value="N06AA04"/>
+						<display value="Clomipramine"/>
+					</coding>
+				</classification>
+				<!-- ISO name: /MedicinalProduct/MedicinalProductName -->
+				<name>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/FullName -->
+					<productName value="Anafranil, 25 mg kaetud tabletid"/>
+					<namePart>
+						<part value="Anafranil"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/StrengthPart -->
+					<namePart>
+						<part value="25 mg"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/PharmaceuticalDoseFormPart -->
+					<namePart>
+						<part value="kaetud tabletid"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language -->
+					<countryLanguage>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Country -->
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Language -->
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/Anafranil-25mg-Coated-tablet-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Anafranil-25mg-Coated-tablet-EE-RA"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationNumber -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="124596"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/Anafranil-25mg-Coated-tablet-EE-MPD"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/Country -->
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatus -->
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<!-- Is it going to be a problem that we have a variety of ways to express "valid"? -->
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatusDate -->
+				<statusDate value="2010-04-21"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation -->
+				<holder>
+					<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation/Identifier -->
+					<!-- LOC-id  -->
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100030936"/>
+					</identifier>
+					<display value="Zr pharma &amp; GmbH"/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Anafranil-25mg-Coated-tablet-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Anafranil-25mg-Coated-tablet-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Anafranil-25mg-Coated-tablet-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073380"/>
+						<display value="Coated tablet"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+				<producedFrom>
+					<reference value="ManufacturedItemDefinition/Anafranil-25mg-Coated-tablet-EE-MID"/>
+				</producedFrom>
+				<routeOfAdministration>
+					<!-- ISO name: /MedicinalProduct/PharmaceuticalProduct/RouteOfAdministration/RouteOfAdministration -->
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073619"/>
+							<display value="Oral use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Anafranil-25mg-Coated-tablet-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Anafranil-25mg-Coated-tablet-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073380"/>
+						<display value="Coated tablet"/>
+					</coding>
+				</manufacturedDoseForm>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/UnitOfPresentation -->
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Anafranil-25mg-Coated-tablet-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<id value="Anafranil-25mg-Coated-tablet-EE-I"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Anafranil-25mg-Coated-tablet-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Anafranil-25mg-Coated-tablet-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Anafranil-25mg-Coated-tablet-EE-APD"/>
+				</for>
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<!-- 100000162540	CLOMIPRAMINE HYDROCHLORIDE BP or 100000090503 Clomipramine hydrochloride -->
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000162540"/>
+								<display value="CLOMIPRAMINE HYDROCHLORIDE"/>
+							</coding>
+						</concept>
+					</code>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+					<strength>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+						<presentationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="25"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+							<denominator>
+								<value value="1"/>
+								<unit value="Tablet"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength -->
+						<referenceStrength>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+							<substance>
+								<concept>
+									<coding>
+										<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000084546"/>
+										<display value="Clomipramine"/>
+									</coding>
+								</concept>
+							</substance>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+							<strengthRatio>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+								<numerator>
+									<value value="25"/>
+									<comparator>
+										<extension url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+								<denominator>
+									<value value="1"/>
+									<unit value="tablet"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002152"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Anafranil-25mg-Coated-tablet-EE-I"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Anafranil-25mg-Coated-tablet-EE-PPD-1001462"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="30"/>
+						<unit value="Tablet"/>
+						<!--units of presentation-->
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100030936-13289-1001462"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Anafranil-25mg-Coated-tablet-EE-MPD"/>
+				</packageFor>
+				<description value="PVC/PE/PVDC/Alumiinium blisterpakend. 10 mg ja 25 mg kaetud tabletid: 30 tabletti pakendis.">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<quantity value="1"/>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PolyVinyl Chloride"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003214"/>
+								<display value="PolyEthylene"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003223"/>
+								<display value="Plasticised PolyVinyl Chloride"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<reference>
+									<reference value="ManufacturedItemDefinition/Anafranil-25mg-Coated-tablet-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="30"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Anafranil-25mg-Coated-tablet-EE-PPD-1001462"/>
+		</request>
+	</entry>
+</Bundle>

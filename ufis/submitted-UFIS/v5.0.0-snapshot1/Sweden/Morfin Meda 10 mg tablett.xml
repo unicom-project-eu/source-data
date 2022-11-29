@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Morfin Meda 10 mg tablet--> 
+<!-- Bersabel Sirak-->
+<!-- Follows the 5.0 standard--> 
+
+<!-- Referenser: 
+    Entry 1: MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition
+	Entry 2: MorfinMeda-10mg-Tablet-SE-BS-RegulatedAuthorization
+	Entry 3: MorfinMeda-10mg-Tablet-SE-BS-AdministrableProductDef
+	Entry 4: MorfinMeda-10mg-Tablet-SE-BS-PackagedProductDefinition
+	Entry 5: MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition
+	Entry 6: MorfinMeda-10mg-Tablet-SE-BS-Ingredient-->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+	<resource>
+	  <MedicinalProductDefinition>
+		<id value="MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition"/> 
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073664"/>
+			<display value="Tablet"/> 
+          </valueCoding>
+        </extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>
+			<value value="SE-100001270-00009873"/> <!-- SE-organisation number-MT number and before the MT number put enough zeros for it to be 8 numbers in total-->
+		</identifier>
+
+        <!-- ISO name: /MedicinalProduct/EURDId -->
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="10549"/>
+		</identifier>
+
+         <domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use"/>
+		  </coding>
+		 </domain>
+		 
+        <status>
+		  <coding> 
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+			<code value="200000005004" />
+			<display value="Current"/>
+		  </coding>
+		</status>
+
+        <!-- Indication from SmPC/Fass--> 
+		<indication value="Svår opioidkänslig smärta, såsom smärta vid cancer."/>
+
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072085"/> <!-- either 100000072076 (not subject to medical prescription), 100000072084 (subject to medical prescription), 200000002239 (some pack sizes)"--> 
+			<display value="Medicinal product subject to special medical prescription"/>
+		  </coding>
+		</legalStatusOfSupply>
+
+        <classification>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000097139"/> <!-- code for ATC code --> 
+			<display value="N02AA01"/> <!-- ATC code--> 
+		  </coding>
+		</classification>
+
+    <name> <!--Product name-->
+	  <productName value="Morfin Meda 10 mg tablett"/>
+
+		<namePart> <!-- Produkt name from EIRA-->
+			<part value="Morfin Meda"/> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000003"/> <!-- or 220000000003 which is scientific name part--> 
+				<display value="Scientific name part"/>
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Strength-->
+			<part value="10 mg"/> <!-- strength and unit for example 10 mg--> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000004" />
+				<display value="Strength part"/>   
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Pharmaceutical dose form--> 
+		  <part value="Tablett"/>
+		  <type>
+		    <coding>
+			  <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+			  <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>              
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>                
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>               
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+
+    <request>
+      <method value="PUT" /> 
+      <url value="MedicinalProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition" />
+    </request>
+  </entry>
+
+
+  <entry>
+      <resource>
+
+        <RegulatedAuthorization>
+		<id value="MorfinMeda-10mg-Tablet-SE-BS-RegulatedAuthorization"/>
+          <identifier>
+            <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+            <value value="9873" /> <!-- MT-number-->
+		  </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </subject>
+
+        <type>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+			<code value="220000000061" />
+			<display value="Marketing Authorisation"/>
+		  </coding>
+        </type>
+		
+		<region>
+		  <coding> 
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/>
+          </coding>
+        </region>
+
+		<status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" />
+			<display value="Valid"/>
+          </coding>
+        </status>
+		
+		
+		<statusDate value="1982-10-22" /> <!-- Date of first authorization--> 
+		
+		<!-- MAH -->
+        <holder>
+		  <identifier>
+		      <system value="https://spor.ema.europa.eu/v1/locations" />
+			  <value value="LOC-100001591" /> <!-- location ID-->
+		  </identifier>
+          <display value="Meda AB" /> <!-- MAH name--> 
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="1982-10-22"/>   <!-- Date of first authorization--> 
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/MorfinMeda-10mg-Tablet-SE-BS-RegulatedAuthorization" />
+    </request>
+  </entry>
+
+ <entry>
+    <resource>
+
+	  <AdministrableProductDefinition>
+		<id value="MorfinMeda-10mg-Tablet-SE-BS-AdministrableProductDef"/>
+		<status value="active"/>
+
+        <formOf> 
+          <reference value="MedicinalProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </formOf>
+
+        <administrableDoseForm>  <!-- Pharmaceutical dose form can be different from the administrable dose form--> 
+		  <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073664" />
+			<display value="Tablet"/>  
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference value="ManufacturedItemDefinition/MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition" /> 
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073619" /> 
+			<display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-AdministrableProductDef" />
+    </request>
+  </entry>
+  
+  <!-- First package starts here-->
+  
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="MorfinMeda-10mg-Tablet-SE-BS-PackagedProductDefinition"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="100" /> 
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Blister, 100 tabletter">
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- Don't write unknown, write it like this instead--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Package layer 1 (the outer layer)-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Package layer 2--> 
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073496"/>
+				<display value="Blister"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="4"/> <!-- Not sure if it's 4 blisters but since there is another package with 25 blisters i just divided 100/25-->
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003200"/>
+						<display value="Aluminium"/>
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003208"/>
+						<display value="Plastic"/>
+					</coding>
+				</material> <!-- The SmPC doesn't list the materials for the packaging so this is purely a guess--> 
+
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="25" />  
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> 
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-PackagedProductDefinition" />
+    </request>
+  </entry>
+  <!-- Package ends here--> 
+  
+  <!-- Second package starts here-->
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="MorfinMeda-10mg-Tablet-SE-BS-PackagedProductDefinition-02"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="25" /> 
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Blister, 25 tabletter">
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- Don't write unknown, write it like this instead--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Package layer 1 (the outer layer)-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Package layer 2--> 
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073496"/>
+				<display value="Blister"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="1"/> 
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003200"/>
+						<display value="Aluminium"/>
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003208"/>
+						<display value="Plastic"/>
+					</coding>
+				</material> <!-- The SmPC doesn't list the materials for the packaging so this is purely a guess--> 
+
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="25" />  
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> 
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-PackagedProductDefinition-02" />
+    </request>
+  </entry>
+  <!-- Package ends here-->
+  
+  <!-- Third package starts here-->
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="MorfinMeda-10mg-Tablet-SE-BS-PackagedProductDefinition-03"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="49" /> 
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Blister, 49x1 tabletter (endos)">
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- Don't write unknown, write it like this instead--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Package layer 1 (the outer layer)-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Package layer 2--> 
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073496"/>
+				<display value="Blister"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="7"/>
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003200"/>
+						<display value="Aluminium"/>
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003208"/>
+						<display value="Plastic"/>
+					</coding>
+				</material> <!-- The SmPC doesn't list the materials for the packaging so this is purely a guess--> 
+
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="7" />  
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> 
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-PackagedProductDefinition-03" />
+    </request>
+  </entry>
+  <!-- Package ends here--> 
+  
+ <entry>
+    <resource>
+	<ManufacturedItemDefinition>
+		<id value="MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition"/>
+		<status value="active" />
+
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />   <!-- Pharmaceutical Dose Form -->
+            <code value="100000073664" /> 
+			<display value="Tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />   <!-- Units of Presentation -->
+            <code value="200000002152" /> 
+			<display value="Tablet"/> 
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+    </request>
+  </entry>
+  
+  <entry>
+    <resource>
+      <Ingredient>
+	  <id value="MorfinMeda-10mg-Tablet-SE-BS-Ingredient" />
+	  <status value="active" />
+	 
+          <for> 
+            <reference value="MedicinalProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-MedicinalProductDefinition" /><!-- Referera till produkten. -->
+          </for>
+		  
+		  <for> 
+            <reference value="ManufacturedItemDefinition/MorfinMeda-10mg-Tablet-SE-BS-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> 
+		  
+          <for> 
+            <reference value="AdministrableProductDefinition/MorfinMeda-10mg-Tablet-SE-BS-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> 
+		
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>            
+          </coding>
+        </role>
+		
+        <substance>
+          <code> 
+		   <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />
+              <code value="100000090494" />     
+				<display value="Morphine hydrochloride"/>             
+            </coding>
+		   </concept>
+          </code>
+		  
+		    <strength>
+			
+              <presentationRatio>
+                    <numerator>
+                      <value value="10" /> 
+					    <comparator>
+					      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+					         <valueCoding>
+							   <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							    <code value="100000000049"/>
+							    <display value="equal to"/>
+						     </valueCoding>
+						  </extension>
+						</comparator>
+						<unit value="milligram(s)"/> <!-- term for unit-->
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                        <code value="100000110655" /> <!--ID for unit-->
+					 </numerator>
+                    <denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>  <!-- term for unit--> 
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" /> <!-- ID for unit-->            
+                    </denominator>
+              </presentationRatio>
+
+			  <referenceStrength> 
+			    <substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000091372"/> <!-- ID for active substance-->
+							<display value="Morphine"/> <!-- term for active substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+					<value value="7.6"/> <!-- How much pure substance the salt is equal to --> 
+					<comparator>
+						<extension url="http://ema.europa.eu/fhir/extension/comparator">
+							<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+								<code value="100000000049"/>
+								<display value="equal to"/>
+							</valueCoding>
+						</extension>
+					</comparator>
+					<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655"/>
+					</numerator>
+					<denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" />                     
+                    </denominator>
+				  </strengthRatio>
+				</referenceStrength>
+			  </strength>
+			</substance>
+		  </Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/MorfinMeda-10mg-Tablet-SE-BS-Ingredient"/> 
+		</request>
+	</entry>
+
+	</Bundle>

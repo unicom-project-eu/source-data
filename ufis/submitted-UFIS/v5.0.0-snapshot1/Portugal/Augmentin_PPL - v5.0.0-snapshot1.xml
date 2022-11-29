@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+   <id value="0a95e4d8-a8e1-464c-ac0b-a72be30e129b"/>
+   <type value="transaction"/>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:bb8c2306-04c5-42df-94c9-aa6d6e68050b"/> -->
+      <resource>
+         <MedicinalProductDefinition xmlns="http://hl7.org/fhir">
+            <id value="bb8c2306-04c5-42df-94c9-aa6d6e68050b"/>
+            <classification>
+               <coding>
+                  <system
+                     value="https://spor.ema.europa.eu/v1/lists/100000093533/terms/100000096162"/>
+                  <code value="100000096162"/>
+                  <display value="amoxicillin and beta-lactamase inhibitor"/>
+               </coding>
+            </classification>
+
+            <name>
+               <productName value="Augmentin 500 mg + 125 mg Comprimido revestido por película"/>
+               <countryLanguage>
+                  <country>
+                     <coding>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/100000000002/terms/100000000501"/>
+                        <code value="100000000501"/>
+                        <display value="Portuguese Republic"/>
+                     </coding>
+                  </country>
+                  <language>
+                     <coding>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/100000072057/terms/100000072251"/>
+                        <code value="100000072251"/>
+                        <display value="Portuguese"/>
+                     </coding>
+                  </language>
+               </countryLanguage>
+            </name>
+            <!--
+            <package>
+               <package>
+                  <reference value="PackagedProductDefinition/e90fb5fe-5531-4280-865e-745865deb686"
+                  />
+               </package>
+            </package>
+            <package>
+               <package>
+                  <reference value="PackagedProductDefinition/b50a5d28-02bd-4a16-9715-3e227a4be7d7"
+                  />
+               </package>
+            </package>
+            <package>
+               <package>
+                  <reference value="PackagedProductDefinition/c03f532c-7506-412b-8b8d-518b6205970d"
+                  />
+               </package>
+            </package>
+            -->
+
+            <!-- <pharmaceuticalProduct>
+               <reference value="urn:uuid:441340e6-207a-4c61-b22d-de5c482c7090"/>
+            </pharmaceuticalProduct> -->
+           <!-- <administrableProduct>
+               <product>
+                  <reference
+                     value="AdministrableProductDefinition/441340e6-207a-4c61-b22d-de5c482c7090"/>
+               </product>
+            </administrableProduct>-->
+
+         </MedicinalProductDefinition>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"/>
+      </request>
+   </entry>
+
+   <entry>
+      <!-- <fullUrl value="urn:uuid:e571fcab-5886-473a-b627-f72238cd4cdd"/> -->
+      <resource>
+         <RegulatedAuthorization xmlns="http://hl7.org/fhir">
+            <id value="e571fcab-5886-473a-b627-f72238cd4cdd"/>
+            <contained>
+               <Organization xmlns="http://hl7.org/fhir">
+                  <id value="1"/>
+                  <identifier>
+                     <system value="https://spor.ema.europa.eu/v1/locations/LOC-100002296"/>
+                     <value value="LOC-100002296"/>
+                  </identifier>
+               </Organization>
+            </contained>
+            <subject>
+               <reference value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"/>
+            </subject>
+            <type>
+               <coding>
+                  <system
+                     value="https://spor.ema.europa.eu/v1/lists/220000000060/terms/220000000061"/>
+                  <code value="220000000061"/>
+                  <display value="Marketing Authorisation"/>
+               </coding>
+            </type>
+            <holder>
+               <reference value="#1"/>
+               <display value="Glaxosmithkline Produtos Farmaceuticos Lda."/>
+            </holder>
+         </RegulatedAuthorization>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="RegulatedAuthorization/e571fcab-5886-473a-b627-f72238cd4cdd"/>
+      </request>
+   </entry>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:0cf52436-fced-4094-bc1f-01ad656685b6"/> -->
+      <resource>
+         <Ingredient xmlns="http://hl7.org/fhir">
+            <id value="0cf52436-fced-4094-bc1f-01ad656685b6"/>
+            <extension url="http://ema.europa.eu/fhir/extension/subject">
+               <valueReference>
+                  <reference value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+                  />
+               </valueReference>
+            </extension>
+            <status value="active"/>
+            <for>
+               <reference value="AdministrableProductDefinition/441340e6-207a-4c61-b22d-de5c482c7090" />
+            </for>
+            <for>
+               <reference value="ManufacturedItemDefinition/cade57d9-734e-4b1a-83a0-743b8af67174" />
+            </for>
+            <role>
+               <coding>
+                  <system
+                     value="https://spor.ema.europa.eu/v1/lists/100000072050/terms/100000072072"/>
+                  <code value="100000072072"/>
+                  <display value="Active"/>
+               </coding>
+            </role>
+            <substance>
+               <code>
+                  <concept>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                        <code value="100000092629"/>
+                        <display value="Amoxicilina tri-hidratada"/>
+                     </coding>
+                  </concept>
+
+               </code>
+               <strength>
+                  <presentationRatio>
+                     <numerator>
+                        <value value="573.96"/>
+                        <unit value="milligram(s)"/>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655"/>
+                        <code value="100000110655"/>
+                     </numerator>
+                     <denominator>
+                        <value value="1.0"/>
+                        <unit value="Tablet"/>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152"/>
+                        <code value="200000002152"/>
+                     </denominator>
+                  </presentationRatio>
+                  <referenceStrength>
+                     <substance>
+                        <concept>
+                           <coding>
+                              <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                              <code value="100000091596"/>
+                              <display value="Amoxicilina"/>
+                           </coding>
+                        </concept>
+                     </substance>
+                     <strengthRatio>
+                        <numerator>
+                           <value value="500.0"/>
+                           <unit value="milligram(s)"/>
+                           <system
+                              value="https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655"/>
+                           <code value="100000110655"/>
+                        </numerator>
+                        <denominator>
+                           <value value="1.0"/>
+                           <unit value="Tablet"/>
+                           <system
+                              value="https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152"/>
+                           <code value="200000002152"/>
+                        </denominator>
+                     </strengthRatio>
+                  </referenceStrength>
+               </strength>
+            </substance>
+         </Ingredient>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="Ingredient/0cf52436-fced-4094-bc1f-01ad656685b6"/>
+      </request>
+   </entry>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:2610c7f0-08df-4c37-b09b-1ed6fdad5389"/> -->
+      <resource>
+         <Ingredient xmlns="http://hl7.org/fhir">
+            <id value="2610c7f0-08df-4c37-b09b-1ed6fdad5389"/>
+            <extension url="http://ema.europa.eu/fhir/extension/subject">
+               <valueReference>
+                  <reference value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+                  />
+               </valueReference>
+            </extension>
+            <status value="active"/>
+            <role>
+               <coding>
+                  <system
+                     value="https://spor.ema.europa.eu/v1/lists/100000072050/terms/100000072072"/>
+                  <code value="100000072072"/>
+                  <display value="Active"/>
+               </coding>
+            </role>
+            <substance>
+               <code>
+                  <concept>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                        <code value="100000093061"/>
+                        <display value="Clavulanato de potássio"/>
+                     </coding>
+                  </concept>
+
+               </code>
+               <strength>
+                  <presentationRatio>
+                     <numerator>
+                        <value value="148.91"/>
+                        <unit value="milligram(s)"/>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655"/>
+                        <code value="100000110655"/>
+                     </numerator>
+                     <denominator>
+                        <value value="1.0"/>
+                        <unit value="Tablet"/>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152"/>
+                        <code value="200000002152"/>
+                     </denominator>
+                  </presentationRatio>
+                  <referenceStrength>
+                     <substance>
+                        <concept>
+                           <coding>
+                              <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                              <code value="100000089842"/>
+                              <display value="Ácido Clavulânico"/>
+                           </coding>
+                        </concept>
+                     </substance>
+                     <strengthRatio>
+                        <numerator>
+                           <value value="125.0"/>
+                           <unit value="milligram(s)"/>
+                           <system
+                              value="https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655"/>
+                           <code value="100000110655"/>
+                        </numerator>
+                        <denominator>
+                           <value value="1.0"/>
+                           <unit value="Tablet"/>
+                           <system
+                              value="https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152"/>
+                           <code value="200000002152"/>
+                        </denominator>
+                     </strengthRatio>
+                  </referenceStrength>
+               </strength>
+            </substance>
+         </Ingredient>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="Ingredient/2610c7f0-08df-4c37-b09b-1ed6fdad5389"/>
+      </request>
+   </entry>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:cade57d9-734e-4b1a-83a0-743b8af67174"/> -->
+      <resource>
+         <ManufacturedItemDefinition xmlns="http://hl7.org/fhir">
+            <id value="cade57d9-734e-4b1a-83a0-743b8af67174"/>
+            <status value="active"/>
+            <manufacturedDoseForm>
+               <coding>
+                  <system
+                     value="https://spor.ema.europa.eu/v1/lists/200000000004/terms/100000073665"/>
+                  <code value="100000073665"/>
+                  <display value="Film-coated tablet"/>
+               </coding>
+            </manufacturedDoseForm>
+          <!--  <ingredient>
+               <reference>
+                  <reference value="Ingredient/0cf52436-fced-4094-bc1f-01ad656685b6"/>
+               </reference>
+            </ingredient>
+            <ingredient>
+               <reference>
+                  <reference value="Ingredient/2610c7f0-08df-4c37-b09b-1ed6fdad5389"/>
+               </reference>
+            </ingredient> -->
+         </ManufacturedItemDefinition>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="ManufacturedItemDefinition/cade57d9-734e-4b1a-83a0-743b8af67174"/>
+      </request>
+   </entry>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:e90fb5fe-5531-4280-865e-745865deb686"/> -->
+      <resource>
+         <PackagedProductDefinition xmlns="http://hl7.org/fhir">
+            <id value="e90fb5fe-5531-4280-865e-745865deb686"/>
+            <extension
+               url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+               <valueQuantity>
+                  <value value="12"/>
+                  <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+               </valueQuantity>
+            </extension>
+            <packageFor>
+               <reference value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"/>
+            </packageFor>
+            <description value="12 comprimido blister">
+               <extension url="http://ema.europa.eu/fhir/extension/language">
+                  <valueCoding>
+                     <system
+                        value="https://spor.ema.europa.eu/v1/lists/100000072057/terms/100000072251"/>
+                     <code value="100000072251"/>
+                     <display value="Portuguese"/>
+                  </valueCoding>
+               </extension>
+            </description>
+            <package>
+               <type>
+                  <coding>
+                     <system
+                        value="https://spor.ema.europa.eu/v1/lists/100000073346/terms/100000073498"/>
+                     <code value="100000073498"/>
+                     <display value="Box"/>
+                  </coding>
+               </type>
+               <quantity value="1"/>
+               <package>
+                  <type>
+                     <coding>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/100000073346/terms/100000073496"/>
+                        <code value="100000073496"/>
+                        <display value="Blister"/>
+                     </coding>
+                  </type>
+                  <quantity value="1"/>
+                  <containedItem>
+                     <item>
+                        <reference>
+                           <reference
+                              value="ManufacturedItemDefinition/cade57d9-734e-4b1a-83a0-743b8af67174"
+                           />
+                        </reference>
+                     </item>
+                  </containedItem>
+               </package>
+            </package>
+         </PackagedProductDefinition>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="PackagedProductDefinition/e90fb5fe-5531-4280-865e-745865deb686"/>
+      </request>
+   </entry>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:b50a5d28-02bd-4a16-9715-3e227a4be7d7"/> -->
+      <resource>
+         <PackagedProductDefinition xmlns="http://hl7.org/fhir">
+            <id value="b50a5d28-02bd-4a16-9715-3e227a4be7d7"/>
+            <extension
+               url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+               <valueQuantity>
+                  <value value="16"/>
+                  <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+               </valueQuantity>
+            </extension>
+            <packageFor>
+               <reference value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"/>
+            </packageFor>
+            <description value="16 comprimido blister">
+               <extension url="http://ema.europa.eu/fhir/extension/language">
+                  <valueCoding>
+                     <system
+                        value="https://spor.ema.europa.eu/v1/lists/100000072057/terms/100000072251"/>
+                     <code value="100000072251"/>
+                     <display value="Portuguese"/>
+                  </valueCoding>
+               </extension>
+            </description>
+            <package>
+               <type>
+                  <coding>
+                     <system
+                        value="https://spor.ema.europa.eu/v1/lists/100000073346/terms/100000073498"/>
+                     <code value="100000073498"/>
+                     <display value="Box"/>
+                  </coding>
+               </type>
+               <quantity value="1"/>
+               <package>
+                  <type>
+                     <coding>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/100000073346/terms/100000073496"/>
+                        <code value="100000073496"/>
+                        <display value="Blister"/>
+                     </coding>
+                  </type>
+                  <quantity value="1"/>
+                  <containedItem>
+                     <item>
+                        <reference>
+                           <reference
+                              value="ManufacturedItemDefinition/cade57d9-734e-4b1a-83a0-743b8af67174"
+                           />
+                        </reference>
+                     </item>
+                  </containedItem>
+               </package>
+            </package>
+         </PackagedProductDefinition>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="PackagedProductDefinition/b50a5d28-02bd-4a16-9715-3e227a4be7d7"/>
+      </request>
+   </entry>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:c03f532c-7506-412b-8b8d-518b6205970d"/> -->
+      <resource>
+         <PackagedProductDefinition xmlns="http://hl7.org/fhir">
+            <id value="c03f532c-7506-412b-8b8d-518b6205970d"/>
+            <extension
+               url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+               <valueQuantity>
+                  <value value="30"/>
+                  <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+               </valueQuantity>
+            </extension>
+            <packageFor>
+               <reference value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"/>
+            </packageFor>
+            <description value="30 comprimido blister">
+               <extension url="http://ema.europa.eu/fhir/extension/language">
+                  <valueCoding>
+                     <system
+                        value="https://spor.ema.europa.eu/v1/lists/100000072057/terms/100000072251"/>
+                     <code value="100000072251"/>
+                     <display value="Portuguese"/>
+                  </valueCoding>
+               </extension>
+            </description>
+            <package>
+               <type>
+                  <coding>
+                     <system
+                        value="https://spor.ema.europa.eu/v1/lists/100000073346/terms/100000073498"/>
+                     <code value="100000073498"/>
+                     <display value="Box"/>
+                  </coding>
+               </type>
+               <quantity value="1"/>
+               <package>
+                  <type>
+                     <coding>
+                        <system
+                           value="https://spor.ema.europa.eu/v1/lists/100000073346/terms/100000073496"/>
+                        <code value="100000073496"/>
+                        <display value="Blister"/>
+                     </coding>
+                  </type>
+                  <quantity value="1"/>
+                  <containedItem>
+                     <item>
+                        <reference>
+                           <reference
+                              value="ManufacturedItemDefinition/cade57d9-734e-4b1a-83a0-743b8af67174"
+                           />
+                        </reference>
+                     </item>
+                  </containedItem>
+               </package>
+            </package>
+         </PackagedProductDefinition>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="PackagedProductDefinition/c03f532c-7506-412b-8b8d-518b6205970d"/>
+      </request>
+   </entry>
+   <entry>
+      <!-- <fullUrl value="urn:uuid:441340e6-207a-4c61-b22d-de5c482c7090"/> -->
+      <resource>
+         <AdministrableProductDefinition xmlns="http://hl7.org/fhir">
+            <id value="441340e6-207a-4c61-b22d-de5c482c7090"/>
+            <status value="active"/>
+            <formOf>
+               <reference value="MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"/>
+            </formOf>
+            <administrableDoseForm>
+               <coding>
+                  <system
+                     value="https://spor.ema.europa.eu/v1/lists/200000000004/terms/100000073665"/>
+                  <code value="100000073665"/>
+                  <display value="Film-coated tablet"/>
+               </coding>
+            </administrableDoseForm>
+            <unitOfPresentation>
+               <coding>
+                  <system
+                     value="https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152"/>
+                  <code value="200000002152"/>
+                  <display value="Tablet"/>
+               </coding>
+            </unitOfPresentation>
+            <!--
+            <ingredient>
+               <reference value="Ingredient/0cf52436-fced-4094-bc1f-01ad656685b6"/>
+            </ingredient>
+            <ingredient>
+               <reference value="Ingredient/2610c7f0-08df-4c37-b09b-1ed6fdad5389"/>
+            </ingredient> -->
+            <routeOfAdministration>
+               <code>
+                  <coding>
+                     <system
+                        value="https://spor.ema.europa.eu/v1/lists/100000073345/terms/100000073619"/>
+                     <code value="100000073619"/>
+                     <display value="Oral use"/>
+                  </coding>
+               </code>
+            </routeOfAdministration>
+         </AdministrableProductDefinition>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="AdministrableProductDefinition/441340e6-207a-4c61-b22d-de5c482c7090"/>
+      </request>
+   </entry>
+</Bundle>

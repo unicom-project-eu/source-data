@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<!--Fixed value-->
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="Agen-5mg-Tablet-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<!-- pharmaceutical dose form of the drug-->
+					<valueCoding>
+						<!-- EMA lists of pharmaceutical dose forms-->
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073664"/>
+						<display value="Tablet"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<!-- FHIR identifier-->
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100002580-15547"/>
+				</identifier>
+				<domain>
+					<!-- human use-->
+					<!-- EMA list of domains human use 100000000012, veterinarian use 100000000013, if both, then both codes? -->
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<status>
+					<!-- status of the document, always current-->
+					<coding>
+						<!-- EMA list of record status-->
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+				</status>
+				<legalStatusOfSupply>
+					<!-- subject to medical prescription or not-->
+					<coding>
+						<!-- EMA list of legal status for the supply-->
+						<system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<classification>
+					<!-- ATC code-->
+					<coding>
+						<!-- EMA list of Anatomical Therapeutic Chemical classification system human -->
+						<system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<code value="100000095065"/>
+						<display value="amlodipine"/>
+					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<code value="C08CA01"/>
+						<display value="amlodipine"/>
+					</coding>
+				</classification>
+				<name>
+					<!-- name of the product-->
+					<productName value="Agen, 5 mg tabletid "/>
+					<!-- full name, in Estonian, Name + strength + form-->
+					<namePart>
+						<part value="Agen"/>
+						<!-- invented/scientific part of the name -->
+						<type>
+							<coding>
+								<system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<!-- EMA list of Medicinal product name part type-->
+								<code value="220000000002"/>
+								<!-- invented 220000000002, scientific 220000000003-->
+								<display value="Invented Name Part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="5 mg"/>
+						<!-- strengt part of the name in Estonian-->
+						<type>
+							<coding>
+								<!-- EMA list of Medicinal product name part type-->
+								<system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<!-- Fixed value-->
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="tabletid"/>
+						<!-- pharmaceutical dose form in Estonian, as stated in the name-->
+						<type>
+							<coding>
+								<!-- EMA list of Medicinal product name part type-->
+								<system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<countryLanguage>
+						<!-- language of the name. EMA SPOR codes. -->
+						<country>
+							<coding>
+								<!-- EMA list of countries-->
+								<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<language>
+							<coding>
+								<!-- EMA list of languages-->
+								<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/Agen-5mg-Tablet-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Agen-5mg-Tablet-EE-RA"/>
+				<!-- Marketing authorisation number-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+					<value value="418303"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/Agen-5mg-Tablet-EE-MPD"/>
+				</subject>
+				<type>
+					<!-- shows that this product is approved-->
+					<!-- type of regulatory entitlement, always Marketing authorisation.-->
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<region>
+					<!-- region where document is valid. EMA list of countries-->
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<status>
+					<!-- wether or not the authorisation is valid, should always be valid-->
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<statusDate value="2013-06-07"/>
+				<!--Marketing authorisation holder -->
+				<holder>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100002580"/>
+					</identifier>
+					<display value="Zentiva k.s."/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Agen-5mg-Tablet-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Agen-5mg-Tablet-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Agen-5mg-Tablet-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+					<coding>
+						<!-- EMA list of pharmaceutical dose forms-->
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073664"/>
+						<display value="Tablet"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+				<producedFrom>
+					<!-- refers to the manufactured items that the administrable dose form consists of-->
+					<reference value="ManufacturedItemDefinition/Agen-5mg-Tablet-EE-MID"/>
+				</producedFrom>
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<!-- EMA list of routes and methods of administration-->
+							<system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073619"/>
+							<display value="Oral use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Agen-5mg-Tablet-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Agen-5mg-Tablet-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073664"/>
+						<display value="Tablet"/>
+					</coding>
+				</manufacturedDoseForm>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/UnitOfPresentation -->
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Agen-5mg-Tablet-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<id value="Agen-5mg-Tablet-EE-I"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Agen-5mg-Tablet-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Agen-5mg-Tablet-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Agen-5mg-Tablet-EE-APD"/>
+				</for>
+				<role>
+					<!--the role of the substance from EMA list of ingredient roles-->
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<!--name the substance in the drug-->
+					<code>
+						<concept>
+							<coding>
+								<system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+								<code value="100000090079"/>
+								<display value="Amlodipine besilate"/>
+							</coding>
+						</concept>
+					</code>
+					<!--strength of the substance-->
+					<strength>
+						<presentationRatio>
+							<!--general rule; liquid: concentration strength; solid or pre-filled single use syringe: presentation strength-->
+							<numerator>
+								<value value="6.935"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<!-- EMA list of quantity operators-->
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<!--EMA list of units of measurement-->
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="Tablet"/>
+								<!-- EMA list units of Presentation-->
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+						<referenceStrength>
+							<!--how much "pure" substance the substance is equal too, think transformation, effect in the body-->
+							<!-- according to the standard there has to be exactly one entry, even though the substance is itself and not a salt.-->
+							<substance>
+								<!-- "pure", original, mother substance-->
+								<concept>
+									<coding>
+										<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000085259"/>
+										<display value="Amlodipine"/>
+									</coding>
+								</concept>
+							</substance>
+							<strengthRatio>
+								<numerator>
+									<value value="5"/>
+									<comparator>
+										<extension url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<denominator>
+									<value value="1"/>
+									<unit value="tablet"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002152"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Agen-5mg-Tablet-EE-I"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Agen-5mg-Tablet-EE-PPD-1109887-A"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="30"/>
+						<unit value="tablet"/>
+						<!--units of presentation-->
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100002580-15547-1109887"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Agen-5mg-Tablet-EE-MPD"/>
+				</packageFor>
+				<description value="Tabletid on pakendatud PVC/PVDC/Al blistritesse (valged) või PVC/Al blistritesse (valged).">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<!-- Differences in Estonian and Swecish example are we repeating ourselves?-->
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!--  EMA Implementation Guide: If the same packaged medicinal product contains different configurations (e.g. Medicinal Product 
+ABC 500mg 30 tablets contained in either 2 blisters of 15 tablets each or 3 blisters of 10 tablets per 
+blister) which are not defined in the terms of the marketing authorisation or packaged description, 
+Package item (container) quantity at the level of the immediate packaging is to be left blank -->
+						<!-- <quantity value=""/> -->
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<!-- short or long name of the material -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PolyVinyl Chloride"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003225"/>
+								<display value="PolyVinylidene Chloride"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<!-- Rutt: viide manufacturedItemDefinitionile -->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Agen-5mg-Tablet-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="30"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Agen-5mg-Tablet-EE-PPD-1109887-A"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Agen-5mg-Tablet-EE-PPD-1109887-B"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="30"/>
+						<unit value="tablets"/>
+						<!--units of presentation-->
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<!-- Note that the only difference with the other package is the package material - this would result in different PCIDs-->
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100002580-15547-1109887"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Agen-5mg-Tablet-EE-MPD"/>
+				</packageFor>
+				<description value="Tabletid on pakendatud PVC/PVDC/Al blistritesse (valged) või PVC/Al blistritesse (valged).">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!-- Number of blisters is unknown. According to EMA IG, the element package.quantity is to be left blank -->
+						<!--<quantity value=""/>-->
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PolyVinyl Chloride"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<reference>
+									<reference value="ManufacturedItemDefinition/Agen-5mg-Tablet-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="30"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Agen-5mg-Tablet-EE-PPD-1109887-B"/>
+		</request>
+	</entry>
+</Bundle>

@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="Metfogamma850-850mg-Film-coated-tablet-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<value value="0000000000016"/>
+				</identifier>
+				<!-- country code + MAH code + med prod ID (ravimikaardi nr)-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100054619-15616"/>
+				</identifier>
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+					<coding>
+						<system value="http://hl7.org/fhir/publication-status"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</status>
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<additionalMonitoringIndicator>
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="False"/>
+						<display value="False"/>
+					</coding>
+				</additionalMonitoringIndicator>
+				<classification>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<code value="100000094031"/>
+						<display value="Metformin"/>
+					</coding>
+					<coding>
+						<system value="http://whocc.no/atc"/>
+						<code value="A10BA02"/>
+						<display value="Metformin "/>
+					</coding>
+				</classification>
+				<name>
+					<productName value="Metfogamma 850, 850 mg õhukese polümeerikattega tabletid "/>
+					<namePart>
+						<part value="Metfogamma 850"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="850 mg"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="õhukese polümeerikattega tabletid"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<countryLanguage>
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Metfogamma850-850mg-Film-coated-tablet-EE-RA"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="490805"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MPD"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<statusDate value="2010-06-29"/>
+				<holder>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100054619"/>
+					</identifier>
+					<display value="Wörwag Pharma GmbH &amp; Co.KG"/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Metfogamma850-850mg-Film-coated-tablet-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Metfogamma850-850mg-Film-coated-tablet-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+				<producedFrom>
+					<reference value="ManufacturedItemDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MID"/>
+				</producedFrom>
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073619"/>
+							<display value="Oral use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Metfogamma850-850mg-Film-coated-tablet-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</coding>
+				</manufacturedDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<id value="Metfogamma850-850mg-Film-coated-tablet-EE-I"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-APD"/>
+				</for>
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<!-- There is also 100000164534	METFORMIN HYDROCHLORIDE BP -->
+				<substance>
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000091366"/>
+								<display value="Metformin hydrochloride"/>
+							</coding>
+						</concept>
+					</code>
+					<strength>
+						<presentationRatio>
+							<numerator>
+								<value value="850"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="Tablet"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+						<referenceStrength>
+							<substance>
+								<concept>
+									<coding>
+										<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000085448"/>
+										<display value="Metformin"/>
+									</coding>
+								</concept>
+							</substance>
+							<strengthRatio>
+								<numerator>
+									<value value="662.8"/>
+									<comparator>
+										<extension url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<denominator>
+									<value value="1"/>
+									<unit value="Tablet"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002152"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Metfogamma850-850mg-Film-coated-tablet-EE-I"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Metfogamma850-850mg-Film-coated-tablet-EE-PPD-1111251"/>
+				
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="30"/>
+						<unit value="tablet"/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-EE-100054619-15616-1111251"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MPD"/>
+				</packageFor>
+				<description value="PVC/Al blister">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<package>
+						<type>
+							<coding>
+								<!-- DO not know how many blisters -->
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!-- If the number of blisters is unknown it is to be left blank (EMA IG)
+						<quantity value=""/> -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PolyVinyl Chloride"/>
+							</coding>
+						</material>
+						<containedItem>
+							<item>
+								<reference>
+									<reference value="ManufacturedItemDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MID"/>
+								</reference>
+							</item>
+							<amount>
+								<value value="30"/>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-PPD-1111251"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Metfogamma850-850mg-Film-coated-tablet-EE-PPD-1111262"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="120"/>
+						<unit value="tablet"/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100054619-15616-1111262"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MPD"/>
+				</packageFor>
+				<description value="PVC/Al blister">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<package>
+						<type>
+							<coding>
+								<!-- DO not know how many blisters -->
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!-- <quantity value="1"/> -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PolyVinyl Chloride"/>
+							</coding>
+						</material>
+						<containedItem>
+							<item>
+								<reference>
+									<reference value="ManufacturedItemDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-MID"/>
+								</reference>
+							</item>
+							<amount>
+								<value value="120"/>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Metfogamma850-850mg-Film-coated-tablet-EE-PPD-1111262"/>
+		</request>
+	</entry>
+</Bundle>

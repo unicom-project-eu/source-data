@@ -1,0 +1,1118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Yaz 0,02mg / 3 mg-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-05, last change 2022-07-05-->
+<!-- follows the 5.0 standard-->
+<!--Several ingredients, different kinds of tablets. This will be interesting. There is a packaging problem-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Yaz-0023mg-tablet-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Yaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition01 (pill)
+Entry 4, AdministrableProductDefinition:           Yaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition02 (placebo)
+Entry 5, PackagedProductDefinition:                Yaz-0023mg-tablet-SE-AJ-PackagedProductDefinition
+Entry 6, ManufacturedItemDefinition:               Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01 (pill)
+Entry 7, ManufacturedItemDefinition:               Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition02 (placebo)
+Entry 8, Ingredient:                               Yaz-0023mg-tablet-SE-AJ-Ingredient01 (ethinylestradiol betadex clathrate)
+Entry 9, Ingredient:                               Yaz-0023mg-tablet-SE-AJ-Ingredient02 (placebo)
+Entry 10, Ingredient:                               Yaz-0023mg-tablet-SE-AJ-Ingredient03  (drospirenone)                     -->
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction"/>
+  <!--Fixed Value-->
+
+
+  <entry>
+    <!-- Entry 1: Medicinal product definition-->
+    <!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+
+        <id value="Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <!-- pharmaceutical dose form of the drug-->
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/>
+            <display value="Film-coated tablet"/>
+          </valueCoding>
+        </extension>
+
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100004813-00026267"/>
+          <!-- Format: SE-xxxxxxxxx-yyyyyyyy. -->
+          <!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+        </identifier>
+
+        <identifier>
+          <!-- EURD-ID-->
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="10217"/>
+          <!--drospirenone / ethinylestradiol-->
+        </identifier>
+
+        <domain>
+
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+          </coding>
+        </status>
+
+        <indication
+          value="Antikonception
+Vid beslut att förskriva Yasminelle 28 ska den enskilda kvinnans riskfaktorer beaktas, framför 
+allt de för venös tromboembolism (VTE), och risken för VTE med Yasminelle 28 jämfört 
+med andra kombinerade hormonella preventivmedel (se avsnitt 4.3 och 4.4)."/>
+        <!-- indication taken from SmPC-->
+        <!-- is the long bit really necessary? it's not really an indication, just a general warning-->
+        <!-- impossible to define language here-->
+
+
+        <legalStatusOfSupply>
+          <!-- subject to medcial prescription or not, type of prescription-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+
+        <classification>
+          <!-- ATC code-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000095785"/>
+            <display value="G03AA12"/>
+            <!--drospirenone and ethinylestradiol-->
+          </coding>
+        </classification>
+
+        <!--commented out for now-->
+        <!--<comprisedOf>-->
+        <!--<reference value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01" /> -->
+        <!-- refers to manufactured item(s) -->
+        <!--</comprisedOf>-->
+        <!--commented out for now-->
+        <!--commented out for now-->
+        <!--<comprisedOf>-->
+        <!--<reference value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition02" /> -->
+        <!-- refers to manufactured item(s) -->
+        <!--</comprisedOf>-->
+        <!--commented out for now-->
+
+        <name>
+          <!-- name of the product-->
+
+          <productName value="Yaz 0,02 mg/3 mg Filmdragerad tablett"/>
+          <!-- full name, in swedish  Name+ strength+ form-->
+
+          <namePart>
+            <part value="Yaz"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000002"/>
+                <display value="Invented Name Part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="0,02 mg/3 mg"/>
+            <!-- strengt part of the name, in swedish-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/>
+                <!-- Fixed Value-->
+                <display value="Strength part"/>
+                <!-- Fixed Value-->
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Filmdragerad tablett"/>
+            <!-- pharmaceutical dose form in swedish-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/>
+                <!-- Fixed Value-->
+                <display value="Pharmaceutical dose form part"/>
+                <!-- Fixed Value-->
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+
+        </name>
+
+
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+    </request>
+  </entry>
+  <!-- Entry 1: Medicinal product definition-->
+  <!--STARTED-->
+
+
+  <entry>
+    <!-- Entry 2: Regulated marketing authorisation-->
+    <!-- STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization>
+        <!--Z needed here, am eng.-->
+
+        <id value="Yaz-0023mg-tablet-SE-AJ-RegulatedAuthorization"/>
+
+        <identifier>
+          <!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <value value="26267"/>
+        </identifier>
+
+        <subject>
+          <reference
+            value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+        </subject>
+
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <code value="220000000061"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region>
+          <!-- region where document is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+
+        <status>
+          <!-- wether or not the ducoment is valid, should always be valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+
+        <statusDate value="2008-07-03"/>
+        <!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+        <holder>
+          <!-- MAH, marketing authorisation holder-->
+          <identifier>
+            <system value="https://spor.ema.europa.eu/v1/locations"/>
+            <value value="LOC-100016468"/>
+          </identifier>
+
+          <display value="Bayer AB"/>
+          <!-- name of MAH-->
+          <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+        <case>
+          <type>
+            <coding>
+              <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+              <code value="dateOfFirstAuthorisation"/>
+              <display value="First Authorisation"/>
+            </coding>
+          </type>
+
+          <dateDateTime value="2008-07-03"/>
+          <!-- date of first authorisation-->
+        </case>
+
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/Yaz-0023mg-tablet-SE-AJ-RegulatedAuthorization"/>
+    </request>
+  </entry>
+  <!-- Entry 2: Regulated marketing authorisation-->
+  <!--STARTED-->
+
+
+  <entry>
+    <!-- Entry 3: Administrable product definition01-->
+    <!--STARTED-->
+
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <AdministrableProductDefinition>
+
+        <id value="Yaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition01"/>
+
+        <status value="active"/>
+
+        <formOf>
+          <!-- previously <Subject> -->
+          <reference
+            value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </formOf>
+        <!-- previously </Subject> -->
+
+        <administrableDoseForm>
+          <!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <!-- refer to the manufactured items that the administrable dose form consists of-->
+          <reference
+            value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01"/>
+          <!-- refers to manufactured item(s)-->
+        </producedFrom>
+
+        <routeOfAdministration>
+          <!--route of administration-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073619"/>
+              <display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/Yaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition01"
+      />
+    </request>
+  </entry>
+  <!-- Entry 3: Administrable product definition01-->
+  <!--STARTED-->
+
+
+  <entry>
+    <!-- Entry 4: Administrable product definition02-->
+    <!--STARTED-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <AdministrableProductDefinition>
+
+        <id value="Yaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition02"/>
+
+        <status value="active"/>
+
+        <formOf>
+          <!-- previously <Subject> -->
+          <reference
+            value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </formOf>
+        <!-- previously </Subject> -->
+
+        <administrableDoseForm>
+          <!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <!-- refer to the manufactured items that the administrable dose form consists of-->
+          <!-- several elements possible-->
+          <reference
+            value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition02"/>
+          <!-- refers to manufactured item(s)-->
+        </producedFrom>
+
+        <routeOfAdministration>
+          <!--route of administration-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073619"/>
+              <display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/Yaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition02"
+      />
+    </request>
+  </entry>
+  <!-- Entry 4: Administrable product definition02-->
+  <!--STARTED-->
+
+
+
+  <entry>
+    <!-- Entry 5: Packaged Product definition-->
+    <!-- STARTED-->
+    <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+        <!--Blister, 3 x 28 tablets-->
+        <id value="Yaz-0023mg-tablet-SE-AJ-PackagedProductDefinition"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <!-- this was more complicated than excpected. because in the world of contraceptives the 3 x 28 seems fairly important-->
+            <value value="84"/>
+            <unit value="tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+          </valueQuantity>
+        </extension>
+
+        <packageFor>
+          <!--previously <subject>-->
+          <reference
+            value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+          <!-- refers to Medicinal Product Definition -->
+        </packageFor>
+        <!--previously </subject>-->
+
+        <description value="Blister, 3 x 28 tabletter">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/>
+              <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus>
+          <!-- if the package is marketed, or not, and why not-->
+
+          <country>
+            <!-- country where the status is valid-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/>
+              <display value="Sweden"/>
+            </coding>
+          </country>
+
+          <status>
+            <!-- the actual status of the package-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/>
+            <!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+
+        <package>
+          <!--outermost packaging layer start-->
+
+          <type>
+            <!-- type of packaging-->
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+              <!-- not really a box but rather a plastic wrapping, but as we've discussed there is no better way of defining it right now. One platic wrapping around three wallets-->
+            </coding>
+          </type>
+
+          <quantity value="1"/>
+          <!--always one, according to the standard. Boxes are easy, plastic film not so much-->
+
+          <material>
+            <!-- material of packaging-->
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003208"/>
+              <display value="Plastic"/>
+            </coding>
+          </material>
+
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="5"/>
+              <unit value="Year"/>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+          </shelfLifeStorage>
+
+          <package>
+            <!--the problematic packaging layer-->
+
+            <type>
+              <!-- type of packaging-->
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073498"/>
+                <display value="Box"/>
+                <!-- not really a box, but rather a blister wallet. Not sure how to define it, box is somehow the closest I can get. Blister wallets shouldn't be that uncommon. Problematic. Three wallets wrapped in one layer of plastic-->
+              </coding>
+            </type>
+
+            <quantity value="3"/>
+
+
+            <material>
+              <!-- material of packaging-->
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003529"/>
+                <display value="Cardboard"/>
+              </coding>
+            </material>
+
+            <package>
+              <!--innermost packaging layer-->
+              <type>
+                <coding>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                  <code value="100000073496"/>
+                  <display value="Blister"/>
+                </coding>
+              </type>
+
+              <quantity value="1"/>
+              <!-- insert number of packages in this level-->
+
+              <material>
+                <coding>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                  <code value="200000003200"/>
+                  <display value="Aluminium"/>
+                </coding>
+              </material>
+
+              <material>
+                <coding>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                  <code value="200000003222"/>
+                  <display value="PolyVinyl Chloride"/>
+                </coding>
+              </material>
+
+              <containedItem>
+                <!--active pill-->
+                <!-- Always inside the innermost layer of packaging, whatever that layer is-->
+                <item>
+                  <reference>
+                    <reference
+                      value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01"/>
+                    <!-- refers to Manufactured Item-->
+                  </reference>
+                </item>
+
+                <amount>
+                  <!-- previously <amountQuantity>-->
+                  <value value="24"/>
+                  <unit value="tablet"/>
+                  <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+                </amount>
+                <!-- previously </amountQuantity>-->
+
+              </containedItem>
+
+              <containedItem>
+                <!--placebo pill-->
+                <!-- Always inside the innermost layer of packaging, whatever that layer is-->
+                <item>
+                  <reference>
+                    <reference
+                      value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition02"/>
+                    <!-- refers to Manufactured Item-->
+                  </reference>
+                </item>
+
+                <amount>
+                  <!-- previously <amountQuantity>-->
+                  <value value="4"/>
+                  <unit value="tablet"/>
+                  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                  <code value="200000002152"/>
+                </amount>
+                <!-- previously </amountQuantity>-->
+
+              </containedItem>
+            </package>
+            <!--end of innermost package-->
+          </package>
+          <!-- problematic layer-->
+        </package>
+        <!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/Yaz-0023mg-tablet-SE-AJ-PackagedProductDefinition"/>
+    </request>
+  </entry>
+  <!-- Entry 5: Packaged Product definition-->
+  <!--STARTED-->
+
+
+
+  <entry>
+    <!--Entry 6: Manufactured item definition01-->
+    <!--STARTED-->
+    <!--several entries allowed-->
+    <!--active pill-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01"/>
+
+        <status value="active"/>
+
+        <manufacturedDoseForm>
+          <!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation>
+          <!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+            <display value="tablet"/>
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01"/>
+    </request>
+  </entry>
+  <!-- Entry 6: Manufactured item definition01-->
+  <!-- STARTED-->
+
+
+
+  <entry>
+    <!--Entry 7: Manufactured item definition02-->
+    <!--STARTED-->
+    <!--several entries allowed-->
+    <!-- placebo tablet-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition02"/>
+
+        <status value="active"/>
+
+        <manufacturedDoseForm>
+          <!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation>
+          <!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+            <display value="tablet"/>
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition02"/>
+    </request>
+  </entry>
+  <!-- Entry 7: Manufactured item definition02-->
+  <!--STARTED-->
+
+
+  <entry>
+    <!-- Entry 8: Ingredient 01-->
+    <!--STARTED-->
+    <!--Ethinylestradiol betadex clathrate-->
+    <!--several entries allowed, one per ingredient-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+        <!--Ethinylestradiol betadex clathrate-->
+
+        <id value="Yaz-0023mg-tablet-SE-AJ-Ingredient01"/>
+
+        <status value="active"/>
+
+        <for>
+          <!--previously <valueReference> -->
+          <reference
+            value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </for>
+        <!--previously <valueReference> -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01"/>
+          <!--refers to Manufactured Item-->
+        </for>
+        <!--new addition -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="AdministrableProductDefinitionYaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition01"/>
+          <!--refers to Administrable product-->
+        </for>
+        <!--new addition -->
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+
+        <substance>
+          <!--name the substance in the drug-->
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000091531"/>
+                <display value="Ethinylestradiol betadex clathrate"/>
+              </coding>
+            </concept>
+          </code>
+
+          <strength>
+            <!--strength of the substance-->
+
+            <presentationRatio>
+              <numerator>
+                <value value="173.17"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="microgram(s)"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110656"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002152"/>
+              </denominator>
+            </presentationRatio>
+
+            <referenceStrength>
+              <substance>
+                <!-- "pure", original, mother substance-->
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000091721"/>
+                    <display value="Ethinylestradiol"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="20"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="microgram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110656"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="tablet"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/Yaz-0023mg-tablet-SE-AJ-Ingredient01"/>
+    </request>
+  </entry>
+  <!--Entry 8: Ingredient01-->
+  <!--STARTED-->
+
+
+
+  <entry>
+    <!-- Entry 9: Ingredient 02-->
+    <!--STARTED-->
+    <!--lactose monohydrate-->
+    <!--several entries allowed, one per ingredient-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+        <!--lactose monohydrate-->
+
+        <id value="Yaz-0023mg-tablet-SE-AJ-Ingredient02"/>
+
+        <status value="active"/>
+
+        <for>
+          <!--previously <valueReference> -->
+          <reference
+            value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </for>
+        <!--previously <valueReference> -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition02"/>
+          <!--refers to Manufactured Item-->
+        </for>
+        <!--new addition -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="AdministrableProductDefinitionYaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition02"/>
+          <!--refers to Administrable product-->
+        </for>
+        <!--new addition -->
+
+        <role>
+          <!--the role of the substance-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072082"/>
+            <display value="Excipient"/>
+          </coding>
+        </role>
+
+        <substance>
+          <!--name the substance in the drug-->
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000093305"/>
+                <display value="Lactose monohydrate"/>
+              </coding>
+            </concept>
+          </code>
+
+          <strength>
+            <!--strength of the substance-->
+
+            <presentationRatio>
+              <numerator>
+                <value value="23.2"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002152"/>
+              </denominator>
+            </presentationRatio>
+
+            <referenceStrength>
+              <substance>
+                <!-- "pure", original, mother substance-->
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000090052"/>
+                    <display value="lactose"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="22"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="tablet"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/Yaz-0023mg-tablet-SE-AJ-Ingredient02"/>
+    </request>
+  </entry>
+  <!--Entry 9: Ingredient02-->
+  <!--STARTED-->
+
+
+
+  <entry>
+    <!-- Entry 10: Ingredient 03-->
+    <!--STARTED-->
+    <!--drospirenone-->
+    <!--several entries allowed, one per ingredient-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+        <!--drospirenone-->
+
+        <id value="Yaz-0023mg-tablet-SE-AJ-Ingredient03"/>
+
+        <status value="active"/>
+
+        <for>
+          <!--previously <valueReference> -->
+          <reference
+            value="MedicinalProductDefinition/Yaz-0023mg-tablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </for>
+        <!--previously <valueReference> -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="ManufacturedItemDefinition/Yaz-0023mg-tablet-SE-AJ-ManufacturedItemDefinition01"/>
+          <!--refers to Manufactured Item-->
+        </for>
+        <!--new addition -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="AdministrableProductDefinitionYaz-0023mg-tablet-SE-AJ-AdministrableProductDefinition01"/>
+          <!--refers to Administrable product-->
+        </for>
+        <!--new addition -->
+
+        <role>
+          <!--the role of the substance-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+
+        <substance>
+          <!--name the substance in the drug-->
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000092375"/>
+                <display value="drospirenone"/>
+              </coding>
+            </concept>
+          </code>
+
+          <strength>
+            <!--strength of the substance-->
+
+            <presentationRatio>
+              <numerator>
+                <value value="3"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="tablet"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002152"/>
+              </denominator>
+            </presentationRatio>
+
+            <referenceStrength>
+              <substance>
+                <!-- "pure", original, mother substance-->
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000092375"/>
+                    <display value="drospirenone"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="3"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="tablet"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/Yaz-0023mg-tablet-SE-AJ-Ingredient03"/>
+    </request>
+  </entry>
+  <!--Entry 10: Ingredient03-->
+  <!--STARTED-->
+
+
+</Bundle>

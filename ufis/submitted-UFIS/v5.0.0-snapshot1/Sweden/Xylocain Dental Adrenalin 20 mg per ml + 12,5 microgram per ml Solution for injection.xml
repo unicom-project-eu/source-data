@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Xylocain Dental Adrenalin 20 mg/ml + 12.5 microgram/ml solution for injection-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-12, last change 2022-07-12-->
+<!-- follows the 5.0 standard-->
+<!--We'll see what happens when I get to the packaging. I'm gonna have real fun with the name parts.-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Xylocain-Dental-Adrenalin-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Xylocain-Dental-Adrenalin-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                Xylocain-Dental-Adrenalin-SE-AJ-PackagedProductDefinition01
+Entry 5, PackagedProductDefinition:                Xylocain-Dental-Adrenalin-SE-AJ-PackagedProductDefinition02
+Entry 6, ManufacturedItemDefinition:               Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition
+Entry 7, Ingredient:                               Xylocain-Dental-Adrenalin-SE-AJ-Ingredient01
+Entry 8, Ingredient:                               Xylocain-Dental-Adrenalin-SE-AJ-Ingredient02                       -->
+
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction" /><!--Fixed Value-->
+  
+  
+  
+  <entry><!-- Entry 1: Medicinal product definition--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+	  
+		<id value="Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" />
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> 
+		<!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+			<code value="100000073863" /> 
+			<display value="Solution for injection" /> 
+		  </valueCoding>
+		</extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100003299-00003844"/>       
+							<!-- Formatet ska vara SE-xxxxxxxxx-yyyyyyyy. --><!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+		</identifier>
+		
+		<identifier>  <!-- EURD-ID-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="1233"/>  
+			<!--epinephrine / lidocaine-->
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> 
+			<code value="100000000012" />
+			<display value="Human use" />
+		  </coding>
+		</domain>
+		
+		<status>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> 
+			<code value="200000005004" />
+			<display value="Current" />
+		  </coding>
+		</status>
+		
+		<indication value="Lokalanestesi inom odontologin, t ex vid operationer, komplicerade extraktioner och vid 
+parodontal kirurgi. Xylocain Dental adrenalin ger god blodtomhet" /> 
+<!--indication taken from SmPC--><!-- impossible to define language here-->
+
+		
+		<legalStatusOfSupply>
+		<!-- subject to medcial prescription or not, type of prescription-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084" />
+			<display value="Medicinal preoduct subject to medical prescription" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		<!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000097207" />
+			<display value="N01BB52" />
+			<!--lidocaine, combinations-->
+		  </coding>
+		</classification>
+		
+		<!--commented out for now-->
+		<!--<comprisedOf>--> <!-- refers to the manufactured item(s) that the product is compromised of--> <!--Several references possible, how?-->
+			<!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+			<!--<reference value="ManufacturedItemDefinition/Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition" /> -->  <!-- refers to manufactured item(s) -->
+		<!--</comprisedOf>-->
+		 <!--commented out for now-->
+		
+		<name> 
+		
+		  <productName value="Xylocain Dental Adrenalin 20 mg/ml + 12,5 mikrogram/ml Injektionsvätska, lösning" /> 
+		  <!-- full name, in swedish-->
+		  
+		  <!--here comes the fun-->
+		  <namePart>
+		    <part value="Xylocain" />
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+				<code value="220000000002" /> 
+				<display value="Invented Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+		  <namePart>
+		    <part value="Dental" /> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+				<code value="220000000007" /> 
+				<display value="Intended use part" />
+			  </coding>
+			</type>
+		  </namePart>
+		  <namePart>
+		    <part value="Adrenalin" /> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+				<code value="220000000003" /> 
+				<display value="Scientific Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+          <namePart>
+            <part value="20 mg/ml + 12,5 mikrogram/ml" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000004" />
+				<display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Injektionsvätska, lösning" />
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage>
+            <country> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> 
+                <code value="100000000535" />
+				<display value="Sweden"/>
+              </coding>
+            </country>
+            <language> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" /> 
+				<display value="Swedish"/> 
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- Entry 1: Medicinal product definition--><!--STARTED-->
+  
+  
+  
+  
+  <entry>  <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	  
+	  <id value="Xylocain-Dental-Adrenalin-SE-AJ-RegulatedAuthorization"/>
+	  
+        <identifier> 
+		<!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="3844" />
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+            <code value="220000000061" /> 
+			<display value="Marketing Authorisation"/> 
+          </coding>
+        </type>
+
+        <region> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> 
+            <code value="100000000535" />
+			<display value="Sweden"/> 
+          </coding>
+        </region>
+
+        <status> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> 
+            <code value="100000072099" /> 
+			<display value="Valid"/> 
+          </coding>
+        </status>
+
+        <statusDate value="1951-05-31" /> 
+		<!-- date of first authorisation--><!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+
+        <holder> 
+		<!-- MAH, marketing authorisation holder-->
+
+			<identifier>
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100007631"/>
+			</identifier>
+
+          <display value="Dentsply DeTrey GmbH" /> 
+		  <!-- name of MAH--> <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="1951-05-31"/>  
+			<!-- date of first authorisation-->
+		</case>
+		
+		
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Xylocain-Dental-Adrenalin-SE-AJ-RegulatedAuthorization" /> 
+    </request>
+  </entry> <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  
+  
+  
+  
+  <entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />--> 
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="Xylocain-Dental-Adrenalin-SE-AJ-AdministrableProductDefinition"/> 
+		
+		<status value="active"/>
+		
+		
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+		
+
+        <administrableDoseForm>
+		<!--pharmaceutical dose form for the administrable product-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> 
+            <code value="100000073863" /> 
+			<display value="Solution for injection"/> 
+          </coding>
+        </administrableDoseForm>
+
+		<producedFrom> 
+			<reference value="ManufacturedItemDefinition/Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+		
+		
+        <routeOfAdministration>
+		<!--route 1-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> 
+              <code value="100000073624" /> 
+			 <display value="Perineural use"/> 
+            </coding>
+          </code>
+        </routeOfAdministration>
+		
+        <routeOfAdministration>
+		<!--route 2-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> 
+              <code value="100000075248" /> 
+			 <display value="Infiltration"/> 
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-AdministrableProductDefinition" />
+    </request>
+  </entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  
+  
+  
+  
+  <entry>  <!-- Entry 4: Packaged Product definition01--><!--Self-aspirating cartrigde 100 x 1.8 ml--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+	  <!--100 self-aspirating cartridges, 1.8 ml-->
+		<id value="Xylocain-Dental-Adrenalin-SE-AJ-PackagedProductDefinition01"/> 
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="100" />
+			<unit value="cartridge"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002114" /> 
+          </valueQuantity>
+        </extension>
+		
+
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+
+		
+        <description value="Cylinderampull (självaspirerande), 100 x 1,8 ml">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" /> 
+			  <display value="Swedish"/>  
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		<!-- if the package is marketed, or not, and why not-->
+		
+          <country> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/>
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/> 
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+		
+		  <type>
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> 
+			  <code value="100000073498"/>
+			  <display value="Box"/> 
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="2"/> 
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" /> 
+                  </periodDuration>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073414"/>
+                        <display value="Store in a refrigerator (2°C - 8°C)"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073423"/>
+                        <display value="Keep the container in the outer carton"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073426"/>
+                        <display value="in order to protect from light"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+            </shelfLifeStorage>
+			   
+
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073503"/>
+				        <display value="Cartridge"/>
+				      </coding>
+			        </type>
+			  
+			        <quantity value="100"/> 
+			  
+				    <material>
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003203"/>
+					    <display value="Glass"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="1.8" /> 
+						  <unit value="millilitre(s)"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110662" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+					
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-PackagedProductDefinition01" />
+    </request>
+  </entry> <!-- Entry 4: Packaged Product definition01--><!--STARTED-->
+  
+  
+  
+  
+  <entry>  <!-- Entry 5: Packaged Product definition02--><!--normal(?) cartridge, 100 x 1.8 ml--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+	  <!--100 cartridges, 1.8 ml-->
+		<id value="Xylocain-Dental-Adrenalin-SE-AJ-PackagedProductDefinition02"/> 
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="100" />
+			<unit value="cartridge"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002114" /> 
+          </valueQuantity>
+        </extension>
+		
+
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+
+		
+        <description value="Cylinderampull (självaspirerande), 100 x 1,8 ml">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" /> 
+			  <display value="Swedish"/>  
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		<!-- if the package is marketed, or not, and why not-->
+		
+          <country> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/>
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/> 
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+		
+		  <type>
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> 
+			  <code value="100000073498"/>
+			  <display value="Box"/> 
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="2"/> 
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" /> 
+                  </periodDuration>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073414"/>
+                        <display value="Store in a refrigerator (2°C - 8°C)"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073423"/>
+                        <display value="Keep the container in the outer carton"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073426"/>
+                        <display value="in order to protect from light"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+            </shelfLifeStorage>
+			   
+
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073503"/>
+				        <display value="Cartridge"/>
+				      </coding>
+			        </type>
+			  
+			        <quantity value="100"/> 
+			  
+				    <material>
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003203"/>
+					    <display value="Glass"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="1.8" /> 
+						  <unit value="millilitre(s)"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110662" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+					
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-PackagedProductDefinition02" />
+    </request>
+  </entry> <!-- Entry 5: Packaged Product definition02--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry> <!--Entry 6: Manufactured item definition--><!--note--><!--STARTED-->
+  <!--several entries allowed--> <!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition"/>
+
+		<status value="active" />
+
+		
+        <manufacturedDoseForm> 
+		<!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073863" /> 
+			<display value="Solution for injection"/> 
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation> 
+		<!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002114" /> 
+			<display value="Cartridge"/> 
+          </coding>
+        </unitOfPresentation>
+		
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- Entry 6: Manufactured item definition--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry><!-- Entry 7: Ingredient01--><!--lidocaine hydrochloride monohydrate--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--Lidocaine hydrochloride monohydrate-->
+	  
+	  <id value="Xylocain-Dental-Adrenalin-SE-AJ-Ingredient01"/>
+	  
+
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionXylocain-Dental-Adrenalin-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> 
+            <code value="100000072072" /> 
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000090563" /> 
+				<display value="Lidocaine hydrochloride monohydrate"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength> 
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="21.33" /> 
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000052"/> 
+							<display value="less than or equal to"/>
+							<!--yes, this is correct. No, I don't know why the reference strenghts were very eact and this wasn't.-->
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                <code value="100000110655" />
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="millilitre(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110662" />
+              </denominator>
+            </concentrationRatio>
+
+            
+     		<referenceStrength>
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000139489"/> 
+							<display value="lidocaine hydrochloride"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="20"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" />
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="millilitre(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110662" /> 
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+			
+     		<referenceStrength>
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000091713"/> 
+							<display value="lidocaine"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="17.3"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" />
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="millilitre(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110662" /> 
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Xylocain-Dental-Adrenalin-SE-AJ-Ingredient01" />
+    </request>
+  </entry><!--Entry 7: Ingredient01--><!--STARTED-->
+  
+  
+  
+  
+  <entry><!-- Entry 8: Ingredient02--><!--adrenaline tartrate--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--adrenaline tartrate-->
+	  
+	  <id value="Xylocain-Dental-Adrenalin-SE-AJ-Ingredient02"/>
+	  
+		
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Xylocain-Dental-Adrenalin-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Xylocain-Dental-Adrenalin-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionXylocain-Dental-Adrenalin-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />
+              <code value="100000162648" /> 
+				<display value="Adrenaline tartrate"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength>
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="22.7" /> 
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/> 
+							<display value="equal to"/> 
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="microgram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110656" />
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="millilitre(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110662" /> 
+              </denominator>
+            </concentrationRatio>
+			
+            
+     		<referenceStrength>
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000183979"/>
+							<display value="Adrenaline"/>
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="12.5"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="microgram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110656" /> 
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="millilitre(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110662" />
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Xylocain-Dental-Adrenalin-SE-AJ-Ingredient02" />
+    </request>
+  </entry><!--Entry 8: Ingredient02--><!--STARTED-->
+  
+  
+  
+  
+
+
+</Bundle>

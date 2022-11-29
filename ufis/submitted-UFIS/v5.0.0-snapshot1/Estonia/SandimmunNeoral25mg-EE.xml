@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<entry>
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="Sandimmun-Neoral-25mg-Soft-Capsule-EE-MPD"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073660"/>
+						<display value="Capsule, soft"/>
+					</valueCoding>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<!-- fake PMS ID -->
+					<value value="0000000000009"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/MPID -->
+				<!-- country code + MAH code + med prod ID (ravimikaardi nr)-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100011823-12531"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/Domain -->
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<status>
+					<coding>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+						<code value="200000005004"/>
+						<display value="Current"/>
+					</coding>
+					<coding>
+						<!-- We should use FHIR status? -->
+						<system value="http://hl7.org/fhir/publication-status"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/LegalStatusOfSupply -->
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<!-- ISO name: /MedicinalProduct/AdditionalMonitoringIndicator -->
+				<additionalMonitoringIndicator>
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="False"/>
+						<display value="False"/>
+					</coding>
+				</additionalMonitoringIndicator>
+				<!-- ISO name: /MedicinalProduct/ProductClassification -->
+				<classification>
+					<!-- ISO name: /MedicinalProduct/ProductClassification/CodeSystem -->
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<!-- ISO name: /MedicinalProduct/ProductClassification/Value -->
+						<code value="100000096122"/>
+						<display value="ciclosporin"/>
+					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<!-- ISO name: /MedicinalProduct/ProductClassification/Value -->
+						<code value="L04AD01"/>
+						<display value="ciclosporin"/>
+					</coding>
+				</classification>
+				<!-- ISO name: /MedicinalProduct/MedicinalProductName -->
+				<name>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/FullName -->
+					<productName value="Sandimmun Neoral, 25 mg pehmekapslid"/>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/InventedNamePart -->
+					<namePart>
+						<part value="Sandimmun Neoral"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/StrengthPart -->
+					<namePart>
+						<part value="25 mg"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/PharmaceuticalDoseFormPart -->
+					<namePart>
+						<part value="pehmekapslid"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language -->
+					<countryLanguage>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Country -->
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<display value="Republic of Estonia"/>
+							</coding>
+						</country>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Language -->
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MPD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Sandimmun-Neoral-25mg-Soft-Capsule-EE-RA"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationNumber -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="093194"/>
+				</identifier>
+				<subject>
+					<reference value="MedicinalProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MPD"/>
+				</subject>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/Country -->
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Republic of Estonia"/>
+					</coding>
+				</region>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatus -->
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatusDate -->
+				<statusDate value="2009-09-29"/>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation -->
+				<holder>
+					<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation/Identifier -->
+					<!-- LOC-id  -->
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100011823"/>
+					</identifier>
+					<display value="Novartis Baltics SIA"/>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Sandimmun-Neoral-25mg-Soft-Capsule-EE-RA"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Sandimmun-Neoral-25mg-Soft-Capsule-EE-APD"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MPD"/>
+				</formOf>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073660"/>
+						<display value="Capsule, soft"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002113"/>
+						<display value="Capsule"/>
+					</coding>
+				</unitOfPresentation>
+				<producedFrom>
+					<reference value="ManufacturedItemDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MID"/>
+				</producedFrom>
+				<routeOfAdministration>
+					<!-- ISO name: /MedicinalProduct/PharmaceuticalProduct/RouteOfAdministration/RouteOfAdministration -->
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073619"/>
+							<display value="Oral use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-APD"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Sandimmun-Neoral-25mg-Soft-Capsule-EE-MID"/>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073660"/>
+						<display value="Capsule, soft"/>
+					</coding>
+				</manufacturedDoseForm>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/UnitOfPresentation -->
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002113"/>
+						<display value="Capsule"/>
+					</coding>
+				</unitOfPresentation>
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MID"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<Ingredient>
+				<!-- id value in the end has Substance name (in the form that it is in the medicine) from https://iris.ema.europa.eu/substances/ -->
+				<id value="Sandimmun-Neoral-25mg-Soft-Capsule-EE-I"/>
+				<status value="active"/>
+				<for>
+					<reference value="MedicinalProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MPD"/>
+				</for>
+				<for>
+					<reference value="ManufacturedItemDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MID"/>
+				</for>
+				<for>
+					<reference value="AdministrableProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-APD"/>
+				</for>
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Substance -->
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000092121"/>
+								<!-- What kind of ciclosporin 100000155842	CICLOSPORIN A or 100000092121	Ciclosporin -->
+								<display value="CICLOSPORIN"/>
+							</coding>
+						</concept>
+					</code>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+					<strength>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+						<presentationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="25"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+							<denominator>
+								<value value="1"/>
+								<unit value="Capsule"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002113"/>
+							</denominator>
+						</presentationRatio>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength -->
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Sandimmun-Neoral-25mg-Soft-Capsule-EE-I"/>
+		</request>
+	</entry>
+	<entry>
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Sandimmun-Neoral-25mg-Soft-Capsule-EE-PPD-1008526"/>
+				<extension url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="50"/>
+						<unit value="Capsule"/>
+						<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002113"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/example/pcid"/>
+					<value value="EE-100011823-12531-1008526"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MPD"/>
+				</packageFor>
+				<description value="Kahepoolsest alumiiniumist blisterpakendid, mis koosnevad polüamiid/alumiinium/polüvinüülkloriidist (PA/alu/PVC) alumisel poolel ja alumiiniumfooliumist ülemisel poolel.25 mg, 50 mg või 100 mg pehmekapslid: 50 tk blisterpakendis.  ">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072172"/>
+							<display value="Estonian"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<country>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000388"/>
+							<display value="Republic of Estonia"/>
+						</coding>
+					</country>
+					<status>
+						<coding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+				</marketingStatus>
+				<package>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!-- The number of blisters is unknown, according to EMA IG the quantity element should be left blank.
+						<quantity value="1"/> -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003209"/>
+								<display value="PolyAmide"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PolyVinyl Chloride"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<reference>
+									<reference value="ManufacturedItemDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-MID"/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amount>
+								<value value="50"/>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Sandimmun-Neoral-25mg-Soft-Capsule-EE-PPD-1008526"/>
+		</request>
+	</entry>
+</Bundle>

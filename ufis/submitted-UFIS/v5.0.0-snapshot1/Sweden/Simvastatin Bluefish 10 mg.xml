@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simvastatin Bluefish 10 mg film-coated tablet--> 
+<!-- Bersabel Sirak-->
+<!-- Follows the 5.0 standard--> 
+
+<!-- Referenser: 
+    Entry 1: SimvastatinBluefish-10mg-Tablet-SE-BS-MedicinalProductDef
+	Entry 2: SimvastatinBluefish-10mg-Tablet-SE-BS-RegulatedAuthorization
+	Entry 3: SimvastatinBluefish-10mg-Tablet-SE-BS-AdministrableProductDef
+	Entry 4: SimvastatinBluefish-10mg-Tablet-SE-BS-PackagedProductDefinition
+	Entry 5: SimvastatinBluefish-10mg-Tablet-SE-BS-ManufacturedItemDefinition
+	Entry 6: SimvastatinBluefish-10mg-Tablet-SE-BS-Ingredient-->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+  	<resource>
+	  <MedicinalProductDefinition>
+		<id value="SimvastatinBluefish-10mg-Tablet-SE-BS-MedicinalProductDef"/> 
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073665"/>
+			<display value="Film-coated tablet"/> 
+          </valueCoding>
+        </extension>
+		
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>
+			<value value="SE-100002566-00026677"/>
+		</identifier>
+		
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="2709"/>
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use"/>
+		  </coding>
+		 </domain>
+		 
+		<status>
+		  <coding> 
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+			<code value="200000005004" />
+			<display value="Current"/>
+		  </coding>
+		</status>
+		
+		<indication value="
+		Hypercholesterolaemia
+Treatment of primary hypercholesterolaemia or mixed dyslipidaemia, as an adjunct to diet, when response to diet and other non-pharmacological treatments (such as exercise, weight reduction) is inadequate.
+
+Treatment of homozygous familial hypercholesterolaemia (HoFH) as an adjunct to diet and other lipid-lowering treatments (e.g. LDL-apheresis) or if such treatments are not appropriate.
+
+           Cardiovascular prevention
+
+Reduction of cardiovascular mortality and morbidity in patients with manifest atherosclerotic cardiovascular disease or diabetes mellitus, with either normal or increased cholesterol levels, as an adjunct to correction of other risk factors and other cardioprotective therapy"/>
+
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084" />
+			<display value="Medicinal product subject to medical prescription" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" /> <!-- EMA list of Anatomical Therapeutic Chemical classification system human, vet is a different list (Q), use correct list-->
+			<code value="100000095169" /><!--ID for code-->
+			<display value="C10AA01" /><!--Simvastatin-->
+		  </coding>
+		</classification>
+		
+		<name>
+		<productName value="Simvastatin Bluefish 10 mg filmdragerad tablett"/>
+		
+		<namePart> 
+			<part value="Simvastatin Bluefish"/> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000003"/>
+				<display value="Scientific name part"/>
+			  </coding>
+			</type>
+		  </namePart>
+		  
+		<namePart> <!--Strength-->
+			<part value="10 mg"/>
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000004" />
+				<display value="Strength part"/>   
+			  </coding>
+			</type>
+		  </namePart>
+		  
+		<namePart> 
+		  <part value="Filmdragerad tablett"/>
+		  <type>
+		    <coding>
+			  <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+			  <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>              
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>                
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>               
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+
+    <request>
+      <method value="PUT" />
+      <url value="MedicinalProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-MedicinalProductDef" />
+    </request>
+  </entry>
+  
+   <entry>
+   <resource>
+   
+   <RegulatedAuthorization>
+	<id value="SimvastatinBluefish-10mg-Tablet-SE-BS-RegulatedAuthorization"/>
+          <identifier>
+            <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+            <value value="26677" /> 
+		  </identifier>
+		  
+		<subject>
+          <reference value="MedicinalProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-MedicinalProductDef" />
+        </subject>
+		
+		<type>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+			<code value="220000000061" />
+			<display value="Marketing Authorisation"/>
+		  </coding>
+        </type>
+		
+		<region>
+		  <coding> 
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />	
+			<display value="Sweden"/>
+          </coding>
+        </region>
+		
+		<status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" />
+			<display value="Valid"/>
+          </coding>
+        </status>
+		
+		<statusDate value="2008-10-31" /> <!-- Date of first authorization--> 
+		
+		<holder>
+		  <identifier>
+		      <system value="https://spor.ema.europa.eu/v1/locations"/>
+			  <value value="LOC-100007939"/>
+		  </identifier>
+          <display value="Bluefish Pharmaceuticals " />
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="2008-10-31"/>    <!-- Date of first authorisation, found in EIRA -->
+		</case>
+		
+		</RegulatedAuthorization>
+    </resource>
+	
+	<request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/SimvastatinBluefish-10mg-Tablet-SE-BS-RegulatedAuthorization" />
+    </request>
+  </entry>
+  
+  <entry>
+    <resource>
+		<AdministrableProductDefinition>
+		  <id value="SimvastatinBluefish-10mg-Tablet-SE-BS-AdministrableProductDef"/>
+		  <status value="active"/>
+
+        <formOf> 
+          <reference value="MedicinalProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-MedicinalProductDef" />
+        </formOf>
+		
+		<administrableDoseForm>  
+		  <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073665" />
+			<display value="Film-coated tablet"/>            
+          </coding>
+        </administrableDoseForm>
+		
+		<producedFrom>
+          <reference value="ManufacturedItemDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-ManufacturedItemDefinition" /> 
+        </producedFrom>
+		
+		<routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073619" />
+			<display value="Oral use"/>             
+            </coding>
+          </code>
+        </routeOfAdministration>
+		
+		</AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-AdministrableProductDef" />
+    </request>
+  </entry>
+  
+  <!-- First package starts here-->
+   <entry> 
+     <resource>
+	  <PackagedProductDefinition>
+		<id value="SimvastatinBluefish-10mg-Tablet-SE-BS-PackagedProductDefinition"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="100" />
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>             
+          </valueQuantity>
+        </extension>
+		
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-MedicinalProductDef"/>
+		</packageFor>
+		
+		<description value="Blister, 100 tablet">
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> 
+          </dateRange>
+        </marketingStatus>
+		
+        <package>   <!-- Förpackningsnivå 1-->
+		<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Förpackningsnivå 2-->
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073496"/>
+				<display value="Blister"/>
+			</coding>
+		</type>
+<!--ContainerQuantity-->
+		<quantity value="10"/>
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003200"/>
+						<display value="Aluminium"/>
+					</coding>
+				</material>
+				
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+
+					<amount> 
+					  <value value="10" />
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" />
+					</amount>
+
+		  </containedItem>
+
+		      </package>
+			</package>
+			
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+        <url value="PackagedProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-PackagedProductDefinition" />
+    </request>
+  </entry>
+  
+  <entry>
+    <resource>
+	<ManufacturedItemDefinition>
+		<id value="SimvastatinBluefish-10mg-Tablet-SE-BS-ManufacturedItemDefinition"/>
+		<status value="active" />
+		
+		<manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />   <!-- Pharmaceutical Dose Form -->
+            <code value="100000073665" />
+			<display value="Film-coated tablet"/>            
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />   <!-- Units of Presentation -->
+            <code value="200000002152" />
+			<display value="Tablet"/>
+          </coding>
+        </unitOfPresentation>
+		
+		
+
+      </ManufacturedItemDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+    </request>
+  </entry>
+
+  <entry>
+    <resource>
+      <Ingredient>
+	  <id value="SimvastatinBluefish-10mg-Tablet-SE-BS-Ingredient" />
+	  <status value="active" />
+	  
+          <for> 
+            <reference value="MedicinalProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-ManufacturedItemDefinition" /><!-- Referera till produkten. -->
+          </for>
+		  
+		  <for> 
+            <reference value="ManufacturedItemDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> 
+		  
+          <for> 
+            <reference value="AdministrableProductDefinition/SimvastatinBluefish-10mg-Tablet-SE-BS-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> 
+		 
+		 <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>            
+          </coding>
+        </role>
+		
+		<substance>
+          <code> 
+		   <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />		<!-- Substans från EMAs substanslista (Excel)-->
+              <code value="100000091786" />     
+				<display value="Simvastatin"/>              
+            </coding>
+		   </concept>
+          </code>
+		  
+		<strength>
+
+		<presentationRatio>
+		          <numerator>
+                      <value value="10" />
+					    <comparator>
+					      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+					         <valueCoding>
+							   <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							    <code value="100000000049"/>
+							    <display value="equal to"/>
+						     </valueCoding>
+						  </extension>
+						</comparator>
+						<unit value="milligram(s)"/>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                        <code value="100000110655" />
+					 </numerator>
+					 <denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>   
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" />             
+                    </denominator>
+              </presentationRatio>
+
+			  <referenceStrength> 
+			    <substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000091786"/>
+							<display value="Simvastatin"/>
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+					<value value="10"/>
+					<comparator>
+						<extension url="http://ema.europa.eu/fhir/extension/comparator">
+							<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+								<code value="100000000049"/>
+								<display value="equal to"/>
+							</valueCoding>
+						</extension>
+					</comparator>
+					<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655"/>
+					</numerator>
+					<denominator>
+                      <value value="1" />
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" />
+				      <unit value="tablet"/>                     
+                    </denominator>
+				  </strengthRatio>
+				</referenceStrength>
+			  </strength>
+			</substance>
+		  </Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/SimvastatinBluefish-10mg-Tablet-SE-BS-Ingredient"/> 
+		</request>
+	</entry>
+
+	</Bundle>

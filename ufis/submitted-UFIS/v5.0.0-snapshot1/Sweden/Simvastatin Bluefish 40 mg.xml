@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simvastatin Bluefish 40mg film-coated tablet--> 
+<!-- Bersabel Sirak-->
+<!-- Follows the 5.0 standard--> 
+
+
+<!-- Referenser: 
+    Entry 1: SimvastatinBluefish-40mg-Tablet-SE-BS-MedicinalProductDefinition
+	Entry 2: SimvastatinBluefish-40mg-Tablet-SE-BS-RegulatedAuthorization
+	Entry 3: SimvastatinBluefish-40mg-Tablet-SE-BS-AdministrableProductDef
+	Entry 4: SimvastatinBluefish-40mg-Tablet-SE-BS-PackagedProductDefinition
+	Entry 5: SimvastatinBluefish-40mg-Tablet-SE-BS-ManufacturedItemDefinition
+	Entry 6: SimvastatinBluefish-40mg-Tablet-SE-BS-Ingredient-->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+	<resource>
+	  <MedicinalProductDefinition>
+		<id value="SimvastatinBluefish-40mg-Tablet-SE-BS-MedicinalProductDefinition"/> 
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073665"/>
+			<display value="Film-coated tablet"/> 
+          </valueCoding>
+        </extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>
+			<value value="SE-100002566-00026679"/> <!-- SE-siffrorna från organisationsnumret-MT-nummret och innan MT-numret ska man sätta in tillräckligt många nollor så att det blir 8 siffror-->
+		</identifier>
+
+        <!-- ISO name: /MedicinalProduct/EURDId -->
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="2709"/>
+		</identifier>
+
+         <domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use"/>
+		  </coding>
+		 </domain>
+		 
+        <status>
+		  <coding> 
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+			<code value="200000005004" />
+			<display value="Current"/>
+		  </coding>
+		</status>
+
+        <!-- Indikation från SmPC/Fass--> 
+		<indication value="Hypercholesterolaemia
+Treatment of primary hypercholesterolaemia or mixed dyslipidaemia, as an adjunct to diet, when response to diet and other non-pharmacological treatments (such as exercise, weight reduction) is inadequate.
+
+Treatment of homozygous familial hypercholesterolaemia (HoFH) as an adjunct to diet and other lipid-lowering treatments (e.g. LDL-apheresis) or if such treatments are not appropriate.
+
+           Cardiovascular prevention
+
+Reduction of cardiovascular mortality and morbidity in patients with manifest atherosclerotic cardiovascular disease or diabetes mellitus, with either normal or increased cholesterol levels, as an adjunct to correction of other risk factors and other cardioprotective therapy (see section 5.1).
+"/>
+
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084"/> <!-- antingen 100000072076 (not subject to medical prescription), 100000072084 (subject to medical prescription), 200000002239 (delvis receptbelagt)"--> 
+			<display value="Medicinal product subject to medical prescription"/>
+		  </coding>
+		</legalStatusOfSupply>
+
+        <classification>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000095169"/> <!-- kod för ATC koden --> 
+			<display value="C10AA01"/> <!-- ATC koden--> 
+		  </coding>
+		</classification>
+
+    <name> <!--Hela produktens namn-->
+	  <productName value="Simvastatin Bluefish 40 mg filmdragerad tablett"/>
+
+		<namePart> <!-- Produktnamn från EIRA-->
+			<part value="SimvastatinBluefish"/> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000003"/> <!-- eller 220000000003 som är scientific name part--> 
+				<display value="Scientific name part"/>
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> 
+			<part value="40 mg"/> <!-- styrka och enhet t.ex 10 mg--> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000004" />
+				<display value="Strength part"/>   
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Läkemedelsform--> 
+		  <part value="Filmdragerad tablett"/>
+		  <type>
+		    <coding>
+			  <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+			  <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>              
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>                
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>               
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+
+    <request>
+      <method value="PUT" /> 
+      <url value="MedicinalProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-MedicinalProductDefinition" />
+    </request>
+  </entry>
+
+
+  <entry>
+      <resource>
+
+        <RegulatedAuthorization>
+		<id value="SimvastatinBluefish-40mg-Tablet-SE-BS-RegulatedAuthorization"/>
+          <identifier>
+            <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+            <value value="26679" /> <!-- MT-nummer-->
+		  </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </subject>
+
+        <type>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+			<code value="220000000061" />
+			<display value="Marketing Authorisation"/>
+		  </coding>
+        </type>
+		
+		<region>
+		  <coding>    <!-- Vilken region gäller godkännandet i? -->
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />		<!-- Johan dubbelkollar -->
+			<display value="Sweden"/>
+          </coding>
+        </region>
+
+		<status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" />
+			<display value="Valid"/>
+          </coding>
+        </status>
+		
+		
+		<statusDate value="2008-10-31" /> <!-- första godkännande datumet--> 
+		
+		<!-- MAH -->
+        <holder>
+		  <identifier>
+		      <system value="https://spor.ema.europa.eu/v1/locations" />
+			  <value value="LOC-100007939" /> <!-- location ID-->
+		  </identifier>
+          <display value="Bluefish Pharmaceuticals " /> <!-- MAH namn--> 
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="2008-10-31"/>   <!-- första godkännande datumet--> 
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/SimvastatinBluefish-40mg-Tablet-SE-BS-RegulatedAuthorization" />
+    </request>
+  </entry>
+
+ <entry>
+    <resource>
+
+	  <AdministrableProductDefinition>
+		<id value="SimvastatinBluefish-40mg-Tablet-SE-BS-AdministrableProductDef"/>
+		<status value="active"/>
+
+        <formOf> 
+          <reference value="MedicinalProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </formOf>
+
+        <administrableDoseForm> 
+		  <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073665" />
+			<display value="Film-coated tablet"/>
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference value="ManufacturedItemDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-ManufacturedItemDefinition" /> 
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073619" /> 
+			<display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-AdministrableProductDef" />
+    </request>
+  </entry>
+  
+  <!-- Första förpackningen börjar här-->
+  
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="SimvastatinBluefish-40mg-Tablet-SE-BS-PackagedProductDefinition"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="100" /> <!-- t.ex antal tabletter-->
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>  <!--200000002152 är koden för tablet-->            
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Blister, 100 tablet"> <!-- t.ex Blister, 14 tablet--> 
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- skriv inte unknown, skriv så här istället--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Förpackningsnivå 1-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Förpackningsnivå 2-->
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073496"/>
+				<display value="Blister"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="10"/>
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003200"/>
+						<display value="Aluminium"/>
+					</coding>
+				</material>
+	
+<!-- I innersta förpackningen lägger man in contained item-->
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="10" /> <!-- antal contained item i innersta förpackningen--> 
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> <!-- kod för unit of presentation om det är en tablet (200000002152). Den andra listan om det är en lösning-->
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-PackagedProductDefinition" />
+    </request>
+  </entry>
+  
+  <!-- förpackningen slutar här--> 
+
+ <entry>
+    <resource>
+	<ManufacturedItemDefinition>
+		<id value="SimvastatinBluefish-40mg-Tablet-SE-BS-ManufacturedItemDefinition"/>
+		<status value="active" />
+
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />   <!-- Pharmaceutical Dose Form -->
+            <code value="100000073665" /> <!-- 100000073664 för tablet-->
+			<display value="Film-coated tablet"/>   <!--term for pharmaceutical dose form t.ex tablet-->         
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />   <!-- Units of Presentation -->
+            <code value="200000002152" /> <!-- 200000002152 för tablet-->
+			<display value="Tablet"/> <!--term for unit t.ex tablet-->
+          </coding>
+        </unitOfPresentation>
+
+<!-- Beståndsdel: Kan vara en eller flera. -->
+ 
+      </ManufacturedItemDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+    </request>
+  </entry>
+  
+   <!-- Beståndsdel(ar) -->
+  <entry>
+    <resource>
+      <Ingredient>
+	  <id value="SimvastatinBluefish-40mg-Tablet-SE-BS-Ingredient" />
+	  <status value="active" />
+	 
+          <for> 
+            <reference value="MedicinalProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-MedicinalProductDefinition" /><!-- Referera till produkten. -->
+          </for>
+		  
+		  <for> 
+            <reference value="ManufacturedItemDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> 
+		  
+          <for> 
+            <reference value="AdministrableProductDefinition/SimvastatinBluefish-40mg-Tablet-SE-BS-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> 
+		
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>            
+          </coding>
+        </role>
+		
+        <substance>
+          <code> 
+		   <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />		<!-- Substans från EMAs lista eller EUTCT. Kolla Excel -->
+              <code value="100000091786" />     
+				<display value="Simvastatin"/> <!-- namn på aktiv substans-->             
+            </coding>
+		   </concept>
+          </code>
+		  
+		    <strength>
+			
+              <presentationRatio>				<!-- Detta element kan bytas ut mot ett <presentation>-element istället, beroende på om man ska beskriva en koncentration eller en totalmängd. -->
+			  <!--mellan value value och unit value måste comparator in. se filen-->
+                    <numerator>
+                      <value value="40" /> <!-- mängden av saltet-->
+					    <comparator>
+					      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+					         <valueCoding>
+							   <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							    <code value="100000000049"/>
+							    <display value="equal to"/>
+						     </valueCoding>
+						  </extension>
+						</comparator>
+						<unit value="milligram(s)"/> <!-- VILKEN ENHET ÄR AKTIVA SUBSTANSEN-->
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                        <code value="100000110655" /> <!-- kod för milligram-->
+					 </numerator>
+                    <denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>  <!-- är läkemedlet en tablet?--> 
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" />             
+                    </denominator>
+              </presentationRatio>
+
+			  <referenceStrength> 
+			    <substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000091786"/> <!-- kod för aktiv substans (inte saltet)-->
+							<display value="Simvastatin"/> <!-- aktiv substans-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+					<value value="40"/> <!-- mängd aktiv substanssommotsvaras av saltet-->
+					<comparator>
+						<extension url="http://ema.europa.eu/fhir/extension/comparator">
+							<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+								<code value="100000000049"/>
+								<display value="equal to"/>
+							</valueCoding>
+						</extension>
+					</comparator>
+					<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655"/>
+					</numerator>
+					<denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>                     
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" />
+                    </denominator>
+				  </strengthRatio>
+				</referenceStrength>
+			  </strength>
+			</substance>
+		  </Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/SimvastatinBluefish-40mg-Tablet-SE-BS-Ingredient"/> 
+		</request>
+	</entry>
+
+	</Bundle>

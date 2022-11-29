@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Concerta 36 mg-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-12, last change 2022-07-15-->
+<!-- follows the 5.0 standard-->
+
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Concerta-36mg-PRTablet-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Concerta-36mg-PRTablet-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Concerta-36mg-PRTablet-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                Concerta-36mg-PRTablet-SE-AJ-PackagedProductDefinition
+Entry 5, ManufacturedItemDefinition:               Concerta-36mg-PRTablet-SE-AJ-ManufacturedItemDefinition
+Entry 6, Ingredient:                               Concerta-36mg-PRTablet-SE-AJ-Ingredient                       -->
+
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction"/>
+  <!--Fixed Value-->
+
+  <entry>
+    <!-- Entry 1: Medicinal product definition-->
+    <!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+
+        <id value="Concerta-36mg-PRTablet-SE-AJ-MedicinalProductDefinition"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <!-- pharmaceutical dose form of the drug-->
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073683"/>
+            <display value="Prolonged-release tablet"/>
+          </valueCoding>
+        </extension>
+
+
+
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100003163-00018542"/>
+          <!-- Format: SE-xxxxxxxxx-yyyyyyyy. -->
+          <!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+        </identifier>
+
+
+        <identifier>
+          <!-- EURD-ID-->
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="2024"/>
+          <!--methylphenidate-->
+        </identifier>
+
+        <domain>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+          </coding>
+        </status>
+
+        <indication
+          value="ADHD (Attention Deficit Hyperactivity Disorder)
+Concerta är avsett som en del i det totala behandlingsprogrammet för ADHD (Attention Deficit Hyperactivity Disorder) hos barn från 6 år, när endast stödjande åtgärder visat sig vara otillräckliga. 
+Behandlingen ska ske under överinseende av specialist på beteendestörningar hos barn. Diagnos ska ställas enligt de aktuella DSM-kriterierna eller ICD-riktlinjerna och ska grundas på 
+en fullständig anamnes och utvärdering av patienten. Diagnos kan inte ställas enbart på närvaro av ett eller flera symtom.
+Den specifika etiologin för detta syndrom är okänd, och det finns inget enstaka diagnostiskt test. 
+Adekvat diagnos kräver användning av såväl medicinska som specialiserade psykologiska, pedagogiska och sociala resurser.
+Ett omfattande behandlingsprogram karaktäriseras av psykologiska, pedagogiska och sociala åtgärder såväl som farmakoterapi och har som målsättning att stabilisera barn 
+med ett beteendesyndrom karaktäriserat av symtom som kan inkludera kronisk anamnes av kort uppmärksamhetsperiod, distraherbarhet, emotionell labilitet, impulsivitet, 
+måttlig till svår hyperaktivitet, obetydliga neurologiska tecken och onormalt EEG. Syndromet kan förekomma både med och utan inlärningssvårigheter.
+Behandling med Concerta är inte indicerat för alla barn med ADHD och beslutet att använda läkemedlet måste grundas på en mycket noggrann bedömning av svårighetsgrad och kronicitet av barnets symtom 
+i förhållande till barnets ålder.
+Välvald utbildningsplacering är väsentlig, och psykosocialt ingripande är i allmänhet nödvändigt. Där enbart stödjande åtgärder visat sig vara otillräckliga måste beslutet att använda stimulantia 
+grundas på en mycket noggrann bedömning av svårighetsgraden hos barnets symtom. Användning av metylfenidat ska alltid ske på detta sätt enligt godkänd indikation och enligt 
+förskrivnings-/diagnostiska riktlinjer."/>
+        <!--indication taken from SmPC-->
+        <!--ridiculously long indication again -->
+
+
+        <legalStatusOfSupply>
+          <!-- subject to medcial prescription or not, type of prescription-->
+          <!-- might be special and restricted, not sure-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072085"/>
+            <display value="Medicinal product subject to special medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+
+        <classification>
+          <!-- ATC code-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000097721"/>
+            <display value="N06BA04"/>
+            <!-- methylphenidate-->
+          </coding>
+        </classification>
+
+        <!--commented out for now-->
+        <!--<comprisedOf>-->
+        <!-- refers to the manufactured item(s) that the product is compromised of-->
+        <!--Several references possible, how?-->
+        <!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+        <!--<reference value="ManufacturedItemDefinition/Concerta-36mg-PRTablet-SE-AJ-ManufacturedItemDefinition" /> -->
+        <!-- refers to manufactured item(s) -->
+        <!--</comprisedOf>-->
+        <!--commented out for now-->
+
+        <name>
+
+          <productName value="Concerta 36 mg Depottablett"/>
+          <!-- full name, in swedish  Name+ strength+ form-->
+
+          <namePart>
+            <part value="Concerta"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000002"/>
+                <display value="Invented Name Part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="36 mg"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/>
+                <display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Depottablett"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/>
+                <display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+
+        </name>
+
+
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url
+        value="MedicinalProductDefinition/Concerta-36mg-PRTablet-SE-AJ-MedicinalProductDefinition"/>
+    </request>
+  </entry>
+  <!-- Entry 1: Medicinal product definition-->
+  <!--STARTED-->
+
+
+
+
+  <entry>
+    <!-- Entry 2: Regulated marketing authorisation-->
+    <!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization>
+        <!--Z needed here, am eng.-->
+
+        <id value="Concerta-36mg-PRTablet-SE-AJ-RegulatedAuthorization"/>
+
+        <identifier>
+          <!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <value value="18542"/>
+        </identifier>
+
+        <subject>
+          <reference
+            value="MedicinalProductDefinition/Concerta-36mg-PRTablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <code value="220000000061"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region>
+          <!-- region where document is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+
+        <statusDate value="2002-11-01"/>
+        <!-- date of first authorisation-->
+        <!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+
+        <holder>
+          <!-- MAH, marketing authorisation holder-->
+
+          <identifier>
+            <system value="https://spor.ema.europa.eu/v1/locations"/>
+            <value value="LOC-100061163"/>
+          </identifier>
+
+          <display value="Janssen-Cilag AB"/>
+          <!-- name of MAH-->
+          <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+        <case>
+          <type>
+            <coding>
+              <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+              <code value="dateOfFirstAuthorisation"/>
+              <display value="First Authorisation"/>
+            </coding>
+          </type>
+
+          <dateDateTime value="2002-11-01"/>
+          <!-- date of first authorisation, found in eira -->
+        </case>
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/Concerta-36mg-PRTablet-SE-AJ-RegulatedAuthorization"/>
+    </request>
+  </entry>
+  <!-- Entry 2: Regulated marketing authorisation-->
+  <!--STARTED-->
+
+
+
+  <entry>
+    <!-- Entry 3: Administrable product definition-->
+    <!--STARTED-->
+    <!--technically there could be several entries for administrable products-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <AdministrableProductDefinition>
+
+        <id value="Concerta-36mg-PRTablet-SE-AJ-AdministrableProductDefinition"/>
+
+        <status value="active"/>
+
+
+        <formOf>
+          <!-- previously <Subject> -->
+          <reference
+            value="MedicinalProductDefinition/Concerta-36mg-PRTablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </formOf>
+        <!-- previously </Subject> -->
+
+
+        <administrableDoseForm>
+          <!--pharmaceutical dose form for the administrable product-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073683"/>
+            <display value="Prolonged-release tablet"/>
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference
+            value="ManufacturedItemDefinition/Concerta-36mg-PRTablet-SE-AJ-ManufacturedItemDefinition"/>
+          <!-- refers to manufactured item(s)-->
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073619"/>
+              <display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/Concerta-36mg-PRTablet-SE-AJ-AdministrableProductDefinition"
+      />
+    </request>
+  </entry>
+  <!-- Entry 3: Administrable product definition-->
+  <!--STARTED-->
+
+
+
+
+  <entry>
+    <!-- Entry 4: Packaged Product definition-->
+    <!--bottle 30 tablets-->
+    <!--STARTED-->
+    <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+        <!--bottle, 30 tablets-->
+        <id value="Concerta-36mg-PRTablet-SE-AJ-PackagedProductDefinition"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="30"/>
+            <unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+          </valueQuantity>
+        </extension>
+
+
+        <packageFor>
+          <!--previously <subject>-->
+          <reference
+            value="MedicinalProductDefinition/Concerta-36mg-PRTablet-SE-AJ-MedicinalProductDefinition"/>
+          <!-- refers to Medicinal Product Definition -->
+        </packageFor>
+        <!--previously </subject>-->
+
+
+        <description value="Burk, 30 tabletter">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/>
+              <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus>
+          <!-- if the package is marketed, or not, and why not-->
+
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/>
+              <display value="Sweden"/>
+            </coding>
+          </country>
+
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/>
+            <!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+
+        <package>
+          <!--outermost packaging layer start-->
+
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+
+          <quantity value="1"/>
+
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/>
+              <display value="Cardboard"/>
+            </coding>
+          </material>
+
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="3"/>
+              <unit value="Year"/>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073411"/>
+                <display value="Do not store above 30 °C"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073422"/>
+                <display value="Keep the container tightly closed"/>
+              </coding>
+            </specialPrecautionsForStorage>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073427"/>
+                <display value="in order to protect from moisture"/>
+              </coding>
+            </specialPrecautionsForStorage>
+          </shelfLifeStorage>
+
+
+          <package>
+            <!--innermost packaging layer-->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073497"/>
+                <display value="Bottle"/>
+              </coding>
+            </type>
+
+            <quantity value="1"/>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003215"/>
+                <display value="High Density PolyEthylene"/>
+              </coding>
+            </material>
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/Concerta-36mg-PRTablet-SE-AJ-ManufacturedItemDefinition"/>
+                  <!-- refers to Manufactured Item-->
+                </reference>
+              </item>
+
+              <amount>
+                <!-- previously <amountQuantity>-->
+                <value value="30"/>
+                <unit value="Tablet"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002152"/>
+              </amount>
+              <!-- previously </amountQuantity>-->
+
+
+            </containedItem>
+          </package>
+          <!--end of innermost package-->
+
+        </package>
+        <!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/Concerta-36mg-PRTablet-SE-AJ-PackagedProductDefinition"
+      />
+    </request>
+  </entry>
+  <!-- Entry 4: Packaged Product definition-->
+  <!--STARTED-->
+
+
+  <entry>
+    <!--Entry 5: Manufactured item definition-->
+    <!--STARTED-->
+    <!--several entries allowed-->
+    <!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="Concerta-36mg-PRTablet-SE-AJ-ManufacturedItemDefinition"/>
+
+        <status value="active"/>
+
+
+        <manufacturedDoseForm>
+          <!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073683"/>
+            <display value="Prolonged-release tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation>
+          <!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>
+            <display value="Tablet"/>
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="ManufacturedItemDefinition/Concerta-36mg-PRTablet-SE-AJ-ManufacturedItemDefinition"/>
+    </request>
+  </entry>
+  <!-- Entry 5: Manufactured item definition-->
+  <!--STARTED-->
+
+
+
+  <entry>
+    <!-- Entry 6: Ingredient -->
+    <!--Methylphenidate hydrochloride-->
+    <!--STARTED-->
+    <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+        <!--methylphenidate hydrochloride-->
+
+        <id value="Concerta-36mg-PRTablet-SE-AJ-Ingredient"/>
+
+
+        <status value="active"/>
+
+        <for>
+          <!--previously <valueReference> -->
+          <reference
+            value="MedicinalProductDefinition/Concerta-36mg-PRTablet-SE-AJ-MedicinalProductDefinition"/>
+          <!--refers to Medicinal Product Definition-->
+        </for>
+        <!--previously <valueReference> -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="ManufacturedItemDefinition/Concerta-36mg-PRTablet-SE-AJ-ManufacturedItemDefinition"/>
+          <!--refers to Manufactured Item-->
+        </for>
+        <!--new addition -->
+
+        <for>
+          <!--new addition -->
+          <reference
+            value="AdministrableProductDefinitionConcerta-36mg-PRTablet-SE-AJ-AdministrableProductDefinition"/>
+          <!--refers to Administrable product-->
+        </for>
+        <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000090133"/>
+                <display value="Methylphenidate hydrochloride"/>
+              </coding>
+            </concept>
+          </code>
+
+          <strength>
+
+
+            <presentationRatio>
+              <numerator>
+                <value value="36"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="Tablet"/>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002152"/>
+              </denominator>
+            </presentationRatio>
+
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000080907"/>
+                    <display value="Methylphenidate"/>
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="31.13"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/>
+                  <unit value="Tablet"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/Concerta-36mg-PRTablet-SE-AJ-Ingredient"/>
+    </request>
+  </entry>
+  <!--Entry 6: Ingredient-->
+  <!--STARTED-->
+
+
+</Bundle>

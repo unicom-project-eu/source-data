@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Imatinib Krka d.d 100 mg Film-coated tablet. ASP-nr: 2014-1492 -->
+<!-- Isabelle Skog 2022-07-06 -->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+<type value="transaction" />
+
+<!-- ENTRY 1 = MedicinalProductDefinition -->
+<entry>
+<resource>
+  <MedicinalProductDefinition> <!-- Beskriver läkemedelsprodukten -->
+  <id value="IMAkrkadd-100mg-Tablet-SE-IS-MedicinalProductDefinition"/> <!-- Unik kod ENTRY 1. Produktnamn-Styrka-Läkemedelsform-SE-IS-MedicinalProductDefinition -->
+  
+    <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> <!-- Anger läkemedelsformen för det godkända läkemedlet -->
+    <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> <!-- SPOR-lista 200000000004="Pharmaceutical Dose Form" 200000000006="Combined Pharmaceutical Dose Form" 200000000007="Combined term" 200000000008="Combination Package" -->
+        <code value="100000073665" /> <!-- Kod läkemedelsform -->
+	    <display value="Film-coated tablet"/> <!-- Textbeskrivning läkemedelsform -->
+    </valueCoding>
+    </extension>
+	
+	<identifier> <!-- mpId -->
+	    <system value="http://ema.europa.eu/fhir/mpId"/> 
+		<value value="SE-100000627-00052195"/> <!-- SE+siffror ORG-id+000MT-nummer (totalt 8 siffror MT-nummer) -->       
+	</identifier>
+	
+	<identifier> <!-- eurdId -->
+		<system value="http://ema.europa.eu/fhir/eurdId"/>
+		<value value="1725"/> <!-- Kod från EURD-lista för substansen -->
+	</identifier>  
+	
+	<domain> <!-- Anger om läkemedlet är för Human Use eller Veterinary Use -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> <!-- SPOR-lista "Domain" -->
+        <code value="100000000012" />  <!-- Kod. 100000000012 = H. 100000000013 = V. 100000000014 = H&V. -->
+        <display value="Human use"/>  <!-- Textbeskrivning "X Use" -->
+    </coding>
+    </domain>
+	
+	<status> <!-- Anger om filen är akutell eller ej. Alltid Current -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> <!-- SPOR-lista "Record Status" -->
+        <code value="200000005004" /> <!-- Kod. 200000005004 = Current -->
+        <display value="Current"/> <!-- Alltid Current -->         
+    </coding>
+    </status>
+	
+	<!-- Anger läkemedlets indikation på svenska. Hämtas från FASS/SPmC --> <indication value="Imatinib Krka d.d. är indicerat för behandling av:
+- vuxna och barn med nydiagnostiserad Philadelphiakromosom- (bcr-abl)-positiv (Ph+) kronisk 
+myeloisk leukemi (KML), för vilka benmärgstransplantation inte är en förstahandsbehandling.
+- vuxna och barn med (Ph+)-KML i kronisk fas efter terapisvikt med interferon alfa-behandling, 
+eller i accelererad fas eller blastkris.
+- vuxna och barn med nyligen diagnosticerad Philadelphia-kromosom-positiv akut lymfoblastisk 
+leukemi (Ph+ ALL) tillsammans med kemoterapi.
+- vuxna patienter med recidiverande eller refraktär Ph+ ALL som monoterapi.
+- vuxna patienter med myelodysplastiska/myeloproliferativa sjukdomar (MDS/MPD) förenat med 
+rearrangemang av platelet-derived growth factor receptor (PDGFR)-genen.
+- vuxna patienter med avancerat hypereosinofilt syndrom (HES) och/eller kronisk eosinofil 
+leukemi (CEL) med FIP1L1-PDGFRα-rearrangemang.
+Effekten av Imatinib Krka d.d. på utfallet av benmärgstransplantation har inte undersökts.
+2
+Imatinib Krka d.d. är indicerat för:
+- behandling av vuxna patienter med Kit (CD 117)-positiva, icke-resecerbara och/eller 
+metastaserande, maligna gastrointestinala stromacellstumörer (GIST).
+- adjuvant behandling av vuxna patienter som löper en signifikant risk för recidiv efter resektion 
+av Kit (CD117)-positiv GIST. Patienter som löper låg eller mycket låg risk för återfall ska inte 
+få adjuvant behandling.
+- behandling av vuxna patienter med icke-resecerbara dermatofibrosarkoma protuberans (DFSP) 
+och vuxna patienter med återkommande och/eller metastaserande DFSP som är olämpliga att 
+operera.
+Hos vuxna och barn baseras effekten av imatinib på det sammantagna hematologiska och 
+cytogenetiska svaret och progressionsfri överlevnad vid KML, på hematologiskt och cytogenetiskt 
+respons vid Ph+ ALL, MDS/MPD, på hematologisk respons vid HES/CEL och på objektiv 
+tumörrespons hos vuxna patienter vid icke-resecerbara och/eller metastaserande GIST och DFSP och 
+på återfallsfri överlevnad vid adjuvant GIST. Erfarenheten av imatinib hos patienter med MDS/MPD 
+förenat med rearrangemang PDGFR-genen är mycket begränsat (se avsnitt 5.1). Förutom vid nyligen 
+diagnosticerad KML i kronisk fas finns det inga kontrollerade studier som visar på en klinisk nytta 
+eller ökad överlevnad för dessa sjukdomar."/>
+	
+	<legalStatusOfSupply>   <!-- Anger receptkrav för läkemedlet -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072051" /> <!-- SPOR-lista "Legal Status for the Supply" -->
+        <code value="100000072084" />     <!-- Kod. -->
+        <display value="Medicinal product subject to medical prescription"/> <!-- Textbeskrivning -->
+            <!-- Receptstatus koder+textbeskrivning:
+			100000072076 = Medicinal product not subject to medical prescription
+			100000072084 = Medicinal product subject to medical prescription
+			200000002239 = Medicinal product subject to medical prescription exempt for some pack sizes -->            
+    </coding>
+    </legalStatusOfSupply>
+	
+	<classification> <!-- Anger ATC-kod -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000116677" />    <!-- SPOR-lista "Anatomical Therapeutic Chemical classification system - Human" eller "Anatomical Therapeutic Chemical classification system - Veterinary" -->
+        <code value="100000093533" /> <!-- Kod 100000093533 = HUM. 100000116677 = VET. -->
+        <display value="L01EA01"/> <!-- Ange ATC-kod. Hämtas från EIRA -->            
+    </coding>
+    </classification>
+	
+	<!-- TILLFÄLLIGT DOLD UR KODEN. Referens till ENTRY 5 = ManufacturedItemDefinition
+	<comprisedOf>
+		<reference value="ManufacturedItemDefinition/" />
+	</comprisedOf> -->
+	
+	<name> <!-- Produktens namn på svenska. Delas upp i nameparts -->
+	  <productName value="Imatinib Krka d.d 100 mg Filmdragerad tablett" /> <!-- Hela produktnamnet. Namn+styrka+läkemedelsform. Hämtas från EIRA -->
+	
+	  <namePart> <!-- Produktnamn från EIRA -->
+      <part value="Imatinib Krka d.d" /> <!-- Produktnamn -->
+        <type>
+        <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+            <code value="220000000002" /> <!-- Kod. 220000000002 = Invented name part. 220000000003 = Scientific name part -->
+			<display value="Invented name part"/> <!-- Tetbeskrivning "Invented name part" eller "Scientifici name part" -->
+        </coding>
+        </type>
+      </namePart>
+	  
+	  <namePart> <!-- Styrka. Alla läkemedel har ej styrka -->
+      <part value="100 mg" /> <!-- Angiven styrka. Hämtas från EIRA -->
+        <type>
+        <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+            <code value="220000000004" /> <!-- Kod. Alltid 220000000004 = Strengt part -->
+		    <display value="Strength part"/>  <!-- Alltid Strength part -->            
+        </coding>
+       </type>
+       </namePart>
+	   
+	   <namePart> <!-- Läkemedelsform -->
+       <part value="Filmdragerad tablett" /> <!-- Anger läkemedelsform. Hämtas från EIRA -->
+        <type>
+         <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+            <code value="220000000005" /> <!-- Kod. 220000000005 = Pharmaceutical dose form part -->
+			<display value="Pharmaceutical dose form part"/> <!-- Alltid Pharmaceutical dose form part -->           
+        </coding>
+        </type>
+       </namePart> 
+	   
+	   <countryLanguage> <!-- Anger land och språk -->
+        <country> <!-- Anger land -->
+         <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+            <code value="100000000535" /> <!-- 100000000535 = Kingdom of Sweden -->
+			<display value="Sweden"/> <!-- Alltid Sweden -->               
+         </coding>
+        </country>
+        <language> <!-- Anger språk -->
+         <coding>  <!-- Alltid Svenska -->
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- SPOR-lista "Language" -->
+            <code value="100000072288" /> <!--  100000072288 = Swedish -->
+			<display value="Swedish"/> <!-- Alltid Swedish -->              
+         </coding>
+        </language>
+       </countryLanguage>
+	</name>	
+	
+  </MedicinalProductDefinition>
+</resource>
+    <request>
+      <method value="PUT" />
+      <url value="MedicinalProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-MedicinalProductDefinition" /> <!-- MedicinalProductDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-MedicinalProductDefinition -->
+    </request>
+</entry>
+<!-- END ENTRY 1 -->
+
+
+
+<!-- ENTRY 2 = RegulatedAuthorization -->
+<entry>
+<resource>
+  <RegulatedAuthorization> <!-- Beskriver godkännandet -->
+  <id value="IMAkrkadd-100mg-Tablet-SE-IS-RegulatedAuthorization"/> <!-- Unik kod ENTRY 2. Produktnamn-Styrka-Läkemedelsform-SE-IS-RegulatedAuthorization -->
+  
+    <identifier> <!-- Anger MT-nummer -->
+        <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+		<value value="52195" /> <!-- MT-nummer för produkt. Hämtas ur EIRA -->
+	</identifier>
+	  <subject>
+          <reference value="MedicinalProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+      </subject>
+	  
+	  <type> <!-- Anger att detta är ett läkemedel som fått ett godkännande. -->
+	<coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/220000000060" /> <!-- SPOR-lista "Regulatory Entitlement Type" -->
+        <code value="220000000061" /> <!-- Kod. Alltid 220000000061 = Marketing Authorisation -->
+		<display value="Marketing Authorisation"/> <!-- Alltid Marketing Authorisation -->
+    </coding>
+    </type>
+	
+	<region> <!-- Anger vilken region godkännandet gäller i -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+        <code value="100000000535" /> <!-- 100000000535 = Kingdom of Sweden -->
+		<display value="Sweden"/> <!-- Alltid Sweden -->
+    </coding>
+    </region>
+	
+	<status> <!-- Anger godkännandestatus -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> <!-- SPOR-lista "Regulatory Entitlement Status" -->
+        <code value="100000072099" /> <!-- Alltid 100000072099 = Valid -->
+		<display value="Valid"/> <!-- Alltid Valid -->
+    </coding>
+    </status>
+	     <statusDate value="2016-06-22" /> <!-- Godkännandedatum (första) för produkten -->
+		 
+	<holder> <!-- Anger MAH -->
+        <identifier>
+			<system value="https://spor.ema.europa.eu/v1/locations"/>
+			<value value="LOC-100009540"/> <!-- LOC-ID för företag. Hämtas från EMA: https://spor.ema.europa.eu/omswi/#/searchOrganisations -->
+		</identifier>
+        <display value="KRKA, tovarna zdravil d.d. Novo mesto" />   <!-- Namn på företaget som är MAH -->
+    </holder>
+	
+	<case> <!-- Anger (första) godkännandedatum -->
+	<type>
+	  <coding>
+		<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+		<code value="dateOfFirstAuthorisation"/>
+		<display value="First Authorisation"/>
+	  </coding>
+	</type>	
+	    <dateDateTime value="2016-06-22"/> <!-- Datum (första) godkännande -->
+	</case>
+		 
+  </RegulatedAuthorization>
+  </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/IMAkrkadd-100mg-Tablet-SE-IS-RegulatedAuthorization" /> <!-- RegulatedAuthorization/Produktnamn-Styrka-Läkemedelsform-SE-IS-RegulatedAuthorization -->
+    </request>
+</entry>
+<!-- END ENTRY 2 -->
+
+
+
+<!-- ENTRY 3 = AdministrableProductDefinition -->
+<entry>
+<resource>
+  <AdministrableProductDefinition> <!-- Beskriver läkemedlet i bruksfärdig (administrerad)form --> 
+  <id value="IMAkrkadd-100mg-Tablet-SE-IS-AdministrableProductDefinition"/> <!-- Unik kod ENTRY 3. Produktnamn-Styrka-Läkemedelsform-SE-IS-AdministrableProductDefinition -->
+       <status value="active"/>
+	   <formOf>
+          <reference value="MedicinalProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+       </formOf>
+	 
+	<administrableDoseForm> <!-- Anger läkemedelsform för bruksfärdigt läkemedel -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> <!-- SPOR-lista "Pharmaceutical Dose Form" -->
+        <code value="100000073665" /> <!-- Kod -->
+		<display value="Film-coated tablet"/> <!-- Textbeskrivning bruksfärdig läkemedelsform -->        
+    </coding>
+    </administrableDoseForm>
+	
+	<producedFrom>
+		<reference value="ManufacturedItemDefinition/IMAkrkadd-100mg-Tablet-SE-IS-ManufacturedItemDefinition" /> <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+	</producedFrom>
+	
+	<routeOfAdministration> <!-- Administreringsväg(ar). Hämtas från EIRA. -->
+	<!-- Kan vara flera. Varje administreringsväg ligger inom <coding></coding> -->
+    <code> 
+     <coding> <!-- Administreringsväg 1 -->
+        <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> <!-- SPOR-lista "Routes and Methods of Administration" -->
+        <code value="100000073619" /> <!-- Kod -->
+		<display value="Oral use"/> <!-- Textbeskrivning -->   
+     </coding>
+    </code>
+    </routeOfAdministration>
+	
+  </AdministrableProductDefinition>
+</resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-AdministrableProductDefinition" /> <!-- AdministrableProductDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-AdministrableProductDefinition -->
+    </request>
+</entry>
+
+
+
+<!-- ENTRY 4 = PackagedProductDefinition -->
+     <!-- Ange en entry per förpackning som produkten har. Allt inom <entry> till </entry> = en förpackning -->
+	 <!-- Om flera förpackningar ange löpnummer i id: Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition0X -->
+<entry> <!-- ENTRY 4.1 (FÖRPACKNING 1) = Blister, 120 tabletter -->
+<resource>
+  <PackagedProductDefinition> <!-- Beskriver vi allt om en förpackning -->
+  <id value="IMAkrkadd-100mg-Tablet-SE-IS-PackagedProductDefinition01"/> <!-- Unik kod ENTRY 4.1. Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition01 -->
+  
+    <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity"> <!-- Anger containedItem -->
+    <valueQuantity>
+        <value value="10" /> <!-- Antal containedItem -->
+		<unit value="Tablet"/> <!-- Textbeskrivning containedItem -->  
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista "Units of Presentation" -->
+        <code value="200000002152" /> <!-- Kod containedItem -->      
+    </valueQuantity>
+    </extension>
+	    <packageFor>
+          <reference value="MedicinalProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+        </packageFor>
+		
+	<description value="Blister, 120 tabletter"> <!-- Förpackningsbeskrivning. Hämtas från EIRA -->
+    <extension url="http://ema.europa.eu/fhir/extension/language">
+    <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- SPOR-lista "Languages" -->
+        <code value="100000072288" /> <!-- Kod. Alltid 100000072288 = Swedish -->
+		<display value="Swedish"/> <!-- Textbeskrivning språk. Alltid Swedish -->          
+    </valueCoding>
+    </extension>
+    </description>
+	
+	<marketingStatus> <!-- Beskriver försäljningstillstånd i avsett land (Sverige) -->
+      <country> <!-- Anger land där man har försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+          <code value="100000000535" /> <!-- Kod. 100000000535 = Kingdom of Sweden -->
+		  <display value="Sweden"/> <!-- Alltid Sweden -->             
+      </coding>
+      </country>
+      <status> <!-- Anger status för försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- SPOR-lista "Marketing Status" -->
+          <code value="100000072083" /> <!-- Kod. 100000072083 = Marketed -->
+	      <display value="Marketed"/> <!-- Alltid Marketed -->         
+       </coding>
+       </status>
+          <dateRange>
+            <start /> <!-- Vi har inte information om när marknadsföring började och slutade. Låt stå som "unknown". -->
+          </dateRange>
+    </marketingStatus>
+	
+<!-- Förpackningsnivå 1 -->
+	  <package> <!-- Förpackningsnivå 1 (ytterförpackning) -->
+	    <type> <!-- Anger förpackningstyp -->
+	    <coding>
+		   <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		   <code value="100000073498"/> <!-- Kod förpackningstyp -->
+		   <display value="Box"/> <!-- Textbeskrivning förpackningstyp -->
+	    </coding>
+	    </type>
+	       <quantity value="1"/> <!-- Antal förpackningsnivå 1 (ytterförpackning) -->
+	  
+	    <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	    <coding>
+	       <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		   <code value="200000003529"/> <!-- Kod material -->
+		   <display value="Cardboard"/> <!-- Textbeskrivning material -->
+	    </coding>
+	    </material> 
+		
+		<shelfLifeStorage> <!-- Anger förvaringsangivelser för produkten. Kan definieras flera gånger genom flera <shelfLifeStorage></shelfLifeStorage> -->
+		 <type> <!-- Anger typ av förvaringsangivelser (obruten förpackning, bruten förpackning ...) -->
+         <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/> <!-- SPOR-lista "Shelf life type" -->
+            <code value="100000073403"/> <!-- Kod -->
+            <display value="Shelf life of the medicinal product as packaged for sale"/> <!-- Textbeskrivning -->
+         </coding>
+         </type>
+		 <periodDuration> <!-- Hållbaretstid -->
+            <value value="3"/> <!-- Värde hållbarhetstid -->
+            <unit value="years"/> <!-- Tidsangivelse hållbarhetstid -->
+         </periodDuration>
+		</shelfLifeStorage>
+
+<!-- Förpackningsnivå 2 -->	  
+	          <package> <!-- Förpackningsnivå 2 -->
+		        <type> <!-- Anger förpackningstyp -->
+	            <coding>
+		           <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		           <code value="100000073496"/> <!-- Kod förpackningstyp -->
+		           <display value="Blister"/> <!-- Textbeskrivning förpackningstyp -->
+	            </coding>
+	            </type>
+	               <quantity value="12"/> <!-- Antal förpackningsnivå 2 -->
+	  
+	            <material> <!-- Förpackningsmaterial 1. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003222"/> <!-- Kod material -->
+		           <display value="PolyVinyl Chloride"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+				<material> <!-- Förpackningsmaterial 2. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003214"/> <!-- Kod material -->
+		           <display value="PolyEthylene"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+				<material> <!-- Förpackningsmaterial 3. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003225"/> <!-- Kod material -->
+		           <display value="PolyVinylidene Chloride"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+				<material> <!-- Förpackningsmaterial 4. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003200"/> <!-- Kod material -->
+		           <display value="Aluminium"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+					 
+<!-- containedItem = innersta enhet/förpackad enhet -->
+		                      <containedItem> <!-- containedItem = innersta enhet -->
+			                    <item> 
+					               <reference>
+				                      <reference value="ManufacturedItemDefinition/IMAkrkadd-100mg-Tablet-SE-IS-ManufacturedItemDefinition" /> <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+			                       </reference> 
+					            </item>
+			                    <amount> <!-- Beskriver containedItem. Amount+unit of presentation -->
+				                   <value value="10" /> <!-- Antal containedItem -->
+						           <unit value="Tablet"/> <!-- Textbeskrivning containedItem -->
+				                   <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista 200000000014 = "Units of presentation" eller 100000110633 = "Units of measurement" -->
+				                   <code value="200000002152"/> <!-- Kod containedItem -->     
+			                    </amount>
+			                  </containedItem>
+				  
+		      </package> <!-- Slut förpackningsnivå 2 -->
+	  </package> <!-- Slut förpackningsnivå 1 -->
+  </PackagedProductDefinition>
+</resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-PackagedProductDefinition01" /> <!-- PackagedProductDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition01 -->
+    </request>
+</entry> <!-- END ENRY 4.1 -->
+
+<entry> <!-- ENTRY 4.2 (FÖRPACKNING 1) = Blister, 60 tabletter -->
+<resource>
+  <PackagedProductDefinition> <!-- Beskriver vi allt om en förpackning -->
+  <id value="IMAkrkadd-100mg-Tablet-SE-IS-PackagedProductDefinition02"/> <!-- Unik kod ENTRY 4.1. Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition01 -->
+  
+    <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity"> <!-- Anger containedItem -->
+    <valueQuantity>
+        <value value="10" /> <!-- Antal containedItem -->
+		<unit value="Tablet"/> <!-- Textbeskrivning containedItem -->  
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista "Units of Presentation" -->
+        <code value="200000002152" /> <!-- Kod containedItem -->      
+    </valueQuantity>
+    </extension>
+	    <packageFor>
+          <reference value="MedicinalProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+        </packageFor>
+		
+	<description value="Blister, 60 tabletter"> <!-- Förpackningsbeskrivning. Hämtas från EIRA -->
+    <extension url="http://ema.europa.eu/fhir/extension/language">
+    <valueCoding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- SPOR-lista "Languages" -->
+        <code value="100000072288" /> <!-- Kod. Alltid 100000072288 = Swedish -->
+		<display value="Swedish"/> <!-- Textbeskrivning språk. Alltid Swedish -->          
+    </valueCoding>
+    </extension>
+    </description>
+	
+	<marketingStatus> <!-- Beskriver försäljningstillstånd i avsett land (Sverige) -->
+      <country> <!-- Anger land där man har försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- SPOR-lista "Country" -->
+          <code value="100000000535" /> <!-- Kod. 100000000535 = Kingdom of Sweden -->
+		  <display value="Sweden"/> <!-- Alltid Sweden -->             
+      </coding>
+      </country>
+      <status> <!-- Anger status för försäljningstillstånd -->
+      <coding>
+          <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- SPOR-lista "Marketing Status" -->
+          <code value="100000072083" /> <!-- Kod. 100000072083 = Marketed -->
+	      <display value="Marketed"/> <!-- Alltid Marketed -->         
+       </coding>
+       </status>
+          <dateRange>
+            <start /> <!-- Vi har inte information om när marknadsföring började och slutade. Låt stå som "unknown". -->
+          </dateRange>
+    </marketingStatus>
+	
+<!-- Förpackningsnivå 1 -->
+	  <package> <!-- Förpackningsnivå 1 (ytterförpackning) -->
+	    <type> <!-- Anger förpackningstyp -->
+	    <coding>
+		   <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		   <code value="100000073498"/> <!-- Kod förpackningstyp -->
+		   <display value="Box"/> <!-- Textbeskrivning förpackningstyp -->
+	    </coding>
+	    </type>
+	       <quantity value="1"/> <!-- Antal förpackningsnivå 1 (ytterförpackning) -->
+	  
+	    <material> <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+	    <coding>
+	       <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		   <code value="200000003529"/> <!-- Kod material -->
+		   <display value="Cardboard"/> <!-- Textbeskrivning material -->
+	    </coding>
+	    </material> 
+		
+		<shelfLifeStorage> <!-- Anger förvaringsangivelser för produkten. Kan definieras flera gånger genom flera <shelfLifeStorage></shelfLifeStorage> -->
+		 <type> <!-- Anger typ av förvaringsangivelser (obruten förpackning, bruten förpackning ...) -->
+         <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/> <!-- SPOR-lista "Shelf life type" -->
+            <code value="100000073403"/> <!-- Kod -->
+            <display value="Shelf life of the medicinal product as packaged for sale"/> <!-- Textbeskrivning -->
+         </coding>
+         </type>
+		 <periodDuration> <!-- Hållbaretstid -->
+            <value value="3"/> <!-- Värde hållbarhetstid -->
+            <unit value="years"/> <!-- Tidsangivelse hållbarhetstid -->
+         </periodDuration>
+		</shelfLifeStorage>
+
+<!-- Förpackningsnivå 2 -->	  
+	          <package> <!-- Förpackningsnivå 2 -->
+		        <type> <!-- Anger förpackningstyp -->
+	            <coding>
+		           <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- SPOR-lista "Packaging" -->
+		           <code value="100000073496"/> <!-- Kod förpackningstyp -->
+		           <display value="Blister"/> <!-- Textbeskrivning förpackningstyp -->
+	            </coding>
+	            </type>
+	               <quantity value="6"/> <!-- Antal förpackningsnivå 2 -->
+	  
+	            <material> <!-- Förpackningsmaterial 1. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003222"/> <!-- Kod material -->
+		           <display value="PolyVinyl Chloride"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+				<material> <!-- Förpackningsmaterial 2. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003214"/> <!-- Kod material -->
+		           <display value="PolyEthylene"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+				<material> <!-- Förpackningsmaterial 3. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003225"/> <!-- Kod material -->
+		           <display value="PolyVinylidene Chloride"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+				<material> <!-- Förpackningsmaterial 4. Kan definieras flera gånger genom flera <material></material> -->
+	            <coding>
+	               <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- SPOR-lista "Material" -->
+		           <code value="200000003200"/> <!-- Kod material -->
+		           <display value="Aluminium"/> <!-- Textbeskrivning material -->
+	            </coding>
+	            </material>
+					 
+<!-- containedItem = innersta enhet/förpackad enhet -->
+		                      <containedItem> <!-- containedItem = innersta enhet -->
+			                    <item> 
+					               <reference>
+				                      <reference value="ManufacturedItemDefinition/IMAkrkadd-100mg-Tablet-SE-IS-ManufacturedItemDefinition" /> <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+			                       </reference> 
+					            </item>
+			                    <amount> <!-- Beskriver containedItem. Amount+unit of presentation -->
+				                   <value value="10" /> <!-- Antal containedItem -->
+						           <unit value="Tablet"/> <!-- Textbeskrivning containedItem -->
+				                   <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /> <!-- SPOR-lista 200000000014 = "Units of presentation" eller 100000110633 = "Units of measurement" -->
+				                   <code value="200000002152"/> <!-- Kod containedItem -->     
+			                    </amount>
+			                  </containedItem>
+				  
+		      </package> <!-- Slut förpackningsnivå 2 -->
+	  </package> <!-- Slut förpackningsnivå 1 -->
+  </PackagedProductDefinition>
+</resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-PackagedProductDefinition02" /> <!-- PackagedProductDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition01 -->
+    </request>
+</entry> <!-- END ENRY 4.2 -->
+<!-- END ENTRY 4 -->
+
+
+
+<!-- ENTRY 5 = ManufacturedItemDefinition -->
+<entry>
+<resource>
+  <ManufacturedItemDefinition>
+  <id value="IMAkrkadd-100mg-Tablet-SE-IS-ManufacturedItemDefinition"/> <!-- Unik kod ENTRY 5. Produktnamn-Styrka-Läkemedelsform-SE-IS-ManufacturedItemDefinition -->
+  <status value="active"/>
+  
+    <manufacturedDoseForm> <!-- Marknadsförd läkemedelsform = läkemedelsform "på hyllan" -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> <!-- SPOR-lista = "Pharmaceutical Dose Form" -->
+        <code value="100000073665" /> <!-- Kod läkemedelsform -->
+		<display value="Film-coated tablet"/> <!-- Textbeskrivning läkemedelsform -->         
+    </coding>
+    </manufacturedDoseForm>
+	
+	<unitOfPresentation> <!-- Beskriver innersta enhet -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/> <!-- SPOR-lista = "Units of Presentation" -->
+        <code value="200000002152" /> <!-- Kod enhet -->
+		<display value="Tablet"/> <!-- Textbeskrivning enhet -->
+    </coding>
+    </unitOfPresentation>
+	
+  </ManufacturedItemDefinition>
+</resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/IMAkrkadd-100mg-Tablet-SE-IS-ManufacturedItemDefinition" /> <!-- ManufacturedItemDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-ManufacturedItemDefinition -->
+    </request>
+</entry>
+
+
+
+<!-- ENTRY 6 = Ingredient -->
+<entry> 
+<resource>
+  <Ingredient>
+  <id value="IMAkrkadd-100mg-Tablet-SE-IS-Ingredient"/> <!-- Unik kod ENTRY 6. Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+  <status value="active"/>
+ 
+<!-- <for> anger referenser --> 
+    <for>
+      <reference value="MedicinalProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-MedicinalProductDefinition" /> <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+    </for>
+	<for>
+	  <reference value="ManufacturedItemDefinition/IMAkrkadd-100mg-Tablet-SE-IS-ManufacturedItemDefinition" /> <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+    </for>
+    <for>
+      <reference value="AdministrableProductDefinition/IMAkrkadd-100mg-Tablet-SE-IS-AdministrableProductDefinition" /> <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+	</for>
+<!-- Slut <for>-referenser -->
+
+	<role> <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+    <coding>
+        <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> <!-- SPOR-lista "Ingredient Role" -->
+        <code value="100000072072" /> <!-- Kod. 100000072072 = Active -->
+		<display value="Active"/> <!-- Textbeskrivning. API = Active -->            
+    </coding>
+    </role>
+	
+	<substance> <!-- Beskriver aktiv substans (API). Hämtas från EIRA -->
+       <!-- API kan avse grundsubstans, salt (...) -->
+	<code>
+	<concept>
+    <coding>
+        <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+        <code value="100000091825" /> <!-- EUTCT-ID från EUTCT-lista -->   
+		<display value="Imatinib mesilate"/> <!-- Textbeskrivning från EUTCT-lista -->             
+    </coding>
+     </concept>
+	 </code>
+	 
+	  <strength> <!-- Anger styrka för API och referenssubstans -->
+	    <presentationRatio> <!-- Anger styrka för API "Aktiv beståndsdel" -->
+<!-- concentrationRatio = flytande fas. presentationRatio = fast fas -->
+		   <numerator> <!-- Anger X i "X per Y" -->
+		      <value value="119.5" /> <!-- Aktiv beståndsdel mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+                  <comparator> <!-- Anger API som "equal to", "quantity sufficient" (...) till Aktiv motsvarande -->
+			      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+			      <valueCoding>
+			          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- SPOR-lista "Quantity Operator" -->
+				      <code value="100000000049"/> <!-- Kod. 100000000049 = equal to -->
+				      <display value="equal to"/> <!-- Textbeskrivning -->
+			      </valueCoding>
+			      </extension>
+			      </comparator>
+			  <unit value="milligram(s)"/> <!-- Textbeskrivning enhet -->
+			  <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> <!-- SPOR-lista "Units of Measurement" -->
+              <code value="100000110655" /> <!-- Kod enhet -->
+		   </numerator>
+		   <denominator> <!-- Anger Y i "X per Y" -->
+		   <value value="1" /> <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+               <unit value="unit(s)"/> <!-- Textbeskrivning enhet --> 
+			   <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> <!-- SPOR-lista "Units of Measurement" -->
+               <code value="100000110756" /> <!-- Kod enhet -->          
+		   </denominator>
+		</presentationRatio>
+		
+		<referenceStrength> <!-- Anger styrka för referenssubstans "Aktiv motsvarande" --> 
+		   <!-- Kan finnas flera referenceStrength. Gör en <referenceStrength></referenceStrength> för varje -->
+           <!-- Obligatorisk. Om ej finns duplicera API -->
+		  <substance> <!-- Anger referenssubstans -->
+	      <concept>
+	      <coding>
+		     <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+		     <code value="100000091894"/> <!-- EUTCT-ID. Hämtas från: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+		     <display value="Imatinib"/> <!-- Textbeskrivning från EUTCT-lista -->
+	      </coding>
+	      </concept>
+	      </substance>
+		  
+		  <strengthRatio>
+		  <numerator> <!-- Anger X i "X per Y" -->
+		      <value value="100" /> <!-- Aktiv beståndsdel mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+                  <comparator> <!-- Anger API som "equal to", "quantity sufficient" (...) till Aktiv motsvarande -->
+			      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+			      <valueCoding>
+			          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- SPOR-lista "Quantity Operator" -->
+				      <code value="100000000049"/> <!-- Kod. 100000000049 = equal to -->
+				      <display value="equal to"/> <!-- Textbeskrivning -->
+			      </valueCoding>
+			      </extension>
+			      </comparator>
+			  <unit value="milligram(s)"/> <!-- Textbeskrivning enhet -->
+			  <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> <!-- SPOR-lista "Units of Measurement" -->
+              <code value="100000110655" /> <!-- Kod enhet -->
+		   </numerator>
+		   <denominator> <!-- Anger Y i "X per Y" -->
+		       <value value="1" /> <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+               <unit value="unit(s)"/> <!-- Textbeskrivning enhet --> 
+			   <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> <!-- SPOR-lista "Units of Measurement" -->
+               <code value="100000110756" /> <!-- Kod enhet -->          
+		   </denominator>
+		  </strengthRatio>
+		  
+		</referenceStrength>
+		
+	  </strength>
+	 </substance>
+	
+	</Ingredient>
+</resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/IMAkrkadd-100mg-Tablet-SE-IS-Ingredient" /> <!-- Ingredient/Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+    </request>
+</entry>
+<!-- END ENTRY 6 -->
+
+</Bundle>

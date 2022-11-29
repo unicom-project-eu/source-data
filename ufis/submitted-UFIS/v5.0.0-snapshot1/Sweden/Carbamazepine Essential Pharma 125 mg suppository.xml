@@ -1,0 +1,632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Carbamazepine Essential Pharma 125 mg suppository-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-04, last change 2022-07-04-->
+<!-- follows the 5.0 standard-->
+<!--First suppository, but it shouldn't bring any problems-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               CBZEssPharm-125mg-Supp-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     CBZEssPharm-125mg-Supp-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           CBZEssPharm-125mg-Supp-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                CBZEssPharm-125mg-Supp-SE-AJ-PackagedProductDefinition
+Entry 5, ManufacturedItemDefinition:               CBZEssPharm-125mg-Supp-SE-AJ-ManufacturedItemDefinition
+Entry 6, Ingredient:                               CBZEssPharm-125mg-Supp-SE-AJ-Ingredient                       -->
+
+<!-- tip: do a replace all for product, strength, doseform and just do a double check-->
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction" /><!--Fixed Value-->
+  
+  
+    <entry><!-- Entry 1: Medicinal product definition--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+	  
+		<id value="CBZEssPharm-125mg-Supp-SE-AJ-MedicinalProductDefinition" />
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+		<!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+			<code value="100000073843" /> 
+			<display value="Suppository" />
+		  </valueCoding>
+		</extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100013348-00011829"/>              
+																<!-- Format: SE-xxxxxxxxx-yyyyyyyy. --><!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+		</identifier>
+
+		<identifier> 
+		<!-- EURD-ID,-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="539"/>  
+			<!--Carbamazepine-->
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> 
+			<code value="100000000012" />
+			<display value="Human use" />
+		  </coding>
+		</domain>
+		
+		<status> 
+		<!-- status of the document, always current-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> 
+			<code value="200000005004" />
+			<display value="Current" />
+		  </coding>
+		</status>
+		
+		<indication value="Epilepsier. Generaliserade toniska-kloniska anfall (grand mal). Partiella anfall. Karbamazepin 
+är ej verksamt vid absenser (petit mal).
+ " />
+ <!-- Indication taken from SmPC--><!-- impossible to define language here-->
+
+		
+		<legalStatusOfSupply>
+		<!-- subject to medcial prescription or not, type of prescription-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084" />
+			<display value="Medicinal product subject to medical prescription" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		<!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" /> 
+			<code value="100000097377" />
+			<display value="N03AF01" />
+			<!--Carbamazepine-->
+		  </coding>
+		</classification>
+		
+<!--commented out for now-->
+		<!--<comprisedOf>--> 
+			<!--<reference value="ManufacturedItemDefinition/CBZEssPharm-125mg-Supp-SE-AJ-ManufacturedItemDefinition" /> -->  <!-- refers to manufactured item(s) -->
+		<!--</comprisedOf>-->
+<!--commented out for now-->
+		
+		<name> 
+		<!-- name of the product-->
+		
+		  <productName value="Carbamazepine Essential Pharma 125 mg Suppositorium" />
+		  
+		  <namePart>
+		    <part value="Name" />
+			<!-- Scientific name part-->
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+				<code value="220000000003" /> 
+				<display value="Scientific Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+          <namePart>
+            <part value="125 mg" /> 
+			<!-- strengt part of the name, in swedish--> <!-- not obligatory, as some products lack a well defined strength, i.e. vaccines-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000004" />
+				<display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Suppositorium" />
+			<!-- pharmaceutical dose form in swedish, as stated in the name-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage> 
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> 
+                <code value="100000000535" />
+				<display value="Sweden"/>
+              </coding>
+            </country>
+            <language> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> 
+                <code value="100000072288" /> 
+				<display value="Swedish"/> 
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> 
+      <url value="MedicinalProductDefinition/CBZEssPharm-125mg-Supp-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- Entry 1: Medicinal product definition--><!--STARTED-->
+  
+  
+  
+    <entry>  <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+	<!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> --> 
+    <resource>
+
+      <RegulatedAuthorization> 
+	  
+	  <id value="CBZEssPharm-125mg-Supp-SE-AJ-RegulatedAuthorization"/>
+	  
+        <identifier> 
+		<!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="11829" />
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/CBZEssPharm-125mg-Supp-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> 
+		<!-- type of regulatory entitlement, always Markteing authorisation.-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+            <code value="220000000061" /> 
+			<display value="Marketing Authorisation"/> 
+          </coding>
+        </type>
+
+        <region> 
+		<!-- region where document is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/> 
+          </coding>
+        </region>
+
+        <status> 
+		<!-- wether or not the ducoment is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> 
+            <code value="100000072099" /> 
+			<display value="Valid"/> 
+          </coding>
+        </status>
+
+        <statusDate value="1993-05-07" /> 
+		<!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+        <holder> 
+		<!-- MAH, marketing authorisation holder-->
+		  
+			<identifier> 
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100038931"/>
+			</identifier>
+
+		
+          <display value="Essential Pharma (M) Ltd" /> 
+		  <!-- name of MAH--> <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="1993-05-07"/>
+					
+		</case>
+		
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/CBZEssPharm-125mg-Supp-SE-AJ-RegulatedAuthorization" />
+    </request>
+  </entry> <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  
+  
+  
+  
+  <entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />--> 
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="CBZEssPharm-125mg-Supp-SE-AJ-AdministrableProductDefinition"/>
+		
+		<status value="active"/>
+		
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/CBZEssPharm-125mg-Supp-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+
+        <administrableDoseForm>
+		<!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> 
+            <code value="100000073843" /> 
+			<display value="Suppository"/>
+          </coding>
+        </administrableDoseForm>
+		
+		<producedFrom>
+			<reference value="ManufacturedItemDefinition/CBZEssPharm-125mg-Supp-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+		
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073628" /> 
+			 <display value="Rectal use"/> 
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/CBZEssPharm-125mg-Supp-SE-AJ-AdministrableProductDefinition" /> 
+    </request>
+  </entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  
+  
+  
+    <entry>  <!-- Entry 4: Packaged Product definition--><!--STARTED-->
+	<!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition> 
+	  <!--Sritp, 5-->
+		<id value="CBZEssPharm-125mg-Supp-SE-AJ-PackagedProductDefinition"/> 
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="5" />
+			<!--this quantity seems a bit arbitary, we can make something up as long as it has a bit of logic in it and makes it fairly easy for the general person to understand how much the entire package contains-->
+			<unit value="Suppository"/> 			
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002149" />
+          </valueQuantity>
+        </extension>
+		
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/CBZEssPharm-125mg-Supp-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		
+        <description value="Strip, 5 suppositorier"> 
+		
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" /> 
+			  <display value="Swedish"/> 
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus>
+		<!-- if the package is marketed, or not, and why not-->
+		
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/> 
+            </coding>
+          </country>
+		  
+          <status> 
+		  <!-- the actual status of the package-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/> 
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start-->
+		
+		  <type> 
+		  <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> 
+			  <code value="100000073498"/>
+			  <display value="Box"/> 
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material>
+		  <!-- material of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="5"/>
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" /> 
+                  </periodDuration>
+<!-- test, no special precautions added, just a period duration-->
+            </shelfLifeStorage>
+
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073559"/>
+				        <display value="Strip"/>
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/>
+			  
+				    <material>
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003219"/>
+					    <display value="PolyPropylene"/>
+				      </coding>
+				    </material>
+					
+				    <material>
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003200"/>
+					    <display value="Aluminium"/>
+				      </coding>
+				    </material>
+					
+				    <material>
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003214"/>
+					    <display value="PolyEthylene"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					  <!-- Always inside the innermost layer of packaging, whatever that layer is-->
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/CBZEssPharm-125mg-Supp-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="5" />
+						  <unit value="Suppository"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+					      <code value="200000002149" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+					
+				      </containedItem>
+			      </package>
+				  <!--end of innermost package-->
+
+        </package>
+		<!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/CBZEssPharm-125mg-Supp-SE-AJ-PackagedProductDefinition" />
+    </request>
+  </entry> <!-- Entry 4: Packaged Product definitionXX--><!--STARTED-->
+  
+  
+  
+    <entry> <!--Entry 5: Manufactured item definition--><!--STARTED-->
+	<!--several entries allowed--> 
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />--> 
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="CBZEssPharm-125mg-Supp-SE-AJ-ManufacturedItemDefinition"/>
+
+		<status value="active" />
+		
+        <manufacturedDoseForm> 
+		<!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073843" />
+			<display value="Suppository"/>
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation>
+		<!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002149" />
+			<display value="Suppository"/>
+          </coding>
+        </unitOfPresentation>
+
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/CBZEssPharm-125mg-Supp-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- Entry 5: Manufactured item definition--><!-- STARTED-->
+  
+  
+  
+    <entry><!-- Entry 6: Ingredient --><!--STARTED--> 
+	<!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!-- Carbamazepine-->
+	  
+	  <id value="CBZEssPharm-125mg-Supp-SE-AJ-Ingredient"/>
+	  
+		<status value="active" />
+		
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/CBZEssPharm-125mg-Supp-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/CBZEssPharm-125mg-Supp-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionCBZEssPharm-125mg-Supp-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+        <role>
+		<!--the role of the substance, always active as for now-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> 
+            <code value="100000072072" /> 
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+		<!--name the substance in the drug-->
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000092127" /> 
+				<display value="Carbamazepine"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength> <!--strength of the substance-->
+
+			
+            <presentationRatio>
+			<!--how much substance there is-->
+              <numerator>
+                <value value="125"/> 
+                  <comparator> 
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                        <valueCoding>
+                          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                          <code value="100000000049"/> 
+                          <display value="equal to"/> 
+                        </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/> 
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/> 
+                  <code value="100000110655" /> 
+              </numerator>
+              <denominator>
+                  <value value="1"/> 
+                  <unit value="Suppository"/> 
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/> 
+                  <code value="200000002149" /> 
+              </denominator>
+            </presentationRatio>			
+            
+     		<referenceStrength>
+				<substance>
+				<!-- "pure", original, mother substance-->
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000092127"/> 
+							<display value="Carbamazepine"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="125"/>
+						<comparator>
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" /> 
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="Suppository"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="200000002149" />
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/CBZEssPharm-125mg-Supp-SE-AJ-Ingredient" />
+    </request>
+  </entry><!--Entry 6: Ingredient--><!-- STARTED-->
+
+
+</Bundle>

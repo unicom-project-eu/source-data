@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Xyloproct Rectal ointment-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-08-01, last change 2022-08-01-->
+<!-- follows the 5.0 standard-->
+<!--combination, shouldn't be a problem-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Xyloproct-RectalOintment-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Xyloproct-RectalOintment-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                Xyloproct-RectalOintment-SE-AJ-PackagedProductDefinition
+Entry 5, ManufacturedItemDefinition:               Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition
+Entry 6, Ingredient:                               Xyloproct-RectalOintment-SE-AJ-Ingredient01
+Entry 7, Ingredient:                               Xyloproct-RectalOintment-SE-AJ-Ingredient02                       -->
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction" /><!--Fixed Value-->
+  
+  <entry><!-- Entry 1: Medicinal product definition--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+	  
+		<id value="Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition" />
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> 
+		<!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+			<code value="100000073828" /> 
+			<display value="Rectal ointment" /> 
+		  </valueCoding>
+		</extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100001718-00008340"/>
+					<!-- Format: SE-xxxxxxxxx-yyyyyyyy. --><!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+		</identifier>
+		
+		
+		<identifier>  <!-- EURD-ID-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="1679"/> 
+			<!--lidocaine / hydrocortisone-->
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use" />
+		  </coding>
+		</domain>
+		
+		<status> 
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> 
+			<code value="200000005004" />
+			<display value="Current" />
+		  </coding>
+		</status>
+		
+		<indication value="Xyloproct rektalsalva och Xyloproct suppositorier är avsedda för behandling av vuxna.
+Behandling av hemorrojder, analtenesmer och analfissurer samt postoperativt efter anorektala ingrepp eller i samband med anorektala explorationer.
+För egenvård: hemorrojder och ytliga ändtarmsirritationer." />
+<!--indication taken from SmPC--><!-- impossible to define language here-->
+
+		
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072076" />
+			<display value="Medicinal product not subject to medical prescription" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		<!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" /> 
+			<code value="100000094927" />
+			<display value="C05AA01" />
+			<!--hydrocortisone-->
+		  </coding>
+		</classification>
+		
+		<!--commented out for now-->
+		<!--<comprisedOf>--> <!-- refers to the manufactured item(s) that the product is compromised of--> <!--Several references possible, how?-->
+			<!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+			<!--<reference value="ManufacturedItemDefinition/Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition" /> -->  <!-- refers to manufactured item(s) -->
+		<!--</comprisedOf>-->
+		<!--commented out for now-->
+		
+		
+		
+		<name> 
+		
+		  <productName value="Xyloproct Rektalsalva" /> 
+		  
+		  <namePart>
+		    <part value="Xyloproct" /> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+				<code value="220000000002" /> 
+				<display value="Invented Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+<!-- no strength part-->
+          <namePart>
+            <part value="Rektalsalva" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage> 
+            <country> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>
+              </coding>
+            </country>
+            <language> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> 
+                <code value="100000072288" /> 
+				<display value="Swedish"/> 
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- Entry 1: Medicinal product definition--><!--STARTED-->
+
+
+
+
+  <entry>  <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	  
+	  <id value="Xyloproct-RectalOintment-SE-AJ-RegulatedAuthorization"/>
+	  
+        <identifier> 
+		<!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="8340" /> 
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+            <code value="220000000061" /> 
+			<display value="Marketing Authorisation"/> 
+          </coding>
+        </type>
+
+        <region> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> 
+            <code value="100000000535" /> 
+			<display value="Sweden"/> 
+          </coding>
+        </region>
+
+        <status> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> 
+            <code value="100000072099" /> 
+			<display value="Valid"/> 
+          </coding>
+        </status>
+
+        <statusDate value="1969-01-24" /> 
+		<!-- date of first authorisation--><!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+
+        <holder> 
+		<!-- MAH, marketing authorisation holder-->
+
+			<identifier>  
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100001575"/>
+			</identifier>
+
+          <display value="Aspen Pharma Trading Limited" />
+		  <!-- name of MAH--> <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="1969-01-24"/>  
+			<!-- date of first authorisation-->
+					
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Xyloproct-RectalOintment-SE-AJ-RegulatedAuthorization" /> 
+    </request>
+  </entry> <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+
+
+
+  <entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />--> 
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="Xyloproct-RectalOintment-SE-AJ-AdministrableProductDefinition"/>  
+		
+		<status value="active"/>
+
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+
+
+        <administrableDoseForm>
+		<!--pharmaceutical dose form for the administrable product-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> 
+            <code value="100000073828" /> 
+			<display value="Rectal Ointment"/> 
+          </coding>
+        </administrableDoseForm>
+
+		<producedFrom> 
+			<reference value="ManufacturedItemDefinition/Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+		
+		
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> 
+              <code value="100000073628" /> 
+			 <display value="Rectal use"/> 
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Xyloproct-RectalOintment-SE-AJ-AdministrableProductDefinition" />
+    </request>
+  </entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+
+
+
+
+  <entry>  <!-- Entry 4: Packaged Product definition--><!--tube, 20 g--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition> 
+	  <!--tube, 20 g-->
+		<id value="Xyloproct-RectalOintment-SE-AJ-PackagedProductDefinition"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />
+			<unit value="tube"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" /> 
+          </valueQuantity>
+        </extension>
+		
+
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+
+        <description value="Tub, 20 g"> 
+		
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" /> 
+			  <display value="Swedish"/> 
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		
+          <country> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/>
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/> 
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		
+		  <type> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> 
+			  <code value="100000073498"/>
+			  <display value="Box"/> 
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="2"/> 
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" />
+                  </periodDuration>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073414"/>
+                        <display value="Store in a refrigerator (2°C - 8°C)"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+
+            </shelfLifeStorage>
+			
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="2"/> 
+                     <unit value="Month"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003433" />
+                  </periodDuration>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073410"/>
+                        <display value="Do not store above 25 °C"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+
+            </shelfLifeStorage>
+
+			      <package>
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073561"/>
+				        <display value="Tube"/> 
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/>
+			  
+				    <material>
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003200"/>
+					    <display value="Tube"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="20" /> 
+						  <unit value="gram(s)"/>  
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110654" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+					
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Xyloproct-RectalOintment-SE-AJ-PackagedProductDefinition" />
+    </request>
+  </entry> <!-- Entry 4: Packaged Product definition--><!--STARTED-->
+  
+  
+  <entry> <!--Entry 5: Manufactured item definition--><!--STARTED-->
+  <!--several entries allowed--> <!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition"/>
+
+		<status value="active" />
+
+		
+        <manufacturedDoseForm> 
+		<!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073828" />
+			<display value="Rectal Ointment"/> 
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation>
+		<!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002156" /> 
+			<display value="Tube"/> 
+          </coding>
+        </unitOfPresentation>
+
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- Entry 5: Manufactured item definition--><!--STARTED-->
+
+
+
+  <entry><!-- Entry 6: Ingredient 01--><!--lidocaine--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--lidocaine-->
+	  
+	  <id value="Xyloproct-RectalOintment-SE-AJ-Ingredient01"/>
+	  
+		
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionXyloproct-RectalOintment-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" /> 
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000091713" /> 
+				<display value="Lidocaine"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength>
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="50" /> 
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/> 
+							<display value="equal to"/>
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                <code value="100000110655" /> 
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="gram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110654" /> 
+              </denominator>
+            </concentrationRatio>
+			
+
+            
+     		<referenceStrength> 
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000091713"/> 
+							<display value="Lidocaine"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="50"/>
+						<comparator>
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" /> 
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="gram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110654" /> 
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Xyloproct-RectalOintment-SE-AJ-Ingredient01" />
+    </request>
+  </entry><!--Entry 6: Ingredient01--><!--STARTED-->
+  
+  
+  
+  <entry><!-- Entry 7: Ingredient 02--><!--hydrocortisone acetate--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--hydrocortisone acetate-->
+	  
+	  <id value="Xyloproct-RectalOintment-SE-AJ-Ingredient02"/>
+	  
+		
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Xyloproct-RectalOintment-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Xyloproct-RectalOintment-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionXyloproct-RectalOintment-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> 
+            <code value="100000072072" /> 
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000092260" />
+				<display value="Hydrocortisone acetate"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength> 
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="2.5" />
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/>
+							<display value="equal to"/> 
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" /> 
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="gram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110654" /> 
+              </denominator>
+            </concentrationRatio>
+
+            
+     		<referenceStrength> 
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000092635"/> 
+							<display value="Hydrocortisone"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="2.24"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" /> 
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="gram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110654" /> 
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Xyloproct-RectalOintment-SE-AJ-Ingredient02" />
+    </request>
+  </entry><!--Entry 7: Ingredient02--><!--STARTED-->
+
+
+</Bundle>

@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v4.6.0/fhir-all.xsd">
+	<id value="10e18b90-c5ff-4921-acae-db0a9f85cc79"/>
+	<type value="transaction"/>
+	<entry>
+		<!-- <fullUrl value="urn:uuid:24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/> -->
+		<resource>
+			<MedicinalProductDefinition>
+				<id value="24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/>
+				<!-- ISO name: /MedicinalProduct -->
+				<!-- No id needed, in a transaction this is identified by fullUrl -->
+				<!-- ISO name: /MedicinalProduct/Language -->
+				<language value="EN"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</valueCoding>
+				</extension>
+				<!-- ISO name: /MedicinalProduct/PMSId -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pmsId"/>
+					<value value="1234567"/>
+				</identifier>
+				<!-- ISO name: /MedicinalProduct/MPID -->
+				<!-- Rutt: country code + MAH code + med prod ID-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="EE-100000833-00000003"/>
+				</identifier>
+
+				<!-- ISO name: /MedicinalProduct/Domain -->
+				<domain>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+
+				<!-- ISO name: /MedicinalProduct/LegalStatusOfSupply -->
+				<legalStatusOfSupply>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072084"/>
+						<display value="Medicinal Product subject to medical prescription"/>
+					</coding>
+				</legalStatusOfSupply>
+				<!-- ISO name: /MedicinalProduct/AdditionalMonitoringIndicator -->
+				<additionalMonitoringIndicator>
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="False"/>
+						<display value="False"/>
+					</coding>
+				</additionalMonitoringIndicator>
+
+				<!-- ISO name: /MedicinalProduct/ProductClassification -->
+				<classification>
+					<!-- ISO name: /MedicinalProduct/ProductClassification/CodeSystem -->
+					<!-- FHIR extra mapping info: CodeSystem maps to system of Value attribute-->
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<!-- ISO name: /MedicinalProduct/ProductClassification/Value -->
+						<code value="100000096162"/>
+						<!-- Rutt: SPOR term name does not include ATC code J01CR02, but just text  -->
+						<display value="amoxicillin and beta-lactamase inhibitor"/>
+					</coding>
+				</classification>
+
+
+				<!-- ISO name: /MedicinalProduct/MedicinalProductName -->
+				<name>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/FullName -->
+					<productName value="Betaklav, 500 mg/125 mg õhukese polümeerikattega tabletid"/>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/InventedNamePart -->
+					<namePart>
+						<part value="Betaklav"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/StrengthPart -->
+					<namePart>
+						<part value="500mg/125mg"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/PharmaceuticalDoseFormPart -->
+					<namePart>
+						<part value="õhukese polümeerikattega tabletid"/>
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language -->
+					<countryLanguage>
+						<!-- Rutt: It would be really wise to use ISO country and language codes instead of SPOR invention-->
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Country -->
+						<country>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000388"/>
+								<!-- Rutt: Long or short name? -->
+								<display value="Estonia"/>
+							</coding>
+						</country>
+						<!-- ISO name: /MedicinalProduct/MedicinalProductName/Country-Language/Language -->
+						<language>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072172"/>
+								<display value="Estonian"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+				<!-- Rutt: Don't know how to add reference to marketing authorisation-->
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct -->
+				<!-- Rutt: package 1 - 10 tablets strip package -->
+				<package>
+					<package>
+						<reference
+							value="PackagedProductDefinition/962569ce-d8fb-4b4e-bd60-5c23f1923925"/>
+					</package>
+				</package>
+				<!-- Rutt: package 2 - 500 tablets strip package, number of strips unknown -->
+				<package>
+					<package>
+						<reference
+							value="PackagedProductDefinition/c6a838d9-27ca-49a4-a6ba-216448f82013"/>
+					</package>
+				</package>
+				<!-- Rutt: package 3 - 10 tablets blister package -->
+				<package>
+					<package>
+						<reference
+							value="PackagedProductDefinition/2b3ae935-234a-46a7-8791-4e5b0867be2b"/>
+					</package>
+				</package>
+
+			</MedicinalProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/>
+		</request>
+	</entry>
+	<!-- Rutt: MedicinalProductDefinition does not refer to the marketing authorisation. It should be done via "operation", but I don't know what the operation type would be-->
+	<!-- ISO name: /MedicinalProduct/MarketingAuthorisation -->
+	<entry>
+		<!-- <fullUrl value="urn:uuid:47b0c071-56d5-4cac-90f7-2b95277f37ce"/> -->
+		<resource>
+			<RegulatedAuthorization>
+				<id value="47b0c071-56d5-4cac-90f7-2b95277f37ce"/>
+				<!-- No id needed, in a transaction this is identified by fullUrl -->
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationNumber -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="879415"/>
+				</identifier>
+				<subject>
+					<!--MedicinalProductDefinition/IE-6006100000833-003-->
+					<!-- Rutt: Reference to Betaklav id -->
+					<reference
+						value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/>
+				</subject>
+				<!-- ISO name: (fixed value) -->
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/Country -->
+				<region>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000388"/>
+						<display value="Estonia"/>
+					</coding>
+				</region>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatus -->
+				<status>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="200000017708"/>
+						<!-- Rutt: Is it going to be a problem that we have a variety of ways to express "valid"? -->
+						<display value="Valid - Renewed/Varied"/>
+					</coding>
+				</status>
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/AuthorisationStatusDate -->
+				<statusDate value="2021-02-03"/>
+
+				<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation -->
+				<holder>
+					<!-- ISO name: /MedicinalProduct/MarketingAuthorisation/MarketingAuthorisationHolder_Organisation/Identifier -->
+					<!-- Rutt: Name or LOC-id or both? -->
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100009540"/>
+					</identifier>
+				</holder>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/47b0c071-56d5-4cac-90f7-2b95277f37ce"/>
+		</request>
+	</entry>
+
+	<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct 1: 10 tablets in a strip package-->
+	<entry>
+		<!-- <fullUrl value="urn:uuid:962569ce-d8fb-4b4e-bd60-5c23f1923925"/> -->
+		<resource>
+			<PackagedProductDefinition>
+				<id value="962569ce-d8fb-4b4e-bd60-5c23f1923925"/>
+				<!-- Rutt: I'm confused when to use English (international) and when Estonian (local) language. Could we have an agreement on this in PPL? -->
+				<language value="EE"/>
+				<!-- Rutt: Why is it defined as an extension? -->
+				<extension
+					url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="10"/>
+						<!-- Rutt: What language? Does it have to be free text? -->
+						<unit value="tablets"/>
+					</valueQuantity>
+				</extension>
+				<!-- Rutt: fake PCID-->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pcId"/>
+					<value value="EE-mpid-0001"/>
+				</identifier>
+				<subject>
+					<!-- Rutt: medicinalProductDefinition id -->
+					<reference
+						value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/>
+				</subject>
+				<!-- Rutt: Currently we don't have it, we could concatenate fields in a clumsy way -->
+				<description value="Ribapakend (Al/Al) 10 õhukese polümeerikattega tabletti karbis"/>
+
+				<marketingAuthorization>
+					<!--Rutt: We would not use it on the package level, but there's no easy way to include it in MedicinalProductDefinition. RegulatedAuthorizationi viide-->
+					<reference value="RegulatedAuthorization/47b0c071-56d5-4cac-90f7-2b95277f37ce"/>
+				</marketingAuthorization>
+
+				<package>
+					<!-- Rutt: Estonia doesn't have the data carrier id -->
+
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073559"/>
+								<display value="Strip"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<quantity value="1"/>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<!-- Rutt: two layers, both aluminium -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<!-- Rutt: viide manufacturedItemDefinitionile -->
+								<reference>
+									<reference
+										value="ManufacturedItemDefinition/5ab3c289-3641-48a9-aee0-588c4e2041f2"
+									/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amountQuantity>
+								<value value="10"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amountQuantity>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/962569ce-d8fb-4b4e-bd60-5c23f1923925"/>
+		</request>
+	</entry>
+
+	<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct 2: 500 tablets in a strip package, SPC not clear about how many strips -->
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82013"/> -->
+		<resource>
+			<PackagedProductDefinition>
+				<id value="c6a838d9-27ca-49a4-a6ba-216448f82013"/>
+				<language value="EE"/>
+				<extension
+					url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="500"/>
+						<unit value="tablets"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pcId"/>
+					<value value="EE-mpid-0002"/>
+				</identifier>
+				<subject>
+					<!-- Rutt: medicinalProductDefinition id -->
+					<reference
+						value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/>
+				</subject>
+				<!-- Rutt: Currently we don't have it, we could concatenate fields in a clumsy way -->
+				<description value="Ribapakend (Al/Al) 500 õhukese polümeerikattega tabletti karbis"/>
+
+				<marketingAuthorization>
+					<!--Rutt: We would not use it on the package level, but there's no easy way to include it in MedicinalProductDefinition.-->
+					<reference value="RegulatedAuthorization/47b0c071-56d5-4cac-90f7-2b95277f37ce"/>
+				</marketingAuthorization>
+
+				<package>
+					<!-- Rutt: missing data carrier id -->
+
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073559"/>
+								<display value="Strip"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<!-- Rutt:  No quantity element when not clear how many inner packages, PMS IG p57-->
+
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<!-- Rutt: two layers, both aluminium -->
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<!-- Rutt: viide manufacturedItemDefinitionile -->
+								<reference>
+									<reference
+										value="ManufacturedItemDefinition/5ab3c289-3641-48a9-aee0-588c4e2041f2"
+									/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amountQuantity>
+								<value value="500"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amountQuantity>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/c6a838d9-27ca-49a4-a6ba-216448f82013"/>
+		</request>
+	</entry>
+
+	<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct 3: 10 tablets in a blister package-->
+	<entry>
+		<!-- <fullUrl value="urn:uuid:2b3ae935-234a-46a7-8791-4e5b0867be2b"/> -->
+		<resource>
+			<PackagedProductDefinition>
+				<id value="2b3ae935-234a-46a7-8791-4e5b0867be2b"/>
+				<language value="EE"/>
+				<extension
+					url="http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity">
+					<valueQuantity>
+						<value value="10"/>
+						<unit value="tablets"/>
+					</valueQuantity>
+				</extension>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pcId"/>
+					<value value="EE-mpid-0003"/>
+				</identifier>
+				<subject>
+					<!-- Rutt: medicinalProductDefinition id -->
+					<reference
+						value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/>
+				</subject>
+				<!-- Rutt: Currently we don't have it, we could concatenate fields in a clumsy way -->
+				<description
+					value="Blisterpakend (OPA/Al/PVC foil/Al foil) 10 õhukese polümeerikattega tabletti karbis"/>
+
+				<marketingAuthorization>
+					<!--Rutt: We would not use it on the package level, but there's no easy way to include it in MedicinalProductDefinition.-->
+					<reference value="RegulatedAuthorization/47b0c071-56d5-4cac-90f7-2b95277f37ce"/>
+				</marketingAuthorization>
+
+				<package>
+					<!-- Rutt: missing data carrier id -->
+
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+					<type>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+					<quantity value="1"/>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+					<material>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+					<package>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+						<type>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073496"/>
+								<display value="Blister"/>
+							</coding>
+						</type>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+						<quantity value="1"/>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+						<!-- Rutt: If multiple layers of the package consist of the same material, should the entries repeat or not? -->
+						<!-- Rutt: FHIR also has "alternate material" - can we use that when the only difference is in package material? -->
+
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003210"/>
+								<display value="OPA"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003222"/>
+								<display value="PVC"/>
+							</coding>
+						</material>
+						<material>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003200"/>
+								<display value="Aluminium"/>
+							</coding>
+						</material>
+						<containedItem>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+							<item>
+								<!--This is an MID-->
+								<reference>
+									<reference
+										value="ManufacturedItemDefinition/5ab3c289-3641-48a9-aee0-588c4e2041f2"
+									/>
+								</reference>
+							</item>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedItemQuantity -->
+							<amountQuantity>
+								<value value="10"/>
+								<!-- Rutt: unit is the unit of presentation in manufactured item-->
+							</amountQuantity>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/2b3ae935-234a-46a7-8791-4e5b0867be2b"/>
+		</request>
+	</entry>
+
+	<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem -->
+	<entry>
+		<!-- <fullUrl value="urn:uuid:5ab3c289-3641-48a9-aee0-588c4e2041f2"/> -->
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="5ab3c289-3641-48a9-aee0-588c4e2041f2"/>
+				<!-- ISO name: (n/a) -->
+				<!-- No id needed, in a transaction this is identified by fullUrl -->
+				<extension url="http://ema.europa.eu/fhir/extension/subject">
+					<valueReference>
+						<!--Betaklav id-->
+						<reference
+							value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"
+						/>
+					</valueReference>
+				</extension>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/ManufacturedDoseForm -->
+				<manufacturedDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</coding>
+				</manufacturedDoseForm>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/UnitOfPresentation -->
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient -->
+				<ingredient>
+					<reference>
+						<reference value="Ingredient/70394f07-02cb-4f04-8b2e-b6ac725da813"/>
+					</reference>
+				</ingredient>
+				<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient -->
+				<ingredient>
+					<reference>
+						<reference value="Ingredient/97f73ce4-094b-45eb-bec9-e4ab3ff338a8"/>
+					</reference>
+				</ingredient>
+
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/5ab3c289-3641-48a9-aee0-588c4e2041f2"/>
+		</request>
+	</entry>
+	<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient -->
+	<entry>
+		<!-- <fullUrl value="urn:uuid:70394f07-02cb-4f04-8b2e-b6ac725da813"/> -->
+		<resource>
+			<Ingredient>
+				<id value="70394f07-02cb-4f04-8b2e-b6ac725da813"/>
+				<extension url="http://ema.europa.eu/fhir/extension/subject">
+					<valueReference>
+						<!--Betaklav id-->
+						<reference
+							value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"
+						/>
+					</valueReference>
+				</extension>
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Substance -->
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000092629"/>
+								<display value="AMOXICILLIN TRIHYDRATE"/>
+							</coding>
+						</concept>
+					</code>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+					<strength>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+						<presentationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="573.892"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+							<denominator>
+								<value value="1"/>
+								<unit value="tablet"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength -->
+						<referenceStrength>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+							<substance>
+								<concept>
+									<coding>
+										<system
+											value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000091596"/>
+										<display value="Amoxicillin"/>
+									</coding>
+								</concept>
+							</substance>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+							<strengthRatio>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+								<numerator>
+									<value value="500"/>
+									<comparator>
+										<extension
+											url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+								<denominator>
+									<value value="1"/>
+									<unit value="tablet"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002152"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/70394f07-02cb-4f04-8b2e-b6ac725da813"/>
+		</request>
+	</entry>
+	<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient -->
+	<entry>
+		<fullUrl value="urn:uuid:97f73ce4-094b-45eb-bec9-e4ab3ff338a8"/>
+		<resource>
+			<Ingredient>
+				<id value="97f73ce4-094b-45eb-bec9-e4ab3ff338a8"/>
+				<extension url="http://ema.europa.eu/fhir/extension/subject">
+					<valueReference>
+						<!--Betaklav id-->
+						<reference
+							value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"
+						/>
+					</valueReference>
+				</extension>
+				<role>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Substance -->
+					<code>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000093061"/>
+								<display value="POTASSIUM CLAVULANATE"/>
+							</coding>
+						</concept>
+					</code>
+					<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength -->
+					<strength>
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation -->
+						<presentationRatio>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/numerator -->
+							<numerator>
+								<value value="151.915"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655"/>
+							</numerator>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/Strength_Presentation/denominator -->
+							<denominator>
+								<value value="1"/>
+								<unit value="tablet"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002152"/>
+							</denominator>
+						</presentationRatio>
+						<referenceStrength>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+							<substance>
+								<concept>
+									<coding>
+										<system
+											value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000089842"/>
+										<display value="CLAVULANIC ACID"/>
+									</coding>
+								</concept>
+							</substance>
+							<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+							<strengthRatio>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+								<numerator>
+									<value value="125"/>
+									<comparator>
+										<extension
+											url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+								<denominator>
+									<value value="1"/>
+									<unit value="tablet"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002152"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/97f73ce4-094b-45eb-bec9-e4ab3ff338a8"/>
+		</request>
+	</entry>
+
+	<!-- ISO name: /MedicinalProduct/PharmaceuticalProduct -->
+	<entry>
+		<!-- <fullUrl value="urn:uuid:856a94fc-3d2e-47a3-99e2-6ca02ae388d6"/> -->
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="856a94fc-3d2e-47a3-99e2-6ca02ae388d6"/>
+				<!-- No id needed, in a transaction this is identified by fullUrl -->
+				<subject>
+					<!--Betaklav id-->
+					<reference
+						value="MedicinalProductDefinition/24b28936-00b1-44c3-bbc4-fe1f5e2082fd"/>
+				</subject>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000073665"/>
+						<display value="Film-coated tablet"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002152"/>
+						<display value="Tablet"/>
+					</coding>
+				</unitOfPresentation>
+				<!--Insert ingredients from first MID-->
+				<ingredient>
+					<reference value="Ingredient/70394f07-02cb-4f04-8b2e-b6ac725da813"/>
+				</ingredient>
+				<ingredient>
+					<reference value="Ingredient/97f73ce4-094b-45eb-bec9-e4ab3ff338a8"/>
+				</ingredient>
+
+				<routeOfAdministration>
+					<!-- ISO name: /MedicinalProduct/PharmaceuticalProduct/RouteOfAdministration/RouteOfAdministration -->
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073619"/>
+							<display value="Oral use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/856a94fc-3d2e-47a3-99e2-6ca02ae388d6"/>
+		</request>
+	</entry>
+
+</Bundle>

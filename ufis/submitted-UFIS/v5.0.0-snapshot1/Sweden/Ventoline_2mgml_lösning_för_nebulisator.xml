@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- -Ventoline 2 mg/ml lösning för nebulisator- ASPnr 1989-0259 -->
+<!--  Penny Lindström Carmanius   Datum 2022-06-28 -->
+
+<!-- Referenser
+MedicinalProductDefiniton:       Ventoline2mgmllosningnebulisator-SE-PLC-MedicinalProductDef
+RegulatedAuthorities:            Ventoline2mgmllosningnebulisator-SE-PLC-RegAutho
+AdministrableProductDefinition:  Ventoline2mgmllosningnebulisator-SE-PLC-AdminProductDef
+PackageProductDefinition:        Ventoline2mgmllosningnebulisator-SE-PLC-PackageProductDef
+ManufacturedItemDefinition:      Ventoline2mgmllosningnebulisator-SE-PLC-ManufacturedItemDef
+Ingredient:                      Ventoline2mgmllosningnebulisator-SE-PLC-Ingredient -->
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+    <!-- <fullUrl value="urn:uuid: cae2d5d9-b111-4da7-b2b0-025d621f815e" />   -->
+    <resource>
+      <MedicinalProductDefinition>  
+		<id value="Ventoline2mgmllosningnebulisator-SE-PLC-MedicinalProductDef"/>  
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">  
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008" />
+            <code value="100000073835" />   <!-- Kod för läkemedelsform, hämtas Johans Teamsfil eller Spor -->
+			<display value="Nebuliser solution"/>  <!-- Läkemedelsformen på engelska översatt till engelska via Teams-filen som Johan fixat --> 
+          </valueCoding>
+        </extension>
+		
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>  
+			<value value="SE-100000307-00011088"/>  <!-- Formatet ska vara SE-xxxxxxxxx(organisationsnummer)-yyyyyyyy(000MT-nr). -->
+																<!-- xxxxxxxxx ska vara nio siffror som identifierar den ORGANISATION som äger rättigheterna till produkten. -->
+																<!-- yyyyyyyy ska vara MT-numret där man lagt till nollor först så att det bli åtta siffror långt. -->
+		</identifier>
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="10330"/>  <!-- Nr för substansen som återfinns i EURD-listan som finns i Unicom-mappen -->
+		</identifier>        
+		<domain>  <!-- Om läkemedlet är för djur eller människa -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+            <code value="100000000012" />  <!-- Låt stå, vi håller bara på med LM för humant bruk--> 
+         	<display value="Human use"/> <!-- Låt stå -->
+          </coding>
+        </domain>
+		
+		<status> <!-- Är vårt dokument klart eller inte. Vi kör bara current -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+            <code value="200000005004" /> <!-- Låt stå -->
+         	<display value="Current"/>  <!-- Låt stå -->          
+          </coding>
+        </status>
+		
+				<indication value=" För symtomlindring av bronkkonstriktion vid astma och för lindring av svåra akuta och kroniska kramptillstånd i luftvägarna (KOL). Ventoline lösning för nebulisator är indicerat för vuxna, ungdomar och barn i åldern 4 till 11 år."/>  <!-- Fylls i enligt Fass eller SmPC från läkemedelssök. Kan vara i listform eller flytande text, lång eller kort. Skriv gärna om den är avsedd för vuxna och barn.--> <!-- T ex: Diklofenak Orifarm 50 mg enterotablett är indicerat för behandling av nedanstående och är avsedd för vuxna och barn som väger mer än 50 kg.
+Reumatoid artrit.
+Juvenil reumatoid artrit.
+Artros.
+Mb. Bechterew.
+Dysmenorré utan organisk orsak -->
+		
+		<legalStatusOfSupply>  <!-- Receptbelat eller receptfritt --> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />  
+            <code value="100000072084" />  <!-- Kod för receptfritt (100000072076), receptbelagt (100000072084)-->
+         	<display value="Medicinal product subject to medical prescription"/>   <!-- Receptfritt eller receptbelagt i textform: Medicinal product not subject to medical prescription eller Medicinal product subject to medical prescription -->          
+          </coding>
+        </legalStatusOfSupply>
+		
+        <classification>
+          <coding>  
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />  
+            <code value="100000098065" />  <!-- Kod för ATC-kod från spor lista Anatomical Therapeutic Classification system - Human  -->
+         	<display value="R03AC02"/>  <!-- ATC-kod för läkemedlet -->           
+          </coding>
+        </classification>
+		
+		<!-- <comprisedOf> -->
+			<!-- <reference value="ManufacturedItemDefinition/Ventoline2mgLösningförnebulisator-SE-PLC-ManItemDef" /> -->
+		<!-- </comprisedOf> -->
+		
+		<!-- Produktens nam delas upp i olika name parts-->
+		<name>
+          <productName value="Ventoline 2 mg/ml lösning för nebulisator" />  <!-- Fullständigt namn på svenska --> 
+		  
+          <namePart> <!-- Produktnamnet -->
+            <part value="Ventoline" />  <!-- Produktnamnet, t ex Diklofenak Orifarm -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000002" />  <!-- Kod för Scientific name part(220000000003) t ex Diklofenak Orifarm eller Invented name part(220000000002) t ex Alvedon. -->
+				<display value="Invented name part"/>   <!-- Scientific name part eller Invented name part -->            
+              </coding>
+            </type>
+          </namePart>  
+		  
+		  <namePart>  <!-- Styrkan -->   
+            <part value="2 mg/ml" /> <!-- Styrkan på produkten t ex 50 mg -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000004" /> <!-- Låt stå -->
+				<display value="Strength part"/>   <!-- Låt stå -->           
+              </coding>
+            </type>
+          </namePart>
+		  
+          <namePart>  <!-- Läkemedelsformen -->
+            <part value="lösning för nebulisator" />  <!-- T ex enterotablett, svenska -->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000005" />  <!-- Låt stå -->
+				<display value="Pharmaceutical dose form part"/> <!-- Låt stå -->             
+              </coding>
+            </type>
+          </namePart> 
+
+          <countryLanguage>
+            <country>
+              <coding>  
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" /> <!-- Låt stå. Alltid Sverige --> 
+				<display value="Sweden"/>  <!-- Låt stå -->              
+              </coding>
+            </country>
+            <language>
+              <coding> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" /> <!-- Låt stå -->
+				<display value="Swedish"/>   <!-- Låt stå, alltid svenska -->            
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+	<request>
+      <method value="PUT" />  
+      <url value="MedicinalProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-MedicinalProductDef" />
+    </request>
+  </entry>  
+  
+  <entry>  
+    <!-- <fullUrl value="urn:uuid: 3fed3b71-0770-41dd-ba02-55df464069a2" /> --> 
+    <resource>
+      <RegulatedAuthorization>
+	  <id value="Ventoline2mgmllosningnebulisator-SE-PLC-RegAutho"/> 
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />  
+          <value value="11088" />  <!-- MT-numret inlagt för godkännandet --> 
+        </identifier>
+        <subject>
+          <reference value="MedicinalProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-MedicinalProductDef" />  <!-- Guidkoden för MedicalProductDefinition  -->  
+        </subject>
+		
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />  
+            <code value="220000000061" />  <!-- Låt stå. Vi kommer bara hålla på med marknadsförda produkter -->
+			<display value="Marketing Authorisation"/>   <!-- Låt stå --> 
+          </coding>
+        </type>
+		
+		<region>  <!-- I vilken region gäller det här godkännandet i? Bör Står EU här om det är en EU godkänd produkt (t ex insulin eller monoklonala antikroppar). Men i de allra flesta fallen lär det stå Sverige -->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" /> <!-- Låt stå -->
+			<display value="Sweden"/>   <!-- Låt stå -->        
+          </coding>
+        </region>
+		
+        <status>  <!-- Vi ska ju bara ha såna som är giltiga  --> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" /> <!-- Låt stå -->
+			<display value="Valid"/>   <!-- Låt stå -->         
+          </coding>
+        </status>
+
+        <statusDate value="1990-02-02" />  <!-- Johan kollar upp varför datumet för första godkännandet står två gånger --> 
+		
+		
+        <holder>  <!-- Här står det vilket företag som äger produkten (MAH) -->
+		
+          <identifier>    
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100000549"/> <!-- EIRA-> korrespondadress -> Spor -> organisations -> organisationsnamn -> kolla vilket location ID som stämmer överens med korrespondadressen -->
+		  </identifier>
+          <display value="GlaxoSmithKLine AB" />  <!-- Namnet på företaget som är MAH --> 
+        </holder>
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="1990-02-02"/>    <!-- Endast detta datum behöver ändras - datum för när produkten först blev godkänd. Övrig kod inom <case> är alltid samma. -->
+		</case>
+		
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Ventoline2mgmllosningnebulisator-SE-PLC-RegAutho" />  
+    </request>
+  </entry>
+  		  
+		  
+   <entry>
+    <!-- <fullUrl value="urn:uuid:cc83eab3-0969-46d4-8914-4e5eb5eb4efb" /> 	-->
+    <resource>
+      <AdministrableProductDefinition>
+		<id value="Ventoline2mgmllosningnebulisator-SE-PLC-AdminProductDef"/>   <!-- NPLid-SE-PharmProd01 (eller andra siffror om man återanvänder)--> 
+		<status value="active"/>
+		<formOf> 
+          <reference value="MedicinalProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-MedicinalProductDef" />      <!-- MedicalProductDefinition --> 
+        </formOf> 
+        <administrableDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073835" /> <!-- Koden för produktens administrerbara läkemedelsform, finns i Johans Teams-fil -->  
+			<display value="Nebuliser solution"/>  <!-- Den administrerbara läkemedelsformen i text, finns i Johans Teams-fil -->          
+          </coding>
+        </administrableDoseForm>
+		<producedFrom> <!-- Skapa flera <producedFrom>-element om det är flera olika tillverkade enheter som ska blandas -->
+			<reference value="ManufacturedItemDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-ManufacturedItemDef" /> <!-- Guidkoden För ManufacturedItem -->
+		</producedFrom>
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073584" /> <!-- Kod för administreringssätt -->
+			<display value="Inhalation use"/>   <!-- Administreringssätt  klartext, engelska -->          
+            </coding>
+          </code>
+        </routeOfAdministration>
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-AdminProductDef" /> <!-- Ändrat som ovan -->
+    </request>
+  </entry>
+  
+  
+    
+  <!-- Förpackningsavsnittet börjar här -->
+  
+  <!-- 1:a förpackningen av produkten börjar här -->
+  
+  <!-- Beskrivningen av vad förpackningen innehåller i sin helhet -->
+  <entry>
+    <!-- <fullUrl value="urn:uuid:d2550b41-fb82-4e0b-ba33-b3ceba9e75af" /> -->
+    <resource>
+      <PackagedProductDefinition>
+		<id value="Ventoline2mgmllosningnebulisator-SE-PLC-PackageProductDef"/>   <!-- NPL pack-id, olika för olika förpackningar av samma produkt -->   
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="60" />  <!-- Antal enheter i förpackningen, t ex 100 (för 100 st tabletter i en förpackning) -->
+			<unit value="Pipette"/>  <!-- Fritext för hur enheten presenteras, t ex som tablett, engelska -->          
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002139" />  <!-- Kod för vad enheten är (t ex tablett), units of presentation -->
+          </valueQuantity>
+        </extension>
+        <packageFor> 
+          <reference value="MedicinalProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-MedicinalProductDef" />    <!-- Guidkod för MedicalProductDefinition -->
+        </packageFor> 
+        <description value="Endosbehållare 6 x 10 x 2,5 ml">  <!-- Kopiera Förpackningsbeskrivningen, svenska (t ex Blister, 100 tabletter) -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />  <!-- Låt koden stå, visar att vi skriver på svenska -->
+			<display value="Swedish"/>    <!-- Låt stå -->       
+            </valueCoding>
+          </extension>
+        </description>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> <!-- Låt stå -->
+				<display value="Sweden"/>    <!-- Låt stå -->          
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />  <!-- Låt stå, vi håller bara på med Marketed grejer -->
+				<display value="Marketed"/>   <!-- Låt stå -->           
+            </coding>
+          </status>
+          <dateRange>
+            <start/>  <!-- vi kommer nog inte kunna hitta det här, låt stå till Johan säger något annat -->
+          </dateRange>
+        </marketingStatus>
+        <package> 
+		
+		
+				<!-- Ytterförpackningen (t ex kartong) -->
+			<type>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+					<code value="100000073498"/>  <!-- Koden för typ av ytterförpackningen (t ex 100000073498 för Box) -->
+					<display value="Box"/>  <!-- Fritext för typ av ytterförpackning (t ex Box), engelska -->
+				</coding>
+			</type>
+			<quantity value="1"/>  <!-- Alltid 1, låt stå -->
+			<material>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="200000003529"/>  <!-- Kod för material på ytterförpackning (t ex 200000003529 för Cardboard) -->
+					<display value="Cardboard"/>  <!-- Fritext för material på ytterförpackningen, engelska -->
+				</coding>
+			</material>
+		<!-- Slut på beskrivning av ytterförpackningen -->
+		
+				<!-- Andra förpacknignen som ligger i ytterförpackningen beskriven ovan. Finns inte alltid, t ex flr ögondroppar och inhalatorer då ögondroppsflaskan eller inhalatorn kommer anses vara contained item. Koden för contained item får då flytta upp till ytterförpackningen, eftersom vi bara har en förpackning i de fallen -->
+			<package>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+						<code value="100000073540"/>  <!-- Kod för typen av förpackning i andra lagret (t ex 100000073496 för Blister) -->
+						<display value="Pouch"/>  <!-- Fritext för typen av den andra förpackningen (t ex Blister), engelska -->
+					</coding>
+				</type>
+				<quantity value="6"/>  <!-- Hur många av andra förpackningen som ligger i ytterförpackningen (t ex 10, om det ligger 10 blisterkartor i en ytterkartong). Kan behöva titta i Mine via Step (chrome) för att lista ut -->
+				
+				<!-- Vad är andra lagrets förpackning gjort av. Om det finns flera material (t ex för blisterkarta) kan material göras flera gånger på raden, kopiera -->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003200"/>  <!-- Kod för det material som används i andra lagrets förpackning -->
+						<display value="Aluminium"/> <!-- Materialet som använts i andra lagret i fritext, engelska -->
+					</coding>
+				</material>
+				
+				<!-- Flera material kan läggas in efter varandra här -->
+				
+				<containedItem> <!-- Om det endast finns ytterförpackning kommer contained item behöva flytta upp till innerförpackningen-->
+					<item>
+					<reference>
+					  <reference value="ManufacturedItemDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-ManufacturedItemDef" /> <!-- Guidkod för ManufacturedItem -->
+					</reference>
+					</item>
+					<amount>
+					  <value value="60" /> <!-- Hur många enheter är contained item (t ex 100 för 100 st tabletter i en blisterkarta, eller 1 för en ögonsdroppsflaska) -->
+					  <unit value="Pipette"/>   <!-- Frtext (T ex Tablet för tablett), engelska -->          
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002139" />  <!-- Kod för enheten i units of presentation (t ex 200000002152 för tablett, något man kan hålla i).-->
+					</amount>  
+				  </containedItem>
+			</package>
+		</package>
+		</PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-PackageProductDef" />
+    </request>
+  </entry>
+<!-- Första förpackningen av produkten slutar här. Hela package avsnittet kan kopieras och en ny entrykod görs om det finns flera förpackningar för en produkt -->
+
+
+  <entry>
+    <!-- <fullUrl value="urn:uuid:437b5362-730d-4601-b25b-25bbf0ea6983" />   -->
+    <resource>
+      <ManufacturedItemDefinition> <!-- förklarar det maskinen spottar ut och den har Lmform och units of presentation-->
+		<id value="Ventoline2mgmllosningnebulisator-SE-PLC-ManufacturedItemDef"/>   <!-- NPLid-SE-ManItem001 (eller andra siffror) -->  
+        <status value="active"/>  
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073835" />  <!-- Kod för läkemedelsform (ej formen som är redo för administrering), återfinns i Johans Teams-fil-->
+			<display value="Nebuliser solution"/>  <!-- Fritext för läkemedelsform, engelska --> 
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002139" /> <!-- Ögondroppar/inhalator (pre-filled)/spruta osv är contained/manufactured item och unit of presentation och har bara en ytterförpckning (1 nivå) -->
+			<display value="Pipette"/>  
+          </coding>
+        </unitOfPresentation>
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-ManufacturedItemDef" />
+    </request>
+  </entry>
+  
+  
+    <entry>
+    <!-- <fullUrl value="urn:uuid:117435fb-6012-476a-aa88-2eb0ae6038d1" />  --> 
+    <resource>
+      <Ingredient>
+	  <id value="Ventoline2mgmllosningnebulisator-SE-PLC-Ingredient"/>
+	  <status value="active"/>
+	  <!-- inklippt från Losec -->
+          <for> 
+            <reference value="MedicinalProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-MedicinalProductDef" /> <!-- Guidkod för MedicinalProductDefinition --> 
+          </for> 
+		  
+		  <for> 
+		    <reference value="ManufacturedItemDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-ManufacturedItemDef" /> <!-- Guidkod för ManufacturedItemDefinition --> 
+		  </for>
+
+		  <for> 
+		    <reference value="AdministrableProductDefinition/Ventoline2mgmllosningnebulisator-SE-PLC-AdminProductDef" /> <!-- Guidkod för AdministrableProductDefinition. --> 
+		  </for>
+            <role>
+               <coding>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+                  <code value="100000072072"/> <!-- Låt stå -->
+                  <display value="Active"/> <!-- Låt stå -->
+               </coding>
+            </role>
+            <substance>
+               <code>
+			    <concept>
+                  <coding>
+                     <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                     <code value="100000090564"/> <!-- Kod för den aktiva substansen (saltform) hittas på eutct.eudra.org -->
+                     <display value="Salbutamol sulfate"/> <!-- Namn utskrivet på den aktiva substansen, engelska -->
+                  </coding>
+				</concept>
+               </code>
+               <strength>
+			   
+			<concentrationRatio>
+              <numerator>
+                <value value="2.4" /> <!-- Styrka i konc, 5,7 (mg) -->
+				<comparator>
+				  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							<code value="100000000049"/> <!-- Låt stå -->
+							<display value="equal to"/>
+						</valueCoding>
+					</extension>
+				</comparator>
+				<unit value="milligram(s)"/> <!-- Enheten i fritext, engelska -->
+				<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+				<code value="100000110655" /> <!-- Kod för enheten /t ex 100000110655 för milligram(s)-->
+              </numerator>
+              <denominator>
+                <value value="1" /> <!-- 1 betyder här typ per 1 bla bla. T ex per 1 ml (om det står ml och dt är typ en injektionsvätska), lär ofta vara 1  -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                <code value="100000110662" /> <!-- Kod för enheten (t ex 100000110662 för millilitre(s) -->
+				<unit value="millilitre(s)"/>   <!-- Enheten i fritext -->                  
+              </denominator>
+            </concentrationRatio>
+
+
+				  <!-- Även om den aktiva subtansen är sin moderform (inte ett salt) ska man ha med referencestrength, kopiera bara. Referencestregnth måste vara med -->
+                  <referenceStrength>
+                     <substance>
+					   <concept>
+                        <coding>
+                           <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                           <code value="100000091629"/> <!-- Kod för den aktiva substansen (moderformen) hittas på eutct.eudra.org -->
+                           <display value="salbutamol"/> <!-- Den aktiva substansen utskriven i fritext, engelska -->
+                        </coding>
+					   </concept>
+                     </substance>
+                     <strengthRatio>
+                        <numerator>
+                           <value value="2"/> <!-- Motsvarande innehåll av den aktiva substansen i sin moderform, återfinns på EIRA -->
+                           <comparator>
+                                <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                                    <valueCoding>
+                                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                        <code value="100000000049"/> <!-- Låt stå -->
+                                        <display value="equal to"/>
+                                    </valueCoding>
+                                </extension>
+                            </comparator>
+                           <unit value="milligram(s)"/> <!-- Enhet på motsvarande innehåll -->
+                           <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                           <code value="100000110655"/> <!-- Kod för enhet av motsvarande innehåll -->
+                        </numerator>
+                        <denominator>
+                           <value value="1"/> <!-- Igen per enhet. Kommer nog oftast stå 1, så det blir per 1 tablett eller per 1 inhalering typ -->
+                           <unit value="millilitre(s)"/> <!-- Per enhet -->
+                           <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                           <code value="100000110662"/> <!-- Koden för enheten -->
+                        </denominator>
+                     </strengthRatio>
+                  </referenceStrength>
+               </strength>
+            </substance>
+         </Ingredient>
+      </resource>
+      <request>
+         <method value="PUT"/>
+         <url value="Ingredient/Ventoline2mgmllosningnebulisator-SE-PLC-Ingredient"/>
+      </request>
+   </entry>
+           
+</Bundle>

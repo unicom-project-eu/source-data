@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Metformin Sandoz 500 mg film-coated tablet--> 
+<!-- Bersabel Sirak-->
+<!-- Follows the 5.0 standard--> 
+
+<!-- Referenser: 
+    Entry 1: MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition
+	Entry 2: MetforminSandoz-500mg-Tablet-SE-BS-RegulatedAuthorization
+	Entry 3: MetforminSandoz-500mg-Tablet-SE-BS-AdministrableProductDef
+	Entry 4: MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition
+	Entry 5: MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition-02
+	Entry 6: MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition-03
+	Entry 7: MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition
+	Entry 8: MetforminSandoz-500mg-Tablet-SE-BS-Ingredient-->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+	<resource>
+	  <MedicinalProductDefinition>
+		<id value="MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition"/> 
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073665"/>
+			<display value="Film-coated tablet"/> 
+          </valueCoding>
+        </extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>
+			<value value="SE-100000848-00025970"/> <!-- SE-organisation number-MT number and before the MT number put enough zeros for it to be 8 numbers in total-->
+		</identifier>
+
+        <!-- ISO name: /MedicinalProduct/EURDId -->
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="2001"/>
+		</identifier>
+
+         <domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use"/>
+		  </coding>
+		 </domain>
+		 
+        <status>
+		  <coding> 
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+			<code value="200000005004" />
+			<display value="Current"/>
+		  </coding>
+		</status>
+
+        <!-- Indication from SmPC/Fass--> 
+		<indication value="Behandling av diabetes mellitus typ 2, speciellt hos överviktiga, där enbart diet och motion inte ger tillräcklig glykemisk kontroll. 
+-	Hos vuxna kan Metformin Sandoz 500 mg/850 mg användas som monoterapi, i kombination med andra perorala diabetesmedel eller med insulin.
+-	Hos barn från 10 år och ungdomar kan Metformin Sandoz 500 mg/850 mg användas som monoterapi eller i kombination med insulin.
+En minskning av diabetiska komplikationer har visats hos överviktiga vuxna patienter med typ 2-diabetes som behandlades med metformin som förstahandspreparat efter att ha sviktat på dietbehandling (se avsnitt 5.1).
+"/>
+
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084"/> 
+			<display value="Medicinal product subject to medical prescription"/>
+		  </coding>
+		</legalStatusOfSupply>
+
+        <classification>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000094031"/> 
+			<display value="A10BA02"/> <!-- ATC code--> 
+		  </coding>
+		</classification>
+
+    <name> <!--Product name-->
+	  <productName value="Metformin Sandoz 500 mg filmdragerad tablett"/>
+
+		<namePart> <!-- Produkt name from EIRA-->
+			<part value="Metformin Sandoz"/> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000003"/> 
+				<display value="Scientific name part"/>
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Strength-->
+			<part value="500 mg"/> <!-- strength and unit for example 10 mg--> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000004" />
+				<display value="Strength part"/>   
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Pharmaceutical dose form--> 
+		  <part value="Filmdragerad tablett"/>
+		  <type>
+		    <coding>
+			  <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+			  <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>              
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>                
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>               
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+
+    <request>
+      <method value="PUT" /> 
+      <url value="MedicinalProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition" />
+    </request>
+  </entry>
+
+
+  <entry>
+      <resource>
+
+        <RegulatedAuthorization>
+		<id value="MetforminSandoz-500mg-Tablet-SE-BS-RegulatedAuthorization"/>
+          <identifier>
+            <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+            <value value="25970" /> 
+		  </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </subject>
+
+        <type>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+			<code value="220000000061" />
+			<display value="Marketing Authorisation"/>
+		  </coding>
+        </type>
+		
+		<region>
+		  <coding> 
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/>
+          </coding>
+        </region>
+
+		<status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" />
+			<display value="Valid"/>
+          </coding>
+        </status>
+		
+		
+		<statusDate value="2009-02-13" /> <!-- Date of first authorization--> 
+		
+		<!-- MAH -->
+        <holder>
+		  <identifier>
+		      <system value="https://spor.ema.europa.eu/v1/locations" />
+			  <value value="LOC-100001468" /> <!-- location ID-->
+		  </identifier>
+          <display value="Sandoz A/S" /> <!-- MAH name--> 
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="2009-02-13"/>   <!-- Date of first authorization--> 
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/MetforminSandoz-500mg-Tablet-SE-BS-RegulatedAuthorization" />
+    </request>
+  </entry>
+
+ <entry>
+    <resource>
+
+	  <AdministrableProductDefinition>
+		<id value="MetforminSandoz-500mg-Tablet-SE-BS-AdministrableProductDef"/>
+		<status value="active"/>
+
+        <formOf> 
+          <reference value="MedicinalProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition" />
+        </formOf>
+
+        <administrableDoseForm>  <!-- Pharmaceutical dose form can be different from the administrable dose form--> 
+		  <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073665" />
+			<display value="Film-coated tablet"/>   
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference value="ManufacturedItemDefinition/MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition" /> 
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073619" /> 
+			<display value="Oral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-AdministrableProductDef" />
+    </request>
+  </entry>
+  
+  <!-- First package starts here-->
+  
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="100" /> 
+			<unit value="Tablet"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/>            
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Blister, 100 tabletter"> 
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- Don't write unknown, write it like this instead--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Package layer 1 (the outer layer)-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Package layer 2-->
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073496"/>
+				<display value="Blister"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="5"/> <!-- 5 blisters is based on the assumption that each one contains 20 tablets. Once again, not sure if it's correct--> 
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003200"/>
+						<display value="Aluminium"/>
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003222"/>
+						<display value="PolyVinyl Chloride"/>
+					</coding>
+				</material>
+
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="20" /> <!-- Number of contained items in the innermost layer of the package--> 
+					  <unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" />
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition" />
+    </request>
+  </entry>
+
+
+<!--The next package starts here-->
+	<entry>
+	  <resource>
+	    <PackagedProductDefinition>
+		  <id value="MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition-02"/>
+		  <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="330" /> <!-- Number of tablets-->
+			<unit value="Tablet"/>
+			<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/> 
+          </valueQuantity>
+        </extension>
+
+		<packageFor>
+		  <reference value="MedicinalProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Burk, 330 tabletter"/> 
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>           
+            </valueCoding>
+          </extension>
+
+        <marketingStatus>
+		
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>  <!-- Package layer 1--> 
+		<type>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+					<code value="100000073498"/>
+					<display value="Box"/> <!-- There are no mock ups for this package so I'm going to assume that the bottle comes in a box because most of the seem to come in a box-->
+				</coding>
+			</type>
+
+			<quantity value="1"/>
+
+			<material>
+				<coding>    <!-- Material can be defined several times. Just copy the <material> element. -->
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="200000003529"/>
+					<display value="Cardboard"/>
+				</coding>
+			</material>
+
+			<package>     <!-- "Package layer 2"-->
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+						<code value="100000073497"/>
+						<display value="Bottle"/>
+					</coding>
+				</type>
+
+				<quantity value="1"/>
+
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003215"/>
+						<display value="High Density PolyEthylene"/> <!-- The bottle-->
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003216"/>
+						<display value="Low Density PolyEthylene"/> <!-- The lid -->
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003219"/>
+						<display value="PolyPropylene"/> <!-- The lid can be this material too--> 
+					</coding>
+				</material>
+				<!--The bottle also has a "torkmedelsbehållare" (i think its desiccant container in english), but i'm not sure if that counts as a packaging layer or how to describe it-->
+				
+				<containedItem>
+					<item>
+					<reference>
+					  <reference value="ManufacturedItemDefinition/MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition" />  
+					</reference>
+					</item>
+
+					<amount>
+					  <value value="330" /><!-- how many contained item in the innermost layer?-->
+					  	<unit value="Tablet"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> 
+					</amount>
+					
+				  </containedItem>
+				</package>
+			</package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition-02" />
+    </request>
+  </entry>
+  
+ <!-- Package ends here-->
+ 
+ <!--The next package starts here-->
+	<entry>
+	  <resource>
+	    <PackagedProductDefinition>
+		  <id value="MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition-03"/>
+		  <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="400" /> <!-- Number of tablets-->
+			<unit value="Tablet"/>
+			<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/> 
+          </valueQuantity>
+        </extension>
+
+		<packageFor>
+		  <reference value="MedicinalProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Burk, 400 tabletter"/> 
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>
+            </valueCoding>
+          </extension>
+
+        <marketingStatus>
+		
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+
+          <dateRange>
+            <start/> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>  <!-- Package layer 1--> 
+		<type>
+				<coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+					<code value="100000073498"/>
+					<display value="Box"/> <!-- There are no mock ups for this package so I'm going to assume that the bottle comes in a box because most of the seem to come in a box-->
+				</coding>
+			</type>
+
+			<quantity value="1"/>
+
+			<material>
+				<coding> 
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="200000003529"/>
+					<display value="Cardboard"/>
+				</coding>
+			</material>
+
+			<package>     <!-- "Package layer 2"-->
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+						<code value="100000073497"/>
+						<display value="Bottle"/>
+					</coding>
+				</type>
+
+				<quantity value="1"/>
+				<!--The bottle also has a "torkmedelsbehållare" (i think its desiccant container in english), but i'm not sure if that counts as a packaging layer or how to describe it-->
+
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003215"/>
+						<display value="High Density PolyEthylene"/> <!-- The bottle-->
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003216"/>
+						<display value="Low Density PolyEthylene"/> <!-- The lid -->
+					</coding>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003219"/>
+						<display value="PolyPropylene"/> <!-- The lid can be this material too--> 
+					</coding>
+				</material>
+
+				<containedItem>
+					<item>
+					<reference>
+					  <reference value="ManufacturedItemDefinition/MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition" />  
+					</reference>
+					</item>
+
+					<amount>
+					  <value value="400" /><!-- how many contained item in the innermost layer?-->
+					  <unit value="Tablet"/>      
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="200000002152" /> 
+					</amount>
+					
+				  </containedItem>
+				</package>
+			</package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-PackagedProductDefinition-03" />
+    </request>
+  </entry>
+  
+ <!-- Package ends here-->
+
+ <entry>
+    <resource>
+	<ManufacturedItemDefinition>
+		<id value="MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition"/>
+		<status value="active" />
+
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />   <!-- Pharmaceutical Dose Form -->
+            <code value="100000073665" /> 
+			<display value="Film-coated tablet"/>
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />   <!-- Units of Presentation -->
+            <code value="200000002152" />
+			<display value="Tablet"/>
+          </coding>
+        </unitOfPresentation>
+ 
+      </ManufacturedItemDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition" />
+    </request>
+  </entry>
+  
+   <!-- Beståndsdel(ar) -->
+  <entry>
+    <resource>
+      <Ingredient>
+	  <id value="MetforminSandoz-500mg-Tablet-SE-BS-Ingredient" />
+	  <status value="active" />
+	 
+          <for> 
+            <reference value="MedicinalProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-MedicinalProductDefinition" /><!-- Referera till produkten. -->
+          </for>
+		  
+		  <for> 
+            <reference value="ManufacturedItemDefinition/MetforminSandoz-500mg-Tablet-SE-BS-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> 
+		  
+          <for> 
+            <reference value="AdministrableProductDefinition/MetforminSandoz-500mg-Tablet-SE-BS-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> 
+		
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>            
+          </coding>
+        </role>
+		
+        <substance>
+          <code> 
+		   <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />		<!-- Substans från EMAs lista eller EUTCT. Kolla Excel -->
+              <code value="100000091366" />     
+				<display value="Metformin hydrochloride"/> <!-- Name of active substance-->             
+            </coding>
+		   </concept>
+          </code>
+		  
+		    <strength>
+			
+              <presentationRatio> <!-- This element can be switched to concentration as well, depending on what we want to describe.-->
+                    <numerator>
+                      <value value="500" /> <!-- amount of the salt-->
+					    <comparator>
+					      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+					         <valueCoding>
+							   <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							    <code value="100000000049"/>
+							    <display value="equal to"/>
+						     </valueCoding>
+						  </extension>
+						</comparator>
+						<unit value="milligram(s)"/> <!-- term for unit-->
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                        <code value="100000110655" /> <!--ID for unit-->
+					 </numerator>
+                    <denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>  <!-- term for unit--> 
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" /> <!-- ID for unit-->            
+                    </denominator>
+              </presentationRatio>
+
+			  <referenceStrength> 
+			    <substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000085448"/> <!-- ID for active substance-->
+							<display value="Metformin"/> <!-- term for active substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+					<value value="390"/> <!-- How much pure substance the salt is equal to --> 
+					<comparator>
+						<extension url="http://ema.europa.eu/fhir/extension/comparator">
+							<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+								<code value="100000000049"/>
+								<display value="equal to"/>
+							</valueCoding>
+						</extension>
+					</comparator>
+					<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655"/>
+					</numerator>
+					<denominator>
+                      <value value="1" />
+					  <unit value="tablet"/>   
+                      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+                      <code value="200000002152" />            
+                    </denominator>
+				  </strengthRatio>
+				</referenceStrength>
+			  </strength>
+			</substance>
+		  </Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/MetforminSandoz-500mg-Tablet-SE-BS-Ingredient"/> 
+		</request>
+	</entry>
+
+	</Bundle>

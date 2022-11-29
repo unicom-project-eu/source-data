@@ -1,0 +1,1625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- harald.laimer@ages.at, Version 08 July 2022 -->
+<!-- Curocef 1500 mg Pulver zur Herstellung einer Injektions- oder Infusionslösung GRZ 128827 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82000 Curocef1500mgPulver-A-HL-MedicinalProductDefinition -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82001 Curocef1500mgPulver-A-HL-DocumentReference01 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82002 Curocef1500mgPulver-A-HL-DocumentReference02 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82003 Curocef1500mgPulver-A-HL-RegulatedAuthorization01 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82004 Curocef1500mgPulver-A-HL-RegulatedAuthorization02 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82006 Curocef1500mgPulver-A-HL-RegulatedAuthorization03 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82008a Curocef1500mgPulver-A-HL-PackagedProductDefinition01 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82008b Curocef1500mgPulver-A-HL-PackagedProductDefinition02 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82008c Curocef1500mgPulver-A-HL-PackagedProductDefinition03 -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82009 Curocef1500mgPulver-A-HL-ManufacturedItemDefinition -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82014 Curocef1500mgPulver-A-HL-AdministrableProductDefinition -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82015 Curocef1500mgPulver-A-HL-ClinicalUseIssue -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82010 Curocef1500mgPulver-A-HL-Ingredient -->
+
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+	<type value="transaction"/>
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82000"/> -->
+		<resource>
+			<MedicinalProductDefinition>
+				<!-- Information not available in PHAROS 
+				<contained>
+					<PractitionerRole> 
+						<id value="qppv1"/>
+						<identifier>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000009/terms/100000075665"/>
+							<value value="1234"/>
+						</identifier>
+					</PractitionerRole>
+				</contained>
+				<contained>
+					<Organization>
+						<id value="phvenq1"/> 
+						<name>
+							<extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+								<valueCode value="unknown"/>
+							</extension>
+						</name>
+						<telecom>
+							<system value="email"/>
+							<value value="pharmacovigilance@bayerie.com"/>
+						</telecom>
+						<telecom>
+							<system value="phone"/>
+							<value value="+311234567890"/>
+						</telecom>
+					</Organization>
+				</contained> -->
+
+				<!-- Not in PHAROS 
+				<contained>
+					<DocumentReference>
+						<id value="mfl1"/>
+						<identifier>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000009/terms/100000075665"/>
+							<value value="MFL1234"/>
+						</identifier>
+
+						<status value="current"/>
+
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000070"/> 
+								<code value="220000000071"/> 
+								<display value="PharmacoVigilance Master File"/>
+							</coding>
+						</type>
+
+						<content>
+
+							<attachment>
+
+								<url value="https://spor.ema.europa.eu/v1/lists/100000000009/terms/100000075665/MFL1234"/>
+								
+							</attachment>
+						</content>
+					</DocumentReference> 
+				</contained> -->
+				<id value="Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+				<extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+					<valueCoding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000116186"/>
+						<display value="Powder for solution for injection/infusion"/>
+					</valueCoding>
+				</extension>
+				
+				<identifier>
+					<!-- Will be provided by PMS. This is just a placeholder -->
+					<system value="http://ema.europa.eu/fhir/mpId"/>
+					<value value="AT-16569"/>
+				</identifier>
+				<!-- Not available in PHAROS
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/eurdId"/>
+					<value value="2215"/>
+				</identifier> -->
+
+				<domain>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000004"/>
+						<code value="100000000012"/>
+						<display value="Human use"/>
+					</coding>
+				</domain>
+				<indication
+					value="Curocef wird angewendet zur Behandlung der nachfolgend genannten Infektionen bei Erwachsenen und Kindern, einschließlich Neugeborenen (von Geburt an) ...">
+					<!-- To be extracted from FI 4.1 -->
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072178"/>
+							<display value="German"/>
+						</valueCoding>
+					</extension>
+				</indication>
+				<legalStatusOfSupply>
+					<!-- PHAROS: Arzneispezialität / Rezeptpflicht / Rezeptpflichtstatus-->
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072051"/>
+						<code value="100000072079"/>
+						<display
+							value="Medicinal product on medical prescription for non-renewable delivery"
+						/>
+					</coding>
+				</legalStatusOfSupply>
+				<additionalMonitoringIndicator>
+					<!-- PHAROS: tap Arzneispezialität: Hat Sicherheitsmerkmal -->
+					<coding>
+						<system value="http://ema.europa.eu/fhir/additionalMonitoringIndicator"/>
+						<code value="True"/>
+						<display value="True"/>
+					</coding>
+				</additionalMonitoringIndicator>
+				<pediatricUseIndicator>
+					<!-- PHAROS: tap Arzneispezialität: Anwendung für Kinder / Jugendliche -->
+					<coding>
+						<system value="http://ema.europa.eu/fhir/paediatricUseIndicator"/>
+						<code value="True"/>
+						<display value="True"/>
+					</coding>
+				</pediatricUseIndicator>
+				<classification>
+					<!-- Not in PHAROS but known -->
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000324"/>
+						<!-- XEVMPD Medicinal Product Type -->
+						<code value="200000003517"/>
+						<display value="Other"/>
+					</coding>
+				</classification>
+				<classification>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000116045"/>
+						<code value="100000116053"/>
+						<!-- Reiter Einstufung / Art der Arzneispezialität -->
+						<display
+							value="Well-established use application (Article 10a of Directive No 2001/83/EC)"
+						/>
+					</coding>
+				</classification>
+				<classification>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000093533"/>
+						<code value="100000096183"/>
+						<!-- PHAROS: tap Arzneispezialität / ATC Code -->
+						<display value="J01DC02"/>
+					</coding>
+				</classification>
+				<classification>
+					<coding>
+						<!-- PHAROS change needed, info should be taken from 'Arzneimittelgruppe' -->
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000155526"/>
+						<code value="100000155527"/>
+						<display value="Chemical"/>
+					</coding>
+				</classification>
+<attachedDocument>
+	<reference value="DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference01"/>
+</attachedDocument>
+				<masterFile>
+					<reference value="#mfl1"/>
+				</masterFile>
+				<contact>
+					<type>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000154441"/>
+							<code value="100000155057"/>
+							<display value="Qualified Person in the EEA for Pharmacovigilance"/>
+						</coding>
+					</type>
+					<contact>
+						<reference value="#qppv1"/>
+					</contact>
+				</contact>
+				<contact>
+					<type>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="3"/>
+							</extension>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000154441"/>
+							<code value="200000017719"/>
+						</coding>
+					</type>
+					<contact>
+						<reference value="#phvenq1"/>
+					</contact>
+				</contact>
+				<name>
+					<productName
+						value="Curocef 1500 mg Pulver zur Herstellung einer Injektions- oder Infusionslösung"/>
+					<namePart>
+						<part value="Curocef"/>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000002"/>
+								<display value="Invented name part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="1500 mg"/>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000004"/>
+								<display value="Strength part"/>
+							</coding>
+						</type>
+					</namePart>
+					<namePart>
+						<part value="Pulver zur Herstellung einer Injektions- oder Infusionslösung"/>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/220000000000"/>
+								<code value="220000000005"/>
+								<display value="Pharmaceutical dose form part"/>
+							</coding>
+						</type>
+					</namePart>
+					<countryLanguage>
+						<country>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+								<code value="100000000330"/>
+								<display value="Austria"/>
+							</coding>
+						</country>
+						<language>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+								<code value="100000072178"/>
+								<display value="German"/>
+							</coding>
+						</language>
+					</countryLanguage>
+				</name>
+				<operation>
+					<type>
+						<concept>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000160406"/>
+								<code value="100000160467"/>
+								<display value="Manufacture of active substance"/>
+							</coding>
+						</concept>
+					</type>
+					<effectiveDate>
+						<start value="2016-07-17"/>
+						<!-- Default value, e.g. Zulassungsdatum, Übermittlungsdatum -->
+					</effectiveDate>
+					<organization>
+						<identifier>
+							<!-- AGES used as a placeholder -->
+							<system value="https://spor.ema.europa.eu/v1/locations"/>
+							<value value="LOC-100000004"/>
+						</identifier>
+						<display value="Austrian Agency For Health And Food Safety"/>
+					</organization>
+					<!--<authorization>
+						<reference value="RegulatedAuthorization/Curocef1500mgPulver-A-HL-RegulatedAuthorization"/>
+					</authorization>-->
+					<confidentialityIndicator>
+						<!-- Everything except Chargenfreigeber is confidential -->
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000004983"/>
+							<code value="200000004984"/>
+							<display value="Confidential"/>
+						</coding>
+					</confidentialityIndicator>
+				</operation>
+				<operation>
+					<type>
+						<concept>
+							<coding>
+								<!-- Chargenfreigeber -->
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000160406"/>
+								<code value="100000160407"/>
+								<display value="Manufacturer responsible for batch certification"/>
+							</coding>
+						</concept>
+					</type>
+					<effectiveDate>
+						<start value="2010-12-22"/>
+						<!-- New data field in PHAROS required for all effective dates -->
+					</effectiveDate>
+					<organization>
+						<identifier>
+							<system value="https://spor.ema.europa.eu/v1/locations"/>
+							<value value="LOC-100050477"/>
+						</identifier>
+						<display value="Acs Dobfar S.P.A."/>
+					</organization>
+					<!-- <authorization>
+						<reference value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82003"/>
+					</authorization> -->
+					<confidentialityIndicator>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000004983"/>
+							<code value="200000004985"/>
+							<display value="Public"/>
+						</coding>
+					</confidentialityIndicator>
+				</operation>
+				<operation>
+					<type>
+						<concept>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000160406"/>
+								<code value="100000160464"/>
+								<display value="Secondary packaging"/>
+							</coding>
+						</concept>
+					</type>
+					<effectiveDate>
+						<start value="2020-03-09"/>
+					</effectiveDate>
+					<organization>
+						<identifier>
+							<!-- AGES used as a placeholder -->
+							<system value="https://spor.ema.europa.eu/v1/locations"/>
+							<value value="LOC-100000004"/>
+						</identifier>
+						<display value="Austrian Agency For Health And Food Safety"/>
+					</organization>
+					<!-- <authorization>
+						<reference value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82004"/>
+					</authorization> -->
+					<confidentialityIndicator>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000004983"/>
+							<code value="200000004984"/>
+							<display value="Confidential"/>
+						</coding>
+					</confidentialityIndicator>
+				</operation>
+				<operation>
+					<type>
+						<concept>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000160406"/>
+								<code value="100000160463"/>
+								<display value="Primary packaging"/>
+							</coding>
+						</concept>
+					</type>
+					<effectiveDate>
+						<start value="2020-03-09"/>
+					</effectiveDate>
+					<organization>
+						<identifier>
+							<!-- AGES used as a placeholder -->
+							<system value="https://spor.ema.europa.eu/v1/locations"/>
+							<value value="LOC-100000004"/>
+						</identifier>
+						<display value="Austrian Agency For Health And Food Safety"/>
+					</organization>
+					<!-- <authorization>
+						<reference value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82005"/>
+					</authorization> -->
+					<confidentialityIndicator>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000004983"/>
+							<code value="200000004984"/>
+							<display value="Confidential"/>
+						</coding>
+					</confidentialityIndicator>
+				</operation>
+				<!-- <characteristic>					
+					<coding>
+						<system value="https://ema.europa.eu/fhir/gmo"/> -->
+						<!-- PHAROS tap ZUS / GMO -->
+						<!-- <code value="False"/>
+					</coding>
+				</characteristic> -->
+			</MedicinalProductDefinition>
+		</resource>
+<request>
+	<method value="PUT"/>
+	<url value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+</request>
+	</entry>
+
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82001"/> -->
+		<resource>
+			<DocumentReference>
+				<id value="Curocef1500mgPulver-A-HL-DocumentReference01"/>
+				<identifier>
+					<system
+						value="https://spor.ema.europa.eu/v1/lists/100000000009/terms/200000024893"/>
+					<value value="123"/>
+					<!-- Document will be taken from PMS -->
+				</identifier>
+				<status value="current"/>
+				<type>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000155531"/>
+						<!-- Product Information Document Type -->
+						<code value="100000155532"/>
+						<!-- Summary of Product Characteristics -->
+						<display value="Summary of Product Characteristics"/>
+					</coding>
+				</type>
+				<date value="2017-07-01T00:00:00Z"/>
+				<!-- Datum der letztem Aktualisierung der FI -->
+				<content>
+					<extension url="http://ema.europa.eu/fhir/extension/documentLanguage">
+						<valueCoding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072178"/>
+							<display value="German"/>
+						</valueCoding>
+					</extension>
+					<attachment>
+						<url value="https://spor.ema.europa.eu/v2/documents/123"/>
+						<!-- PHAROS Data Storage, ASP Register link -->
+					</attachment>
+				</content>
+			</DocumentReference>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference01"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82002"/> -->
+		<resource>
+			<DocumentReference>
+				<id value="Curocef1500mgPulver-A-HL-DocumentReference02"/>
+				<extension url="http://ema.europa.eu/fhir/extension/dateOfUpdate">
+					<valueDate value="1900-01-01"/>
+				</extension>
+				<identifier>
+					<system
+						value="https://spor.ema.europa.eu/v1/lists/100000000009/terms/CEP-number"/>
+					<value value="Rn-CEP 1111-222-Rev 33"/>
+				</identifier>
+				<status value="current"/>
+				<type>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000070"/>
+						<code value="X"/>
+						<display value="Certificate of Suitability"/>
+					</coding>
+				</type>
+				<date value="1900-01-01T00:00:00Z"/>
+				<content>
+					<attachment>
+						<extension url="http://hl7.org/fhir/StructureDefinition/data-absent-reason">
+							<valueCode value="unsupported"/>
+						</extension>
+					</attachment>
+				</content>
+			</DocumentReference>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference02"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82003"/> -->
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Curocef1500mgPulver-A-HL-RegulatedAuthorization01"/>
+				<!-- Annahme: Manufactrurer Responsible for Batch Certification -->
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/manufacturingAuthorizationNumber"/>
+					<!-- MIA Nummer according to EudraGMDP -->
+					<value value="aM13/2021"/>
+				</identifier>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/authorisationTypeExample"/>
+						<code value="220000000099"/>
+						<display value="Manufacturing Authorisation"/>
+					</coding>
+				</type>
+				<regulator>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100000033"/>
+						<!-- Italian Medicines Agency, data from OMS -->
+					</identifier>
+					<display value="AIFA"/>
+				</regulator>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Curocef1500mgPulver-A-HL-RegulatedAuthorization01"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- Processing of non serile medicinal product -->
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82004"/> -->
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Curocef1500mgPulver-A-HL-RegulatedAuthorization02"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/manufacturingAuthorizationNumber"/>
+					<value value="aM13/2021"/>
+				</identifier>
+				<type>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/authorisationTypeExample"/>
+						<code value="220000000099"/>
+						<display value="Manufacturing Authorisation"/>
+					</coding>
+				</type>
+				<validityPeriod>
+					<start value="2020-09-03"/>
+					<!-- not known, default date, was machen die anderen NCAs? -->
+				</validityPeriod>
+				<regulator>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100000033"/>
+					</identifier>
+					<display value="AIFA"/>
+				</regulator>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Curocef1500mgPulver-A-HL-RegulatedAuthorization02"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82006"/> -->
+		<resource>
+			<RegulatedAuthorization>
+				<id value="Curocef1500mgPulver-A-HL-RegulatedAuthorization03"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/marketingAuthorizationNumber"/>
+					<value value="16569"/>
+				</identifier>
+				<subject>
+					<!-- was ist ein subject NOEL? Zulassungsbescheid? -->
+					<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+				</subject>
+				<type>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/220000000060"/>
+						<code value="220000000061"/>
+						<display value="Marketing Authorisation"/>
+					</coding>
+				</type>
+				<region>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+						<code value="100000000330"/>
+						<display value="Austria"/>
+					</coding>
+				</region>
+				<status>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072049"/>
+						<code value="100000072099"/>
+						<display value="Valid"/>
+					</coding>
+				</status>
+				<!-- Renewal Status -->
+				<statusDate value="2021-08-18"/>
+				<!--<relatedDate>
+					<dateDateTime value="1979-09-13"/>
+					<type>
+						<coding>
+							<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+							<code value="dateOfFirstAuthorisation"/>
+							<display value="First Authorisation"/>
+						</coding>
+					</type>
+				</relatedDate>
+				<relatedDate>
+					<dateDateTime value="1987-04-15"/>
+					<type>
+						<coding>
+							<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+							<code value="internationalBirthDate"/>
+							<display value="International Birth Date"/>
+						</coding>
+					</type>
+				</relatedDate> -->
+				<holder>
+					<!--AGES used as placeholder-->
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-100000004"/>
+					</identifier>
+					<display value="Austrian Agency For Health And Food Safety"/>
+				</holder>
+				<regulator>
+					<identifier>
+						<system value="https://spor.ema.europa.eu/v1/locations"/>
+						<value value="LOC-10000032"/>
+					</identifier>
+					<display value="Health Products Regulatory Authority"/>
+				</regulator>
+				<case>
+					<identifier>
+						<system value="http://ema.europa.eu/fhir/procedureIdentifierNumber"/>
+						<value value="IE/H/0655/001"/>
+					</identifier>
+					<type>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000154442"/>
+							<code value="100000155061"/>
+							<display value="Mutual Recognition Procedure"/>
+						</coding>
+					</type>
+					<datePeriod>
+						<start value="2009-10-29"/>
+						<end value="2011-03-03"/>
+					</datePeriod>
+					<application>
+						<identifier>
+							<system value="http://ema.europa.eu/fhir/applicationIdentifierNumber"/>
+							<value value="IE/H/0655/05/II/0015"/>
+						</identifier>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000155688"/>
+								<code value="100000155693"/>
+								<display value="Variation Type II"/>
+							</coding>
+						</type>
+						<dateDateTime value="2019-02-17"/>
+					</application>
+				</case>
+			</RegulatedAuthorization>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="RegulatedAuthorization/Curocef1500mgPulver-A-HL-RegulatedAuthorization03"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- 1 piece -->
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82008a"/> -->
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Curocef1500mgPulver-A-HL-PackagedProductDefinition01"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pcId"/>
+					<!-- currently: PHAROS tap Packung/Packungsnummer, later: PMS PackageID AT -->
+					<value value="128827001"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+				</packageFor>
+				<containedItemQuantity>
+					<value value="1"/>
+					<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+					<code value="200000002164">
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+					</code>
+				</containedItemQuantity>
+				<description
+					value="Farblose Glasampulle mit einem Brombutylkautschuk-Stopfen und Aluminium-Verschluss mit aufklappbarem Kunststoffdeckel, die 1500 mg Cefuroxim (als Cefuroxim-Natrium) Pulver enthält ">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072178"/>
+							<display value="German"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<!-- to be completed by the MAH -->
+					<extension url="http://ema.europa.eu/fhir/extension/riskOfSupplyShortage">
+						<valueCoding>
+							<system value="http://ema.europa.eu/fhir/riskOfSupplyShortage"/>
+							<code value="False"/>
+							<display value="False"/>
+						</valueCoding>
+					</extension>
+					<country>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000330"/>
+							<display value="Austria"/>
+						</coding>
+					</country>
+					<status>
+						<!-- if PZN available then status marketed -->
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072074"/>
+							<display value="Not Marketed"/>
+						</coding>
+					</status>
+					<dateRange>
+						<start value="1979-09-13"/>
+						<!-- Zulassungsdatum -->
+					</dateRange>
+				</marketingStatus>
+				<package>
+					<identifier>
+						<system value="http://ema.europa.eu/fhir/dataCarrierIdentifier"/>
+						<!-- GTIN, not marketed > no number, provided by MAH -->
+						<value value="12345678905678"/>
+					</identifier>
+					<type>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<shelfLifeStorage>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+								<code value="100000073403"/>
+								<display
+									value="Shelf life of the medicinal product as packaged for sale"
+								/>
+							</coding>
+						</type>
+						<periodDuration>
+							<value value="3"/>
+							<unit value="year"/>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+							<code value="200000003434">
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="7"/>
+								</extension>
+							</code>
+						</periodDuration>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073410"/>
+								<display value="Do not store above 25 °C"/>
+							</coding>
+						</specialPrecautionsForStorage>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073421"/>
+								<display value="Store in the original package"/>
+							</coding>
+						</specialPrecautionsForStorage>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073426"/>
+								<display value="in order to protect from light"/>
+							</coding>
+						</specialPrecautionsForStorage>
+					</shelfLifeStorage>
+					<package>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073490"/>
+								<display value="Ampoule"/>
+							</coding>
+						</type>
+						<quantity value="1"/>
+						<material>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003204"/>
+								<display value="Glass type I"/>
+							</coding>
+						</material>
+						<containedItem>
+							<item>
+								<!--This is an MID-->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Curocef1500mgPulver-A-HL-ManufacturedItemDefinition"
+									/>
+								</reference>
+							</item>
+							<amount>
+								<value value="1"/>
+								<system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110756">
+									<!-- unit(s) -->
+									<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+										<valueInteger value="1"/>
+									</extension>
+								</code>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Curocef1500mgPulver-A-HL-PackagedProductDefinition01"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- 5 x 1 piece -->
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82008b"/> -->
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Curocef1500mgPulver-A-HL-PackagedProductDefinition02"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pcId"/>
+					<!-- currently: PHAROS Reiter Packung/Packungsnummer, later: PMS PackageID AT -->
+					<value value="128827002"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+				</packageFor>
+				<containedItemQuantity>
+					<value value="5"/>
+					<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+					<code value="200000002164">
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+					</code>
+				</containedItemQuantity>
+				<description
+					value="Farblose Glasampulle mit einem Brombutylkautschuk-Stopfen und Aluminium-Verschluss mit aufklappbarem Kunststoffdeckel, die 1500 mg Cefuroxim (als Cefuroxim-Natrium) Pulver enthält ">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072178"/>
+							<display value="German"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<!-- to be completed by the MAH -->
+					<extension url="http://ema.europa.eu/fhir/extension/riskOfSupplyShortage">
+						<valueCoding>
+							<system value="http://ema.europa.eu/fhir/riskOfSupplyShortage"/>
+							<code value="False"/>
+							<display value="False"/>
+						</valueCoding>
+					</extension>
+					<country>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000330"/>
+							<display value="Austria"/>
+						</coding>
+					</country>
+					<status>
+						<!-- if PZN available then status marketed -->
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072083"/>
+							<display value="Marketed"/>
+						</coding>
+					</status>
+					<dateRange>
+						<start value="1979-09-13"/>
+						<!-- Zulassungsdatum -->
+					</dateRange>
+				</marketingStatus>
+				<package>
+					<identifier>
+						<system value="http://ema.europa.eu/fhir/dataCarrierIdentifier"/>
+						<!-- GTIN, provided by MAH -->
+						<!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/DataCarrierIdentifier/Value -->
+						<value value="12345678905678"/>
+					</identifier>
+					<type>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<shelfLifeStorage>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+								<code value="100000073403"/>
+								<display
+									value="Shelf life of the medicinal product as packaged for sale"
+								/>
+							</coding>
+						</type>
+						<periodDuration>
+							<value value="3"/>
+							<unit value="year"/>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+							<code value="200000003434">
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="7"/>
+								</extension>
+							</code>
+						</periodDuration>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073410"/>
+								<display value="Do not store above 25 °C"/>
+							</coding>
+						</specialPrecautionsForStorage>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073421"/>
+								<display value="Store in the original package"/>
+							</coding>
+						</specialPrecautionsForStorage>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073426"/>
+								<display value="in order to protect from light"/>
+							</coding>
+						</specialPrecautionsForStorage>
+					</shelfLifeStorage>
+					<package>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073490"/>
+								<display value="Ampoule"/>
+							</coding>
+						</type>
+						<quantity value="1"/>
+						<material>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003204"/>
+								<display value="Glass type I"/>
+							</coding>
+						</material>
+						<containedItem>
+							<item>
+								<!--This is an MID-->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Curocef1500mgPulver-A-HL-ManufacturedItemDefinition"
+									/>
+								</reference>
+							</item>
+							<amount>
+								<value value="5"/>
+								<system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110756">
+									<!-- unit(s) -->
+									<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+										<valueInteger value="1"/>
+									</extension>
+								</code>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Curocef1500mgPulver-A-HL-PackagedProductDefinition02"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- 50 x 1 piece -->
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82008c"/> -->
+		<resource>
+			<PackagedProductDefinition>
+				<id value="Curocef1500mgPulver-A-HL-PackagedProductDefinition03"/>
+				<identifier>
+					<system value="http://ema.europa.eu/fhir/pcId"/>
+					<!-- currently: PHAROS Reiter Packung/Packungsnummer, later: PMS PackageID AT -->
+					<value value="128827003"/>
+				</identifier>
+				<packageFor>
+					<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+				</packageFor>
+				<containedItemQuantity>
+					<value value="1"/>
+					<system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+					<code value="200000002164">
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="50"/>
+						</extension>
+					</code>
+				</containedItemQuantity>
+				<description
+					value="Farblose Glasampulle mit einem Brombutylkautschuk-Stopfen und Aluminium-Verschluss mit aufklappbarem Kunststoffdeckel, die 1500 mg Cefuroxim (als Cefuroxim-Natrium) Pulver enthält ">
+					<extension url="http://ema.europa.eu/fhir/extension/language">
+						<valueCoding>
+							<system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+							<code value="100000072178"/>
+							<display value="German"/>
+						</valueCoding>
+					</extension>
+				</description>
+				<marketingStatus>
+					<!-- to be completed by the MAH -->
+					<extension url="http://ema.europa.eu/fhir/extension/riskOfSupplyShortage">
+						<valueCoding>
+							<system value="http://ema.europa.eu/fhir/riskOfSupplyShortage"/>
+							<code value="False"/>
+							<display value="False"/>
+						</valueCoding>
+					</extension>
+					<country>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000002"/>
+							<code value="100000000330"/>
+							<display value="Austria"/>
+						</coding>
+					</country>
+					<status>
+						<!-- if PZN available then status marketed -->
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000072052"/>
+							<code value="100000072074"/>
+							<display value="Not Marketed"/>
+						</coding>
+					</status>
+					<dateRange>
+						<start value="1979-09-13"/>
+						<!-- Zulassungsdatum -->
+					</dateRange>
+				</marketingStatus>
+				<package>
+					<identifier>
+						<system value="http://ema.europa.eu/fhir/dataCarrierIdentifier"/>
+						<!-- GTIN, not marketed > no number, provided by MAH -->
+						<value value="12345678905678"/>
+					</identifier>
+					<type>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+							<code value="100000073498"/>
+							<display value="Box"/>
+						</coding>
+					</type>
+					<quantity value="1"/>
+					<material>
+						<coding>
+							<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+								<valueInteger value="1"/>
+							</extension>
+							<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+							<code value="200000003529"/>
+							<display value="Cardboard"/>
+						</coding>
+					</material>
+					<shelfLifeStorage>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+								<code value="100000073403"/>
+								<display
+									value="Shelf life of the medicinal product as packaged for sale"
+								/>
+							</coding>
+						</type>
+						<periodDuration>
+							<value value="3"/>
+							<unit value="year"/>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+							<code value="200000003434">
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="7"/>
+								</extension>
+							</code>
+						</periodDuration>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073410"/>
+								<display value="Do not store above 25 °C"/>
+							</coding>
+						</specialPrecautionsForStorage>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073421"/>
+								<display value="Store in the original package"/>
+							</coding>
+						</specialPrecautionsForStorage>
+						<specialPrecautionsForStorage>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+								<code value="100000073426"/>
+								<display value="in order to protect from light"/>
+							</coding>
+						</specialPrecautionsForStorage>
+					</shelfLifeStorage>
+					<package>
+						<type>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+								<code value="100000073490"/>
+								<display value="Ampoule"/>
+							</coding>
+						</type>
+						<quantity value="1"/>
+						<material>
+							<coding>
+								<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+									<valueInteger value="1"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+								<code value="200000003204"/>
+								<display value="Glass type I"/>
+							</coding>
+						</material>
+						<containedItem>
+							<item>
+								<!--This is an MID-->
+								<reference>
+									<reference value="ManufacturedItemDefinition/Curocef1500mgPulver-A-HL-ManufacturedItemDefinition"
+									/>
+								</reference>
+							</item>
+							<amount>
+								<value value="50"/>
+								<system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110756">
+									<!-- unit(s) -->
+									<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+										<valueInteger value="1"/>
+									</extension>
+								</code>
+							</amount>
+						</containedItem>
+					</package>
+				</package>
+			</PackagedProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="PackagedProductDefinition/Curocef1500mgPulver-A-HL-PackagedProductDefinition03"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82009"/> -->
+		<resource>
+			<ManufacturedItemDefinition>
+				<id value="Curocef1500mgPulver-A-HL-ManufacturedItemDefinition"/>
+				<extension url="http://ema.europa.eu/fhir/extension/subject">
+					<valueReference>
+						<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+					</valueReference>
+				</extension>
+				<status value="active"/>
+				<manufacturedDoseForm>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000116186"/>
+						<display value="Powder for solution for injection/infusion"/>
+					</coding>
+				</manufacturedDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002164"/>
+						<display value="Ampoule"/>
+					</coding>
+				</unitOfPresentation>
+				<!--<ingredient>
+					<reference>
+						<reference value="Ingredient/Curocef1500mgPulver-A-HL-Ingredient"/>
+					</reference>
+				</ingredient>-->
+			</ManufacturedItemDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ManufacturedItemDefinition/Curocef1500mgPulver-A-HL-ManufacturedItemDefinition"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82014"/> -->
+		<resource>
+			<AdministrableProductDefinition>
+				<id value="Curocef1500mgPulver-A-HL-AdministrableProductDefinition"/>
+				<status value="active"/>
+				<formOf>
+					<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+				</formOf>
+				<administrableDoseForm>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000004"/>
+						<code value="100000074038"/>
+						<display value="Solution for injection/infusion"/>
+					</coding>
+				</administrableDoseForm>
+				<unitOfPresentation>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+						<code value="200000002164"/>
+						<display value="Ampoule"/>
+					</coding>
+				</unitOfPresentation>
+				<!-- <ingredient>
+					<reference value="Ingredient/Curocef1500mgPulver-A-HL-Ingredient"/>
+				</ingredient> -->
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073600"/>
+							<display value="Intramuscular use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+				<routeOfAdministration>
+					<code>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000073345"/>
+							<code value="100000073611"/>
+							<display value="Intravenous use"/>
+						</coding>
+					</code>
+				</routeOfAdministration>
+			</AdministrableProductDefinition>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="AdministrableProductDefinition/Curocef1500mgPulver-A-HL-AdministrableProductDefinition"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- Not part of the EU IG -->
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82015"/> -->
+		<resource>
+			<ClinicalUseIssue>
+				<id value="Curocef1500mgPulver-A-HL-ClinicalUseIssue"/>
+				<type value="indication"/>
+				<subject>
+					<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+				</subject>
+				<indication>
+					<diseaseSymptomProcedure>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000000006"/>
+								<code value="100000026489"/>
+								<display value="Heartburn"/>
+							</coding>
+						</concept>
+					</diseaseSymptomProcedure>
+					<intendedEffect>
+						<concept>
+							<coding>
+								<system value="https://spor.ema.europa.eu/v1/lists/intendedEffect"/>
+								<code value="X"/>
+								<display value="Treatment"/>
+							</coding>
+						</concept>
+					</intendedEffect>
+				</indication>
+			</ClinicalUseIssue>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="ClinicalUseIssue/Curocef1500mgPulver-A-HL-ClinicalUseIssue"/>
+		</request>
+	</entry>
+
+	<entry>
+		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82010"/> -->
+		<resource>
+			<Ingredient>
+				<id value="Curocef1500mgPulver-A-HL-Ingredient"/>
+				<extension url="http://ema.europa.eu/fhir/extension/masterFile">
+					<extension url="http://ema.europa.eu/fhir/extension/masterFileManufacturer">
+						<valueIdentifier>
+							<system value="https://spor.ema.europa.eu/v1/locations"/>
+							<value value="LOC-100002256"/>
+						</valueIdentifier>
+					</extension>
+					<valueReference>
+						<reference value="DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference02"/>
+					</valueReference>
+				</extension>
+				<extension url="http://ema.europa.eu/fhir/extension/subject">
+					<valueReference>
+						<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
+					</valueReference>
+				</extension>
+				<status value="active"/>
+				<role>
+					<coding>
+						<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+							<valueInteger value="1"/>
+						</extension>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+						<code value="100000072072"/>
+						<display value="Active"/>
+					</coding>
+				</role>
+				<substance>
+					<code>
+						<concept>
+							<coding>
+								<extension
+									url="http://ema.europa.eu/fhir/extension/substanceVersion">
+									<valueInteger value="20"/>
+								</extension>
+								<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+								<code value="100000091436"/>
+								<!-- EUTCT or. APEX -->
+								<display value="CEFUROXIME SODIUM"/>
+							</coding>
+						</concept>
+					</code>
+					<strength>
+						<presentationRatio>
+							<numerator>
+								<value value="1578"/>
+								<comparator>
+									<extension url="http://ema.europa.eu/fhir/extension/comparator">
+										<valueCoding>
+											<extension
+												url="http://ema.europa.eu/fhir/extension/termVersion">
+												<valueInteger value="1"/>
+											</extension>
+											<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+											<code value="100000000049"/>
+											<display value="equal to"/>
+										</valueCoding>
+									</extension>
+								</comparator>
+								<unit value="milligram(s)"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+								<code value="100000110655">
+									<extension url="http://ema.europa.eu/fhir/extension/termVersion">
+										<valueInteger value="1"/>
+									</extension>
+								</code>
+							</numerator>
+							<denominator>
+								<value value="1"/>
+								<unit value="ampoule"/>
+								<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+								<code value="200000002164"/>
+							</denominator>
+						</presentationRatio>
+						<referenceStrength>
+							<substance>
+								<concept>
+									<coding>
+										<system
+											value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+										<code value="100000092667"/>
+										<!-- EUTCT -->
+										<display value="Cefuroxime"/>
+									</coding>
+								</concept>
+							</substance>
+							<strengthRatio>
+								<numerator>
+									<value value="1500"/>
+									<comparator>
+										<extension
+											url="http://ema.europa.eu/fhir/extension/comparator">
+											<valueCoding>
+												<system
+												value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+												<code value="100000000049"/>
+												<display value="equal to"/>
+											</valueCoding>
+										</extension>
+									</comparator>
+									<unit value="milligram(s)"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+									<code value="100000110655"/>
+								</numerator>
+								<denominator>
+									<value value="1"/>
+									<unit value="ampoule"/>
+									<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+									<code value="200000002164"/>
+								</denominator>
+							</strengthRatio>
+						</referenceStrength>
+					</strength>
+				</substance>
+			</Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/Curocef1500mgPulver-A-HL-Ingredient"/>
+		</request>
+	</entry>
+
+</Bundle>

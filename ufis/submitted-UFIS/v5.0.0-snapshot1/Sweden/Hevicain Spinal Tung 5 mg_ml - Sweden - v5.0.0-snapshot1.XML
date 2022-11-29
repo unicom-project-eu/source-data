@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hevicain Spinal Tung 5 mg/ml solution for injection ASPnr 2018-0060-->
+<!-- struccture based on UPD upload message  -->
+<!--  Jeff Martin   2022-01-21 -->
+<Bundle xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <id value="241f0c57-0281-46f9-b6a7-c709b8f19f01"/>
+  <type value="transaction"/>
+  <entry>
+    <fullUrl value="urn:uuid:ee4ca901-fe3c-4db7-8740-d8db86428958"/>
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="20180126000017"/>
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system
+              value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073863"/>
+            <display value="Solution for injection"/>
+          </valueCoding>
+        </extension>
+        <!-- ISO name: /MedicinalProduct/MPID -->
+        <!-- MAH EQL Pharma AB  ORGID 100003167-->
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100003167-00000001"/>
+        </identifier>
+        <!-- ISO name: /MedicinalProduct/EURDId -->
+        <!-- 'Bupivacaine -->
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="10335"/>
+        </identifier>
+        <domain>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/>
+            <display value="Human use"/>
+          </coding>
+        </domain>
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/>
+            <display value="Current"/>
+          </coding>
+        </status>
+        <indication
+          value="Hevicain Spinal Tung 5 mg/ml injektionsvätska, lösning är avsett för vuxna och barn i alla åldrar.
+Spinal analgesi.
+Intratekal (subaraknoidal, spinal) anestesi vid kirurgiska ingrepp och obstetriska undersökningar, t ex
+urologisk kirurgi och kirurgi i nedre extremiteterna (inklusive höftkirurgi) och bukkirurgi (inklusive
+kejsarsnitt) som varar 1,5 – 3 timmar."/>
+        <legalStatusOfSupply>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/>
+            <display value="Medicinal product subject to medical prescription"/>
+          </coding>
+        </legalStatusOfSupply>
+        <classification>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000116677"/>
+            <code value="100000097195"/>
+            <display value="N01BB01"/>
+          </coding>
+        </classification>
+        <name>
+          <productName value="Hevicain Spinal Tung 5 mg/ml injektionsvätska, lösning"/>
+          <namePart>
+            <part value="Hevicain Spinal Tung"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000002"/>
+                <display value="Invented name part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="5 mg/ml"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/>
+                <display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="injektionsvätska, lösning"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/>
+                <display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+        <!--
+        <package>
+         <package>
+           <reference value="PackagedProductDefinition/20180423100175"/>
+         </package>
+        </package> -->
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="MedicinalProductDefinition/20180126000017"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:2f012a2c-d57c-4ab0-8cc7-e56f6dd310c5"/>
+    <resource>
+      <RegulatedAuthorization>
+        <id value="MTnr57470"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <value value="57470"/>
+        </identifier>
+        <subject>
+          <reference value="MedicinalProductDefinition/20180126000017"/>
+          <!-- <reference value="urn:uuid:ee4ca901-fe3c-4db7-8740-d8db86428958"/>-->
+        </subject>
+        <type>
+          <coding>
+            <!-- MAH -->
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <code value="220000000061"/>
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+        <region>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+        <statusDate value="2019-08-12"/>
+ 
+        <holder>
+          <reference value="http://spor.ema.europa.eu/v1/locations/ORG-100003167"/>
+          <display value="EQL Pharma AB"/>
+        </holder>       
+
+        <case>
+          <type>
+            <coding>
+              <system value="http://ema.europa.eu/fhir/code-systems/authorisation-date-type"/>
+              <code value="dateOfFirstAuthorisation"/>
+            </coding>
+          </type>
+          <dateDateTime value="2019-08-12"/> 
+        </case>
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="RegulatedAuthorization/MTnr57470"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:124d5041-0a0b-5345-dcba-eeffaa100000"/>
+    <resource>
+      <AdministrableProductDefinition>
+        <id value="hevicain5-SE-PharmProd"/>
+        <status value="active"/>
+        <formOf>
+          <reference value="MedicinalProductDefinition/20180126000017"/>
+          <!--<reference value="urn:uuid:ee4ca901-fe3c-4db7-8740-d8db86428958"/>-->
+        </formOf>
+        <administrableDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073863"/>
+            <display value="Film-coated tablet"/>
+          </coding>
+        </administrableDoseForm>
+        <!-- <reference value="urn:uuid:f13b314c-b6d4-49fe-878a-271ac178fd16"/>  
+        <ingredient>
+          <reference value="Ingredient/hevicain5-SE-Ingredient001"/
+        </ingredient>--> 
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073608"/>
+              <display value="Intrathecal use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="AdministrableProductDefinition/hevicain5-SE-PharmProd"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:4563c2e5-16b8-4535-811e-ac570bb7d030"/>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="20180423100175"/>
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="5"/>
+            <unit value="Ampoule"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002164"/>
+          </valueQuantity>
+        </extension>
+        <packageFor>
+          <reference value="MedicinalProductDefinition/20180126000017"/>
+          <!--<reference value="urn:uuid:124d5041-0a0b-5345-dcba-aabbcc100000"/>-->
+        </packageFor>
+        <description value="Ampull, 5 x 4 ml">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/>
+              <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/>
+              <display value="Sweden"/>
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072075"/>
+              <display value="Marketed"/>
+            </coding>
+          </status>
+          <dateRange>
+            <!--            <start value="unknown"/>  not allowed -->
+          </dateRange>
+        </marketingStatus>
+        <package>
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerType -->
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/>
+              <display value="Box"/>
+            </coding>
+          </type>
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_ContainerQuantity -->
+          <quantity value="1"/>
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/Material -->
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/>
+              <display value="Cardboard"/>
+            </coding>
+          </material>
+          <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container -->
+          <package>
+            <!-- ISO name: /MedicinProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073496"/>
+                <display value="Blister"/>
+              </coding>
+            </type>
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+            <quantity value="5"/>
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/>
+                <display value="Aluminium"/>
+              </coding>
+            </material>
+          </package>
+          <package>
+            <!-- ISO name: /MedicinProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerType -->
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073490"/>
+                <display value="Ampoule"/>
+              </coding>
+            </type>
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/PackageItem_ContainerQuantity -->
+            <quantity value="1"/>
+            <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/Material -->
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="XXX"/>
+                <display value="Glass"/>
+              </coding>
+            </material>
+            <containedItem>
+              <item>
+                <reference>
+                  <reference value="ManufacturedItemDefinition/hevicain5-SE-ManItem001"/>
+                  <!-- <reference value="urn:uuid:edf350de-bbda-4d15-8693-f27642743d84"/> -->
+                </reference>
+              </item>
+              <amount>
+                <value value="4"/>
+                <unit value="millilitre(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                <code value="100000110662"/>
+              </amount>
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="PackagedProductDefinition/20180423100175"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:edf350de-bbda-4d15-8693-f27642743d84"/>
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="hevicain5-SE-ManItem001"/>
+        <extension url="http://ema.europa.eu/fhir/extension/manufacturedItemDefinitionSubject">
+          <valueReference>
+            <reference value="MedicinalProductDefinition/20180126000017"/>
+            <!-- <reference value="urn:uuid:ee4ca901-fe3c-4db7-8740-d8db86428958"/> -->
+          </valueReference>
+        </extension>
+        <status value="active"/>
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073863"/>
+            <display value="Solution for injection"/>
+          </coding>
+        </manufacturedDoseForm>
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002164"/>
+            <display value="Ampoule"/>
+          </coding>
+        </unitOfPresentation>
+        <!-- <reference value="urn:uuid:f13b314c-b6d4-49fe-878a-271ac178fd16"/>
+        <ingredient>
+          <reference>
+            <reference value="Ingredient/hevicain5-SE-Ingredient001"/> 
+          </reference>
+        </ingredient> -->
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="ManufacturedItemDefinition/hevicain5-SE-ManItem001"/>
+    </request>
+  </entry>
+  <entry>
+    <fullUrl value="urn:uuid:f13b314c-b6d4-49fe-878a-271ac178fd16"/>
+    <resource>
+      <Ingredient>
+        <id value="hevicain5-SE-Ingredient001"/>
+        <extension url="http://ema.europa.eu/fhir/extension/ingredientSubject">
+          <valueReference>
+            <reference value="MedicinalProductDefinition/20180126000017"/>
+            <!-- <reference value="urn:uuid:ee4ca901-fe3c-4db7-8740-d8db86428958"/> -->
+          </valueReference>
+        </extension>
+        <status value="active"/>
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/>
+            <display value="Active"/>
+          </coding>
+        </role>
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                <code value="100000088212"/>
+                <display value="bupivacaine hydrochloride (monohydrate)"/>
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <concentrationRatio>
+              <numerator>
+                <value value="5.277"/>
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/>
+              </numerator>
+              <denominator>
+                <value value="1"/>
+                <unit value="millilitre(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110662"/>
+              </denominator>
+            </concentrationRatio>
+            <referenceStrength>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000088449"/>
+                    <display value="bupivacaine"/>
+                  </coding>
+                </concept>
+              </substance>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+              <strengthRatio>
+                <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+                <numerator>
+                  <value value="4.44"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+                <denominator>
+                  <value value="1"/>
+                  <unit value="millilitre(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="100000110662"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+            <referenceStrength>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceSubstance -->
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000135638"/>
+                    <display value="bupivacaine hydrochloride, anhydrous"/>
+                  </coding>
+                </concept>
+              </substance>
+              <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength -->
+              <strengthRatio>
+                <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/numerator -->
+                <numerator>
+                  <value value="5"/>
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/PackageItem_Container/ManufacturedItem/Ingredient/Substance/Strength/ReferenceStrength/ReferenceStrength/denominator -->
+                <denominator>
+                  <value value="1"/>
+                  <unit value="millilitre(s)"/>
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="100000110662"/>
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/hevicain5-SE-Ingredient001"/>
+    </request>
+  </entry>
+</Bundle>

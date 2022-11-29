@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Vaxigrip Tetra-->
+<!-- Alva Jonsson -->
+<!-- Started 2022-06-27, latest edit 2022-06-28-->
+<!-- follows the 5.0 standard-->
+<!-- started-->
+
+
+<!-- Referenser:
+Entry 1, MedicinalProductDefinition:       ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:              ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:   ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-AdministrableProductDef
+Entry 4, PackagedProductDefinition:        ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition01
+Entry 5, PackagedProductDefinition:        ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition02
+Entry 6, PackagedProductDefinition:        ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition03
+Entry 7, ManufacturedItemDefinition:       ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition
+Entry 8, Ingredient:                       ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient01
+Entry 9, Ingredient:                       ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient02
+Entry 10, Ingredient:                       ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient03
+Entry 11, Ingredient:                       ersätts av VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient04                       -->
+
+<!-- CHANGE(S) HERE!!! New BUndle element. Ändring inlagd 2022-06-27. //Johan -->
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+<!-- END OF CHANGE(S) -->
+
+  <type value="transaction" /><!--fixed value-->
+  
+  <entry><!-- start of Medicinal product definition--><!--started--><!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:3c3b6966-161a-4336-8c0e-ce0e5f1b17dd" />-->  <!--new id generated:3c3b6966-161a-4336-8c0e-ce0e5f1b17dd--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <MedicinalProductDefinition>
+		<id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /> <!-- m-->
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> <!-- pharmaceutical dose form of the product-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000007" /><!-- EMA lists of pharmaceutical dose forms,fixed value-->
+			<code value="100000074063" /> <!--ID for pharmaceutical dose form-->
+			<display value="Suspension for injection in pre-filled syringe" /> <!--term for pharmaceutical dose form-->
+		  </valueCoding>
+		</extension>
+		
+		<identifier> <!-- FHIR identifier-->
+			<system value="http://ema.europa.eu/fhir/mpId" />
+			<value value= "SE-100005958-00053400" /><!-- SE-numbers from ORGID-000mtnr--> <!-- Johan's suggestion until we hear from Estonia-->
+		</identifier>
+		
+		<identifier>  <!-- EURD-ID, see U:\ EURD-listan--> <!-- the feck?--> <!--think i found it-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="10298"/>  <!--influenza vaccine (split virion, inactivated) (non centrally authorised products)-->
+		</identifier>
+		
+		<domain><!-- is the drug for human or veterinary use, or both? most likly to be human only--> <!-- human use, 100000000012, vet use 100000000013 -->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> <!-- EMA list of domains-->
+			<code value="100000000012" /><!--ID for domain-->
+			<display value="human use" /><!--term for domain-->
+		  </coding>
+		</domain>
+		
+		<status> <!-- status of the document, always current right now --> <!-- fixed value-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> <!-- EMA list of record status-->
+			<code value="200000005004" /><!--ID for status-->
+			<display value="Current" /><!--term for status-->
+		  </coding>
+		</status>		
+		
+		<indication value="VaxigripTetra är avsett för att förebygga influensa orsakad av de två subtyper av influensa A virus och 
+två typer av influensa B virus som finns i vaccinet för:
+- aktiv immunisering av vuxna, inklusive gravida kvinnor, och barn från 6 månader och uppåt
+- passivt skydd av nyfödda och spädbarn under 6 månader efter vaccinering av gravida kvinnor (se 
+avsnitt 4.4, 4.6 och 5.1)
+Användning av VaxigripTetra ska bedömas på basis av officiella rekommendationer. " /> <!--indication from SmPC/FASS/wherever we can find it--><!--indication taken from SmPC--><!-- impossible to define language here-->
+		
+		
+		<legalStatusOfSupply><!-- subject to medcial prescription or not, type of prescription-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" /><!-- EMA list of legal status for the supply-->
+			<code value="100000072084" /><!--ID for legal staus-->
+			<display value="Medicinal product subject to medical prescription" /><!--term for legal status-->
+		  </coding>
+		</legalStatusOfSupply>
+		
+		
+		<classification><!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" /> <!-- EMA list of Anatomical Therapeutic Chemical classification system human-->
+			<code value="100000096563" /><!--ID for code-->
+			<display value="J07BB02" /><!-- influenza, inactivated, split virus or surface antigen-->
+		  </coding>
+		</classification>
+		
+		<!-- FIXED!!! CHANGE HERE!!! 2022-06-23 -->
+		<!--<comprisedOf> --><!-- refers to the manufactured item(s) that the product is compromised of--> <!--Several references possible-->
+			<!--<reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /> -->  <!-- refers to Manufactured Item(s) -->
+		<!--</comprisedOf>-->
+		<!-- FIXED!!! END OF CHANGE 202-06-23-->
+		
+		<name> <!-- name of the product-->
+		
+		  <productName value="VaxigripTetra Injektionsvätska, suspension, förfylld spruta" /> <!-- full name, in swedish  Name+ strength+ form-->
+		  
+		  <namePart>
+		    <part value="VaxigripTetra" /> <!-- invented/scientific part of the name, Produktnamn in EIRA-->
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- EMA list of Medicinal product name part type-->
+				<code value="220000000002" /> <!--ID for name part--> <!-- invented 220000000002, scientific 220000000003-->
+				<display value="Invented Name Part" /><!-- specify wether the name is invented (fantasinamn) or scientific (vetenskapligt) substance+ company e.g. Metylfenidat actavis-->
+			  </coding>
+			</type>
+		  </namePart>
+<!-- strength part removed, no definable strength as it is a vaccine-->
+          <namePart>
+            <part value="Injektionsvätska, suspension, förfylld spruta" /> <!-- pharmaceutical dose form in swedish, as stated in the name of the product-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- EMA list of Medicinal product name part type-->
+                <code value="220000000005" /><!--ID for name part--> <!--fixed value-->
+				<display value="Pharmaceutical dose form part"/><!--term for name part--> <!-- fixed value-->
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage> <!-- language of the name, all names will be in swedish so there will be no changes--><!-- more or less a fixed value-->
+            <country> <!-- always sweden-->
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- EMA list of countries-->
+                <code value="100000000535" /><!--ID for country-->
+				<display value="Sweden"/><!-- name of country, short name should be enough. Specify which country the product is from even though the language can be spoken in several countries-->
+              </coding>
+            </country>
+            <language> <!-- language of the name, always swedish--><!--fixed value-->
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- EMA list of languages-->
+                <code value="100000072288" /> <!-- ID for language-->
+				<display value="Swedish"/> <!--name of language-->
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- end of Medicinal product definition--><!--started-->
+  
+  
+
+  <entry>  <!-- start of Regulated marketing authorisation--><!--started--><!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:a255f807-1fa4-4ecb-9e7a-fdd777cd5465" /> --> <!--new id generated:a255f807-1fa4-4ecb-9e7a-fdd777cd5465--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	   <id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-RegulatedAuthorization" />
+	   
+        <identifier> <!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="53400" /> <!--MT number, found in EIRA-->
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> <!-- shows that this product is approved--><!-- type of regulatory entitlement, always Markteing authorisation.--><!--fixed value-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" /><!-- EMA list of regulatory entitlement type-->
+            <code value="220000000061" /> <!--ID for type-->
+			<display value="Marketing Authorisation"/> <!-- term for type-->
+          </coding>
+        </type>
+
+        <region> <!-- region where document is valid--> <!-- will be sweden for all procedures except CP--><!--essentially a fixed value-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- EMA list of countries-->
+            <code value="100000000535" /> <!--ID for country-->
+			<display value="Sweden"/> <!--name of country, short name should be enough-->
+          </coding>
+        </region>
+
+        <status> <!-- wether or not the ducoment is valid, should always be valid--><!--fixed value-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> <!--  EMA list of regulatory entitlement status-->
+            <code value="100000072099" /> <!--ID for status-->
+			<display value="Valid"/> <!-- term for status-->
+          </coding>
+        </status>
+
+        <statusDate value="2016-11-25" /> <!-- date of first authorisation-->
+
+
+        <holder> <!-- MAH, marketing authorisation holder-->
+		
+        <identifier>
+          <system value="http://spor.ema.europa.eu/v1/locations" /> 
+		  <value value="LOC-100010588"/> <!--this was intresting-->
+		</identifier>
+		
+          <display value="Sanofi Pasteur Europe" /> <!-- name of MAH-->
+        </holder>
+		
+       <!--CHANGE(S) HERE!!! 2022-06-27-->
+	   <!-- new element-->
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="2016-11-25"/>    <!-- date of first authorisation, found in eira -->
+					
+		</case>
+		<!-- END OF CHANGE(S) !!! 2022-06-27-->		
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/VaxigripTetra-0.5ml-Suspension-SE-AJ-RegulatedAuthorization" /> <!-- insert MT number -->
+    </request>
+  </entry> <!-- end of Regulated marketing authorisation--><!--started-->
+  
+  
+  
+  <entry> <!-- start of Administrable product definition--><!--started-->
+    <!--<fullUrl value="urn:uuid:fab75d48-00b9-4fdd-8708-c2f3888c3463" />--> <!--new id generated:fab75d48-00b9-4fdd-8708-c2f3888c3463--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-AdministrableProductDef"/> <!--wild but educated guess. Johan's suggestion: NPLid + SE + PharmProd01 etc-->
+		 <status value="active"/>
+		 
+        <!-- FIXED !!!CHANGE(S) HERE!!! 2022-06-23-->
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+		<!--FIXED!!!  END OF CHANGE(S)!!! 2022-06-23-->
+
+        <administrableDoseForm><!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> <!-- EMA list of pharmaceutical dose forms-->
+            <code value="100000073864" /> <!--ID for parmaceutical dose form-->
+			<display value="Suspension for injection"/> <!--term for pharmaceutical dose form-->
+          </coding>
+        </administrableDoseForm>
+		
+		
+        <!--FIXED!!!CHANGE(S) HERE!!! 2022-06-23-->
+		<producedFrom> <!-- refer to the manufactured items that the administrable dose form consists of-->
+			<reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+		<!-- FIXED!!!END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <routeOfAdministration><!--route of administration, found in EIRA--> <!--can I make several elements? because I need it. I'll simply try-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> <!-- EMA list of routes and methods of administration-->
+              <code value="100000073600" /> <!--ID for route of administration-->
+			<display value="Intramuscular use"/> <!--term for route of administration-->
+            </coding>
+          </code>
+        </routeOfAdministration>
+		
+        <routeOfAdministration><!--route of administration, found in EIRA--> <!--Attempt at defining another route of administration-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> <!-- EMA list of routes and methods of administration-->
+              <code value="100000073633" /> <!--ID for route of administration-->
+			<display value="Subcutaneous use"/> <!--term for route of administration-->
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-AdministrableProductDef" /> <!-- once again a wild but educated guess according to Johan's suggestion-->
+    </request>
+  </entry> <!-- end of Administrable product definition--><!--started-->
+  
+    <entry>  <!-- start of Packaged Product definition01--><!--started--><!--1x0,5 ml med nål--><!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:a285cc14-9646-4adf-a0a3-cb95312afbf2" />--> <!--new id generated:a285cc14-9646-4adf-a0a3-cb95312afbf2--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+
+      <PackagedProductDefinition> <!-- description of just about everything regarding a single package--><!--1 x 0,5 ml, (med injektionsnål)-->
+		<id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition01"/> <!-- npl packID, found in EIRA-->
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />
+			<!--this quantity seems a bit arbitary, we can make something up as long as it has a bit of logic in it and makes it fairly easy for the general person to understand how much product the entire package contains and how it is divided-->
+			<unit value="syringe"/>  <!-- term for unit -->			
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!-- EMA list of units of presentation-->
+            <code value="200000002150" /> <!--ID for unit-->
+          </valueQuantity>
+        </extension>
+		
+        <!--FIXED!!! CHANGE(S) HERE!!! 2022-06-23-->
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		<!--FIXED!!!  END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <description value="förfylld spruta, 1 x 0,5 ml (med injektionsnål)"> <!-- insert how the package is marketed/named in sweden-->
+          <extension url="http://ema.europa.eu/fhir/extension/language"><!--fixed value-->
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /><!--EMA list of languages-->
+              <code value="100000072288" /> <!-- ID for language-->
+			  <display value="Swedish"/>  <!-- term for language-->
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> <!-- if the package is marketed or not, and why not-->
+		
+          <country> <!-- country where the status is valid, always sweden--><!--fixed value-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /><!--EMA list of countries-->
+              <code value="100000000535" /> <!--id for country-->
+			  <display value="Sweden"/> <!--term for country-->
+            </coding>
+          </country>
+		  
+          <status> <!-- the actual status of the package-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- EMA list of marketing statuses. Stati?-->
+              <code value="100000072083" /> <!-- ID--><!--hevicain code wrong-->
+			  <display value="Marketed"/> <!--term-->
+            </coding>
+          </status>
+		  
+          <dateRange> 
+            <start/><!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products--> <!--fixed value-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package><!--outermost packaging layer start--> <!-- packaging information is sparse in Eira etc, look in 3.2p7 in the dossier to find better information. Search in step/mine-->
+		
+		  <type> <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- EMA list of packaging-->
+			  <code value="100000073498"/><!-- ID for packaging-->
+			  <display value="Box"/> <!--term for packaging-->
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/><!--always one, according to the standard. Boxes are easy, plastic film not so much-->
+		  
+		  <material> <!-- material of packaging--> <!-- several material elements can be added right after one another if there are several materials-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!--EMA list of materials-->
+			  <code value="200000003529"/><!-- ID for material-->
+			  <display value="Cardboard"/><!--term for material-->
+			</coding>
+		  </material>
+		  
+<!--should we add this, ask JOhan--><shelfLifeStorage><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/ShelfLifeType -->
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+				  
+                  <periodDuration>
+                     <value value="1"/>
+                     <unit value="year"/>
+                     <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+					 <code value="200000003434" />
+                  </periodDuration>
+
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073414"/>
+                        <display value="Store in a refrigerator (2°C - 8°C)"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073421"/>
+                        <display value="Store in the original package"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073426"/>
+                        <display value="in order to protect from light"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+<!--should we add this, ask JOhan--></shelfLifeStorage>
+			   
+			<package><!--package layer two--> <!-- there seems to be a kind of plastic container, I will define it as a blister because why not--> <!-- add as many layers of packaging as you need--> <!-- each new layer should be inside the former one. If two packages are nex to each other they should appear after one another inside the same outer layer-->
+			  <type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				  <code value="100000174066"/><!-- ID for packaging-->
+				  <display value="Unit-dose blister"/> <!--term for packaging-->
+				</coding>
+			  </type>
+			  
+			  <quantity value="1"/> <!-- insert number of packages in this level-->
+			  
+				<material><!--material of package.--> <!--stopper and whatever the other thing was called are more difficult to define as they would have to de defined as separate layers of packaging due to having their own codes, but we cant define wether they are inside or outside the vial, and they can't be put as individual layers inside layer one as that would indicate that they lie separately in the box, not connected to the glass vial, which is also very incorrect-->
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					<code value="200000003208"/><!-- ID for material-->
+					<display value="Plastic"/><!--term for material-->
+				  </coding>
+				</material>
+			      <package><!--innermost packaging layer--> <!-- i'll put the syringe here until we know what to do about it-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				        <code value="100000073544"/><!-- ID for packaging-->
+				        <display value="Pre-filled syringe"/> <!--term for packaging-->
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/> <!-- insert number of packages in this level-->
+			  
+				    <material><!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					    <code value="200000003204"/><!-- ID for material-->
+					    <display value="Glass type I"/><!--term for material-->
+				      </coding>
+				    </material>
+					
+				      <containedItem><!-- Always inside the innermost layer of packaging, whatever that layer is--> 
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount>
+					      <value value="0.5" /> <!-- number of manufactured items inside the innermost package-->
+					      <unit value="Millilitre(s)"/> <!-- term for unit of presentation-->						  
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /><!-- EMA list of units of measurement-->
+					      <code value="100000110662" /> <!-- id for unit -->
+					    </amount>
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+			</package> <!-- endof package layer two-->
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition01" />
+    </request>
+  </entry> <!-- end of Packaged Product definition--><!--started-->
+  
+  <entry>  <!-- start of Packaged Product definition02--><!--started--><!--10 x 0,5 ml med nål--><!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:1205452f-1152-486b-a7e7-d5e89931efd1" />--> <!--new id generated:1205452f-1152-486b-a7e7-d5e89931efd1--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+
+      <PackagedProductDefinition> <!-- description of just about everything regarding a single package--><!--10 x 0,5 ml (med injektionsnål)-->
+		<id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition02"/> <!-- npl packID, found in EIRA-->
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="10" /><!--this quantity seems a bit arbitary, we can make something up as long as it has a bit of logic in it and makes it fairly easy for the general person to understand how much the entire package contains-->
+			<unit value="syringe"/>  <!-- term for unit -->			
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!-- EMA list of units of presentation-->
+            <code value="200000002150" /> <!--ID for unit-->
+          </valueQuantity>
+        </extension>
+		
+        <!--CHANGE(S) HERE!!! 2022-06-23-->
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		<!-- END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <description value="Förfylld spruta, 10 x 0,5 ml (med injektionsnål)"> <!-- insert how the package is marketed in sweden, even if it seems a bit not correct as compared to what the package actualy is-->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /><!--EMA list of languages-->
+              <code value="100000072288" /> <!-- ID for language-->
+			  <display value="Swedish"/>  <!-- term for language-->
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> <!-- if the package is marketed, or not, and why not-->
+		
+          <country> <!-- country where the status is valid, always sweden-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /><!--EMA list of countries-->
+              <code value="100000000535" /> <!--id for country-->
+			  <display value="Sweden"/> <!--term for country-->
+            </coding>
+          </country>
+		  
+          <status> <!-- the actual status of the package-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- EMA list of marketing statuses. Stati?-->
+              <code value="100000072083" /> <!-- ID-->
+			  <display value="Marketed"/> <!--term-->
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/><!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package><!--outermost packaging layer start--> <!-- packaging information is sparse in Eira etc, look in 3.2p7 in the dossier to find better information. Search in step/mine-->
+		
+		  <type> <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- EMA list of packaging-->
+			  <code value="100000073498"/><!-- ID for packaging-->
+			  <display value="Box"/> <!--term for packaging-->
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/><!--always one, according to the standard. Boxes are easy, plastic film not so much-->
+		  
+		  <material> <!-- material of packaging--> <!-- several material elements can be added right after one another if there are several materials-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!--EMA list of materials-->
+			  <code value="200000003529"/><!-- ID for material-->
+			  <display value="Cardboard"/><!--term for material-->
+			</coding>
+		  </material>
+		  
+<!--should we add this, ask JOhan--><shelfLifeStorage><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/ShelfLifeType -->
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+				  
+                  <periodDuration>
+                     <value value="1"/>
+                     <unit value="year"/>
+                     <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+					 <code value="200000003434" />
+                  </periodDuration>
+
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073414"/>
+                        <display value="Store in a refrigerator (2°C - 8°C)"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073421"/>
+                        <display value="Store in the original package"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073426"/>
+                        <display value="in order to protect from light"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+<!--should we add this, ask JOhan--></shelfLifeStorage>
+			   
+			<package><!--package layer two--> <!-- there seems to be a kind of plastic container, rather tray-lookning. Couldn't find a better tern than container. Don't think I'm allowed to define it as a blister--> <!-- add as many layers of packaging as you need--> <!-- each new layer should be inside the former one. If two packages are nex to each other they should appear after one another inside the same outer layer-->
+			  <type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				  <code value="100000137702"/><!-- ID for packaging-->
+				  <display value="Container"/> <!--term for packaging-->
+				</coding>
+			  </type>
+			  
+			  <quantity value="2"/> <!-- insert number of packages in this level-->
+			  
+				<material><!--material of package.--> <!--stopper and whatever the other thing was called are more difficult to define as they would have to de defined as separate layers of packaging due to having their own codes, but we cant define wether they are inside or outside the vial, and they can't be put as individual layers inside layer one as that would indicate that they lie separately in the box, not connected to the glass vial, which is very incorrect-->
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					<code value="200000003208"/><!-- ID for material-->
+					<display value="Plastic"/><!--term for material-->
+				  </coding>
+				</material>
+			      <package><!--innermost packaging layer--> <!-- i'll put the syringe here until we know what to do about it--> <!-- i'd like to be able to define the needle as well, how? just another layer? a contained item? It is connected to the syringe-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				        <code value="100000073544"/><!-- ID for packaging-->
+				        <display value="Pre-filled syringe"/> <!--term for packaging-->
+				      </coding>
+			        </type>
+			  
+			        <quantity value="5"/> <!-- insert number of packages in this level-->
+			  
+				    <material><!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					    <code value="200000003204"/><!-- ID for material-->
+					    <display value="Glass type I"/><!--term for material-->
+				      </coding>
+				    </material>
+					
+				      <containedItem><!-- Always inside the innermost layer of packaging, whatever that layer is--><!-- there could be one or more comtained items--> 
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount>
+					      <value value="0.5" /> <!-- number of manufactured items inside the innermost package-->
+					      <unit value="Millilitre(s)"/> <!-- term for unit of presentation-->						  
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /><!-- EMA list of units of measurement-->
+					      <code value="100000110662" /> <!-- id for unit -->
+					    </amount>
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+			</package> <!-- endof package layer two-->
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition02" />
+    </request>
+  </entry> <!-- end of Packaged Product definition--><!--started-->
+  
+  <entry>  <!-- start of Packaged Product definition03--><!--started--><!--10 x 0,5 ml utan nål--><!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:d2d901fd-68c9-4997-9431-8e702b509e86" /> --><!--new id generated:d2d901fd-68c9-4997-9431-8e702b509e86--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+
+      <PackagedProductDefinition> <!-- description of just about everything regarding a single package--><!--10 x 0,5 ml (utan injektionsnål)-->
+		<id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition03"/> <!-- npl packID, found in EIRA-->
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="10" />
+			<unit value="syringe"/>  <!-- term for unit -->			
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!-- EMA list of units of presentation-->
+            <code value="200000002150" /> <!--ID for unit-->
+          </valueQuantity>
+        </extension>
+		
+        <!--FIXED!!!CHANGE(S) HERE!!! 2022-06-23-->
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		<!--FIXED!!! END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <description value="whatever the company calls the package in swedish"> <!-- insert how the package is marketed in sweden, even if it seems a bit not correct as compared to what the package actualy is-->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /><!--EMA list of languages-->
+              <code value="100000072288" /> <!-- ID for language-->
+			  <display value="Swedish"/>  <!-- term for language-->
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> <!-- if the package is marketed, or not, and why not-->
+		
+          <country> <!-- country where the status is valid, always sweden-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /><!--EMA list of countries-->
+              <code value="100000000535" /> <!--id for country-->
+			  <display value="Sweden"/> <!--term for country-->
+            </coding>
+          </country>
+		  
+          <status> <!-- the actual status of the package-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- EMA list of marketing statuses. Stati?-->
+              <code value="100000072083" /> <!-- ID-->
+			  <display value="Marketed"/> <!--term-->
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/><!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package><!--outermost packaging layer start--> <!-- packaging information is sparse in Eira etc, look in 3.2p7 in the dossier to find better information. Search in step/mine-->
+		
+		  <type> <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- EMA list of packaging-->
+			  <code value="100000073498"/><!-- ID for packaging-->
+			  <display value="Box"/> <!--term for packaging-->
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/><!--always one, according to the standard. Boxes are easy, plastic film not so much-->
+		  
+		  <material> <!-- material of packaging--> <!-- several material elements can be added right after one another if there are several materials-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!--EMA list of materials-->
+			  <code value="200000003529"/><!-- ID for material-->
+			  <display value="Cardboard"/><!--term for material-->
+			</coding>
+		  </material>
+		  
+<!--should we add this, ask JOhan--><shelfLifeStorage><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/ShelfLifeType -->
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+				  
+                  <periodDuration>
+                     <value value="1"/>
+                     <unit value="year"/>
+                     <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+					 <code value="200000003434" />
+                  </periodDuration>
+
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073414"/>
+                        <display value="Store in a refrigerator (2°C - 8°C)"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+				  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073421"/>
+                        <display value="Store in the original package"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073426"/>
+                        <display value="in order to protect from light"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+<!--should we add this, ask JOhan--></shelfLifeStorage>
+			   
+			<package><!--package layer two--> <!-- there seems to be a kind of plastic container,  i've used container as the term since there seems to be no better alternative at the moment--> <!-- add as many layers of packaging as you need--> <!-- each new layer should be inside the former one. If two packages are nex to each other they should appear after one another inside the same outer layer-->
+			  <type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				  <code value="100000137702"/><!-- ID for packaging-->
+				  <display value="Container"/> <!--term for packaging-->
+				</coding>
+			  </type>
+			  
+			  <quantity value="2"/> <!-- insert number of packages in this level-->
+			  
+				<material><!--material of package.--> <!--stopper and whatever the other thing was called are more difficult to define as they would have to de defined as separate layers of packaging due to having their own codes, but we cant define wether they are inside or outside the vial, and they can't be put as individual layers inside layer one as that would indicate that they lie separately in the box, not connected to the glass vial-->
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					<code value="200000003208"/><!-- ID for material-->
+					<display value="Plastic"/><!--term for material-->
+				  </coding>
+				</material>
+			      <package><!--innermost packaging layer--> <!-- i'll put the syringe here until we know what to do about it-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				        <code value="100000073544"/><!-- ID for packaging-->
+				        <display value="Pre-filled syringe"/> <!--term for packaging-->
+				      </coding>
+			        </type>
+			  
+			        <quantity value="5"/> <!-- insert number of packages in this level-->
+			  
+				    <material><!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					    <code value="200000003204"/><!-- ID for material-->
+					    <display value="Glass type I"/><!--term for material-->
+				      </coding>
+				    </material>
+					
+				      <containedItem><!-- Always inside the innermost layer of packaging, whatever that layer is--><!-- there could be one or more comtained items--> <!-- our item should be the manufactured item--><!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount>
+					      <value value="0.5" /> <!-- number of manufactured items inside the innermost package-->
+					      <unit value="Millilitre(s)"/> <!-- term for unit of presentation--> <!--should this be unit value-->						  
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /><!-- EMA list of units of measurement-->
+					      <code value="100000110662" /> <!-- id for unit -->
+					    </amount>
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+			</package> <!-- endof package layer two-->
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-PackagedProductDefinition03" />
+    </request>
+  </entry> <!-- end of Packaged Product definition--><!--started-->
+  
+    <entry> <!--start of manufactured item definition--><!--started--><!--several entries allowed--> <!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+    <!--<fullUrl value="urn:uuid:3b67ea6c-dc3d-4163-8a35-b8049ec00535" />--> <!-- new id generated: 3b67ea6c-dc3d-4163-8a35-b8049ec00535--><!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition"/><!--NPL-ID-SE-ManItem001-->
+		
+		<status value="active" />
+		
+        <manufacturedDoseForm> <!-- pharmaceutical dose form of the manufactures item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /><!-- EMA list of pharmaceutical dose forms--> <!-- can i use the 007 list, and define the whole shit?-->
+            <code value="100000073864" /> <!--ID for pharmaceutical dose form-->
+			<display value="suspension for injection"/> <!--term for pharmaceutical dose form-->
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation> <!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!--EMA list of unit of presentation-->
+            <code value="200000002150" /> <!-- ID for unit-->
+			<display value="syringe"/> <!--term for unit-->
+          </coding>
+        </unitOfPresentation>
+		
+		<!--<manufactureditemquantity>-->
+			<!--<value value="0.5" /> --><!-- number of manufactured items inside the innermost package-->
+			<!--<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />--><!-- EMA list of units of measurement-->
+			<!--<code value="100000110662" />--> <!-- id for unit -->
+			<!--<display value="Millilitre(s)"/> --><!-- term for unit of presentation-->
+		<!--</manufactureditemquantity>-->
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- end of manufactured item definition--><!--started-->
+  
+  <entry><!-- start of ingredient01--><!--started--> <!-- Ingredient 1, influenza virus A/Cambodia/e0826360/2020 (H3N2)-like strain (A/Tasmania/503/2020, IVR-221), split virion, inactivated--><!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:293d9e5e-e6df-4d0d-a4d3-e77ce7091e37" />--><!-- new id generated: 293d9e5e-e6df-4d0d-a4d3-e77ce7091e37--><!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <Ingredient> <!-- Ingredient 1, influenza virus A/Cambodia/e0826360/2020 (H3N2)-like strain (A/Tasmania/503/2020, IVR-221), split virion, inactivated-->
+	  <id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient01" />
+	  
+		<status value="active" />
+		
+        <!--<extension url="http://ema.europa.eu/fhir/extension/ingredientSubject">-->
+		
+        <!--FIXED!!!CHANGE(S) HERE!!! 2022-06-23-->
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+		<!-- FIXED!!!END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <!--</extension>-->
+		
+
+        <role><!--the role of the substance, always active, as for now-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> <!-- EMA list of ingredient roles-->
+            <code value="100000072072" /> <!--ID for role-->
+			<display value="Active"/> <!--term for role-->
+          </coding>
+        </role>
+		
+        <substance><!--name the substance in the drug-->
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+              <code value="300000034518" /> <!--ID for substance-->
+				<display value="Influenza A virus, A/Cambodia/e0826360/2020 (H3N2) - like strain (A/Tasmania/503/2020, IVR-221), Inactivated"/> <!--term for substance-->
+            </coding>
+			</concept>
+          </code>
+		  
+          <strength> <!--strength of the substance-->
+		  
+		  
+			
+            <presentationRatio><!--how much substance there is--><!--EIther this element or the concentration element, see above--><!--general rule; liqiud: concentration ; solid or pre-filled single use syringe: presentation-->
+              <numerator>
+                <value value="15"/> <!-- insert whatever amount-->
+                  <comparator> <!--most likely always equal to-->
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                        <valueCoding>
+                          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+                          <code value="100000000049"/> <!--ID-->
+                          <display value="equal to"/> <!--term-->
+                        </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="microgram(s)"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/> <!--EMA list of units of measurement-->
+                  <code value="100000110656" /> <!--ID for unit-->
+              </numerator>
+              <denominator>
+                  <value value="1"/> <!-- insert whatever amount-->
+                  <unit value="syringe"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/> <!-- EMA list units of Presentation-->
+                  <code value="200000002150" /> <!--ID for unit-->
+              </denominator>
+            </presentationRatio>			
+            
+     		<referenceStrength><!--how much "pure" substance the substance is equal too, think transformation, effect in the body--><!--ARES in eira--><!-- according to the standard there has to be exactly one entry, even though the substance is itself and not a salt. Copy paste then. Exclude other salts and shit, only "mother substance"-->
+				<substance> <!-- "pure", original, mother substance-->
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+							<code value="300000034518"/> <!--ID for substance-->
+							<display value="Influenza A virus, A/Cambodia/e0826360/2020 (H3N2) - like strain (A/Tasmania/503/2020, IVR-221), Inactivated"/> <!--term for substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="15"/><!-- insert whatever amount-->
+						<comparator> <!-- most likely always equal to-->
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+									<code value="100000000049"/><!--ID-->
+									<display value="equal to"/><!--term-->
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="microgram(s)"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/><!--EMA list of units of measurement-->
+						<code value="100000110656" /> <!--ID for unit-->
+					</numerator>
+					<denominator>
+						<value value="1"/><!-- insert whatever amount-->
+						<unit value="syringe"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/><!--EMA list of units of presentation--> <!-- can this be a presentation and not a measurement, eastier to define-->
+						<code value="200000002150" /> <!--ID for unit-->
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient01" />
+    </request>
+  </entry><!--end of ingredient--><!--started-->
+  
+    <entry><!-- start of ingredient02--><!--started--> <!-- ingredient 2, influenza virus A/Victoria/2570/2019 (H1N1)pdm09-like strain (A/Victoria/2570/2019, IVR-215), split virion, inactivated--><!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:d94f3942-a971-4d6a-bced-f75dd0586774" />--><!-- new id generated: d94f3942-a971-4d6a-bced-f75dd0586774--><!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <Ingredient> <!-- ingredient 2, influenza virus A/Victoria/2570/2019 (H1N1)pdm09-like strain (A/Victoria/2570/2019, IVR-215), split virion, inactivated-->
+	  <id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient02"/>
+		<status value="active" />
+		
+        <!--<extension url="http://ema.europa.eu/fhir/extension/ingredientSubject">-->
+		
+        <!-- FIXED!!!CHANGE(S) HERE!!! 2022-06-23-->
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+		<!-- FIXED!!!END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <!--</extension>-->
+		
+
+        <role><!--the role of the substance, always active, as for now-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> <!-- EMA list of ingredient roles-->
+            <code value="100000072072" /> <!--ID for role-->
+			<display value="Active"/> <!--term for role-->
+          </coding>
+        </role>
+		
+        <substance><!--name the substance in the drug--> <!-- can't find this fucker--><!-- this was the best i could do, might be the same thing, at least not far away-->
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+              <code value="300000034498" /> <!--ID for substance-->
+				<display value="A/Victoria/2570/2019 (H1N1)pdm09-like strain (A/Victoria/2570/2019, IVR-215)"/> <!--term for substance-->
+            </coding>
+			</concept>
+          </code>
+		  
+          <strength> <!--strength of the substance-->
+		  
+
+			
+            <presentationRatio><!--how much substance there is--><!--EIther this element or the concentration element, see above--><!--general rule; liqiud: concentration ; solid or pre-filled single use syringe: presentation-->
+              <numerator>
+                <value value="15"/> <!-- insert whatever amount-->
+                  <comparator> <!--most likely always equal to-->
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                        <valueCoding>
+                          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+                          <code value="100000000049"/> <!--ID-->
+                          <display value="equal to"/> <!--term-->
+                        </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="microgram(s)"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/> <!--EMA list of units of measurement-->
+                  <code value="100000110656" /> <!--ID for unit-->
+              </numerator>
+              <denominator>
+                  <value value="1"/> <!-- insert whatever amount-->
+                  <unit value="syringe"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/> <!-- EMA list units of Presentation-->
+                  <code value="200000002150" /> <!--ID for unit-->
+              </denominator>
+            </presentationRatio>					
+            
+     		<referenceStrength><!--how much "pure" substance the substance is equal too, think transformation, effect in the body--><!--ARES in eira--><!-- according to the standard there has to be exactly one entry, even though the substance is itself and not a salt. Copy paste then. Exclude other salts and shit, only "mother substance"-->
+				<substance> <!-- "pure", original, mother substance--> <!-- can't find this fucker--> <!--found the little shit, I think-->
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+							<code value="300000034498"/> <!--ID for substance-->
+							<display value="A/Victoria/2570/2019 (H1N1)pdm09-like strain (A/Victoria/2570/2019, IVR-215)"/> <!--term for substance--><!--hopefully correct-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="15"/><!-- insert whatever amount-->
+						<comparator> <!-- most likely always equal to-->
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+									<code value="100000000049"/><!--ID-->
+									<display value="equal to"/><!--term-->
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="microgram(s)"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/><!--EMA list of units of measurement-->
+						<code value="100000110656" /> <!--ID for unit-->
+					</numerator>
+					<denominator>
+						<value value="1"/><!-- insert whatever amount-->
+						<unit value="syringe"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/><!--EMA list of units of presentation--> <!-- can this be a presentation and not a measurement, eastier to define-->
+						<code value="200000002150" /> <!--ID for unit-->
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient02" />
+    </request>
+  </entry><!--end of ingredient--><!--started-->
+  
+    <entry><!-- start of ingredient03--><!--level of progress--> <!-- Ingredient 3, influenza virus B/Phuket/3073/2013-like strain (B/Phuket/3073/2013, wild type), split viron (borde detta vara virion? fel i eira?), inactivated--><!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:12c791fd-4b7d-46da-8390-66dda2c0f37b" />--><!-- new id generated: 12c791fd-4b7d-46da-8390-66dda2c0f37b--><!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <Ingredient> <!-- Ingredient 3, influenza virus B/Phuket/3073/2013-like strain (B/Phuket/3073/2013, wild type), split viron, inactivated-->
+	  <id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient03"/>
+	  
+		<status value="active" />	  
+	  
+        <!--<extension url="http://ema.europa.eu/fhir/extension/ingredientSubject">-->
+		
+        <!--FIXED!!!CHANGE(S) HERE!!! 2022-06-23-->
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+		<!-- FIXED!!!END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <!--</extension>-->
+		
+
+        <role><!--the role of the substance, always active, as for now-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> <!-- EMA list of ingredient roles-->
+            <code value="100000072072" /> <!--ID for role-->
+			<display value="Active"/> <!--term for role-->
+          </coding>
+        </role>
+		
+        <substance><!--name the substance in the drug--> <!-- once again a wild fucking guess, seemed most similar. either specific strain like this or to define that the fucker is inactivated, what's most important-->
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+              <code value="100000164127" /> <!--ID for substance-->
+				<display value="B/PHUKET/3073/2013-LIKE VIRUS (B/PHUKET/3073/2013, WILD TYPE)"/> <!--term for substance-->
+            </coding>
+			</concept>
+          </code>
+		  
+          <strength> <!--strength of the substance-->
+		  
+
+			
+            <presentationRatio><!--how much substance there is--><!--EIther this element or the concentration element, see above--><!--general rule; liqiud: concentration ; solid or pre-filled single use syringe: presentation-->
+              <numerator>
+                <value value="15"/> <!-- insert whatever amount-->
+                  <comparator> <!--most likely always equal to-->
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                        <valueCoding>
+                          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+                          <code value="100000000049"/> <!--ID-->
+                          <display value="equal to"/> <!--term-->
+                        </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="microgram(s)"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/> <!--EMA list of units of measurement-->
+                  <code value="100000110656" /> <!--ID for unit-->
+              </numerator>
+              <denominator>
+                  <value value="1"/> <!-- insert whatever amount-->
+                  <unit value="syringe"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/> <!-- EMA list units of Presentation-->
+                  <code value="200000002150" /> <!--ID for unit-->
+              </denominator>
+            </presentationRatio>			
+            
+     		<referenceStrength><!--how much "pure" substance the substance is equal too, think transformation, effect in the body--><!--ARES in eira--><!-- according to the standard there has to be exactly one entry, even though the substance is itself and not a salt. Copy paste then. Exclude other salts and shit, only "mother substance"-->
+				<substance> <!-- "pure", original, mother substance-->
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+							<code value="100000164127"/> <!--ID for substance-->
+							<display value="B/PHUKET/3073/2013-LIKE VIRUS (B/PHUKET/3073/2013, WILD TYPE)"/> <!--term for substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="15"/><!-- insert whatever amount-->
+						<comparator> <!-- most likely always equal to-->
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+									<code value="100000000049"/><!--ID-->
+									<display value="equal to"/><!--term-->
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="microgram(s)"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/><!--EMA list of units of measurement-->
+						<code value="100000110656" /> <!--ID for unit-->
+					</numerator>
+					<denominator>
+						<value value="1"/><!-- insert whatever amount-->
+						<unit value="syringe"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/><!--EMA list of units of presentation--> <!-- can this be a presentation and not a measurement, eastier to define-->
+						<code value="200000002150" /> <!--ID for unit-->
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient03" />
+    </request>
+  </entry><!--end of ingredient--><!--started-->
+  
+    <entry><!-- start of ingredient04--><!--started--><!-- Ingredient 4, influenza virus B/Washington/02/2019-like strain (B/Washington/02/2019, wild type), split virion, inactivated--><!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:8d895a2f-4f63-4757-a821-0de0ffb25f54" />--><!-- new id generated: 8d895a2f-4f63-4757-a821-0de0ffb25f54--><!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+   <resource>
+      <Ingredient> <!-- Ingredient 4, influenza virus B/Washington/02/2019-like strain (B/Washington/02/2019, wild type), split virion, inactivated-->
+	  <id value="VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient04"/>
+	  
+	  <status value="active"/>
+	  
+        <!--<extension url="http://ema.europa.eu/fhir/extension/ingredientSubject">-->
+		
+        <!--FIXED!!!CHANGE(S) HERE!!! 2022-06-23-->
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinition/VaxigripTetra-0.5ml-Suspension-SE-AJ-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+		<!-- FIXED!!!END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <!--</extension>-->
+
+        <role><!--the role of the substance, always active, as for now-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> <!-- EMA list of ingredient roles-->
+            <code value="100000072072" /> <!--ID for role-->
+			<display value="Active"/> <!--term for role-->
+          </coding>
+        </role>
+		
+        <substance><!--name the substance in the drug-->
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+              <code value="300000017594" /> <!--ID for substance-->
+				<display value="B/Washington/02/2019 - like virus (B/Washington/02/2019, wild type)"/> <!--term for substance--> <!-- see phuket strain for reasoning-->
+            </coding>
+			</concept>
+          </code>
+		  
+          <strength> <!--strength of the substance-->
+		  
+
+			
+            <presentationRatio><!--how much substance there is--><!--EIther this element or the concentration element, see above--><!--general rule; liqiud: concentration ; solid or pre-filled single use syringe: presentation-->
+              <numerator>
+                <value value="15"/> <!-- insert whatever amount-->
+                  <comparator> <!--most likely always equal to-->
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                        <valueCoding>
+                          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+                          <code value="100000000049"/> <!--ID-->
+                          <display value="equal to"/> <!--term-->
+                        </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="microgram(s)"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/> <!--EMA list of units of measurement-->
+                  <code value="100000110656" /> <!--ID for unit-->
+              </numerator>
+              <denominator>
+                  <value value="1"/> <!-- insert whatever amount-->
+                  <unit value="syringe"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/> <!-- EMA list units of Presentation-->
+                  <code value="200000002150" /> <!--ID for unit-->
+              </denominator>
+            </presentationRatio>			
+            
+     		<referenceStrength><!--how much "pure" substance the substance is equal too, think transformation, effect in the body--><!--ARES in eira--><!-- according to the standard there has to be exactly one entry, even though the substance is itself and not a salt. Copy paste then. Exclude other salts and shit, only "mother substance"-->
+				<substance> <!-- "pure", original, mother substance-->
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+							<code value="300000017594"/> <!--ID for substance-->
+							<display value="B/Washington/02/2019 - like virus (B/Washington/02/2019, wild type)"/> <!--term for substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="15"/><!-- insert whatever amount-->
+						<comparator> <!-- most likely always equal to-->
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+									<code value="100000000049"/><!--ID-->
+									<display value="equal to"/><!--term-->
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="microgram(s)"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/><!--EMA list of units of measurement-->
+						<code value="100000110656" /> <!--ID for unit-->
+					</numerator>
+					<denominator>
+						<value value="1"/><!-- insert whatever amount-->
+						<unit value="syringe"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/><!--EMA list of units of presentation--> <!-- can this be a presentation and not a measurement, eastier to define-->
+						<code value="200000002150" /> <!--ID for unit-->
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/VaxigripTetra-0.5ml-Suspension-SE-AJ-Ingredient04" />
+    </request>
+  </entry><!--end of ingredient--><!--started-->
+  
+</Bundle>

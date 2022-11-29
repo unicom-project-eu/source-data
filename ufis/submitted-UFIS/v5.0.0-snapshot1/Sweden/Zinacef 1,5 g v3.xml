@@ -1,0 +1,791 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Zinacef 1,5 g Powder for solution for injection/infusion. ASP-nr: 2014-0696 -->
+<!-- Isabelle Skog 2022-06-27 -->
+
+<!-- Referenser:
+Entry 1, MedicinalProductDefinition: 79df7b0d-c027-4666-b335-6a2a257f8d99       ersätts av Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities: 166e2c4e-9342-42b5-99a8-2754ec722246             ersätts av Zinacef-1.5g-Powder-SE-IS-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition: 3693574d-b87a-4642-8fce-a79c787e01fd   ersätts av Zinacef-1.5g-Powder-SE-IS-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition: 78c924ea-dba3-40ec-b36e-f34e78430fd8        ersätts av Zinacef-1.5g-Powder-SE-IS-PackagedProductDefinition
+Entry 5, ManufacturedItemDefinition: 66c27672-6fa3-4804-90ae-5e7b95e6b453       ersätts av Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition
+Entry 6, Ingredient: b475c346-c3a1-4a14-a56a-fda37f7b6c42                       ersätts av Zinacef-1.5g-Powder-SE-IS-Ingredient                       -->
+
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+    <type value="transaction"/>
+
+    <!-- ENTRY 1 = MedicinalProductDefinition -->
+    <entry>
+        <fullUrl value="urn:uuid:79df7b0d-c027-4666-b335-6a2a257f8d99"/>
+        <!-- Unik kod ENTRY 1. Skapas på sidan https://www.guidgenerator.com/online-guid-generator.aspx -->
+        <resource>
+            <MedicinalProductDefinition>
+                <!-- Beskriver läkemedelsprodukten -->
+                <id value="Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"/>
+                <!-- NPL-id (produkt). Hämtas från EIRA -->
+
+                <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+                    <!-- Anger läkemedelsformen för det godkända läkemedlet -->
+                    <valueCoding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+                        <!-- SPOR-lista "Pharmaceutical Dose Form" -->
+                        <code value="100000116186"/>
+                        <!-- Kod läkemedelsform -->
+                        <display value="Powder for solution for injection/infusion"/>
+                        <!-- Textbeskrivning läkemedelsform -->
+                    </valueCoding>
+                </extension>
+
+                <identifier>
+                    <!-- MpID -->
+                    <system value="http://ema.europa.eu/fhir/mpId"/>
+                    <value value="SE-100000848-00051399"/>
+                    <!-- SE+siffror ORG-id+000MT-nummer (totalt 8 siffror MT-nummer) -->
+                </identifier>
+
+                <identifier>
+                    <!-- EURD-ID -->
+                    <system value="http://ema.europa.eu/fhir/eurdId"/>
+                    <value value="615"/>
+                    <!-- Kod från EURD-lista för substansen -->
+                </identifier>
+
+                <domain>
+                    <!-- Anger om läkemedlet är för Human Use eller Veterinary Use -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+                        <!-- SPOR-lista "Domain" -->
+                        <code value="100000000012"/>
+                        <!-- Kod. 100000000012 = H. 100000000013 = V. 100000000014 = H&V. -->
+                        <display value="Human use"/>
+                        <!-- Textbeskrivning "X Use" -->
+                    </coding>
+                </domain>
+                <status>
+                    <!-- Anger om filen är akutell eller ej. Alltid Current -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+                        <!-- SPOR-lista "Record Status" -->
+                        <code value="200000005004"/>
+                        <!-- Kod. 200000005004 = Current -->
+                        <display value="Current"/>
+                        <!-- Alltid Current -->
+                    </coding>
+                </status>
+                <!-- Anger läkemedlets indikation på svenska. Hämtas från FASS/SPmC -->
+                <indication
+                    value="Zinacef är avsett för behandling av nedanstående infektioner hos vuxna och barn, även nyfödda (från 
+födelsen).
+• Samhällsförvärvad pneumoni.
+• Akut exacerbation av kronisk bronkit.
+• Komplicerade urinvägsinfektioner, även pyelonefrit.
+• Mjukdelsinfektioner: cellulit, erysipelas och sårinfektioner.
+• Intraabdominella infektioner.
+• Profylax mot infektion inför gastrointestinal (även esofageal), ortopedisk, kardiovaskulär och 
+gynekologisk operation (även kejsarsnitt). 
+Vid behandling och förebyggande av infektioner då det är mycket troligt att anaeroba organismer påträffas 
+ska cefuroxim administreras tillsammans med ett lämpligt antianaerobt antibiotikum. 
+Hänsyn ska tas till officiella riktlinjer om lämplig användning av antibakteriella medel."/>
+
+
+
+                <legalStatusOfSupply>
+                    <!-- Anger receptkrav för läkemedlet -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+                        <!-- SPOR-lista "Legal Status for the Supply" -->
+                        <code value="100000072084"/>
+                        <!-- Kod. -->
+                        <display value="Medicinal product subject to medical prescription"/>
+                        <!-- Textbeskrivning -->
+                        <!-- Receptstatus koder+textbeskrivning:
+			100000072076 = Medicinal product not subject to medical prescription
+			100000072084 = Medicinal product subject to medical prescription
+			200000002239 = Medicinal product subject to medical prescription exempt for some pack sizes -->
+                    </coding>
+                </legalStatusOfSupply>
+
+                <classification>
+                    <!-- Anger ATC-kod -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000116677"/>
+                        <!-- SPOR-lista "Anatomical Therapeutic Chemical classification system - Human" eller "Anatomical Therapeutic Chemical classification system - Veterinary" -->
+                        <code value="100000093533"/>
+                        <!-- Kod 100000093533 = HUM. 100000116677 = VET. -->
+                        <display value="J01DC02"/>
+                        <!-- Ange ATC-kod. Hämtas från EIRA -->
+                    </coding>
+                </classification>
+
+                <!-- <comprisedOf> -->
+                <!--   <reference value="ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition" /> -->
+                <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+                <!-- </comprisedOf> -->
+
+                <name>
+                    <!-- Produktens namn. Delas upp i nameparts -->
+                    <productName
+                        value="Zinacef 1,5 g Pulver till injektions-/infusionsvätska, lösning"/>
+                    <!-- Hela produktnamnet. Namn+styrka+läkemedelsform. Hämtas från EIRA -->
+
+                    <namePart>
+                        <!-- Produktnamn från EIRA -->
+                        <part value="Zinacef"/>
+                        <type>
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                                <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+                                <code value="220000000002"/>
+                                <!-- Kod. 220000000002 = Invented name part. 220000000003 = Scientific name part -->
+                                <display value="Invented name part"/>
+                                <!-- Tetbeskrivning "Invented name part" eller "Scientifici name part" -->
+                            </coding>
+                        </type>
+                    </namePart>
+
+                    <namePart>
+                        <!-- Styrka. Alla läkemedel har ej styrka -->
+                        <part value="1,5 g"/>
+                        <!-- Angiven styrka. Hämtas från EIRA -->
+                        <type>
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                                <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+                                <code value="220000000004"/>
+                                <!-- Kod. Alltid 220000000004 = Strengt part -->
+                                <display value="Strength part"/>
+                                <!-- Alltid Strength part -->
+                            </coding>
+                        </type>
+                    </namePart>
+
+                    <namePart>
+                        <!-- Läkemedelsform -->
+                        <part value="Pulver till injektions-/infusionsvätska, lösning"/>
+                        <!-- Anger läkemedelsform. Hämtas från EIRA -->
+                        <type>
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                                <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+                                <code value="220000000005"/>
+                                <!-- Kod. 220000000005 = Pharmaceutical dose form part -->
+                                <display value="Pharmaceutical dose form part"/>
+                                <!-- Alltid Pharmaceutical dose form part -->
+                            </coding>
+                        </type>
+                    </namePart>
+
+                    <countryLanguage>
+                        <!-- Anger land och språk -->
+                        <country>
+                            <!-- Anger land -->
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                                <!-- SPOR-lista "Country" -->
+                                <code value="100000000535"/>
+                                <!-- 100000000535 = Kingdom of Sweden -->
+                                <display value="Sweden"/>
+                                <!-- Alltid Sweden -->
+                            </coding>
+                        </country>
+                        <language>
+                            <!-- Anger språk -->
+                            <coding>
+                                <!-- Alltid Svenska -->
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                                <!-- SPOR-lista "Language" -->
+                                <code value="100000072288"/>
+                                <!--  100000072288 = Swedish -->
+                                <display value="Swedish"/>
+                                <!-- Alltid Swedish -->
+                            </coding>
+                        </language>
+                    </countryLanguage>
+                </name>
+
+            </MedicinalProductDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"
+            />
+        </request>
+    </entry>
+    <!-- END ENTRY 1 -->
+
+
+    <!-- ENTRY 2 = RegulatedAuthorization -->
+    <entry>
+        <fullUrl value="urn:uuid:166e2c4e-9342-42b5-99a8-2754ec722246"/>
+        <!-- Unik kod ENTRY 2. Skapas på sidan https://www.guidgenerator.com/online-guid-generator.aspx -->
+        <resource>
+            <RegulatedAuthorization>
+                <!-- RegulatedAuthorization är godkännandet -->
+                <id value="Zinacef-1.5g-Powder-SE-IS-RegulatedAuthorization"/>
+                <identifier>
+                    <!-- Anger MT-nummer -->
+                    <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+                    <value value="51399"/>
+                    <!-- MT-nummer för produkt. Hämtas ur EIRA -->
+                </identifier>
+                <subject>
+                    <reference
+                        value="MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </subject>
+
+                <type>
+                    <!-- Anger att detta är ett läkemedel som fått ett godkännande. -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+                        <!-- SPOR-lista "Regulatory Entitlement Type" -->
+                        <code value="220000000061"/>
+                        <!-- Kod. Alltid 220000000061 = Marketing Authorisation -->
+                        <display value="Marketing Authorisation"/>
+                        <!-- Alltid Marketing Authorisation -->
+                    </coding>
+                </type>
+
+                <region>
+                    <!-- Anger vilken region godkännandet gäller i -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                        <!-- SPOR-lista "Country" -->
+                        <code value="100000000535"/>
+                        <!-- 100000000535 = Kingdom of Sweden -->
+                        <display value="Sweden"/>
+                        <!-- Alltid Sweden -->
+                    </coding>
+                </region>
+
+                <status>
+                    <!-- Anger godkännandestatus -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+                        <!-- SPOR-lista "Regulatory Entitlement Status" -->
+                        <code value="100000072099"/>
+                        <!-- Alltid 100000072099 = Valid -->
+                        <display value="Valid"/>
+                        <!-- Alltid Valid -->
+                    </coding>
+                </status>
+                <statusDate value="2015-03-19"/>
+                <!-- Godkännandedatum (första) för produkten -->
+
+                <holder>
+                    <!-- Anger MAH -->
+                    <identifier>
+                        <system value="https://spor.ema.europa.eu/v1/locations"/>
+                        <value value="LOC-100001468"/>
+                        <!-- LOC-ID för företag. Hämtas från EMA: https://spor.ema.europa.eu/omswi/#/searchOrganisations -->
+                    </identifier>
+                    <display value="Sandoz A/S"/>
+                    <!-- Namn på företaget som är MAH -->
+                </holder>
+
+                <case>
+                    <!-- Anger (första) godkännandedatum -->
+                    <type>
+                        <coding>
+                            <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+                            <code value="dateOfFirstAuthorisation"/>
+                            <display value="First Authorisation"/>
+                        </coding>
+                    </type>
+                    <dateDateTime value="2015-03-19"/>
+                    <!-- Datum (första) godkännande -->
+                </case>
+
+            </RegulatedAuthorization>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="RegulatedAuthorization/Zinacef-1.5g-Powder-SE-IS-RegulatedAuthorization"/>
+            <!-- MT-nummer i MTnrXXXXX -->
+        </request>
+    </entry>
+    <!-- END ENTRY 2 -->
+
+
+    <!-- ENTRY 3 = AdministrableProductDefinition -->
+    <entry>
+        <fullUrl value="urn:uuid:3693574d-b87a-4642-8fce-a79c787e01fd"/>
+        <!-- Unik kod ENTRY 3. Skapas på sidan https://www.guidgenerator.com/online-guid-generator.aspx -->
+        <resource>
+            <AdministrableProductDefinition>
+                <!-- Beskriver läkemedlet i bruksfärdig (administrerad) form -->
+                <id value="Zinacef-1.5g-Powder-SE-IS-AdministrableProductDefinition"/>
+                <!-- NPL-id (produkt)-SE-PharmProd -->
+                <status value="active"/>
+                <formOf>
+                    <reference
+                        value="MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </formOf>
+
+                <administrableDoseForm>
+                    <!-- Anger läkemedelsform för bruksfärdigt läkemedel -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+                        <!-- SPOR-lista "Pharmaceutical Dose Form" -->
+                        <code value="100000074038"/>
+                        <!-- Kod -->
+                        <display value="Solution for injection/infusion"/>
+                        <!-- Textbeskrivning bruksfärdig läkemedelsform -->
+                    </coding>
+                </administrableDoseForm>
+
+                <producedFrom>
+                    <reference
+                        value="ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referens till ENTRY 5 = ManufacturedItemDefinition (alla entry) -->
+                </producedFrom>
+
+                <routeOfAdministration>
+                    <!-- Administreringsväg(ar). Hämtas från EIRA -->
+                    <code>
+                        <!-- Administreringsväg 1 -->
+                        <coding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+                            <!-- SPOR-lista "Routes and Methods of Administration" -->
+                            <code value="100000073600"/>
+                            <!-- Kod -->
+                            <display value="Intramuscular use"/>
+                            <!-- Textbeskrivning -->
+                        </coding>
+                        <!-- Administreringsväg 2 -->
+                        <coding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+                            <!-- SPOR-lista "Routes and Methods of Administration" -->
+                            <code value="100000073611"/>
+                            <!-- Kod -->
+                            <display value="Intravenous use"/>
+                            <!-- Textbeskrivning -->
+                        </coding>
+                    </code>
+                </routeOfAdministration>
+
+            </AdministrableProductDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="AdministrableProductDefinition/Zinacef-1.5g-Powder-SE-IS-AdministrableProductDefinition"/>
+            <!-- AdministrableProductDefinition/NPL-id -->
+        </request>
+    </entry>
+    <!-- END ENTRY 3 -->
+
+
+    <!-- ENTRY 4 = PackagedProductDefinition -->
+    <!-- Ange en entry per förpackning som produkten har. Allt inom <entry> till </entry> = en förpackning -->
+    <entry>
+        <!-- Förpackning 1 -->
+        <fullUrl value="urn:uuid:c06f6dbe-3e34-41f6-a546-ec3fd7964c79"/>
+        <!-- Unik kod ENTRY 4 (förpackning 1). Skapas på sidan https://www.guidgenerator.com/online-guid-generator.aspx -->
+        <resource>
+            <PackagedProductDefinition>
+                <!-- Beskriver vi allt om en förpackning -->
+                <id value="Zinacef-1.5g-Powder-SE-IS-PackagedProductDefinition"/>
+                <!--NPL-pack-id (förpackning). Hämtas från EIRA -->
+
+                <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+                    <!-- Anger containedItem = "innersta enhet man kan ta i" -->
+                    <valueQuantity>
+                        <value value="1"/>
+                        <!-- Antal containedItem -->
+                        <unit value="Vial"/>
+                        <!-- Textbeskrivning containedItem -->
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                        <!-- SPOR-lista "Units of Presentation" -->
+                        <code value="200000002158"/>
+                        <!-- Kod containedItem -->
+                    </valueQuantity>
+                </extension>
+                <packageFor>
+                    <reference
+                        value="MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 3 = AdministrableProductDefinition ?? -->
+                </packageFor>
+
+                <description value="Injektionsflaska, 5 st (5 x 1,5 g)">
+                    <!-- Förpackningsbeskrivning. Hämtas från EIRA -->
+                    <extension url="http://ema.europa.eu/fhir/extension/language">
+                        <valueCoding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                            <!-- SPOR-lista "Languages" -->
+                            <code value="100000072288"/>
+                            <!-- Kod. Alltid 100000072288 = Swedish -->
+                            <display value="Swedish"/>
+                            <!-- Textbeskrivning språk. Alltid Swedish -->
+                        </valueCoding>
+                    </extension>
+                </description>
+
+                <marketingStatus>
+                    <!-- Beskriver försäljningstillstånd i avsett land (Sverige) -->
+                    <country>
+                        <!-- Anger land där man har försäljningstillstånd -->
+                        <coding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                            <!-- SPOR-lista "Country" -->
+                            <code value="100000000535"/>
+                            <!-- Kod. 100000000535 = Kingdom of Sweden -->
+                            <display value="Sweden"/>
+                            <!-- Alltid Sweden -->
+                        </coding>
+                    </country>
+                    <status>
+                        <!-- Anger status för försäljningstillstånd -->
+                        <coding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+                            <!-- SPOR-lista "Marketing Status" -->
+                            <code value="100000072083"/>
+                            <!-- Kod. 100000072083 = Marketed -->
+                            <display value="Marketed"/>
+                            <!-- Alltid Marketed -->
+                        </coding>
+                    </status>
+                    <dateRange>
+                        <start/>
+                        <!-- Vi har inte information om när marknadsföring började och slutade. Låt stå som "unknown". -->
+                    </dateRange>
+                </marketingStatus>
+
+                <package>
+                    <!-- Förpackningsnivå 1 (ytterförpackning) -->
+                    <type>
+                        <!-- Anger förpackningstyp -->
+                        <coding>
+                            <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                            <!-- SPOR-lista "Packaging" -->
+                            <code value="100000073498"/>
+                            <!-- Kod -->
+                            <display value="Box"/>
+                            <!-- Textbeskrivning -->
+                        </coding>
+                    </type>
+                    <quantity value="1"/>
+                    <!-- Antal ytterförpackning -->
+
+                    <material>
+                        <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+                        <coding>
+                            <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                            <!-- SPOR-lista "Material" -->
+                            <code value="200000003208"/>
+                            <!-- Kod -->
+                            <display value="Plastic"/>
+                            <!-- Textbeskrivning -->
+                        </coding>
+                    </material>
+
+                    <package>
+                        <!-- Förpackningsnivå 2 -->
+                        <type>
+                            <!-- Anger förpackningstyp -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                                <!-- SPOR-lista "Packaging" -->
+                                <code value="100000073498"/>
+                                <!-- Kod -->
+                                <display value="Box"/>
+                                <!-- Textbeskrivning -->
+                            </coding>
+                        </type>
+                        <quantity value="5"/>
+                        <!-- Antal andra förpackning -->
+
+                        <material>
+                            <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                                <!-- SPOR-lista "Material" -->
+                                <code value="200000003529"/>
+                                <!-- Kod -->
+                                <display value="Cardboard"/>
+                                <!-- Textbeskrivning -->
+                            </coding>
+                        </material>
+
+                        <package>
+                            <!-- Förpackningsnivå 3 -->
+                            <type>
+                                <!-- Anger förpackningstyp -->
+                                <coding>
+                                    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                                    <!-- SPOR-lista "Packaging" -->
+                                    <code value="200000002158"/>
+                                    <!-- Kod -->
+                                    <display value="Vial"/>
+                                    <!-- Textbeskrivning -->
+                                </coding>
+                            </type>
+                            <quantity value="1"/>
+                            <!-- Antal andra förpackning -->
+
+                            <material>
+                                <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+                                <coding>
+                                    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                                    <!-- SPOR-lista "Material" -->
+                                    <code value="200000003203"/>
+                                    <!-- Kod -->
+                                    <display value="Glass"/>
+                                    <!-- Textbeskrivning -->
+                                </coding>
+                            </material>
+
+                            <containedItem>
+                                <!-- containedItem = "innersta enhet man kan ta i" -->
+                                <item>
+                                    <reference>
+                                        <reference
+                                            value="ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"/>
+                                        <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+                                    </reference>
+                                </item>
+                                <amount>
+                                    <!-- Beskriver containedItem. Amount+unit of presentation -->
+                                    <value value="1"/>
+                                    <unit value="Vial"/>
+                                    <!-- Textbeskrivning containedItem -->
+                                    <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                                    <!-- SPOR-lista 200000000014 = "Units of presentation" eller 100000110633 = "Units of measurement" -->
+                                    <code value="200000002158"/>
+                                    <!-- Kod -->
+                                </amount>
+                            </containedItem>
+
+                        </package>
+                        <!-- Slut förpackningsnivå 3 -->
+                    </package>
+                    <!-- Slut förpackningsnivå 2 -->
+                </package>
+                <!-- Slut förpackningsnivå 1 (ytterförpackning) -->
+            </PackagedProductDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="PackagedProductDefinition/Zinacef-1.5g-Powder-SE-IS-PackagedProductDefinition"
+            />
+        </request>
+    </entry>
+    <!-- END ENTRY 4 -->
+
+
+    <!-- ENTRY 5 = ManufacturedItemDefinition -->
+    <entry>
+        <fullUrl value="urn:uuid:55ce2867-d7b1-423c-bcb1-ffceba6ab3a7"/>
+        <!-- Unik kod ENTRY 5. Skapas på sidan https://www.guidgenerator.com/online-guid-generator.aspx -->
+        <resource>
+            <ManufacturedItemDefinition>
+                <!-- Beskriver förpackad enhet(er) -->
+                <id value="Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"/>
+                <!-- NPL-id(produkt)-SE-ManItem00X -->
+                <status value="active"/>
+
+                <manufacturedDoseForm>
+                    <!-- Marknadsförd läkemedelsform = läkemedelsform "på hyllan" -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+                        <!-- SPOR-lista = "Pharmaceutical Dose Form" -->
+                        <code value="100000116186"/>
+                        <!-- Kod -->
+                        <display value="Powder for solution for injection/infusion"/>
+                        <!-- Textbeskrivning läkemedelsform -->
+                    </coding>
+                </manufacturedDoseForm>
+
+                <unitOfPresentation>
+                    <!-- Beskriver containedItem -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                        <!-- SPOR-lista = "Units of Presentation" -->
+                        <code value="200000002158"/>
+                        <display value="Vial"/>
+                    </coding>
+                </unitOfPresentation>
+
+            </ManufacturedItemDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"
+            />
+        </request>
+    </entry>
+    <!-- END ENTRY 5 -->
+
+    <!-- ENTRY 6 = Ingredient -->
+    <entry>
+        <fullUrl value="urn:uuid:39e79b7d-9666-4548-9692-dbd64a9b39aa"/>
+        <!-- Unik kod ENTRY 6. Skapas på sidan https://www.guidgenerator.com/online-guid-generator.aspx -->
+        <resource>
+            <Ingredient>
+                <!-- Beskriver beståndsdel(ar) -->
+                <id value="Zinacef-1.5g-Powder-SE-IS-Ingredient"/>
+                <status value="active"/>
+                <!-- <extension url="http://ema.europa.eu/fhir/extension/ingredientSubject"> -->
+                <for>
+                    <reference
+                        value="MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="AdministrableProductDefinition/Zinacef-1.5g-Powder-SE-IS-AdministrableProductDefinition"/>
+                    <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+                </for>
+                <!--	</extension> -->
+
+                <role>
+                    <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+                        <!-- SPOR-lista "Ingredient Role" -->
+                        <code value="100000072072"/>
+                        <!-- Kod. 100000072072 = Active -->
+                        <display value="Active"/>
+                        <!-- Textbeskrivning. API = Active -->
+                    </coding>
+                </role>
+
+                <substance>
+                    <!-- Beskriver API (ev salt av substans) -->
+                    <code>
+                        <concept>
+                            <coding>
+                                <system
+                                    value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                                <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                <code value="100000091436"/>
+                                <display value="cefuroxime sodium"/>
+                            </coding>
+                        </concept>
+                    </code>
+
+                    <strength>
+                        <!-- m -->
+                        <concentrationRatio>
+                            <!-- Flytande form = concentration. Fast form = presentation -->
+
+                            <numerator>
+                                <!-- Anger X i "X per Y" -->
+                                <value value="1.58"/>
+                                <!-- Aktiv beståndsdel mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+                                <comparator>
+                                    <!-- Anger aktiv motsvarande. "Aktiv beståndsdel X, Aktiv motsvarande Y" -->
+                                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                                        <valueCoding>
+                                            <system
+                                                value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                            <!-- SPOR-lista "Quantity Operator" -->
+                                            <code value="100000000049"/>
+                                            <!-- Kod. 100000000049 = equal to -->
+                                            <display value="equal to"/>
+                                            <!-- Textbeskrivning -->
+                                        </valueCoding>
+                                    </extension>
+                                </comparator>
+                                <unit value="gram(s)"/>
+                                <!-- Textbeskrivning enhet -->
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                <!-- SPOR-lista "Units of Measurement" -->
+                                <code value="100000110654"/>
+                                <!-- Kod -->
+                            </numerator>
+                            <denominator>
+                                <!-- Anger Y i "X per Y" -->
+                                <value value="1"/>
+                                <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+                                <unit value="unit(s)"/>
+                                <!-- Textbeskrivning -->
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                <!-- SPOR-lista "Units of Measurement" -->
+                                <code value="100000110756"/>
+                                <!-- Kod -->
+                            </denominator>
+                        </concentrationRatio>
+
+                        <referenceStrength>
+                            <!-- Referensstyrka (substans till saltet om API=salt). Hämtas från EIRA "Aktiv motsvarande" -->
+                            <!-- Kan finnas flera referenceStrength. Gör en <referenceStrength></referenceStrength> för varje -->
+                            <!-- Obligatorisk. Om ej finns duplicera API -->
+                            <substance>
+                                <!-- "Grundsubstans" -->
+                                <!-- API = Dalteparin sodium. Grundsubstans = Dalteparin -->
+                                <concept>
+                                    <coding>
+                                        <system
+                                            value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                                        <code value="100000092667"/>
+                                        <!-- EUTCT-ID. Hämtas från: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                        <display value="cefuroxime"/>
+                                    </coding>
+                                </concept>
+                            </substance>
+
+                            <strengthRatio>
+                                <numerator>
+                                    <!-- Anger X i "X per Y" -->
+                                    <value value="1.5"/>
+                                    <!-- Aktiv motsvarande mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+                                    <comparator>
+                                        <!-- Anger aktiv motsvarande. "Aktiv beståndsdel X, Aktiv motsvarande Y" -->
+                                        <extension
+                                            url="http://ema.europa.eu/fhir/extension/comparator">
+                                            <valueCoding>
+                                                <system
+                                                  value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                                <!-- SPOR-lista "Quantity Operator" -->
+                                                <code value="100000000049"/>
+                                                <!-- Kod. 100000000049 = equal to -->
+                                                <display value="equal to"/>
+                                                <!-- Textbeskrivning -->
+                                            </valueCoding>
+                                        </extension>
+                                    </comparator>
+                                    <unit value="gram(s)"/>
+                                    <!-- Textbeskrivning enhet -->
+                                    <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                    <!-- SPOR-lista "Units of Measurement" -->
+                                    <code value="100000110654"/>
+                                    <!-- Kod -->
+                                </numerator>
+                                <denominator>
+                                    <!-- Anger Y i "X per Y" -->
+                                    <value value="1"/>
+                                    <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+                                    <unit value="unit(s)"/>
+                                    <!-- Textbeskrivning -->
+                                    <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                    <!-- SPOR-lista "Units of Measurement" -->
+                                    <code value="100000110756"/>
+                                    <!-- Kod -->
+                                </denominator>
+                            </strengthRatio>
+                        </referenceStrength>
+
+                    </strength>
+                </substance>
+
+            </Ingredient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="Ingredient/Zinacef-1.5g-Powder-SE-IS-Ingredient"/>
+        </request>
+    </entry>
+    <!-- END ENTRY 6 -->
+
+</Bundle>

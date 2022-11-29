@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hydrokortison Evolan 10 mg/g salva : ASPnr 1990-0145-->
+<!--  Penny Lindström Carmanius    2022-07-06 -->
+<!-- IDs:
+MedicinalProductDefiniton:       HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef
+RegulatedAuthorities:            HydrokortisonEvolan10mgpergsalva-SE-PLC-RegAutho
+AdministrableProductDefinition:  HydrokortisonEvolan10mgpergsalva-SE-PLC-AdminProductDef
+PackageProductDefinition:        HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef01
+                                 HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef02
+								 HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef03
+ManufacturedItemDefinition:      HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef
+Ingredient:                      HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient01 
+                                 HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient02
+								 HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient03 -->
+
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction"/>
+  <entry>
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system
+              value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073713"/> <!-- Look in the Spor lists mentioned just above for the code and the text for the pharmaceutical dose form. -->
+            <display value="Ointment"/> <!-- In english -->
+          </valueCoding>
+        </extension>
+
+
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100002766-00011277"/> <!-- SE-Organisationnumber-MTnumber. Organisationnumber should be 9 numbers and can be found in Spor under organisations. The part for the MTnumber should be 8 numbers long (fill in with zeros before the MTnumber if it is to short (it is commonly 5 numbers long in Sweden-->
+        </identifier> <!-- 	LOC-100016200 -->
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="10856"/> <!-- EURD number for the substance, can be found in the list saved in the U: map. Can be any numbers long. -->
+        </identifier>
+		
+		<domain>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/> <!-- Let be. We only deal with products for human use for the moment -->
+            <display value="Human use"/> <!-- Do not change. -->
+          </coding>
+        </domain>
+		
+		
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/> <!-- Describes the status of the file. Do not change, we only do current -->
+            <display value="Current"/> <!-- Do not change. -->
+          </coding>
+        </status>
+
+
+        <indication
+          value="Hydrokortison Evolan 10 mg per g salva indicerat för akuta och kroniska eksem av varierande genes. Anogenital pruritus."/> <!-- Gather information about the indication in FASS or the product specification in Läkemedelsverkets Läkemedelssök, in swedish. -->
+
+
+        <legalStatusOfSupply>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="200000002239"/> <!-- Code from list from Spor. Medicinal product not subject to medical prescription (100000072076) receptfritt, Medicinal product subject to medical prescription (100000072084) receptbelagt. -->
+            <display value="Medicinal product subject to medical prescription exempt for some pack sizes"/> <!-- Change if needed. -->
+          </coding>
+        </legalStatusOfSupply>
+
+
+        <classification>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000095413"/> <!-- Code for the ATC-code -->
+            <display value="D07AA02"/> <!-- ATC-code -->
+          </coding>
+        </classification>
+		
+		
+        <!-- This element are not yet compatible with FHIR, keep for eventual integration in the code. -->
+        <!-- <comprisedOf> -->
+        <!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+        <!-- <reference value="ManufacturedItemDefinition/DiklofenakOrifarm50Enterotablett-SE-PLC-ManufacturedItemDef" />   -->
+        <!-- </comprisedOf> -->
+
+
+		<!-- Name section starts here. -->
+        <name>
+          <productName value="Hydrokortison Evolan 10 mg/g salva"/>
+          <namePart>
+            <part value="Hydrokortison Evolan"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000003"/> <!-- Code for Scientific name part(220000000003) eg Diklofenak Orifarm or Invented name part(220000000002) eg Alvedon. -->
+                <display value="Scientific name part"/> <!-- Change if needed. -->
+              </coding>
+            </type>
+          </namePart>
+
+
+          <namePart>
+            <part value="10 mg/g" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/> <!-- Do not change. -->
+                <display value="Strength part"/> <!-- Do not change. -->
+              </coding>
+            </type>
+          </namePart>
+
+
+          <namePart>
+            <part value="salva"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/> <!-- Do not change. -->
+                <!-- Koden är samma hela tiden, säger bara att vi tittar på Pharmaceutical dose part -->
+                <display value="Pharmaceutical dose form part"/> <!-- Do not change. -->
+              </coding>
+            </type>
+          </namePart>
+		  <!-- Name section finishes here. -->
+
+
+		  <!-- Do not change this small section. -->
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+    </request>
+  </entry>
+
+
+    <entry>
+    <resource>
+      <RegulatedAuthorization>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-RegAutho"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <value value="11277"/>
+        </identifier>
+
+        <subject>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </subject>
+
+
+        <!-- Do not change this small section. -->
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <code value="220000000061"/> <!-- We only deal with Marketed product so this will not change. -->
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+
+        <statusDate value="1990-12-21"/> <!-- The date whe the product was approved. -->
+
+        <holder>
+          <identifier>
+            <system value="https://spor.ema.europa.eu/v1/locations"/>
+            <value value="LOC-100002766"/> <!-- LOC-number can be found by looking in EIRA for the MAH adress and then go to Spor and match the adress with the LOC-number. -->
+          </identifier>
+          <display value="Evolan Pharma AB"/> <!-- MAH name. -->
+        </holder>
+        <case>
+          <type>
+            <coding>
+              <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+              <code value="dateOfFirstAuthorisation"/> <!-- Do not change. -->
+              <display value="First Authorisation"/> <!-- Do not change. -->
+            </coding>
+          </type>
+          <dateDateTime value="1990-12-21"/>
+        </case>
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="RegulatedAuthorization/HydrokortisonEvolan10mgpergsalva-SE-PLC-RegAutho"/>
+    </request>
+  </entry>
+
+
+  <entry>
+    <resource>
+      <AdministrableProductDefinition>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-AdminProductDef"/>
+        <status value="active"/> <!-- Do not change. -->
+        <formOf>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </formOf>
+        <administrableDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073713"/> <!-- Code for the administrable dose form. -->
+            <display value="Ointment"/> <!-- Administrable dose form. The dose form that are administred to the patient. English -->
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference
+            value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073566"/> <!-- Code for the route of administration. Oral use (100000073619). -->
+              <display value="Cutaneous use"/> <!-- Can be found in EIRA. English. -->
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-AdminProductDef"/>
+    </request>
+  </entry>
+
+
+<!-- First pack size, Tube 100 g -->
+  <!-- There could be more than one entry for the packageproductdefinition. Make sure to use numbers at the end of the ID. -->
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef01"/>
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1"/> <!-- Eg write how many tablets are in the jar or blister. -->
+            <unit value="Tube"/> <!-- How is the product presented? Eg a tablet or vial. English. -->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002156"/> <!-- Code for the unitOfPresentation. -->
+          </valueQuantity>
+        </extension>
+		
+        <packageFor>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </packageFor>
+		
+        <description value="Tub, 100 g"> <!-- Förpackningsbeskrvning. Package description, swedish. -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/> <!-- Do not change. -->
+              <display value="Swedish"/> <!-- Do not change. -->
+            </valueCoding>
+          </extension>
+        </description>
+		
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/> <!-- Do not change. -->
+              <display value="Sweden"/> <!-- Do not change. -->
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/> <!-- Do not change. -->
+              <display value="Marketed"/> <!-- Do not change. -->
+            </coding>
+          </status>
+          <dateRange>
+            <start/>
+          </dateRange>
+        </marketingStatus>
+
+
+		 <!-- Outside packaging, eg a cardboard box -->
+        <package>
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/> <!-- Very common but change if needed. -->
+              <display value="Box"/> <!-- Very common but change if needed. -->
+            </coding>
+          </type>
+          <quantity value="1"/> <!-- Always 1. -->
+		  
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/> <!-- Very common but change if needed. -->
+              <display value="Cardboard"/> <!-- Very common but change if needed. -->
+            </coding>
+          </material>
+          <!-- Outside packaging end. -->
+		  
+		  
+		  <!-- Added to test -->
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="3"/>
+              <unit value="year"/>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073424"/>
+                <display value="This medicinal product does not require any special storage conditions"/>
+              </coding>
+            </specialPrecautionsForStorage>
+          </shelfLifeStorage>
+		  <!-- Added to test -->
+		  
+		  
+          <!-- There could be another packaging inside the outer packaging. If not containeditem needs to be moved upwards to the outside packaging. And chech amount of tag ends for packaging. There could also be a third package element. -->
+          <package>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073561"/> <!-- Code for the type of secondary package. -->
+                <display value="Tube"/> <!-- Type of secondary package. English. -->
+              </coding>
+            </type>
+            <quantity value="1"/> <!-- How many of the secondary packaging are there? Eg if we have 100 tablets and blister charts of 10 tablets we would have 10 blister charts. -->
+
+            <!-- There could be several elemnts of material if the secondary packaging (or any packaging really) are made out of more than one material. -->
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/> <!-- Code for the material -->
+                <display value="Tube"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003208"/> <!-- Code for the material -->
+                <display value="Plastic"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+                </reference>
+              </item>
+			  
+              <amount>
+                <value value="100"/> <!-- How many of the contained item are there? If there is tablets it is the numbers of tablets in the package, if there is vials with oral solutions for injections it is the numbers of vials. -->
+                <unit value="gram(s)"/> <!-- What is the unit of presentation. -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                <code value="100000110654"/> <!-- Code for unit of presentation. -->
+              </amount>
+			  
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="PackagedProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef01" /> <!-- Change ID numbers if needed. -->
+    </request>
+  </entry>
+
+
+<!-- Second pack size, Tube 20 g -->
+  <!-- There could be more than one entry for the packageproductdefinition. Make sure to use numbers at the end of the ID. -->
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef02"/>
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1"/> <!-- Eg write how many tablets are in the jar or blister. -->
+            <unit value="Tube"/> <!-- How is the product presented? Eg a tablet or vial. English. -->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002156"/> <!-- Code for the unitOfPresentation. -->
+          </valueQuantity>
+        </extension>
+		
+        <packageFor>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </packageFor>
+		
+        <description value="Tub, 20 g"> <!-- Förpackningsbeskrvning. Package description, swedish. -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/> <!-- Do not change. -->
+              <display value="Swedish"/> <!-- Do not change. -->
+            </valueCoding>
+          </extension>
+        </description>
+		
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/> <!-- Do not change. -->
+              <display value="Sweden"/> <!-- Do not change. -->
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/> <!-- Do not change. -->
+              <display value="Marketed"/> <!-- Do not change. -->
+            </coding>
+          </status>
+          <dateRange>
+            <start/>
+          </dateRange>
+        </marketingStatus>
+
+
+		 <!-- Outside packaging, eg a cardboard box -->
+        <package>
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/> <!-- Very common but change if needed. -->
+              <display value="Box"/> <!-- Very common but change if needed. -->
+            </coding>
+          </type>
+          <quantity value="1"/> <!-- Always 1. -->
+		  
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/> <!-- Very common but change if needed. -->
+              <display value="Cardboard"/> <!-- Very common but change if needed. -->
+            </coding>
+          </material>
+          <!-- Outside packaging end. -->
+		  
+		  
+		  <!-- Added to test -->
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="3"/>
+              <unit value="year"/>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073424"/>
+                <display value="This medicinal product does not require any special storage conditions"/>
+              </coding>
+            </specialPrecautionsForStorage>
+          </shelfLifeStorage>
+		  <!-- Added to test -->
+		  
+		  
+          <!-- There could be another packaging inside the outer packaging. If not containeditem needs to be moved upwards to the outside packaging. And chech amount of tag ends for packaging. There could also be a third package element. -->
+          <package>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073561"/> <!-- Code for the type of secondary package. -->
+                <display value="Tube"/> <!-- Type of secondary package. English. -->
+              </coding>
+            </type>
+            <quantity value="1"/> <!-- How many of the secondary packaging are there? Eg if we have 100 tablets and blister charts of 10 tablets we would have 10 blister charts. -->
+
+            <!-- There could be several elemnts of material if the secondary packaging (or any packaging really) are made out of more than one material. -->
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/> <!-- Code for the material -->
+                <display value="Aluminium"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003208"/> <!-- Code for the material -->
+                <display value="Plastic"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+                </reference>
+              </item>
+			  
+              <amount>
+                <value value="20"/> <!-- How many of the contained item are there? If there is tablets it is the numbers of tablets in the package, if there is vials with oral solutions for injections it is the numbers of vials. -->
+                <unit value="gram(s)"/> <!-- What is the unit of presentation. -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                <code value="100000110654"/> <!-- Code for unit of presentation. -->
+              </amount>
+			  
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="PackagedProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef02" /> <!-- Change ID numbers if needed. -->
+    </request>
+  </entry>
+
+
+<!-- Second pack size, Tube 50 g -->
+  <!-- There could be more than one entry for the packageproductdefinition. Make sure to use numbers at the end of the ID. -->
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef03"/>
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1"/> <!-- Eg write how many tablets are in the jar or blister. -->
+            <unit value="Tube"/> <!-- How is the product presented? Eg a tablet or vial. English. -->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002156"/> <!-- Code for the unitOfPresentation. -->
+          </valueQuantity>
+        </extension>
+		
+        <packageFor>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </packageFor>
+		
+        <description value="Tub, 50 g"> <!-- Förpackningsbeskrvning. Package description, swedish. -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/> <!-- Do not change. -->
+              <display value="Swedish"/> <!-- Do not change. -->
+            </valueCoding>
+          </extension>
+        </description>
+		
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/> <!-- Do not change. -->
+              <display value="Sweden"/> <!-- Do not change. -->
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/> <!-- Do not change. -->
+              <display value="Marketed"/> <!-- Do not change. -->
+            </coding>
+          </status>
+          <dateRange>
+            <start/>
+          </dateRange>
+        </marketingStatus>
+
+
+		 <!-- Outside packaging, eg a cardboard box -->
+        <package>
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/> <!-- Very common but change if needed. -->
+              <display value="Box"/> <!-- Very common but change if needed. -->
+            </coding>
+          </type>
+          <quantity value="1"/> <!-- Always 1. -->
+		  
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/> <!-- Very common but change if needed. -->
+              <display value="Cardboard"/> <!-- Very common but change if needed. -->
+            </coding>
+          </material>
+          <!-- Outside packaging end. -->
+		  
+		  
+<!-- Added to test -->
+          <shelfLifeStorage>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                <code value="100000073403"/>
+                <display value="Shelf life of the medicinal product as packaged for sale"/>
+              </coding>
+            </type>
+
+            <periodDuration>
+              <value value="3"/>
+              <unit value="year"/>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+              <code value="200000003434"/>
+            </periodDuration>
+
+            <specialPrecautionsForStorage>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                <code value="100000073424"/>
+                <display value="This medicinal product does not require any special storage conditions"/>
+              </coding>
+            </specialPrecautionsForStorage>
+          </shelfLifeStorage>
+		  <!-- Added to test -->
+		  
+		  
+          <!-- There could be another packaging inside the outer packaging. If not containeditem needs to be moved upwards to the outside packaging. And chech amount of tag ends for packaging. There could also be a third package element. -->
+          <package>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073561"/> <!-- Code for the type of secondary package. -->
+                <display value="Tube"/> <!-- Type of secondary package. English. -->
+              </coding>
+            </type>
+            <quantity value="1"/> <!-- How many of the secondary packaging are there? Eg if we have 100 tablets and blister charts of 10 tablets we would have 10 blister charts. -->
+
+            <!-- There could be several elemnts of material if the secondary packaging (or any packaging really) are made out of more than one material. -->
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/> <!-- Code for the material -->
+                <display value="Aluminium"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003208"/> <!-- Code for the material -->
+                <display value="Plastic"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+                </reference>
+              </item>
+			  
+              <amount>
+                <value value="50"/> <!-- How many of the contained item are there? If there is tablets it is the numbers of tablets in the package, if there is vials with oral solutions for injections it is the numbers of vials. -->
+                <unit value="gram(s)"/> <!-- What is the unit of presentation. -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                <code value="100000110654"/> <!-- Code for unit of presentation. -->
+              </amount>
+			  
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="PackagedProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-PackageProductDef03" /> <!-- Change ID numbers if needed. -->
+    </request>
+  </entry>
+  
+  
+  <entry>
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+        <status value="active"/> <!-- Do not change. -->
+		
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073713"/> <!-- Manufactured item, eg code for tablet. -->
+            <display value="Ointment"/> <!-- English -->
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002156"/> <!-- UnitofPresentation code -->
+            <display value="Tube"/> <!-- Engish -->
+          </coding>
+        </unitOfPresentation>
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+    </request>
+  </entry>
+
+
+    <entry>
+    <resource>
+      <Ingredient>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient01"/>
+        <status value="active"/>
+
+        <for>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="AdministrableProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-AdminProductDef"/>
+        </for>
+
+        <role>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/> <!-- Code for what the ingredient does in the product. Only active for now. -->
+            <display value="Active"/> <!-- Do not change. -->
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000092635"/> <!-- EUTCT code for the active substance. -->
+                <display value="Hydrocortisone"/> <!-- The active substance (could be the salt), english. -->
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <concentrationRatio>
+              <numerator>
+                <value value="10"/> <!-- Quantity of active substanse, eg 50 if 50 mg is in eg a tablet. -->
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/> <!-- Unit of the amount of active substance, eg milligram(s). -->
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/> <!-- code for the unit eg 100000110655 for milligram(s). -->
+              </numerator>
+              <denominator>
+                <value value="1"/> <!-- Often 1. -->
+                <unit value="gram(s)"/> <!-- Per eg one tablet. Or per one millilitre. English. -->
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110654"/> <!-- Code for the unit used above. -->
+              </denominator>
+            </concentrationRatio>
+            <!-- Presentation could be changed to concentration if it is eg a solution, make another guide for that. -->
+
+
+            <!-- If the active substance was not a salt just repeat what you did above. -->
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000092635"/> <!-- Code from eutct. -->
+                    <display value="Hydrocortisone"/> <!-- The corresponding substance if we had a salt  above. English. --> 
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="10"/> <!-- the amount, no commas are allowed. -->
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/> <!-- Unit, english. -->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/> <!-- Often 1. -->
+                  <unit value="gram(s)"/> <!-- The unit in english. -->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110654"/> <!-- Code from spor. -->
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient01"/>
+    </request>
+  </entry>
+
+<!-- Paraffin, light liquid. I will make up some strengths here, just to try it -->
+    <entry>
+    <resource>
+      <Ingredient>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient02"/>
+        <status value="active"/>
+
+        <for>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="AdministrableProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-AdminProductDef"/>
+        </for>
+
+        <role>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072082"/> <!-- Code for what the ingredient does in the product. Only active for now. -->
+            <display value="Excipient"/> <!-- Do not change. -->
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000092267"/> <!-- EUTCT code for the active substance. -->
+                <display value="Paraffin, light liquid"/> <!-- The active substance (could be the salt), english. -->
+              </coding>
+            </concept>
+          </code>
+         
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient02"/>
+    </request>
+  </entry>
+
+
+<!-- Paraffin, white soft. I will make up some strengths here, just to try it -->
+    <entry>
+    <resource>
+      <Ingredient>
+        <id value="HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient03"/>
+        <status value="active"/>
+
+        <for>
+          <reference
+            value="MedicinalProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-MedicinalProductDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="ManufacturedItemDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-ManufacturedItemDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="AdministrableProductDefinition/HydrokortisonEvolan10mgpergsalva-SE-PLC-AdminProductDef"/>
+        </for>
+
+        <role>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072082"/> <!-- Code for what the ingredient does in the product. Only active for now. -->
+            <display value="Excipient"/> <!-- Do not change. -->
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000079000"/> <!-- EUTCT code for the active substance. -->
+                <display value="Paraffin white soft"/> <!-- The active substance (could be the salt), english. -->
+              </coding>
+            </concept>
+          </code>
+     
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/HydrokortisonEvolan10mgpergsalva-SE-PLC-Ingredient03"/>
+    </request>
+  </entry>
+ </Bundle>

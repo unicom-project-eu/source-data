@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Mydrane 0.2 mg/ml + 3.1 mg/ml + 10 mg/ml Solution for injection-->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-11, last change 2022-07-11-->
+<!-- follows the 5.0 standard-->
+<!--the packages are exactly the same code-wise right now, waiting for Austira-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Mydrane-InjSol-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Mydrane-InjSol-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Mydrane-InjSol-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                Mydrane-InjSol-SE-AJ-PackagedProductDefinition01
+Entry 5, PackagedProductDefinition:                Mydrane-InjSol-SE-AJ-PackagedProductDefinition02
+Entry 6, ManufacturedItemDefinition:               Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition
+Entry 7, Ingredient:                               Mydrane-InjSol-SE-AJ-Ingredient01 (lidocaine)
+Entry 8, Ingredient:                               Mydrane-InjSol-SE-AJ-Ingredient02 (phenylephrine)
+Entry 9, Ingredient:                               Mydrane-InjSol-SE-AJ-Ingredient03 (tropicamide)                      -->
+
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction" /><!--Fixed Value-->
+  
+  
+  
+  
+  <entry><!-- Entry 1: Medicinal product definition--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+	  
+		<id value="Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" />
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> 
+		<!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+			<code value="100000073863" /> 
+			<display value="Solution for injection" />
+		  </valueCoding>
+		</extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100001677-00051088"/>      
+						<!-- Format: SE-xxxxxxxxx-yyyyyyyy. --><!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+		</identifier>
+		
+		<identifier>  <!-- EURD-ID-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="10390"/> 
+			<!--lidocaine hydrochloride/ phenylephrine hydrochloride / tropicamide-->
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> 
+			<code value="100000000012" />
+			<display value="Human use" />
+		  </coding>
+		</domain>
+		
+		<status> 
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> 
+			<code value="200000005004" />
+			<display value="Current" />
+		  </coding>
+		</status>
+		
+		<indication value="Mydrane är avsett för kataraktkirurgi för att erhålla mydriasis och intraokulär anestesi under det kirurgiska ingreppet.
+Mydrane är endast avsett för vuxna." />
+<!--indication taken from SmPC--><!-- impossible to define language here-->
+
+		
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084" />
+			<display value="Medicinal product subject to medical prescription" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		<!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" /> 
+			<code value="100000098543" />
+			<display value="S01FA56" />
+			<!--tropicamide, combinations-->
+		  </coding>
+		</classification>
+		
+		<!--commented out for now-->
+		<!--<comprisedOf>--> <!-- refers to the manufactured item(s) that the product is compromised of--> <!--Several references possible, how?-->
+			<!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+			<!--<reference value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" /> -->  <!-- refers to manufactured item(s) -->
+		<!--</comprisedOf>-->
+		<!--commented out for now-->
+		
+		<name> 
+		
+		  <productName value="Mydrane 0,2 mg/ml + 3,1 mg/ml + 10 mg/ml Injektionsvätska, lösning" /> 
+		  <!-- full name, in swedish  Name+ strength+ form-->
+		  
+		  <namePart>
+		    <part value="Mydrane" />
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+				<code value="220000000002" /> 
+				<display value="Invented Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+          <namePart>
+            <part value="0,2 mg/ml + 3,1 mg/ml + 10 mg/ml" />
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000004" />
+				<display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Injektionsvätska, lösning" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage>
+            <country> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>
+              </coding>
+            </country>
+            <language> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> 
+                <code value="100000072288" /> 
+				<display value="Swedish"/> 
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- Entry 1: Medicinal product definition--><!--STARTED-->
+  
+  
+  
+  
+  <entry><!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	  
+	  <id value="Mydrane-InjSol-SE-AJ-RegulatedAuthorization"/>
+	  
+        <identifier>
+		<!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="51088" /> 
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+            <code value="220000000061" />
+			<display value="Marketing Authorisation"/> 
+          </coding>
+        </type>
+
+        <region> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> 
+            <code value="100000000535" /> 
+			<display value="Sweden"/>
+          </coding>
+        </region>
+
+        <status> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> 
+            <code value="100000072099" /> 
+			<display value="Valid"/> 
+          </coding>
+        </status>
+
+        <statusDate value="2016-03-31" /> 
+		<!-- date of first authorisation--><!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+
+        <holder> 
+		<!-- MAH, marketing authorisation holder-->
+
+			<identifier> 
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100005605"/>
+			</identifier>
+
+          <display value="Laboratoires Théa" /> 
+		  <!-- name of MAH--> <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="2016-03-31"/>  
+			<!-- date of first authorisation, found in eira -->
+					
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Mydrane-InjSol-SE-AJ-RegulatedAuthorization" /> 
+    </request>
+  </entry> <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  
+  
+  
+  
+  <entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  <!--technically there could be several entries for administrable products-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />--> 
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="Mydrane-InjSol-SE-AJ-AdministrableProductDefinition"/> 
+		
+		<status value="active"/>
+		
+
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+
+
+        <administrableDoseForm>
+		<!--pharmaceutical dose form for the administrable product-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> 
+            <code value="100000073863" />
+			<display value="Solution for injection"/>
+          </coding>
+        </administrableDoseForm>
+
+		<producedFrom>
+			<reference value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+		
+		
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> 
+              <code value="100000125763" /> 
+			 <display value="Intracameral use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Mydrane-InjSol-SE-AJ-AdministrableProductDefinition" /> 
+    </request>
+  </entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry>  <!-- Entry 4: Packaged Product definition01--><!--kanyl och ampull tillsammans--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+	  <!--ampoule and cannula in the same blister-->
+		<id value="Mydrane-InjSol-SE-AJ-PackagedProductDefinition01"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="20" />
+			<unit value="Ampoule"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002164" /> 
+          </valueQuantity>
+        </extension>
+		
+
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+
+		
+        <description value="Ampull, 20 x 0,6 ml (Blister med en ampull och en filterkanyl.)">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" /> 
+			  <display value="Swedish"/> 
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/> 
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/> 
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+		
+		  <type> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> 
+			  <code value="100000073498"/>
+			  <display value="Box"/>
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="3"/> 
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" />
+                  </periodDuration>
+
+            </shelfLifeStorage>
+			   
+			<package>
+			<!--package layer two-->
+			  <type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				  <code value="100000174066"/>
+				  <display value="Unit-dose blister"/> 
+				</coding>
+			  </type>
+			  
+			  <quantity value="20"/>
+			  
+				<material>
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					<code value="200000003207"/>
+					<display value="Paper"/>
+				  </coding>
+				</material>
+				
+				<material>
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					<code value="200000003222"/>
+					<display value="PolyVinyl Chloride"/>
+				  </coding>
+				</material>				
+				
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073490"/>
+				        <display value="Ampoule"/> 
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/> 
+			  
+				    <material> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003204"/>
+					    <display value="Glass type I"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="0.6" /> 
+						  <unit value="millilitre(s)"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110662" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+					
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+			</package> <!-- endof package layer two-->
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Mydrane-InjSol-SE-AJ-PackagedProductDefinition01" />
+    </request>
+  </entry> <!-- Entry 4: Packaged Product definition01--><!--NOT STARTED-->
+  
+  
+  
+  
+  
+  <entry>  <!-- Entry 5: Packaged Product definition02--><!--kanyler separat--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>
+	  <!--cannulas and ampoules in separate packages -->
+		<id value="Mydrane-InjSol-SE-AJ-PackagedProductDefinition02"/>
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="20" />
+			<unit value="Ampoule"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002164" /> 
+          </valueQuantity>
+        </extension>
+		
+
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+
+		
+        <description value="Ampull, 20 x 0,6 ml (Blister med en ampull. Filterkanyl i separat blister.)">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" /> 
+			  <display value="Swedish"/> 
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" /> 
+			  <display value="Sweden"/> 
+            </coding>
+          </country>
+		  
+          <status> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/> 
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+		
+		  <type> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> 
+			  <code value="100000073498"/>
+			  <display value="Box"/>
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material> 
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="3"/> 
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" />
+                  </periodDuration>
+
+            </shelfLifeStorage>
+			   
+			<package>
+			<!--package layer two-->
+			  <type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				  <code value="100000174066"/>
+				  <display value="Unit-dose blister"/> 
+				</coding>
+			  </type>
+			  
+			  <quantity value="20"/>
+			  
+				<material>
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					<code value="200000003207"/>
+					<display value="Paper"/>
+				  </coding>
+				</material>
+				
+				<material>
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					<code value="200000003222"/>
+					<display value="PolyVinyl Chloride"/>
+				  </coding>
+				</material>				
+				
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073490"/>
+				        <display value="Ampoule"/> 
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/> 
+			  
+				    <material> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> 
+					    <code value="200000003204"/>
+					    <display value="Glass type I"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="0.6" /> 
+						  <unit value="millilitre(s)"/> 
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110662" /> 
+					    </amount> <!-- previously </amountQuantity>-->
+					
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+			</package> <!-- endof package layer two-->
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Mydrane-InjSol-SE-AJ-PackagedProductDefinition02" />
+    </request>
+  </entry> <!-- Entry 5: Packaged Product definition02--><!--STARTED-->
+  
+  
+  
+  
+  <entry> <!--Entry 6: Manufactured item definition--><!--STARTED-->
+  <!--several entries allowed--> <!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition"/>
+
+		<status value="active" />
+		
+		
+        <manufacturedDoseForm> 
+		<!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073863" /> 
+			<display value="Solution for injection"/>
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation> 
+		<!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002164" /> 
+			<display value="Ampoule"/> 
+          </coding>
+        </unitOfPresentation>
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- Entry 6: Manufactured item definition--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry><!-- Entry 7: Ingredient 01--><!--lidocaine hydrochloride anhydrous--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient>
+	  <!--lidocaine hydrochloride anhydrous-->
+	  
+	  <id value="Mydrane-InjSol-SE-AJ-Ingredient01"/>
+
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionMydrane-InjSol-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" /> 
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />
+              <code value="100000139489" /> 
+				<display value="Lidocaine hydrochloride"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength>
+		  
+            <concentrationRatio> 
+              <numerator>
+                <value value="10" /> 
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/> 
+							<display value="equal to"/>
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" />
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="millilitre(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                <code value="100000110662" />
+              </denominator>
+            </concentrationRatio>
+
+            
+     		<referenceStrength>
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000091713"/>
+							<display value="Lidocaine"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="8.65"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" />
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="millilitre(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110662" />
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Mydrane-InjSol-SE-AJ-Ingredient01" />
+    </request>
+  </entry><!--Entry 7: Ingredient01--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry><!-- Entry 8: Ingredient 02--><!--Phenylephrine hydrochloride--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--Phenylephrine hydrochloride-->
+	  
+	  <id value="Mydrane-InjSol-SE-AJ-Ingredient02"/>
+	  
+
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionMydrane-InjSol-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> 
+            <code value="100000072072" />
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000160254" /> 
+				<display value="Phenylephrine hydrochloride ph. eur."/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength> 
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="3.1" /> 
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/> 
+							<display value="equal to"/> 
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" />
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="millilitre(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110662" /> 
+              </denominator>
+            </concentrationRatio>
+
+            
+     		<referenceStrength>
+				<substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000088260"/> 
+							<display value="Phenylephrine"/>
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="2.54"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" />
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="millilitre(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110662" /> 
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Mydrane-InjSol-SE-AJ-Ingredient02" />
+    </request>
+  </entry><!--Entry 8: Ingredient02--><!--STARTED-->
+  
+  
+  
+  
+  
+  <entry><!-- Entry 9: Ingredient 03--><!--tropicamide--><!--STARTED--> 
+  <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--Tropicamide-->
+	  
+	  <id value="Mydrane-InjSol-SE-AJ-Ingredient03"/>
+	  
+		
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Mydrane-InjSol-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Mydrane-InjSol-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionMydrane-InjSol-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> 
+            <code value="100000072072" /> 
+			<display value="Active"/>
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />
+              <code value="100000091954" />
+				<display value="Tropicamide"/> 
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength>
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="0.2" />
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/>
+							<display value="equal to"/> 
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" /> 
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="millilitre(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                <code value="100000110662" /> 
+              </denominator>
+            </concentrationRatio>
+
+            
+     		<referenceStrength>
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000091954"/>
+							<display value="Tropicamide"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="0.2"/>
+						<comparator> 
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> 
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" /> 
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="millilitre(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110662" /> 
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Mydrane-InjSol-SE-AJ-Ingredient03" />
+    </request>
+  </entry><!--Entry 9: Ingredient03--><!--STARTED-->
+  
+  
+  
+  
+</Bundle>

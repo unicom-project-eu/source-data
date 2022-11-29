@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dicuno 50 mg filmdragerad tablett: ASPnr 2009-0916 -->
+<!--  Penny Lindström Carmanius   2022-08-03 -->
+<!-- IDs:
+MedicinalProductDefiniton:       Dicuno50mgFilmtablet-SE-PLC-MedicinalProductDef
+RegulatedAuthorities:            Dicuno50mgFilmtablet-SE-PLC-RegAutho
+AdministrableProductDefinition:  Dicuno50mgFilmtablet-SE-PLC-AdminProductDef
+PackageProductDefinition:        Dicuno50mgFilmtablet-SE-PLC-PackageProductDef01
+                                 Dicuno50mgFilmtablet-SE-PLC-PackageProductDef02
+ManufacturedItemDefinition:      Dicuno50mgFilmtablet-SE-PLC-ManufacturedItemDef
+Ingredient:                      Dicuno50mgFilmtablet-SE-PLC-Ingredient -->
+
+
+
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction"/>
+  <entry>
+    <resource>
+      <MedicinalProductDefinition>
+        <id value="Dicuno50mgFilmtablet-SE-PLC-MedicinalProductDef"/>
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system
+              value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073665"/> <!-- Look in the Spor lists mentioned just above for the code and the text for the pharmaceutical dose form. -->
+            <display value="Film-coated tablet"/> <!-- In english -->
+          </valueCoding>
+        </extension>
+		
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/mpId"/>
+          <value value="SE-100002026-00042952"/> <!-- SE-Organisationnumber-MTnumber. Organisationnumber should be 9 numbers and can be found in Spor under organisations. The part for the MTnumber should be 8 numbers long (fill in with zeros before the MTnumber if it is to short (it is commonly 5 numbers long in Sweden-->
+        </identifier> <!-- LOC-100005946 -->
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/eurdId"/>
+          <value value="1048"/> <!-- EURD number for the substance, can be found in the list saved in the U: map. Can be any numbers long. -->
+        </identifier>
+		
+		<domain>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+            <code value="100000000012"/> <!-- Let be. We only deal with products for human use for the moment -->
+            <display value="Human use"/> <!-- Do not change. -->
+          </coding>
+        </domain>
+		
+		
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+            <code value="200000005004"/> <!-- Describes the status of the file. Do not change, we only do current -->
+            <display value="Current"/> <!-- Do not change. -->
+          </coding>
+        </status>
+		
+        <indication
+          value="Symtomatisk behandling av akut smärta av lätt till måttlig intensitet. Symtomatisk behandling av akuta anfall 
+av migränhuvudvärk.
+"/> <!-- Gather information about the indication in FASS or the product specification in Läkemedelsverkets Läkemedelssök, in swedish. -->
+
+
+        <legalStatusOfSupply>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+            <code value="100000072084"/> <!-- Code from list from Spor. Medicinal product not subject to medical prescription (100000072076) receptfritt, Medicinal product subject to medical prescription (100000072084) receptbelagt. -->
+            <display value="Medicinal product subject to medical prescription"/> <!-- Change if needed. -->
+          </coding>
+        </legalStatusOfSupply>
+
+
+        <classification>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000093533"/>
+            <code value="100000096906"/> <!-- Code for the ATC-code -->
+            <display value="M01AB05"/> <!-- ATC-code -->
+          </coding>
+        </classification>
+		
+		
+        <!-- This element are not yet compatible with FHIR, keep for eventual integration in the code. -->
+        <!-- <comprisedOf> -->
+        <!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+        <!-- <reference value="ManufacturedItemDefinition/DiklofenakOrifarm50Enterotablett-SE-PLC-ManufacturedItemDef" />   -->
+        <!-- </comprisedOf> -->
+		
+		<!-- Name section starts here. -->
+        <name>
+          <productName value="Dicuno 50 mg fildragerad tablett"/>
+          <namePart>
+            <part value="Dicuno"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000002"/> <!-- Code for Scientific name part(220000000003) eg Diklofenak Orifarm or Invented name part(220000000002) eg Alvedon. -->
+                <display value="Invented name part"/> <!-- Change if needed. -->
+              </coding>
+            </type>
+          </namePart>
+
+
+          <namePart>
+            <part value="50 mg" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000004"/> <!-- Do not change. -->
+                <display value="Strength part"/> <!-- Do not change. -->
+              </coding>
+            </type>
+          </namePart>
+		  
+          <namePart>
+            <part value="filmdragerad tablett"/>
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                <code value="220000000005"/> <!-- Do not change. -->
+                <!-- Koden är samma hela tiden, säger bara att vi tittar på Pharmaceutical dose part -->
+                <display value="Pharmaceutical dose form part"/> <!-- Do not change. -->
+              </coding>
+            </type>
+          </namePart>
+		  <!-- Name section finishes here. -->
+
+
+		  <!-- Do not change this small section. -->
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                <code value="100000000535"/>
+                <display value="Sweden"/>
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                <code value="100000072288"/>
+                <display value="Swedish"/>
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="MedicinalProductDefinition/Dicuno50mgFilmtablet-SE-PLC-MedicinalProductDef"/>
+    </request>
+  </entry>
+  
+  
+    <entry>
+    <resource>
+      <RegulatedAuthorization>
+        <id value="Dicuno50mgFilmtablet-SE-PLC-RegAutho"/>
+        <identifier>
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+          <value value="42952"/>
+        </identifier>
+        <subject>
+
+          <reference
+            value="MedicinalProductDefinition/Dicuno50mgFilmtablet-SE-PLC-MedicinalProductDef"/>
+        </subject>
+
+
+        <!-- Do not change this small section. -->
+        <type>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+            <code value="220000000061"/> <!-- We only deal with Marketed product so this will not change. -->
+            <display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+            <code value="100000000535"/>
+            <display value="Sweden"/>
+          </coding>
+        </region>
+		
+        <status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+            <code value="100000072099"/>
+            <display value="Valid"/>
+          </coding>
+        </status>
+
+        <statusDate value="2011-09-16"/> <!-- The date whe the product was approved. -->
+
+        <holder>
+          <identifier>
+            <system value="https://spor.ema.europa.eu/v1/locations"/>
+            <value value="LOC-100005946"/> <!-- LOC-number can be found by looking in EIRA for the MAH adress and then go to Spor and match the adress with the LOC-number. -->
+          </identifier>
+          <display value="Vitabalans Oy"/> <!-- MAH name. -->
+        </holder>
+        <case>
+          <type>
+            <coding>
+              <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+              <code value="dateOfFirstAuthorisation"/> <!-- Do not change. -->
+              <display value="First Authorisation"/> <!-- Do not change. -->
+            </coding>
+          </type>
+          <dateDateTime value="2011-09-16"/>
+        </case>
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="RegulatedAuthorization/Dicuno50mgFilmtablet-SE-PLC-RegAutho"/>
+    </request>
+  </entry>
+  
+  
+  <entry>
+    <resource>
+      <AdministrableProductDefinition>
+        <id value="Dicuno50mgFilmtablet-SE-PLC-AdminProductDef"/>
+        <status value="active"/> <!-- Do not change. -->
+        <formOf>
+          <reference
+            value="MedicinalProductDefinition/Dicuno50mgFilmtablet-SE-PLC-MedicinalProductDef"/>
+        </formOf>
+        <administrableDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/> <!-- Code for the administrable dose form. -->
+            <display value="Film-coated tablet"/> <!-- Administrable dose form. The dose form that are administred to the patient. English -->
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference
+            value="ManufacturedItemDefinition/Dicuno50mgFilmtablet-SE-PLC-ManufacturedItemDef"/>
+        </producedFrom>
+
+        <routeOfAdministration>
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+              <code value="100000073619"/> <!-- Code for the route of administration. -->
+              <display value="Oral use"/> <!-- Can be found in EIRA. English. -->
+            </coding>
+          </code>
+        </routeOfAdministration>
+		
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="AdministrableProductDefinition/Dicuno50mgFilmtablet-SE-PLC-AdminProductDef"/>
+    </request>
+  </entry>
+
+
+  <!-- There could be more than one entry for the packageproductdefinition. Make sure to use numbers at the end of the ID. -->
+  <!-- Two package sizes are marketed in Sweden, this is the first package vith 100 tablets. -->
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="Dicuno50mgFilmtablet-SE-PLC-PackageProductDef01"/>
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="100"/> <!-- Eg write how many tablets are in the jar or blister. -->
+            <unit value="Tablet"/> <!-- How is the product presented? Eg a tablet or vial. English. -->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/> <!-- Code for the unitOfPresentation. -->
+          </valueQuantity>
+        </extension>
+		
+        <packageFor>
+          <reference
+            value="MedicinalProductDefinition/Dicuno50mgFilmtablet-SE-PLC-MedicinalProductDef"/>
+        </packageFor>
+		
+        <description value="Blister, 100 tabletter"> <!-- Förpackningsbeskrivning. Package description, swedish. -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/> <!-- Do not change. -->
+              <display value="Swedish"/> <!-- Do not change. -->
+            </valueCoding>
+          </extension>
+        </description>
+		
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/> <!-- Do not change. -->
+              <display value="Sweden"/> <!-- Do not change. -->
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/> <!-- Do not change. -->
+              <display value="Marketed"/> <!-- Do not change. -->
+            </coding>
+          </status>
+          <dateRange>
+            <start/>
+          </dateRange>
+        </marketingStatus>
+		
+		
+		 <!-- Outside packaging, eg a cardboard box -->
+        <package>
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/> <!-- Very common but change if needed. -->
+              <display value="Box"/> <!-- Very common but change if needed. -->
+            </coding>
+          </type>
+          <quantity value="1"/> <!-- Always 1. -->
+		  
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/> <!-- Very common but change if needed. -->
+              <display value="Cardboard"/> <!-- Very common but change if needed. -->
+            </coding>
+          </material>
+          <!-- Outside packaging end. -->
+		  
+		  
+          <!-- There could be another packaging inside the outer packaging. If not containeditem needs to be moved upwards to the outside packaging. And chech amount of tag ends for packaging. There could also be a third package element. -->
+          <package>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073496"/> <!-- Code for the type of secondary package. -->
+                <display value="Blister"/> <!-- Type of secondary package. English. -->
+              </coding>
+            </type>
+            <quantity value="10"/> <!-- How many of the secondary packaging are there? Eg if we have 100 tablets and blister charts of 10 tablets we would have 10 blister charts. -->
+
+            <!-- There could be several elemnts pf material if the secondary packaging (or any packaging really) are made out of more than one material. -->
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/> <!-- Code for the material -->
+                <display value="Aluminium"/> <!-- The material used. -->
+              </coding>
+            </material>
+			
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003208"/> <!-- Code for the material -->
+                <display value="Plastic"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/Dicuno50mgFilmtablet-SE-PLC-ManufacturedItemDef"/>
+                </reference>
+              </item>
+			  
+              <amount>
+                <value value="10"/> <!-- How many of the contained item are there? If there is tablets it is the numbers of tablets in the package, if there is vials with oral solutions for injections it is the numbers of vials. -->
+                <unit value="Tablet"/> <!-- What is the unit of presentation. -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                <code value="200000002152"/> <!-- Code for unit of presentation. -->
+              </amount>
+			  
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="PackagedProductDefinition/Dicuno50mgFilmtablet-SE-PLC-PackageProductDef01" /> <!-- Change ID numbers if needed. -->
+    </request>
+  </entry>
+  
+  
+  <!-- Two package sizes are marketed in Sweden, this is the second package with 50 tablets. -->
+  <entry>
+    <resource>
+      <PackagedProductDefinition>
+        <id value="Dicuno50mgFilmtablet-SE-PLC-PackageProductDef02"/>
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="50"/> <!-- Eg write how many tablets are in the jar or blister. -->
+            <unit value="Tablet"/> <!-- How is the product presented? Eg a tablet or vial. English. -->
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/> <!-- Code for the unitOfPresentation. -->
+          </valueQuantity>
+        </extension>
+		
+        <packageFor>
+          <reference
+            value="MedicinalProductDefinition/DicTratiopharma50mgFilmtablet-SE-PLC-MedicinalProductDef"/>
+        </packageFor>
+		
+        <description value="Blister, 50 tabletter"> <!-- Förpackningsbeskrivning. Package description, swedish. -->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+              <code value="100000072288"/> <!-- Do not change. -->
+              <display value="Swedish"/> <!-- Do not change. -->
+            </valueCoding>
+          </extension>
+        </description>
+		
+        <marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+              <code value="100000000535"/> <!-- Do not change. -->
+              <display value="Sweden"/> <!-- Do not change. -->
+            </coding>
+          </country>
+          <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+              <code value="100000072083"/> <!-- Do not change. -->
+              <display value="Marketed"/> <!-- Do not change. -->
+            </coding>
+          </status>
+          <dateRange>
+            <start/>
+          </dateRange>
+        </marketingStatus>
+		
+		
+		 <!-- Outside packaging, eg a cardboard box -->
+        <package>
+          <type>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+              <code value="100000073498"/> <!-- Very common but change if needed. -->
+              <display value="Box"/> <!-- Very common but change if needed. -->
+            </coding>
+          </type>
+          <quantity value="1"/> <!-- Always 1. -->
+		  
+          <material>
+            <coding>
+              <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+              <code value="200000003529"/> <!-- Very common but change if needed. -->
+              <display value="Cardboard"/> <!-- Very common but change if needed. -->
+            </coding>
+          </material>
+          <!-- Outside packaging end. -->
+		  
+		  
+          <!-- There could be another packaging inside the outer packaging. If not containeditem needs to be moved upwards to the outside packaging. And chech amount of tag ends for packaging. There could also be a third package element. -->
+          <package>
+            <type>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                <code value="100000073496"/> <!-- Code for the type of secondary package. -->
+                <display value="Blister"/> <!-- Type of secondary package. English. -->
+              </coding>
+            </type>
+            <quantity value="5"/> <!-- How many of the secondary packaging are there? Eg if we have 100 tablets and blister charts of 10 tablets we would have 10 blister charts. -->
+
+            <!-- There could be several elemnts pf material if the secondary packaging (or any packaging really) are made out of more than one material. -->
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003200"/> <!-- Code for the material -->
+                <display value="Aluminium"/> <!-- The material used. -->
+              </coding>
+            </material>
+			
+            <material>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                <code value="200000003208"/> <!-- Code for the material -->
+                <display value="Plastic"/> <!-- The material used. -->
+              </coding>
+            </material>
+
+            <containedItem>
+              <item>
+                <reference>
+                  <reference
+                    value="ManufacturedItemDefinition/Dicuno50mgFilmtablet-SE-PLC-ManufacturedItemDef"/>
+                </reference>
+              </item>
+			  
+              <amount>
+                <value value="10"/> <!-- How many of the contained item are there? If there is tablets it is the numbers of tablets in the package, if there is vials with oral solutions for injections it is the numbers of vials. -->
+                <unit value="Tablet"/> <!-- What is the unit of presentation. -->
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014"/>
+                <code value="200000002152"/> <!-- Code for unit of presentation. -->
+              </amount>
+			  
+            </containedItem>
+          </package>
+        </package>
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="PackagedProductDefinition/Dicuno50mgFilmtablet-SE-PLC-PackageProductDef02" /> <!-- Change ID numbers if needed. -->
+    </request>
+  </entry>
+  
+
+  <entry>
+    <resource>
+      <ManufacturedItemDefinition>
+        <id value="Dicuno50mgFilmtablet-SE-PLC-ManufacturedItemDef"/>
+        <status value="active"/> <!-- Do not change. -->
+		
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+            <code value="100000073665"/> <!-- Manufactured item, eg code for tablet. -->
+            <display value="Film-coated tablet"/> <!-- English -->
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002152"/> <!-- UnitofPresentation code -->
+            <display value="Tablet"/> <!-- Engish -->
+          </coding>
+        </unitOfPresentation>
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url
+        value="ManufacturedItemDefinition/Dicuno50mgFilmtablet-SE-PLC-ManufacturedItemDef"
+      />
+    </request>
+  </entry>
+  
+  
+    <entry>
+    <resource>
+      <Ingredient>
+        <id value="Dicuno50mgFilmtablet-SE-PLC-Ingredient"/>
+        <status value="active"/>
+
+        <for>
+          <reference
+            value="MedicinalProductDefinition/Dicuno50mgFilmtablet-SE-PLC-MedicinalProductDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="ManufacturedItemDefinition/Dicuno50mgFilmtablet-SE-PLC-ManufacturedItemDef"/>
+        </for>
+
+        <for>
+          <reference
+            value="AdministrableProductDefinition/Dicuno50mgFilmtablet-SE-PLC-AdminProductDef"/>
+        </for>
+
+        <role>
+          <coding>
+            <system value="https://spor.ema.europa.eu/v1/lists/100000072050"/>
+            <code value="100000072072"/> <!-- Code for what the ingredient does in the product. Only active for now. -->
+            <display value="Active"/> <!-- Do not change. -->
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+            <concept>
+              <coding>
+                <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                <code value="100000092368"/> <!-- EUTCT code for the active substance. -->
+                <display value="Diclofenac potassium"/> <!-- The active substance (could be the salt), english. -->
+              </coding>
+            </concept>
+          </code>
+          <strength>
+            <presentationRatio>
+              <numerator>
+                <value value="50"/> <!-- Quantity of active substanse, eg 50 if 50 mg is in eg a tablet. -->
+                <comparator>
+                  <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                    <valueCoding>
+                      <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                      <code value="100000000049"/>
+                      <display value="equal to"/>
+                    </valueCoding>
+                  </extension>
+                </comparator>
+                <unit value="milligram(s)"/> <!-- Unit of the amount of active substance, eg milligram(s). -->
+                <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                <code value="100000110655"/> <!-- code for the unit eg 100000110655 for milligram(s). -->
+              </numerator>
+              <denominator>
+                <value value="1"/> <!-- Often 1. -->
+                <unit value="Tablet"/> <!-- Per eg one tablet. Or per one millilitre. English. -->
+                <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                <code value="200000002152"/> <!-- Code for the unit used above. -->
+              </denominator>
+            </presentationRatio>
+            <!-- Presentation could be changed to concentration if it is eg a solution, make another guide for that. -->
+			
+            <!-- If the active substance was not a salt just repeat what you did above. -->
+            <referenceStrength>
+              <substance>
+                <concept>
+                  <coding>
+                    <system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                    <code value="100000092798"/> <!-- Code from eutct. -->
+                    <display value="Diclofenac"/> <!-- The corresponding substance if we had a salt  above. English. --> 
+                  </coding>
+                </concept>
+              </substance>
+              <strengthRatio>
+                <numerator>
+                  <value value="44"/> <!-- the amount, no commas are allowed. -->
+                  <comparator>
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                      <valueCoding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                        <code value="100000000049"/>
+                        <display value="equal to"/>
+                      </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/> <!-- Unit, english. -->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+                  <code value="100000110655"/>
+                </numerator>
+                <denominator>
+                  <value value="1"/> <!-- Often 1. -->
+                  <unit value="Tablet"/> <!-- The unit in english. -->
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/>
+                  <code value="200000002152"/> <!-- Code from spor. -->
+                </denominator>
+              </strengthRatio>
+            </referenceStrength>
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT"/>
+      <url value="Ingredient/Dicuno50mgFilmtablet-SE-PLC-Ingredient"/>
+    </request>
+  </entry>
+
+</Bundle>

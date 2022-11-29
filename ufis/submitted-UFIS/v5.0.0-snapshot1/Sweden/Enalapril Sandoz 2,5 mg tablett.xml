@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Enalapril Sandoz 2,5 mg tablett-->
+<!-- Alva Jonsson -->
+<!-- Started 2022-06-29, last change 2022-06-29-->
+<!-- follows the 5.0 standard-->
+<!-- -->
+
+<!-- Referenser:
+Entry 1, MedicinalProductDefinition:               EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     EnalaprilSandoz-2.5mg-Tablet-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           EnalaprilSandoz-2.5mg-Tablet-SE-AJ-AdministrableProductDef
+Entry 4, PackagedProductDefinition:                EnalaprilSandoz-2.5mg-Tablet-SE-AJ-PackagedProductDefinition01
+Entry 5, PackagedProductDefinition:                EnalaprilSandoz-2.5mg-Tablet-SE-AJ-PackagedProductDefinition02
+Entry 6, ManufacturedItemDefinition:               EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition
+Entry 7, Ingredient:                               EnalaprilSandoz-2.5mg-Tablet-SE-AJ-Ingredient                       -->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" /><!--Fixed Value-->
+  
+  
+  
+  <entry><!-- start of Entry 1 Medicinal product definition--><!--started--><!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:02d32a11-c316-494b-a464-79ccea8fa735" /> --> <!--new id generated:02d32a11-c316-494b-a464-79ccea8fa735--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <MedicinalProductDefinition>
+		<id value="EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition" /> <!-- EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition-->
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> <!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /><!-- EMA lists of pharmaceutical dose forms, Fixed Value-->
+			<code value="100000073664" /> <!--ID for pharmaceutical dose form-->
+			<display value="Tablet" /> <!--term for pharmaceutical dose form-->
+		  </valueCoding>
+		</extension>
+		
+		<!-- CHAGNE(S)HERE!!! 2022-06-27-->
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100000546-00015983"/>              <!-- Johan väntar på svar. Så länge använder vi MT-numret (godkännandenumret) på slutet här. -->
+		</identifier>
+		<!-- END OF CHANGE(S)!!! 2022-06-27-->
+		
+		
+		<identifier>  <!-- EURD-ID, see U:\ EURD-listan-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="1211"/>  <!--enalapril-->
+		</identifier>
+		
+		<domain><!-- is the drug for human or veterinary use, or both? most likly to be human only--> <!-- human use, 100000000012, vet use 100000000013 -->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> <!-- EMA list of domains-->
+			<code value="100000000012" /><!--ID for domain-->
+			<display value="Human use" /><!--term for domain-->
+		  </coding>
+		</domain>
+		
+		<status> <!-- status of the document, always current-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> <!-- EMA list of record status-->
+			<code value="200000005004" /><!--ID for status-->
+			<display value="Current" /><!--term for status-->
+		  </coding>
+		</status>
+		
+		<indication value="• Behandling av hypertoni
+• Behandling av symptomatisk hjärtsvikt
+• Prevention av symptomatisk hjärtsvikt hos patienter med asymptomatisk 
+vänsterkammardysfunktion (ejektionsfraktion  35 %)
+ " /> <!--indication from SmPC/FASS/wherever we can find it--><!-- indication taken from SmPC--><!-- impossible to define language here-->
+		
+		
+		<legalStatusOfSupply><!-- subject to medcial prescription or not, type of prescription-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" /><!-- EMA list of legal status for the supply-->
+			<code value="100000072084" /><!--ID for legal staus-->
+			<display value="Medicinal product subject to medical prescription" /><!--term for legal status-->
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification><!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" /> <!-- EMA list of Anatomical Therapeutic Chemical classification system human, vet is a different list (Q), use correct list-->
+			<code value="100000095104" /><!--ID for code-->
+			<display value="C09AA02" /><!-- Enalapril-->
+		  </coding>
+		</classification>
+		
+		<!-- CHANGE(S) HERE!!! 2022-06-23-->
+		<!--<comprisedOf>--> <!-- refers to the manufactured item(s) that the product is compromised of--> <!--Several references possible, how?-->
+			<!--<reference value="ManufacturedItemDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition" />-->   <!-- refers to manufactured item(s) -->
+		<!--</comprisedOf>-->
+		<!-- END OF CHANGE(S)!!! 2022-06-23-->
+		
+		<name> <!-- name of the product-->
+		
+		  <productName value="Enalapril Sandoz 2,5 mg Tablett" /> <!-- full name, in swedish  Name+ strength+ form-->
+		  
+		  <namePart>
+		    <part value="Enalapril Sandoz" /> <!-- invented/scientific part of the name, Produktnamn in EIRA-->
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- EMA list of Medicinal product name part type-->
+				<code value="220000000003" /> <!--ID for name part--> <!-- invented 220000000002, scientific 220000000003-->
+				<display value="Scientific Name Part" /><!-- specify wether the name is invented (fantasinamn) or scientific (vetenskapligt) substance+ company e.g. Metylfenidat actavis-->
+			  </coding>
+			</type>
+		  </namePart>
+          <namePart>
+            <part value="2,5 mg" /> <!-- strengt part of the name, in swedish--> <!-- not obligatory, as some products lack a well defined strength, i.e. vaccines-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- EMA list of Medicinal product name part type-->
+                <code value="220000000004" /><!--ID for name part--> <!-- Fixed Value-->
+				<display value="Strength part"/><!--term for name part--> <!-- Fixed Value-->
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Tablett" /> <!-- pharmaceutical dose form in swedish, as stated in the name-->
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> <!-- EMA list of Medicinal product name part type-->
+                <code value="220000000005" /><!--ID for name part--> <!-- Fixed Value-->
+				<display value="Pharmaceutical dose form part"/><!--term for name part--> <!-- Fixed Value-->
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage> <!-- language of the name, all names will be in swedish so there will be no changes-->
+            <country> <!-- always sweden-->
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- EMA list of countries-->
+                <code value="100000000535" /><!--ID for country-->
+				<display value="Sweden"/><!-- name of country, short name should be enough. Specify which country the product is from even though the language can be spoken in several countries-->
+              </coding>
+            </country>
+            <language> <!-- language of the name, always swedish-->
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> <!-- EMA list of languages-->
+                <code value="100000072288" /> <!-- ID for language-->
+				<display value="Swedish"/> <!--name of language-->
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- end of Medicinal product definition--><!--started-->
+  
+  
+  
+  <entry>  <!-- start of Entry 2 Regulated marketing authorisation--><!-- started--><!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:fcbaefb1-dcad-48da-a034-0c4398c682d5" /> --> <!--new id generated:fcbaefb1-dcad-48da-a034-0c4398c682d5--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	  
+	  <id value="EnalaprilSandoz-2.5mg-Tablet-SE-AJ-RegulatedAuthorization"/>	 
+	  
+        <identifier> <!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="15983" /> <!--MT number, found in EIRA-->
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> <!-- shows that this product is approved--><!-- type of regulatory entitlement, always Markteing authorisation.-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" /><!-- EMA list of regulatory entitlement type-->
+            <code value="220000000061" /> <!--ID for type-->
+			<display value="Marketing Authorisation"/> <!-- term for type-->
+          </coding>
+        </type>
+
+        <region> <!-- region where document is valid--> <!-- will be sweden for all procedures except CP-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /> <!-- EMA list of countries-->
+            <code value="100000000535" /> <!--ID for country-->
+			<display value="Sweden"/> <!--name of country, short name should be enough-->
+          </coding>
+        </region>
+
+        <status> <!-- wether or not the ducoment is valid, should always be valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" /> <!--  EMA list of regulatory entitlement status-->
+            <code value="100000072099" /> <!--ID for status-->
+			<display value="Valid"/> <!-- term for status-->
+          </coding>
+        </status>
+
+        <statusDate value="2000-05-05" /> <!-- date of first authorisation--><!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+
+        <holder> <!-- MAH, marketing authorisation holder-->
+		
+		<!--CHANGE(S) HERE!!! 2022-06-27-->
+		  
+			<identifier>
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100000450"/>
+			</identifier>
+		<!-- END OF CHANGE(S) !!! 2022-06-27-->			
+		
+          <display value="Sandoz GmbH" /> <!-- name of MAH-->
+        </holder>
+
+       <!--CHANGE(S) HERE!!! 2022-06-27-->
+	   <!-- new element-->
+		<case>
+			<type>
+				<!-- ISO name: (fixed value) -->
+				<coding>
+					<!-- ISO name: (fixed value) -->
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<!-- ISO name: (fixed value) -->
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="2000-05-05"/>    <!-- date of first authorisation, found in eira -->
+					
+		</case>
+		<!-- END OF CHANGE(S) !!! 2022-06-27-->
+		
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-RegulatedAuthorization" /> <!-- insert MT number -->
+    </request>
+  </entry> <!-- end of Regulated marketing authorisation--><!-- started-->
+  
+  
+  
+  
+  <entry> <!-- start of Entry 3 Administrable product definition--><!-- started--><!--technically there could be several entries for administrable products, but it is unlikely that we encounter such products at this stage of the project. powder that can be mixed with both salt water and sterile water vill need two-->
+    <!--<fullUrl value="urn:uuid:1109657b-b084-434e-8c17-6f0de3b2256d" />--> <!--new id generated:1109657b-b084-434e-8c17-6f0de3b2256d--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="EnalaprilSandoz-2.5mg-Tablet-SE-AJ-AdministrableProductDef"/>  <!--new suggestion from Hugh: AJ-Product-AdministrableProduct-->
+		<status value="active"/>
+
+		<!-- CHANGE(S) HERE!!! 2022-06-23-->
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+		<!-- END OF CHANGE(S)!!! 2022-06-23-->
+
+        <administrableDoseForm><!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> <!-- EMA list of pharmaceutical dose forms-->
+            <code value="100000073664" /> <!--ID for parmaceutical dose form-->
+			<display value="tablet"/> <!--term for pharmaceutical dose form-->
+          </coding>
+        </administrableDoseForm>
+
+		
+		<!-- CHANGE(S) HERE!!! 2022-06-23-->
+		<producedFrom> <!-- refer to the manufactured items that the administrable dose form consists of--><!-- several elements possible-->
+			<reference value="ManufacturedItemDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+		<!-- END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <routeOfAdministration><!--route of administration, found in EIRA-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> <!-- EMA list of routes and methods of administration-->
+              <code value="100000073619" /> <!--ID for route of administration-->
+			<display value="Oral use"/> <!--term for route of administration-->
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-AdministrableProductDef" /> <!-- once again a wild but educated guess, but we seem to have decided on this format for the codes-->
+    </request>
+  </entry> <!-- end of Administrable product definition--><!--started-->
+  
+  
+  
+  <entry>  <!-- start of Entry 4 Packaged Product definition01--><!-- started--><!--Blister--><!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:adfec391-399d-4bfe-aadd-bc80044a62d6" /> --><!--new id generated:adfec391-399d-4bfe-aadd-bc80044a62d6--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+
+      <PackagedProductDefinition> <!-- description of just about everything regarding a single package--><!--nice little comment on which package it is, again, yes, 'cause why not-->
+		<id value="EnalaprilSandoz-2.5mg-Tablet-SE-AJ-PackagedProductDefinition01"/> <!-- j-->
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="100" />
+			<!--this quantity seems a bit arbitary, we can make something up as long as it has a bit of logic in it and makes it fairly easy for the general person to understand how much the entire package contains-->
+			<unit value="tablet"/>  <!-- term for unit -->			
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!-- EMA list of units of presentation-->
+            <code value="200000002152" /> <!--ID for unit-->
+          </valueQuantity>
+        </extension>
+		
+		<!-- CHANGE(S) HERE!!! 2022-06-23-->
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		<!-- END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <description value="Blister, 100 tabletter"> <!-- insert how the package is marketed in sweden, even if it seems a bit not correct as compared to what the package actualy is-->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /><!--EMA list of languages-->
+              <code value="100000072288" /> <!-- ID for language-->
+			  <display value="Swedish"/>  <!-- term for language-->
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> <!-- if the package is marketed, or not, and why not-->
+		
+          <country> <!-- country where the status is valid, always sweden-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /><!--EMA list of countries-->
+              <code value="100000000535" /> <!--id for country-->
+			  <display value="Sweden"/> <!--term for country-->
+            </coding>
+          </country>
+		  
+          <status> <!-- the actual status of the package--><!-- should always be marketed at this stage-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- EMA list of marketing statuses. Stati?-->
+              <code value="100000072083" /> <!-- ID--><!--hevicain code wrong-->
+			  <display value="Marketed"/> <!--term-->
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/><!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package><!--outermost packaging layer start--> <!-- packaging information is sparse in Eira etc, look in 3.2p7 in the dossier to find better information. Search in step/mine-->
+		
+		  <type> <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- EMA list of packaging-->
+			  <code value="100000073498"/><!-- ID for packaging-->
+			  <display value="Box"/> <!--term for packaging-->
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/><!--always one, according to the standard. Boxes are easy, plastic film not so much-->
+		  
+		  <material> <!-- material of packaging--> <!-- several material elements can be added right after one another if there are several materials-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!--EMA list of materials-->
+			  <code value="200000003529"/><!-- ID for material-->
+			  <display value="Cardboard"/><!--term for material-->
+			</coding>
+		  </material>
+		  
+<!--should we add this, ask JOhan--><shelfLifeStorage><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/ShelfLifeType -->
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/ShelfLifeTimePeriod -->
+                  <periodDuration>
+                     <value value="2"/> <!--how many of that unit of time-->
+                     <unit value="year"/> <!--unit of time--> <!-- unit of time can't be plural cuz fuck logic-->
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" /><!-- EMA list of units of measurement-->
+					<code value="200000003434" /> <!-- id for unit -->
+                  </periodDuration>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/SpecialPrecautionsForStorage -->
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073411"/>
+                        <display value="Do not store above 30 °C"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/SpecialPrecautionsForStorage -->
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073421"/>
+                        <display value="Store in the original package"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/SpecialPrecautionsForStorage -->
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073427"/>
+                        <display value="in order to protect from moisture"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+<!--should we add this, ask JOhan--></shelfLifeStorage>
+			   
+			      <package><!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				        <code value="100000073496"/><!-- ID for packaging-->
+				        <display value="Blister"/> <!--term for packaging-->
+				      </coding>
+			        </type>
+			  
+			        <quantity value="10"/> <!-- insert number of packages in this level-->
+			  
+				    <material><!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					    <code value="200000003200"/><!-- ID for material-->
+					    <display value="Aluminium"/><!--term for material-->
+				      </coding>
+				    </material>
+					
+				    <material><!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					    <code value="200000003222"/><!-- ID for material-->
+					    <display value="PolyVinyl Chloride"/><!--term for material-->
+				      </coding>
+				    </material>
+					
+				      <containedItem><!-- Always inside the innermost layer of packaging, whatever that layer is--><!-- there could be one or more comtained items--> <!-- our item should be the manufactured item--><!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					<!--CHANGE(S) HERE!!! 2022-06-27-->
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="10" /> <!-- number of manufactured items inside the innermost package/ amount of liqiud or whatever-->
+					      <unit value="tablet"/> <!-- term for unit-->
+					      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!-- EMA list of units of measurement/ presentation-->
+					      <code value="200000002152" /> <!-- id for unit -->
+					    </amount> <!-- previously </amountQuantity>-->
+					<!-- END OS CHANGE(S)!!! 2022-06-27-->
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-PackagedProductDefinition01" />
+    </request>
+  </entry> <!-- end of Packaged Product definition--><!-- started-->
+  
+  
+  
+  
+  <entry>  <!-- start of Entry 5 Packaged Product definition02--><!--started--><!--burk--><!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:505ed5b2-5df3-44a5-ab15-7421c5d83cdd" /> --><!--new id generated:505ed5b2-5df3-44a5-ab15-7421c5d83cdd--> <!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+
+      <PackagedProductDefinition> <!-- description of just about everything regarding a single package--><!--nice little comment on which package it is, again, yes, 'cause why not-->
+		<id value="EnalaprilSandoz-2.5mg-Tablet-SE-AJ-PackagedProductDefinition02"/> <!-- k-->
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="250" />
+			<!--this quantity seems a bit arbitary, we can make something up as long as it has a bit of logic in it and makes it fairly easy for the general person to understand how much the entire package contains-->
+			<unit value="tablet"/>  <!-- term for unit -->			
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!-- EMA list of units of presentation-->
+            <code value="200000002152" /> <!--ID for unit-->
+          </valueQuantity>
+        </extension>
+		
+		<!-- CHANGE(S) HERE!!! 2022-06-23-->
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		<!-- END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <description value="Burk, 250 tabletter (dosdispensering)"> <!-- insert how the package is marketed in sweden, even if it seems a bit not correct as compared to what the package actualy is-->
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /><!--EMA list of languages-->
+              <code value="100000072288" /> <!-- ID for language-->
+			  <display value="Swedish"/>  <!-- term for language-->
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> <!-- if the package is marketed, or not, and why not-->
+		
+          <country> <!-- country where the status is valid, always sweden-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" /><!--EMA list of countries-->
+              <code value="100000000535" /> <!--id for country-->
+			  <display value="Sweden"/> <!--term for country-->
+            </coding>
+          </country>
+		  
+          <status> <!-- the actual status of the package--><!-- should always be marketed at this stage-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> <!-- EMA list of marketing statuses. Stati?-->
+              <code value="100000072083" /> <!-- ID--><!--hevicain code wrong-->
+			  <display value="Marketed"/> <!--term-->
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/><!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package><!--outermost packaging layer start--> <!-- packaging information is sparse in Eira etc, look in 3.2p7 in the dossier to find better information. Search in step/mine-->
+		
+		  <type> <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/> <!-- EMA list of packaging-->
+			  <code value="100000073498"/><!-- ID for packaging-->
+			  <display value="Box"/> <!--term for packaging-->
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/><!--always one, according to the standard. Boxes are easy, plastic film not so much-->
+		  
+		  <material> <!-- material of packaging--> <!-- several material elements can be added right after one another if there are several materials-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!--EMA list of materials-->
+			  <code value="200000003529"/><!-- ID for material-->
+			  <display value="Cardboard"/><!--term for material-->
+			</coding>
+		  </material>
+		  
+<!--should we add this, ask JOhan--><shelfLifeStorage><!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/ShelfLifeType -->
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/ShelfLifeTimePeriod -->
+                  <periodDuration>
+                     <value value="2"/> <!--how many of that unit of time-->
+                     <unit value="year"/> <!--unit of time--> <!-- unit of time can't be plural cuz fuck logic-->
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" /><!-- EMA list of units of measurement-->
+					<code value="200000003434" /> <!-- id for unit -->
+                  </periodDuration>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/SpecialPrecautionsForStorage -->
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073411"/>
+                        <display value="Do not store above 30 °C"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/SpecialPrecautionsForStorage -->
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073422"/>
+                        <display value="Keep the container tightly closed"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  <!-- ISO name: /MedicinalProduct/PackagedMedicinalProduct/PackageItem_Container/ShelfLife-Storage/SpecialPrecautionsForStorage -->
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073427"/>
+                        <display value="in order to protect from moisture"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+<!--should we add this, ask JOhan--></shelfLifeStorage>
+			   
+			      <package><!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/><!-- EMA list of packaging-->
+				        <code value="100000073497"/><!-- ID for packaging-->
+				        <display value="Bottle"/> <!--term for packaging-->
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/> <!-- insert number of packages in this level-->
+			  
+				    <material><!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/> <!-- EMA list of materials-->
+					    <code value="200000003215"/><!-- ID for material-->
+					    <display value="High Density PolyEthylene"/><!--term for material-->
+				      </coding>
+				    </material>
+					
+				      <containedItem><!-- Always inside the innermost layer of packaging, whatever that layer is--><!-- there could be one or more comtained items--> <!-- our item should be the manufactured item--><!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+					<!--CHANGE(S) HERE!!! 2022-06-27-->
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="250" /> <!-- number of manufactured items inside the innermost package/ amount of liqiud or whatever-->
+					      <unit value="tablet "/> <!-- term for unit-->						  
+					      <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!-- EMA list of units of measurement/ presentation-->
+					      <code value="200000002152" /> <!-- id for unit -->
+					    </amount> <!-- previously </amountQuantity>-->
+					<!-- END OS CHANGE(S)!!! 2022-06-27-->
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-PackagedProductDefinition02" />
+    </request>
+  </entry> <!-- end of Packaged Product definition--><!--started-->
+  
+  
+  
+  <entry> <!--start of Entry 6 manufactured item definition--><!-- started--><!--several entries allowed--> <!-- should be an item that can come out of a machine and contain itself and be a definable unit without any container-->
+    <!--<fullUrl value="urn:uuid:8bddcf5f-fc0f-4076-9c30-c05e20e5a1b2" />--> <!-- new id generated: 8bddcf5f-fc0f-4076-9c30-c05e20e5a1b2--><!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition"/><!--NPL-ID-SE-ManItem001-->
+
+
+		
+		<!-- CHANGE(S) HERE!!! 2022-06-27-->
+		<status value="active" />
+		<!-- END OF CHANGE(S)!!! 2022-06-27-->		
+		
+        <manufacturedDoseForm> <!-- pharmaceutical dose form of the manufactures item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /><!-- EMA list of pharmaceutical dose forms-->
+            <code value="100000073664" /> <!--ID for pharmaceutical dose form-->
+			<display value="tablet"/> <!--term for pharmaceutical dose form-->
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation> <!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" /><!--EMA list of unit of  presentation-->
+            <code value="200000002152" /> <!-- ID for unit-->
+			<display value="tablet"/> <!--term for unit-->
+          </coding>
+        </unitOfPresentation>
+		
+
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- end of manufactured item definition--><!-- started-->
+  
+  
+  
+  <entry><!-- start of Entry 7 ingredient--><!-- started--> <!-- Enalapril Maleate, the only active ingredient--> <!--several entries allowed, one per ingredient. Only active substances as for now-->
+    <!--<fullUrl value="urn:uuid:95b84ba6-5e4b-489f-bc24-163044b4478d" />--><!-- new id generated: 95b84ba6-5e4b-489f-bc24-163044b4478d--><!-- ID specific for this entry, generate here: https://www.guidgenerator.com/online-guid-generator.aspx-->
+    <resource>
+      <Ingredient> <!-- Enalapril Maleate-->
+	  <id value="EnalaprilSandoz-2.5mg-Tablet-SE-AJ-Ingredient"/>
+	  
+		<!-- CHANGE(S) HERE!!! 2022-06-27-->
+		<status value="active" />
+		<!-- END OF CHANGE(S)!!! 2022-06-27-->			  
+	  
+        <!--<extension url="http://ema.europa.eu/fhir/extension/ingredientSubject">-->
+		
+		<!-- CHANGE(S) HERE!!! 2022-06-23-->
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinition/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+		<!-- END OF CHANGE(S)!!! 2022-06-23-->
+		
+        <!--</extension>-->
+		
+
+        <role><!--the role of the substance, always active, as for now-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> <!-- EMA list of ingredient roles-->
+            <code value="100000072072" /> <!--ID for role-->
+			<display value="Active"/> <!--term for role-->
+          </coding>
+        </role>
+		
+        <substance><!--name the substance in the drug-->
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+              <code value="100000091343" /> <!--ID for substance-->
+				<display value="enalapril maleate"/> <!--term for substance-->
+            </coding>
+			</concept>
+          </code>
+		  
+          <strength> <!--strength of the substance-->
+		  
+			
+            <presentationRatio><!--how much substance there is--><!--EIther this element or the concentration element, see above--><!--general rule; liqiud: concentration ; solid or pre-filled single use syringe: presentation-->
+              <numerator>
+                <value value="2.5"/> <!-- insert whatever amount-->
+                  <comparator> <!--most likely always equal to-->
+                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                        <valueCoding>
+                          <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+                          <code value="100000000049"/> <!--ID-->
+                          <display value="equal to"/> <!--term-->
+                        </valueCoding>
+                    </extension>
+                  </comparator>
+                  <unit value="milligram(s)"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/100000110633"/> <!--EMA list of units of measurement-->
+                  <code value="100000110655" /> <!--ID for unit-->
+              </numerator>
+              <denominator>
+                  <value value="1"/> <!-- insert whatever amount-->
+                  <unit value="tablet"/> <!--term for unit-->
+                  <system value="https://spor.ema.europa.eu/v1/lists/200000000014"/> <!-- EMA list units of Presentation-->
+                  <code value="200000002152" /> <!--ID for unit-->
+              </denominator>
+            </presentationRatio>			
+            
+     		<referenceStrength><!--how much "pure" substance the substance is equal too, think transformation, effect in the body--><!--ARES in eira--><!-- according to the standard there has to be exactly one entry, even though the substance is itself and not a salt. Copy paste then. Exclude other salts and shit, only "mother substance"-->
+				<substance> <!-- "pure", original, mother substance-->
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> <!--hellish list of substances, file in U:\ emas substanslista or EUTCT-->
+							<code value="100000092359"/> <!--ID for substance-->
+							<display value="enalapril"/> <!--term for substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="1.91"/><!-- insert whatever amount-->
+						<comparator> <!-- most likely always equal to-->
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> <!-- EMA list of quantity operators-->
+									<code value="100000000049"/><!--ID-->
+									<display value="equal to"/><!--term-->
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/><!--EMA list of units of measurement-->
+						<code value="100000110655" /> <!--ID for unit-->
+					</numerator>
+					<denominator>
+						<value value="1"/><!-- insert whatever amount--> 
+						<unit value="tablet"/> <!--term for unit-->
+						<system value="https://spor.ema.europa.eu/v1/lists/200000000014"/><!--EMA list of units of presentation-->
+						<code value="200000002152" /> <!--ID for unit-->
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/EnalaprilSandoz-2.5mg-Tablet-SE-AJ-Ingredient" />
+    </request>
+  </entry><!--end of ingredient--><!-- started-->
+
+
+</Bundle>

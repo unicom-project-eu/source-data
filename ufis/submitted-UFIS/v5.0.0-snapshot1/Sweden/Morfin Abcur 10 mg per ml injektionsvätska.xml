@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Morfin Abcur 10 mg/ml solution for injection--> 
+<!-- Bersabel Sirak-->
+<!-- Follows the 5.0 standard--> 
+
+<!-- Referenser: 
+    Entry 1: MorfinAbcur-10mgml-Solution-SE-BS-MedicinalProductDefinition
+	Entry 2: MorfinAbcur-10mgml-Solution-SE-BS-RegulatedAuthorization
+	Entry 3: MorfinAbcur-10mgml-Solution-SE-BS-AdministrableProductDef
+	Entry 4: MorfinAbcur-10mgml-Solution-SE-BS-PackagedProductDefinition
+	Entry 5: MorfinAbcur-10mgml-Solution-SE-BS-ManufacturedItemDefinition
+	Entry 6: MorfinAbcur-10mgml-Solution-SE-BS-Ingredient-->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+  <type value="transaction" />
+  <entry>
+	<resource>
+	  <MedicinalProductDefinition>
+		<id value="MorfinAbcur-10mgml-Solution-SE-BS-MedicinalProductDefinition"/> 
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+          <valueCoding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008"/>
+            <code value="100000073863"/>
+			<display value="Solution for injection"/> 
+          </valueCoding>
+        </extension>
+
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>
+			<value value="SE-100000508-00045658"/> <!-- SE-organisation number-MT number and before the MT number put enough zeros for it to be 8 numbers in total-->
+		</identifier>
+
+        <!-- ISO name: /MedicinalProduct/EURDId -->
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/eurdId"/>
+			<value value="10549"/>
+		</identifier>
+
+         <domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" />
+			<code value="100000000012" />
+			<display value="Human use"/>
+		  </coding>
+		 </domain>
+		 
+        <status>
+		  <coding> 
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" />
+			<code value="200000005004" />
+			<display value="Current"/>
+		  </coding>
+		</status>
+
+        <!-- Indication from SmPC/Fass--> 
+		<indication value="Svåra smärttillstånd"/>
+
+		<legalStatusOfSupply>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072085"/> 
+			<display value="Medicinal product subject to special medical prescription"/>
+		  </coding>
+		</legalStatusOfSupply>
+
+        <classification>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" />
+			<code value="100000097139"/> <!-- code for ATC code --> 
+			<display value="N02AA01"/> <!-- ATC code--> 
+		  </coding>
+		</classification>
+
+    <name> <!--Product name-->
+	  <productName value="Morfin Abcur 10 mg/ml injektionsvätska, lösning"/>
+
+		<namePart> <!-- Produkt name from EIRA-->
+			<part value="Morfin Abcur"/> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000003"/> 
+				<display value="Scientific name part"/>
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Strength-->
+			<part value="10 mg/ml"/> <!-- strength and unit for example 10 mg--> 
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000004" />
+				<display value="Strength part"/>   
+			  </coding>
+			</type>
+		  </namePart>
+
+		<namePart> <!--Pharmaceutical dose form--> 
+		  <part value="Injektionsvätska, lösning"/>
+		  <type>
+		    <coding>
+			  <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+			  <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>              
+              </coding>
+            </type>
+          </namePart>
+
+          <countryLanguage>
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>                
+              </coding>
+            </country>
+            <language>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+                <code value="100000072288" />
+				<display value="Swedish"/>               
+              </coding>
+            </language>
+          </countryLanguage>
+        </name>
+      </MedicinalProductDefinition>
+    </resource>
+
+    <request>
+      <method value="PUT" /> 
+      <url value="MedicinalProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-MedicinalProductDefinition" />
+    </request>
+  </entry>
+
+
+  <entry>
+      <resource>
+
+        <RegulatedAuthorization>
+		<id value="MorfinAbcur-10mgml-Solution-SE-BS-RegulatedAuthorization"/>
+          <identifier>
+            <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+            <value value="45658" /> 
+		  </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-MedicinalProductDefinition" />
+        </subject>
+
+        <type>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+			<code value="220000000061" />
+			<display value="Marketing Authorisation"/>
+		  </coding>
+        </type>
+		
+		<region>
+		  <coding> 
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/>
+          </coding>
+        </region>
+
+		<status>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" />
+			<display value="Valid"/>
+          </coding>
+        </status>
+		
+		
+		<statusDate value="2012-06-14" /> <!-- Date of first authorization--> 
+		
+		<!-- MAH -->
+        <holder>
+		  <identifier>
+		      <system value="https://spor.ema.europa.eu/v1/locations" />
+			  <value value="LOC-100002124" /> <!-- location ID-->
+		  </identifier>
+          <display value="Abcur AB" /> <!-- MAH name--> 
+        </holder>
+		
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			<dateDateTime value="2012-06-14"/>   <!-- Date of first authorization--> 
+		</case>
+
+      </RegulatedAuthorization>
+    </resource>
+
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/MorfinAbcur-10mgml-Solution-SE-BS-RegulatedAuthorization" />
+    </request>
+  </entry>
+
+ <entry>
+    <resource>
+
+	  <AdministrableProductDefinition>
+		<id value="MorfinAbcur-10mgml-Solution-SE-BS-AdministrableProductDef"/>
+		<status value="active"/>
+
+        <formOf> 
+          <reference value="MedicinalProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-MedicinalProductDefinition" />
+        </formOf>
+
+        <administrableDoseForm>  <!-- Pharmaceutical dose form can be different from the administrable dose form--> 
+		  <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073863" />
+			<display value="Solution for injection"/>  
+          </coding>
+        </administrableDoseForm>
+
+        <producedFrom>
+          <reference value="ManufacturedItemDefinition/MorfinAbcur-10mgml-Solution-SE-BS-ManufacturedItemDefinition" /> 
+        </producedFrom>
+
+        <routeOfAdministration> 
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073633" />  
+			<display value="Subcutaneous use"/>
+            </coding>
+			<coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073600" /> 
+			<display value="Intramuscular use"/>
+            </coding>
+			<coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" />
+              <code value="100000073611" />  
+			<display value="Intravenous use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-AdministrableProductDef" />
+    </request>
+  </entry>
+  
+  <!-- First package starts here-->
+  <entry>
+    <resource>
+	  <PackagedProductDefinition>
+		<id value="MorfinAbcur-10mgml-Solution-SE-BS-PackagedProductDefinition"/> 
+		<extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+		  <valueQuantity>
+		    <value value="10" /> 
+			<unit value="Ampoule"/>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+            <code value="200000002164"/>
+          </valueQuantity>
+        </extension>
+
+		<packageFor> 
+		  <reference value="MedicinalProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-MedicinalProductDefinition"/>
+		</packageFor>
+
+		<description value="Ampull, 10 x 1 ml">  
+		  <extension url="http://ema.europa.eu/fhir/extension/language">
+		    <valueCoding>
+			 <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			<display value="Swedish"/>  
+			</valueCoding>
+          </extension>
+        </description>
+		
+		<marketingStatus>
+          <country>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+				<display value="Sweden"/>              
+            </coding>
+          </country>
+		  
+		  <status>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" />
+              <code value="100000072083" />
+				<display value="Marketed"/>              
+            </coding>
+          </status>
+		  
+		  <dateRange>
+            <start/> <!-- Don't write unknown, write it like this instead--> 
+          </dateRange>
+        </marketingStatus>
+
+        <package>   <!-- Package layer 1 (the outer layer)-->
+		
+<!--ContainerType-->
+		<type>
+		    <coding>
+			    <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073498"/>
+				<display value="Box"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity -->
+		<quantity value="1"/>
+
+<!--ContainerMaterial-->
+		<material>
+			<coding>    
+				<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+				<code value="200000003529"/>
+				<display value="Cardboard"/>
+			</coding>
+		</material>
+		
+		<package>   <!--Package layer 2-->
+		<type>
+			<coding>
+				<system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				<code value="100000073490"/>
+				<display value="Ampoule"/>
+			</coding>
+		</type>
+
+<!--ContainerQuantity-->
+		<quantity value="10"/>
+
+<!--ContainerMaterial-->
+				<material>
+					<coding>
+						<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+						<code value="200000003203"/>
+						<display value="Glass"/>
+					</coding>
+				</material>
+
+		  <containedItem>
+					<item> 
+					<reference>
+					  <reference value="ManufacturedItemDefinition/MorfinAbcur-10mgml-Solution-SE-BS-ManufacturedItemDefinition" />
+					</reference>
+					</item>
+					
+					<amount> 
+					  <value value="1" />
+					  <unit value="millilitre(s)"/>  
+					  <system value="http://spor.ema.europa.eu/v1/lists/100000110633~200000000014" />
+					  <code value="100000110662" /> 
+					</amount>
+
+		  </containedItem>
+
+				</package>
+			</package>
+      </PackagedProductDefinition>
+	  </resource>
+	  <request>
+        <method value="PUT" />
+      <url value="PackagedProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-PackagedProductDefinition" />
+    </request>
+  </entry>
+
+
+ <entry>
+    <resource>
+	<ManufacturedItemDefinition>
+		<id value="MorfinAbcur-10mgml-Solution-SE-BS-ManufacturedItemDefinition"/>
+		<status value="active" />
+
+        <manufacturedDoseForm>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />   <!-- Pharmaceutical Dose Form -->
+            <code value="100000073863" /> <!-- 100000073664 for tablet-->
+			<display value="Solution for injection"/>   <!--term for pharmaceutical dose form for example tablet-->         
+          </coding>
+        </manufacturedDoseForm>
+
+        <unitOfPresentation>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />   <!-- Units of Presentation -->
+            <code value="200000002164" /> 
+			<display value="Ampoule"/> 
+          </coding>
+        </unitOfPresentation>
+ 
+      </ManufacturedItemDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/MorfinAbcur-10mgml-Solution-SE-BS-ManufacturedItemDefinition" />
+    </request>
+  </entry>
+  
+   <!-- Beståndsdel(ar) -->
+  <entry>
+    <resource>
+      <Ingredient>
+	  <id value="MorfinAbcur-10mgml-Solution-SE-BS-Ingredient" />
+	  <status value="active" />
+	 
+          <for> 
+            <reference value="MedicinalProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-MedicinalProductDefinition" /><!-- Referera till produkten. -->
+          </for>
+		  
+		  <for> 
+            <reference value="ManufacturedItemDefinition/MorfinAbcur-10mgml-Solution-SE-BS-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> 
+		  
+          <for> 
+            <reference value="AdministrableProductDefinition/MorfinAbcur-10mgml-Solution-SE-BS-AdministrableProductDef" /><!--refers to Administrable product-->
+          </for> 
+		
+        <role>
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" />
+            <code value="100000072072" />
+			<display value="Active"/>            
+          </coding>
+        </role>
+		
+        <substance>
+          <code> 
+		   <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" />		<!-- Substans från EMAs lista eller EUTCT. Kolla Excel -->
+              <code value="100000090494" />     
+				<display value="Morphine hydrochloride"/> <!-- Name of active substance-->             
+            </coding>
+		   </concept>
+          </code>
+		  
+		    <strength>
+			
+              <concentrationRatio> 
+                    <numerator>
+                      <value value="10" /> 
+					    <comparator>
+					      <extension url="http://ema.europa.eu/fhir/extension/comparator">
+					         <valueCoding>
+							   <system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+							    <code value="100000000049"/>
+							    <display value="equal to"/>
+						     </valueCoding>
+						  </extension>
+						</comparator>
+						<unit value="milligram(s)"/> <!-- term for unit-->
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                        <code value="100000110655" /> <!--ID for unit-->
+					 </numerator>
+                    <denominator>
+                      <value value="1" />
+					  <unit value="millilitre(s)"/>  <!-- term for unit--> 
+                      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                      <code value="100000110662" /> <!-- ID for unit-->            
+                    </denominator>
+              </concentrationRatio>
+
+			  <referenceStrength> 
+			    <substance>
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+							<code value="100000091372"/> <!-- ID for active substance-->
+							<display value="Morphine"/> <!-- term for active substance-->
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+					<value value="7.59"/> <!-- How much pure substance the salt is equal to --> 
+					<comparator>
+						<extension url="http://ema.europa.eu/fhir/extension/comparator">
+							<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+								<code value="100000000049"/>
+								<display value="equal to"/>
+							</valueCoding>
+						</extension>
+					</comparator>
+					<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655"/>
+					</numerator>
+					<denominator>
+                      <value value="1" />
+					  <unit value="millilitre(s)"/>   
+                      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+                      <code value="100000110662" />            
+                    </denominator>
+				  </strengthRatio>
+				</referenceStrength>
+			  </strength>
+			</substance>
+		  </Ingredient>
+		</resource>
+		<request>
+			<method value="PUT"/>
+			<url value="Ingredient/MorfinAbcur-10mgml-Solution-SE-BS-Ingredient"/> 
+		</request>
+	</entry>
+
+	</Bundle>

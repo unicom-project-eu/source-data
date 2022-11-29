@@ -1,0 +1,1196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Herceptin® 150 mg Powder for concentrate for solution for infusion. ASP-nr: 1999-0184 -->
+<!-- Isabelle Skog 2022-07-12 -->
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+    <type value="transaction"/>
+
+    <!-- ENTRY 1 = MedicinalProductDefinition -->
+    <entry>
+        <resource>
+            <MedicinalProductDefinition>
+                <!-- Beskriver läkemedelsprodukten -->
+                <id value="Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                <!-- Unik kod ENTRY 1. Produktnamn-Styrka-Läkemedelsform-SE-IS-MedicinalProductDefinition -->
+
+                <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm">
+                    <!-- Anger läkemedelsformen för det godkända läkemedlet -->
+                    <valueCoding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+                        <!-- SPOR-lista 200000000004="Pharmaceutical Dose Form" 200000000006="Combined Pharmaceutical Dose Form" 200000000007="Combined term" 200000000008="Combination Package" -->
+                        <code value="100000074029"/>
+                        <!-- Kod läkemedelsform -->
+                        <display value="Powder for concentrate for solution for infusion"/>
+                        <!-- Textbeskrivning läkemedelsform -->
+                    </valueCoding>
+                </extension>
+
+                <identifier>
+                    <!-- mpId -->
+                    <system value="http://ema.europa.eu/fhir/mpId"/>
+                    <value value="SE-100007814-00015488"/>
+                    <!-- SE+siffror ORG-id+000MT-nummer (totalt 8 siffror MT-nummer) -->
+                </identifier>
+
+                <identifier>
+                    <!-- eurdId -->
+                    <system value="http://ema.europa.eu/fhir/eurdId"/>
+                    <value value="3010"/>
+                    <!-- Kod från EURD-lista för substansen -->
+                </identifier>
+
+                <domain>
+                    <!-- Anger om läkemedlet är för Human Use eller Veterinary Use -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000000004"/>
+                        <!-- SPOR-lista "Domain" -->
+                        <code value="100000000012"/>
+                        <!-- Kod. 100000000012 = H. 100000000013 = V. 100000000014 = H&V. -->
+                        <display value="Human use"/>
+                        <!-- Textbeskrivning "X Use" -->
+                    </coding>
+                </domain>
+
+                <status>
+                    <!-- Anger om filen är akutell eller ej. Alltid Current -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000005003"/>
+                        <!-- SPOR-lista "Record Status" -->
+                        <code value="200000005004"/>
+                        <!-- Kod. 200000005004 = Current -->
+                        <display value="Current"/>
+                        <!-- Alltid Current -->
+                    </coding>
+                </status>
+
+                <!-- Anger läkemedlets indikation på svenska. Hämtas från FASS/SPmC -->
+                <indication
+                    value="Bröstcancer
+Metastaserad bröstcancer
+Herceptin är indicerat för behandling av vuxna patienter med HER2-positiv metastaserad bröstcancer:
+- som monoterapi för behandling av de patienter som har fått åtminstone två kemoterapiregimer 
+mot metastaserad sjukdom. Tidigare kemoterapi måste ha inkluderat åtminstone ett antracyklin och ett taxanpreparat såvida inte sådana behandlingar är olämpliga för dessa patienter. 
+Hormonreceptorpositiva patienter måste också ha sviktat på hormonterapi, såvida inte sådan 
+behandling är olämplig för dessa patienter.
+- i kombination med paklitaxel för behandling av de patienter som inte fått kemoterapi mot 
+metastaserad sjukdom och för vilka ett antracyklinpreparat ej är lämpligt.
+- i kombination med docetaxel för behandling av de patienter som inte fått kemoterapi mot 
+metastaserad sjukdom. 
+- i kombination med en aromatashämmare för behandling av post-menopausala patienter med 
+hormonreceptorpositiv metastaserad bröstcancer som inte tidigare behandlats med trastuzumab.
+Tidig bröstcancer
+Herceptin är indicerat för behandling av vuxna patienter med HER2-positiv tidig bröstcancer:
+- efter kirurgi, kemoterapi (neoadjuvant eller adjuvant) och strålbehandling (om tillämpbart) (se 
+avsnitt 5.1).
+- efter adjuvant kemoterapi med doxorubicin och cyklofosfamid, i kombination med paklitaxel 
+eller docetaxel.
+3
+- i kombination med adjuvant kemoterapi som utgörs av docetaxel och karboplatin.
+- i kombination med neoadjuvant kemoterapi följt av adjuvant behandling med Herceptin, för 
+lokalt avancerad (inklusive inflammatorisk) sjukdom eller för tumörer > 2 cm i diameter (se 
+avsnitt 4.4 och 5.1).
+Herceptin bör endast användas till patienter med metastaserad eller tidig bröstcancer vilkas tumörer 
+antingen överuttrycker HER2 eller har HER2 genamplifiering påvisad med en tillförlitlig och 
+validerad metod (se avsnitt 4.4 och 5.1).
+Metastaserad ventrikelcancer 
+Herceptin i kombination med capecitabin eller 5-fluorouracil och cisplatin är indicerat för behandling 
+av vuxna patienter med metastaserat HER 2-positivt adenokarcinom i ventrikeln eller cardia (övre 
+magmunnen) som inte tidigare fått behandling för sin metastaserade sjukdom.
+Herceptin ska endast användas till patienter med metastaserad ventrikelcancer vilkas tumörer 
+överuttrycker HER2 definierat som IHC2+ och ett konfirmerande positivt SISH eller FISH resultat, 
+eller definierat som IHC3+. Tillförlitliga och validerade metoder ska användas (se avsnitt 4.4 och 5.1)."/>
+
+                <legalStatusOfSupply>
+                    <!-- Anger receptkrav för läkemedlet -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072051"/>
+                        <!-- SPOR-lista "Legal Status for the Supply" -->
+                        <code value="100000072084"/>
+                        <!-- Kod. -->
+                        <display value="Medicinal product subject to medical prescription"/>
+                        <!-- Textbeskrivning -->
+                        <!-- Receptstatus koder+textbeskrivning:
+			100000072076 = Medicinal product not subject to medical prescription
+			100000072084 = Medicinal product subject to medical prescription
+			200000002239 = Medicinal product subject to medical prescription exempt for some pack sizes -->
+                    </coding>
+                </legalStatusOfSupply>
+
+                <classification>
+                    <!-- Anger ATC-kod -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000116677"/>
+                        <!-- SPOR-lista "Anatomical Therapeutic Chemical classification system - Human" eller "Anatomical Therapeutic Chemical classification system - Veterinary" -->
+                        <code value="100000093533"/>
+                        <!-- Kod 100000093533 = HUM. 100000116677 = VET. -->
+                        <display value="L01FD01"/>
+                        <!-- Ange ATC-kod. Hämtas från EIRA -->
+                    </coding>
+                </classification>
+
+                <!-- Attempt on including procedure type and Sweden's procedure roles -->
+                <classification>
+                    <!-- Anger procedurtyp -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000154442"/>
+                        <!-- SPOR-lista "EU Regulatory Authorisation/Registration Procedure" -->
+                        <code value="100000155059"/>
+                        <!-- Kod. 100000155059 = Centralised Procedure -->
+                        <display value="Centralised procedure"/>
+                        <!-- Textbeskrivning  -->
+                    </coding>
+                </classification>
+                <classification>
+                    <!-- Anger Sveriges roll i godkännandeproceduren
+                    <description value="EU Procedural Authority Role"/> -->
+                    <coding>
+                        <!-- Kan definieras flera gånger. En <coding></coding> per roll -->
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000160962"/>
+                        <!-- SPOR-lista "EU Procedural Authority Role" -->
+                        <code value="100000160967"/>
+                        <!-- Kod -->
+                        <display value="Concerned Member State"/>
+                        <!-- Textbeskrivning -->
+                    </coding>
+
+                </classification>
+                <!-- End of attempt -->
+
+                <!-- TILLFÄLLIGT DOLD UR KODEN. Referens till ENTRY 5 = ManufacturedItemDefinition
+	<comprisedOf>
+		<reference value="ManufacturedItemDefinition/" />
+	</comprisedOf> -->
+
+                <name>
+                    <!-- Produktens namn på svenska. Delas upp i nameparts -->
+                    <productName value="Herceptin®"/>
+                    <!-- Hela produktnamnet. Namn+styrka+läkemedelsform. Hämtas från EIRA -->
+
+                    <namePart>
+                        <!-- Produktnamn från EIRA -->
+                        <part
+                            value="Herceptin® 150 mg Pulver till konc. till infusionsvätska, lösning"/>
+                        <!-- Produktnamn -->
+                        <type>
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                                <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+                                <code value="220000000002"/>
+                                <!-- Kod. 220000000002 = Invented name part. 220000000003 = Scientific name part -->
+                                <display value="Invented name part"/>
+                                <!-- Tetbeskrivning "Invented name part" eller "Scientifici name part" -->
+                            </coding>
+                        </type>
+                    </namePart>
+
+                    <namePart>
+                        <!-- Styrka. Alla läkemedel har ej styrka -->
+                        <part value="150 mg"/>
+                        <!-- Angiven styrka. Hämtas från EIRA -->
+                        <type>
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                                <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+                                <code value="220000000004"/>
+                                <!-- Kod. Alltid 220000000004 = Strengt part -->
+                                <display value="Strength part"/>
+                                <!-- Alltid Strength part -->
+                            </coding>
+                        </type>
+                    </namePart>
+
+                    <namePart>
+                        <!-- Läkemedelsform -->
+                        <part value="Pulver till konc. till infusionsvätska, lösning"/>
+                        <!-- Anger läkemedelsform. Hämtas från EIRA -->
+                        <type>
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/220000000000"/>
+                                <!-- SPOR-lista "Medicinal Product Name Part Type" -->
+                                <code value="220000000005"/>
+                                <!-- Kod. 220000000005 = Pharmaceutical dose form part -->
+                                <display value="Pharmaceutical dose form part"/>
+                                <!-- Alltid Pharmaceutical dose form part -->
+                            </coding>
+                        </type>
+                    </namePart>
+
+                    <countryLanguage>
+                        <!-- Anger land och språk -->
+                        <country>
+                            <!-- Anger land -->
+                            <coding>
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                                <!-- SPOR-lista "Country" -->
+                                <code value="100000000535"/>
+                                <!-- 100000000535 = Kingdom of Sweden -->
+                                <display value="Sweden"/>
+                                <!-- Alltid Sweden -->
+                            </coding>
+                        </country>
+                        <language>
+                            <!-- Anger språk -->
+                            <coding>
+                                <!-- Alltid Svenska -->
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                                <!-- SPOR-lista "Language" -->
+                                <code value="100000072288"/>
+                                <!--  100000072288 = Swedish -->
+                                <display value="Swedish"/>
+                                <!-- Alltid Swedish -->
+                            </coding>
+                        </language>
+                    </countryLanguage>
+                </name>
+
+            </MedicinalProductDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+            <!-- MedicinalProductDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-MedicinalProductDefinition -->
+        </request>
+    </entry>
+    <!-- END ENTRY 1 -->
+
+
+
+    <!-- ENTRY 2 = RegulatedAuthorization -->
+    <entry>
+        <resource>
+            <RegulatedAuthorization>
+                <!-- Beskriver godkännandet -->
+                <id value="Herceptin-150mg-Powder-SE-IS-RegulatedAuthorization"/>
+                <!-- Unik kod ENTRY 2. Produktnamn-Styrka-Läkemedelsform-SE-IS-RegulatedAuthorization -->
+
+                <identifier>
+                    <!-- Anger MT-nummer -->
+                    <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber"/>
+                    <value value="15488"/>
+                    <!-- MT-nummer för produkt. Hämtas ur EIRA -->
+                </identifier>
+                <subject>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </subject>
+
+                <type>
+                    <!-- Anger att detta är ett läkemedel som fått ett godkännande. -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/220000000060"/>
+                        <!-- SPOR-lista "Regulatory Entitlement Type" -->
+                        <code value="220000000061"/>
+                        <!-- Kod. Alltid 220000000061 = Marketing Authorisation -->
+                        <display value="Marketing Authorisation"/>
+                        <!-- Alltid Marketing Authorisation -->
+                    </coding>
+                </type>
+
+                <region>
+                    <!-- Anger vilken region godkännandet gäller i -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                        <!-- SPOR-lista "Country" -->
+                        <code value="100000000535"/>
+                        <!-- 100000000535 = Kingdom of Sweden -->
+                        <display value="Sweden"/>
+                        <!-- Alltid Sweden -->
+                    </coding>
+                </region>
+
+                <status>
+                    <!-- Anger godkännandestatus -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072049"/>
+                        <!-- SPOR-lista "Regulatory Entitlement Status" -->
+                        <code value="100000072099"/>
+                        <!-- Alltid 100000072099 = Valid -->
+                        <display value="Valid"/>
+                        <!-- Alltid Valid -->
+                    </coding>
+                </status>
+                <statusDate value="2000-08-28"/>
+                <!-- Godkännandedatum (första) för produkten -->
+
+                <holder>
+                    <!-- Anger MAH -->
+                    <identifier>
+                        <system value="https://spor.ema.europa.eu/v1/locations"/>
+                        <value value="LOC-100010587"/>
+                        <!-- LOC-ID för företag. Hämtas från EMA: https://spor.ema.europa.eu/omswi/#/searchOrganisations -->
+                    </identifier>
+                    <display value="Roche Registration GmbH"/>
+                    <!-- Namn på företaget som är MAH -->
+                </holder>
+
+                <case>
+                    <!-- Anger (första) godkännandedatum -->
+                    <type>
+                        <coding>
+                            <system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+                            <code value="dateOfFirstAuthorisation"/>
+                            <display value="First Authorisation"/>
+                        </coding>
+                    </type>
+                    <dateDateTime value="2000-08-28"/>
+                    <!-- Datum (första) godkännande -->
+                </case>
+
+
+                <!-- Another attempt on defining the procedure role
+                <case> -->
+                <!-- Anger (första) godkännandedatum
+                    <type>
+                        <coding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000154442"/> -->
+                <!-- SPOR-lista "EU Regulatory Authorisation/Registration Procedure"
+                            <code value="100000155059"/> -->
+                <!-- Kod. 100000155059 = Centralised Procedure
+                            <display value="Centralised procedure"/> -->
+                <!-- Textbeskrivning
+                        </coding>
+                    </type>
+                </case>  -->
+                <!-- End of attempt -->
+
+            </RegulatedAuthorization>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="RegulatedAuthorization/Herceptin-150mg-Powder-SE-IS-RegulatedAuthorization"/>
+            <!-- RegulatedAuthorization/Produktnamn-Styrka-Läkemedelsform-SE-IS-RegulatedAuthorization -->
+        </request>
+
+    </entry>
+    <!-- END ENTRY 2 -->
+
+
+
+    <!-- ENTRY 3 = AdministrableProductDefinition -->
+    <entry>
+        <resource>
+            <AdministrableProductDefinition>
+                <!-- Beskriver läkemedlet i bruksfärdig (administrerad)form -->
+                <id value="Herceptin-150mg-Powder-SE-IS-AdministrableProductDefinition"/>
+                <!-- Unik kod ENTRY 3. Produktnamn-Styrka-Läkemedelsform-SE-IS-AdministrableProductDefinition -->
+                <status value="active"/>
+                <formOf>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </formOf>
+
+                <administrableDoseForm>
+                    <!-- Anger läkemedelsform för bruksfärdigt läkemedel -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+                        <!-- SPOR-lista "Pharmaceutical Dose Form" -->
+                        <code value="100000073870"/>
+                        <!-- Kod -->
+                        <display value="Solution for infusion"/>
+                        <!-- Textbeskrivning bruksfärdig läkemedelsform -->
+                    </coding>
+                </administrableDoseForm>
+
+                <producedFrom>
+                    <reference
+                        value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+                </producedFrom>
+
+                <routeOfAdministration>
+                    <!-- Administreringsväg(ar). Hämtas från EIRA. -->
+                    <!-- Kan vara flera. Varje administreringsväg ligger inom <coding></coding> -->
+                    <code>
+                        <coding>
+                            <!-- Administreringsväg 1 -->
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000073345"/>
+                            <!-- SPOR-lista "Routes and Methods of Administration" -->
+                            <code value="100000073611"/>
+                            <!-- Kod -->
+                            <display value="Intravenous use"/>
+                            <!-- Textbeskrivning -->
+                        </coding>
+                    </code>
+                </routeOfAdministration>
+
+            </AdministrableProductDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="AdministrableProductDefinition/Herceptin-150mg-Powder-SE-IS-AdministrableProductDefinition"/>
+            <!-- AdministrableProductDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-AdministrableProductDefinition -->
+        </request>
+    </entry>
+
+
+
+    <!-- ENTRY 4 = PackagedProductDefinition -->
+    <!-- Ange en entry per förpackning som produkten har. Allt inom <entry> till </entry> = en förpackning -->
+    <!-- Om flera förpackningar ange löpnummer i id: Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition0X -->
+    <entry>
+        <!-- ENTRY 4.1 (FÖRPACKNING 1) = Injektionsflaska, 1 x 150 mg -->
+        <resource>
+            <PackagedProductDefinition>
+                <!-- Beskriver vi allt om en förpackning -->
+                <id value="Herceptin-150mg-Powder-SE-IS-PackagedProductDefinition"/>
+                <!-- Unik kod ENTRY 4.1. Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition01 -->
+
+                <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+                    <!-- Anger containedItem -->
+                    <valueQuantity>
+                        <value value="1"/>
+                        <!-- Antal containedItem -->
+                        <unit value="Vial"/>
+                        <!-- Textbeskrivning containedItem -->
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                        <!-- SPOR-lista "Units of Presentation" -->
+                        <code value="200000002158"/>
+                        <!-- Kod containedItem -->
+                    </valueQuantity>
+                </extension>
+                <packageFor>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </packageFor>
+
+                <description value="Injektionsflaska, 1 x 150 mg">
+                    <!-- Förpackningsbeskrivning. Hämtas från EIRA -->
+                    <extension url="http://ema.europa.eu/fhir/extension/language">
+                        <valueCoding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000072057"/>
+                            <!-- SPOR-lista "Languages" -->
+                            <code value="100000072288"/>
+                            <!-- Kod. Alltid 100000072288 = Swedish -->
+                            <display value="Swedish"/>
+                            <!-- Textbeskrivning språk. Alltid Swedish -->
+                        </valueCoding>
+                    </extension>
+                </description>
+
+                <marketingStatus>
+                    <!-- Beskriver försäljningstillstånd i avsett land (Sverige) -->
+                    <country>
+                        <!-- Anger land där man har försäljningstillstånd -->
+                        <coding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000000002"/>
+                            <!-- SPOR-lista "Country" -->
+                            <code value="100000000535"/>
+                            <!-- Kod. 100000000535 = Kingdom of Sweden -->
+                            <display value="Sweden"/>
+                            <!-- Alltid Sweden -->
+                        </coding>
+                    </country>
+                    <status>
+                        <!-- Anger status för försäljningstillstånd -->
+                        <coding>
+                            <system value="http://spor.ema.europa.eu/v1/lists/100000072052"/>
+                            <!-- SPOR-lista "Marketing Status" -->
+                            <code value="100000072083"/>
+                            <!-- Kod. 100000072083 = Marketed -->
+                            <display value="Marketed"/>
+                            <!-- Alltid Marketed -->
+                        </coding>
+                    </status>
+                    <dateRange>
+                        <start/>
+                        <!-- Vi har inte information om när marknadsföring började och slutade. Låt stå som "unknown". -->
+                    </dateRange>
+                </marketingStatus>
+
+                <!-- Förpackningsnivå 1 -->
+                <package>
+                    <!-- Förpackningsnivå 1 (ytterförpackning) -->
+                    <type>
+                        <!-- Anger förpackningstyp -->
+                        <coding>
+                            <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                            <!-- SPOR-lista "Packaging" -->
+                            <code value="100000073498"/>
+                            <!-- Kod förpackningstyp -->
+                            <display value="Box"/>
+                            <!-- Textbeskrivning förpackningstyp -->
+                        </coding>
+                    </type>
+                    <quantity value="1"/>
+                    <!-- Antal förpackningsnivå 1 (ytterförpackning) -->
+
+                    <material>
+                        <!-- Förpackningsmaterial. Kan definieras flera gånger genom flera <material></material> -->
+                        <coding>
+                            <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                            <!-- SPOR-lista "Material" -->
+                            <code value="200000003529"/>
+                            <!-- Kod material -->
+                            <display value="Cardboard"/>
+                            <!-- Textbeskrivning material -->
+                        </coding>
+                    </material>
+
+                    <shelfLifeStorage>
+                        <!-- Anger förvaringsangivelser för produkten. Kan definieras flera gånger genom flera <shelfLifeStorage></shelfLifeStorage> -->
+                        <type>
+                            <!-- Anger typ av förvaringsangivelser (obruten förpackning, bruten förpackning ...) -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                                <!-- SPOR-lista "Shelf life type" -->
+                                <code value="100000073403"/>
+                                <!-- Kod -->
+                                <display
+                                    value="Shelf life of the medicinal product as packaged for sale"/>
+                                <!-- Textbeskrivning -->
+                            </coding>
+                        </type>
+                        <periodDuration>
+                            <!-- Hållbaretstid -->
+                            <value value="4"/>
+                            <!-- Värde hållbarhetstid -->
+                            <unit value="years"/>
+                            <!-- Tidsangivelse hållbarhetstid -->
+                        </periodDuration>
+                        <specialPrecautionsForStorage>
+                            <!-- Särskilda förvaringsangivelser 1. Kan definieras flera gånger genom flera <specialPrecautionsForStorage></specialPrecautionsForStorage> -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                                <!-- SPOR-lista "Special Precautions for Storage" -->
+                                <code value="100000073414"/>
+                                <!-- Kod -->
+                                <display value="Store in a refrigerator (2°C – 8°C)"/>
+                                <!-- Textbeskrivning -->
+                            </coding>
+                        </specialPrecautionsForStorage>
+                        <specialPrecautionsForStorage>
+                            <!-- Särskilda förvaringsangivelser 2. Kan definieras flera gånger genom flera <specialPrecautionsForStorage></specialPrecautionsForStorage> -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                                <!-- SPOR-lista "Special Precautions for Storage" -->
+                                <code value="100000073421"/>
+                                <!-- Kod -->
+                                <display value="Store in the original package"/>
+                                <!-- Textbeskrivning -->
+                            </coding>
+                        </specialPrecautionsForStorage>
+                    </shelfLifeStorage>
+
+                    <!-- Attempt do define that this product has three different periods depending on method of preparation -->
+                    <shelfLifeStorage>
+                        <!-- Anger förvaringsangivelser för produkten. Kan definieras flera gånger genom flera <shelfLifeStorage></shelfLifeStorage> -->
+                        <type>
+                            <!-- Anger typ av förvaringsangivelser (obruten förpackning, bruten förpackning ...) -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                                <!-- SPOR-lista "Shelf life type" -->
+                                <code value="100000073405"/>
+                                <!-- Kod -->
+                                <display
+                                    value="Shelf life after dilution or reconstitution according to directions"/>
+                                <!-- Textbeskrivning -->
+                            </coding>
+                        </type>
+                        <periodDuration>
+                            <!-- Hållbaretstid 1
+                            <periodString
+                                value="Use immediatly after aseptic dilution, storage during normal use"/> -->
+                            <value value="24"/>
+                            <!-- Värde hållbarhetstid -->
+                            <unit value="hours"/>
+                            <!-- Tidsangivelse hållbarhetstid -->
+                        </periodDuration>
+                        <!-- <periodDuration>
+                            Hållbaretstid 2
+                            <periodString value="Aseptic preparation with sterile water"/>
+                            <value value="48"/> -->
+                            <!-- Värde hållbarhetstid
+                            <unit value="hours"/> -->
+                            <!-- Tidsangivelse hållbarhetstid
+                        </periodDuration> -->
+                        <!-- <periodDuration>
+                            Hållbaretstid 3
+                            <periodString
+                                value="Aseptic dilution in PolyVinyl Chloride, Polyethylene or PolyPropylene bags containing sodium chloride 9mg/ml (0.9%) solution for injection"/>
+                            <value value="30"/> -->
+                            <!-- Värde hållbarhetstid
+                            <unit value="days"/> -->
+                            <!-- Tidsangivelse hållbarhetstid
+                        </periodDuration> -->
+                        <specialPrecautionsForStorage>
+                            <!-- Särskilda förvaringsangivelser 1. Kan definieras flera gånger genom flera <specialPrecautionsForStorage></specialPrecautionsForStorage> -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                                <!-- SPOR-lista "Special Precautions for Storage" -->
+                                <code value="100000073420"/>
+                                <!-- Kod -->
+                                <display value="Do not freeze"/>
+                                <!-- Textbeskrivning -->
+                            </coding>
+                        </specialPrecautionsForStorage>
+                    </shelfLifeStorage>
+                    <!-- End of attempt -->
+
+                    <!-- Förpackningsnivå 2 -->
+                    <package>
+                        <!-- Förpackningsnivå 2 -->
+                        <type>
+                            <!-- Anger förpackningstyp -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+                                <!-- SPOR-lista "Packaging" -->
+                                <code value="100000073563"/>
+                                <!-- Kod förpackningstyp -->
+                                <display value="Vial"/>
+                                <!-- Textbeskrivning förpackningstyp -->
+                            </coding>
+                        </type>
+                        <quantity value="1"/>
+                        <!-- Antal förpackningsnivå 2 -->
+
+                        <material>
+                            <!-- Förpackningsmaterial 1. Kan definieras flera gånger genom flera <material></material> -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                                <!-- SPOR-lista "Material" -->
+                                <code value="200000003204"/>
+                                <!-- Kod material -->
+                                <display value="Glass type I"/>
+                                <!-- Textbeskrivning material -->
+                            </coding>
+                        </material>
+                        <material>
+                            <!-- Förpackningsmaterial 2. Kan definieras flera gånger genom flera <material></material> -->
+                            <coding>
+                                <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+                                <!-- SPOR-lista "Material" -->
+                                <code value="200000003226"/>
+                                <!-- Kod material -->
+                                <display value="Rubber"/>
+                                <!-- Textbeskrivning material -->
+                            </coding>
+                        </material>
+
+                        <!-- containedItem = innersta enhet/förpackad enhet -->
+                        <containedItem>
+                            <!-- containedItem = innersta enhet -->
+                            <item>
+                                <reference>
+                                    <reference
+                                        value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                                    <!-- Referens till ENTRY 5 = ManufacturedItemDefinition -->
+                                </reference>
+                            </item>
+                            <amount>
+                                <!-- Beskriver containedItem. Amount+unit of presentation -->
+                                <value value="150"/>
+                                <!-- Antal containedItem -->
+                                <unit value="millilitre(s)"/>
+                                <!-- Textbeskrivning containedItem -->
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                <!-- SPOR-lista 200000000014 = "Units of presentation" eller 100000110633 = "Units of measurement" -->
+                                <code value="100000110662"/>
+                                <!-- Kod containedItem -->
+                            </amount>
+                        </containedItem>
+
+                    </package>
+                    <!-- Slut förpackningsnivå 2 -->
+                </package>
+                <!-- Slut förpackningsnivå 1 -->
+            </PackagedProductDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="PackagedProductDefinition/Herceptin-150mg-Powder-SE-IS-PackagedProductDefinition"/>
+            <!-- PackagedProductDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-PackagedProductDefinition01 -->
+        </request>
+    </entry>
+    <!-- END ENTRY 4 -->
+
+
+
+    <!-- ENTRY 5 = ManufacturedItemDefinition -->
+    <entry>
+        <resource>
+            <ManufacturedItemDefinition>
+                <id value="Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                <!-- Unik kod ENTRY 5. Produktnamn-Styrka-Läkemedelsform-SE-IS-ManufacturedItemDefinition -->
+                <status value="active"/>
+
+                <manufacturedDoseForm>
+                    <!-- Marknadsförd läkemedelsform = läkemedelsform "på hyllan" -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000004"/>
+                        <!-- SPOR-lista = "Pharmaceutical Dose Form" -->
+                        <code value="100000074029"/>
+                        <!-- Kod läkemedelsform -->
+                        <display value="Powder for concentrate for solution for infusion"/>
+                        <!-- Textbeskrivning läkemedelsform -->
+                    </coding>
+                </manufacturedDoseForm>
+
+                <unitOfPresentation>
+                    <!-- Beskriver innersta enhet -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/200000000014"/>
+                        <!-- SPOR-lista = "Units of Presentation" -->
+                        <code value="200000002158"/>
+                        <!-- Kod enhet -->
+                        <display value="Vial"/>
+                        <!-- Textbeskrivning enhet -->
+                    </coding>
+                </unitOfPresentation>
+
+            </ManufacturedItemDefinition>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url
+                value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+            <!-- ManufacturedItemDefinition/Produktnamn-Styrka-Läkemedelsform-SE-IS-ManufacturedItemDefinition -->
+        </request>
+    </entry>
+
+
+
+    <!-- ENTRY 6 = Ingredient -->
+    <entry>
+        <!-- ENTRY 6.1 Aktiv substans = Trastuzumab -->
+        <resource>
+            <Ingredient>
+                <id value="Herceptin-150mg-Powder-SE-IS-Ingredient-01"/>
+                <!-- Unik kod ENTRY 6. Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+                <status value="active"/>
+
+                <!-- <for> anger referenser -->
+                <for>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="AdministrableProductDefinition/Herceptin-150mg-Powder-SE-IS-AdministrableProductDefinition"/>
+                    <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+                </for>
+                <!-- Slut <for>-referenser -->
+
+                <role>
+                    <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+                        <!-- SPOR-lista "Ingredient Role" -->
+                        <code value="100000072072"/>
+                        <!-- Kod. 100000072072 = Active -->
+                        <display value="Active"/>
+                        <!-- Textbeskrivning. API = Active -->
+                    </coding>
+                </role>
+
+                <substance>
+                    <!-- Beskriver aktiv substans (API). Hämtas från EIRA -->
+                    <!-- API kan avse grundsubstans, salt (...) -->
+                    <code>
+                        <concept>
+                            <coding>
+                                <system
+                                    value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                                <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                <code value="100000089314"/>
+                                <!-- EUTCT-ID från EUTCT-lista -->
+                                <display value="Trastuzumab"/>
+                                <!-- Textbeskrivning från EUTCT-lista -->
+                            </coding>
+                        </concept>
+                    </code>
+
+                    <strength>
+                        <!-- Anger styrka för API och referenssubstans -->
+                        <presentationRatio>
+                            <!-- Anger styrka för API "Aktiv beståndsdel" -->
+                            <!-- concentrationRatio = flytande fas. presentationRatio = fast fas -->
+                            <numerator>
+                                <!-- Anger X i "X per Y" -->
+                                <value value="150"/>
+                                <!-- Aktiv beståndsdel mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+                                <comparator>
+                                    <!-- Anger API som "equal to", "quantity sufficient" (...) till Aktiv motsvarande -->
+                                    <extension url="http://ema.europa.eu/fhir/extension/comparator">
+                                        <valueCoding>
+                                            <system
+                                                value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                            <!-- SPOR-lista "Quantity Operator" -->
+                                            <code value="100000000049"/>
+                                            <!-- Kod. 100000000049 = equal to -->
+                                            <display value="equal to"/>
+                                            <!-- Textbeskrivning -->
+                                        </valueCoding>
+                                    </extension>
+                                </comparator>
+                                <unit value="milligram(s)"/>
+                                <!-- Textbeskrivning enhet -->
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                <!-- SPOR-lista "Units of Measurement" -->
+                                <code value="100000110655"/>
+                                <!-- Kod enhet -->
+                            </numerator>
+                            <denominator>
+                                <!-- Anger Y i "X per Y" -->
+                                <value value="1"/>
+                                <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+                                <unit value="unit(s)"/>
+                                <!-- Textbeskrivning enhet -->
+                                <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                <!-- SPOR-lista "Units of Measurement" -->
+                                <code value="100000110756"/>
+                                <!-- Kod enhet -->
+                            </denominator>
+                        </presentationRatio>
+
+                        <referenceStrength>
+                            <!-- Anger styrka för referenssubstans "Aktiv motsvarande" -->
+                            <!-- Kan finnas flera referenceStrength. Gör en <referenceStrength></referenceStrength> för varje -->
+                            <!-- Obligatorisk. Om ej finns duplicera API -->
+                            <substance>
+                                <!-- Anger referenssubstans -->
+                                <concept>
+                                    <coding>
+                                        <system
+                                            value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/>
+                                        <code value="100000089314"/>
+                                        <!-- EUTCT-ID. Hämtas från: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                        <display value="Trastuzumab"/>
+                                        <!-- Textbeskrivning från EUTCT-lista -->
+                                    </coding>
+                                </concept>
+                            </substance>
+
+                            <strengthRatio>
+                                <numerator>
+                                    <!-- Anger X i "X per Y" -->
+                                    <value value="150"/>
+                                    <!-- Aktiv beståndsdel mängd per enhet. Hittas i EIRA > komposition > Aktiv beståndsdel > Mängd per enhet -->
+                                    <comparator>
+                                        <!-- Anger API som "equal to", "quantity sufficient" (...) till Aktiv motsvarande -->
+                                        <extension
+                                            url="http://ema.europa.eu/fhir/extension/comparator">
+                                            <valueCoding>
+                                                <system
+                                                  value="https://spor.ema.europa.eu/v1/lists/100000000008"/>
+                                                <!-- SPOR-lista "Quantity Operator" -->
+                                                <code value="100000000049"/>
+                                                <!-- Kod. 100000000049 = equal to -->
+                                                <display value="equal to"/>
+                                                <!-- Textbeskrivning -->
+                                            </valueCoding>
+                                        </extension>
+                                    </comparator>
+                                    <unit value="milligram(s)"/>
+                                    <!-- Textbeskrivning enhet -->
+                                    <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                    <!-- SPOR-lista "Units of Measurement" -->
+                                    <code value="100000110655"/>
+                                    <!-- Kod enhet -->
+                                </numerator>
+                                <denominator>
+                                    <!-- Anger Y i "X per Y" -->
+                                    <value value="1"/>
+                                    <!-- Mängd Y. T.ex 5 mg/ml = 5 mg per 1 ml = value 1 -->
+                                    <unit value="unit(s)"/>
+                                    <!-- Textbeskrivning enhet -->
+                                    <system value="http://spor.ema.europa.eu/v1/lists/100000110633"/>
+                                    <!-- SPOR-lista "Units of Measurement" -->
+                                    <code value="100000110756"/>
+                                    <!-- Kod enhet -->
+                                </denominator>
+                            </strengthRatio>
+
+                        </referenceStrength>
+
+                    </strength>
+                </substance>
+
+            </Ingredient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="Ingredient/Herceptin-150mg-Powder-SE-IS-Ingredient-01"/>
+            <!-- Ingredient/Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+        </request>
+    </entry>
+
+    <!-- Attempt to define excipients. Strength part is removed as the values are confidential information -->
+    <entry>
+        <!-- ENTRY 6.2 Hjälpämne = Histidine -->
+        <resource>
+            <Ingredient>
+                <id value="Herceptin-150mg-Powder-SE-IS-Ingredient-02"/>
+                <!-- Unik kod ENTRY 6. Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+                <status value="active"/>
+
+                <!-- <for> anger referenser -->
+                <for>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="AdministrableProductDefinition/Herceptin-150mg-Powder-SE-IS-AdministrableProductDefinition"/>
+                    <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+                </for>
+                <!-- Slut <for>-referenser -->
+
+                <role>
+                    <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+                        <!-- SPOR-lista "Ingredient Role" -->
+                        <code value="100000072082"/>
+                        <!-- Kod. 100000072072 = Active -->
+                        <display value="Excipient"/>
+                        <!-- Textbeskrivning. API = Active -->
+                    </coding>
+                </role>
+
+                <substance>
+                    <!-- Beskriver aktiv substans (API). Hämtas från EIRA -->
+                    <!-- API kan avse grundsubstans, salt (...) -->
+                    <code>
+                        <concept>
+                            <coding>
+                                <system
+                                    value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                                <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                <code value="100000092646"/>
+                                <!-- EUTCT-ID från EUTCT-lista -->
+                                <display value="Histidine"/>
+                                <!-- Textbeskrivning från EUTCT-lista -->
+                            </coding>
+                        </concept>
+                    </code>
+
+                </substance>
+
+            </Ingredient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="Ingredient/Herceptin-150mg-Powder-SE-IS-Ingredient-02"/>
+            <!-- Ingredient/Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+        </request>
+    </entry>
+
+    <entry>
+        <!-- ENTRY 6.3 Hjälpämne = Histidine hydrochloride monohydrate -->
+        <resource>
+            <Ingredient>
+                <id value="Herceptin-150mg-Powder-SE-IS-Ingredient-03"/>
+                <!-- Unik kod ENTRY 6. Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+                <status value="active"/>
+
+                <!-- <for> anger referenser -->
+                <for>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="AdministrableProductDefinition/Herceptin-150mg-Powder-SE-IS-AdministrableProductDefinition"/>
+                    <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+                </for>
+                <!-- Slut <for>-referenser -->
+
+                <role>
+                    <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+                        <!-- SPOR-lista "Ingredient Role" -->
+                        <code value="100000072082"/>
+                        <!-- Kod. 100000072072 = Active -->
+                        <display value="Excipient"/>
+                        <!-- Textbeskrivning. API = Active -->
+                    </coding>
+                </role>
+
+                <substance>
+                    <!-- Beskriver aktiv substans (API). Hämtas från EIRA -->
+                    <!-- API kan avse grundsubstans, salt (...) -->
+                    <code>
+                        <concept>
+                            <coding>
+                                <system
+                                    value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                                <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                <code value="100000091553"/>
+                                <!-- EUTCT-ID från EUTCT-lista -->
+                                <display value="Histidine hydrochloride monohydrate"/>
+                                <!-- Textbeskrivning från EUTCT-lista -->
+                            </coding>
+                        </concept>
+                    </code>
+
+                </substance>
+
+            </Ingredient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="Ingredient/Herceptin-150mg-Powder-SE-IS-Ingredient-03"/>
+            <!-- Ingredient/Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+        </request>
+    </entry>
+
+    <entry>
+        <!-- ENTRY 6.4 Hjälpämne = Polysorbate 20 -->
+        <resource>
+            <Ingredient>
+                <id value="Herceptin-150mg-Powder-SE-IS-Ingredient-04"/>
+                <!-- Unik kod ENTRY 6. Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+                <status value="active"/>
+
+                <!-- <for> anger referenser -->
+                <for>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="AdministrableProductDefinition/Herceptin-150mg-Powder-SE-IS-AdministrableProductDefinition"/>
+                    <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+                </for>
+                <!-- Slut <for>-referenser -->
+
+                <role>
+                    <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+                        <!-- SPOR-lista "Ingredient Role" -->
+                        <code value="100000072082"/>
+                        <!-- Kod. 100000072072 = Active -->
+                        <display value="Excipient"/>
+                        <!-- Textbeskrivning. API = Active -->
+                    </coding>
+                </role>
+
+                <substance>
+                    <!-- Beskriver aktiv substans (API). Hämtas från EIRA -->
+                    <!-- API kan avse grundsubstans, salt (...) -->
+                    <code>
+                        <concept>
+                            <coding>
+                                <system
+                                    value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                                <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                <code value="100000078537"/>
+                                <!-- EUTCT-ID från EUTCT-lista -->
+                                <display value="Polysorbate 20"/>
+                                <!-- Textbeskrivning från EUTCT-lista -->
+                            </coding>
+                        </concept>
+                    </code>
+
+                </substance>
+
+            </Ingredient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="Ingredient/Herceptin-150mg-Powder-SE-IS-Ingredient-04"/>
+            <!-- Ingredient/Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+        </request>
+    </entry>
+
+    <entry>
+        <!-- ENTRY 6.5 Hjälpämne = Trehalose dihydrate -->
+        <resource>
+            <Ingredient>
+                <id value="Herceptin-150mg-Powder-SE-IS-Ingredient-05"/>
+                <!-- Unik kod ENTRY 6. Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+                <status value="active"/>
+
+                <!-- <for> anger referenser -->
+                <for>
+                    <reference
+                        value="MedicinalProductDefinition/Herceptin-150mg-Powder-SE-IS-MedicinalProductDefinition"/>
+                    <!-- Referens till ENTRY 1 = MedicinalProductDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="ManufacturedItemDefinition/Herceptin-150mg-Powder-SE-IS-ManufacturedItemDefinition"/>
+                    <!-- Referera till ENTRY 5 = ManufacturedItemDefinition -->
+                </for>
+                <for>
+                    <reference
+                        value="AdministrableProductDefinition/Herceptin-150mg-Powder-SE-IS-AdministrableProductDefinition"/>
+                    <!-- Referera till ENTRY 3 = AdministrableProductDefinition -->
+                </for>
+                <!-- Slut <for>-referenser -->
+
+                <role>
+                    <!-- Anger typ av beståndsdel. T.ex Aktiv substans (API) -->
+                    <coding>
+                        <system value="http://spor.ema.europa.eu/v1/lists/100000072050"/>
+                        <!-- SPOR-lista "Ingredient Role" -->
+                        <code value="100000072082"/>
+                        <!-- Kod. 100000072072 = Active -->
+                        <display value="Excipient"/>
+                        <!-- Textbeskrivning. API = Active -->
+                    </coding>
+                </role>
+
+                <substance>
+                    <!-- Beskriver aktiv substans (API). Hämtas från EIRA -->
+                    <!-- API kan avse grundsubstans, salt (...) -->
+                    <code>
+                        <concept>
+                            <coding>
+                                <system
+                                    value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition"/>
+                                <!-- Aktiv substans från EUTCT: https://eutct.eudra.org/eutct/viewListDisplay.do?listId=100000075825&firstTime=true&d-5037238-p=1&d-5037238-n=1&d-5037238-o=1&d-5037238-s=termName -->
+                                <code value="100000078318"/>
+                                <!-- EUTCT-ID från EUTCT-lista -->
+                                <display value="Trehalose dihydrate"/>
+                                <!-- Textbeskrivning från EUTCT-lista -->
+                            </coding>
+                        </concept>
+                    </code>
+
+                </substance>
+
+            </Ingredient>
+        </resource>
+        <request>
+            <method value="PUT"/>
+            <url value="Ingredient/Herceptin-150mg-Powder-SE-IS-Ingredient-05"/>
+            <!-- Ingredient/Produktnamn-Styrka-Läkemedelsform-SE-IS-Ingredient -->
+        </request>
+    </entry>
+    <!-- End of attempt -->
+    <!-- END ENTRY 6 -->
+
+</Bundle>

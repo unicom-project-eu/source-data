@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Xylocain 100mg/ml cutaneous spray, solution -->
+<!-- Alva Jonsson, Sweden -->
+<!-- Started 2022-07-06, last change 2022-07-06-->
+<!-- follows the 5.0 standard-->
+<!--the spray part makes this intresting-->
+
+<!-- resources, mpd,rma,apd,ppd,mid,i, one ID per entry-->
+<!-- References: maximum of 64 characters
+Entry 1, MedicinalProductDefinition:               Xylocain-100mgml-cutspray-SE-AJ-MedicinalProductDefinition
+Entry 2, RegulatedAuthorities:                     Xylocain-100mgml-cutspray-SE-AJ-RegulatedAuthorization
+Entry 3, AdministrableProductDefinition:           Xylocain-100mgml-cutspray-SE-AJ-AdministrableProductDefinition
+Entry 4, PackagedProductDefinition:                Xylocain-100mgml-cutspray-SE-AJ-PackagedProductDefinition
+Entry 5, ManufacturedItemDefinition:               Xylocain-100mgml-cutspray-SE-AJ-ManufacturedItemDefinition
+Entry 6, Ingredient:                               Xylocain-100mgml-cutspray-SE-AJ-Ingredient                       -->
+
+<Bundle xmlns="http://hl7.org/fhir"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://hl7.org/fhir file:../Schemas/v5.0.0-snapshot1/fhir-all.xsd">
+
+  <type value="transaction" /><!--Fixed Value-->
+  
+  
+  
+  <entry><!-- Entry 1: Medicinal product definition--><!--STARTED-->
+    <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <MedicinalProductDefinition>
+	  
+		<id value="Xylocain-100mgml-cutspray-SE-AJ-MedicinalProductDefinition" />
+
+        <extension url="http://ema.europa.eu/fhir/extension/authorisedDoseForm"> 
+		<!-- pharmaceutical dose form of the drug-->
+		  <valueCoding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+			<code value="100000073729" />
+			<display value="Cutaneous spray, solution" />
+		  </valueCoding>
+		</extension>
+
+		<identifier>
+			<system value="http://ema.europa.eu/fhir/mpId"/>	
+			<value value="SE-100001718-00011258"/>  
+							<!-- Format: SE-xxxxxxxxx-yyyyyyyy. --><!--x:es, org id numbers ; y:s, enough zeros to get a total of 8 digits + MT-Number-->
+		</identifier>
+		
+		<identifier>  <!-- EURD-ID-->
+			<system value="http://ema.europa.eu/fhir/eurdId" />
+			<value value="10933"/> 
+			<!--lidocaine (topical use)-->
+		</identifier>
+		
+		<domain>
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000000004" /> 
+			<code value="100000000012" />
+			<display value="Human use" />
+		  </coding>
+		</domain>
+		
+		<status> 
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/200000005003" /> 
+			<code value="200000005004" />
+			<display value="Current" />
+		  </coding>
+		</status>
+		
+		<indication value="Ytanestesi på slemhinnor
+
+Odontologi: Ytanestetikum till exempel före instick vid injektionsanestesi.
+
+Oto-rino-laryngologi: Ytanestesi vid käkhålepunktion och vid ingrepp i näsa, svalg och epifarynx
+
+Obstetrik: Vid förlossning, i slutskedet samt vid suturering av förlossningsskador
+
+Nedläggning av instrument, tuber och katetrar i andningsvägarna och gastrointestinalkanalen
+
+Xylocain kutan spray är avsedd för vuxna och barn ≥3 år." />
+<!--indication from SmPC--><!-- impossible to define language here-->
+
+		
+		<legalStatusOfSupply>
+		<!-- subject to medcial prescription or not, type of prescription-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000072051" />
+			<code value="100000072084" />
+			<display value="Medicinal product subject to medical prescription" />
+		  </coding>
+		</legalStatusOfSupply>
+		
+		<classification>
+		<!-- ATC code-->
+		  <coding>
+		    <system value="http://spor.ema.europa.eu/v1/lists/100000093533" /> 
+			<code value="100000097196" />
+			<display value="N01BB02" />
+			<!--Lidocaine-->
+		  </coding>
+		</classification>
+		
+		<!--commented out for now-->
+		<!--<comprisedOf>--> <!-- refers to the manufactured item(s) that the product is compromised of--> <!--Several references possible, how?-->
+			<!-- 0..* Reference(ManufacturedItemDefinition) A medicinal manufactured item that this product consists of, such as a tablet or capsule -->
+			<!--<reference value="ManufacturedItemDefinition/Xylocain-100mgml-cutspray-SE-AJ-ManufacturedItemDefinition" /> -->  <!-- refers to manufactured item(s) -->
+		<!--</comprisedOf>-->
+		 <!--commented out for now-->
+		
+		<name> 
+		<!-- name of the product-->
+		
+		  <productName value="Xylocain 100mg/ml Kutan spray, lösning" /> 
+		  <!-- full name, in swedish  Name+ strength+ form-->
+		  
+		  <namePart>
+		    <part value="Xylocain" />
+			<type>
+			  <coding>
+			    <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+				<code value="220000000002" />
+				<display value="Invented Name Part" />
+			  </coding>
+			</type>
+		  </namePart>
+          <namePart>
+            <part value="100 mg/ml" />
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" />
+                <code value="220000000004" />
+				<display value="Strength part"/>
+              </coding>
+            </type>
+          </namePart>
+          <namePart>
+            <part value="Kutan spray, lösning" /> 
+            <type>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/220000000000" /> 
+                <code value="220000000005" />
+				<display value="Pharmaceutical dose form part"/>
+              </coding>
+            </type>
+          </namePart>
+		  
+          <countryLanguage> 
+            <country>
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+                <code value="100000000535" />
+				<display value="Sweden"/>
+              </coding>
+            </country>
+            <language> 
+              <coding>
+                <system value="http://spor.ema.europa.eu/v1/lists/100000072057" /> 
+                <code value="100000072288" /> 
+				<display value="Swedish"/> 
+              </coding>
+            </language>
+          </countryLanguage>
+		  
+        </name>
+
+		
+      </MedicinalProductDefinition> 
+    </resource>
+    <request>
+      <method value="PUT" /> <!-- probably just needs to be here to make the file compatible with FHIR-->
+      <url value="MedicinalProductDefinition/Xylocain-100mgml-cutspray-SE-AJ-MedicinalProductDefinition" />
+    </request>
+  </entry> <!-- Entry 1: Medicinal product definition--><!--STARTED-->
+  
+  
+  
+  <entry>  <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  <!--always one entry only-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> --> 
+    <resource>
+
+      <RegulatedAuthorization> <!--Z needed here, am eng.-->
+	  
+	  <id value="Xylocain-100mgml-cutspray-SE-AJ-RegulatedAuthorization"/>
+	  
+        <identifier> 
+		<!-- MT number-->
+          <system value="http://ema.europa.eu/fhir/MarketingAuthorizationNumber" />
+          <value value="11258" /> 
+		  <!--MT number-->
+        </identifier>
+
+        <subject>
+          <reference value="MedicinalProductDefinition/Xylocain-100mgml-cutspray-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition -->
+        </subject>
+
+        <type> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/220000000060" />
+            <code value="220000000061" />
+			<display value="Marketing Authorisation"/>
+          </coding>
+        </type>
+
+        <region>
+		<!-- region where document is valid-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+            <code value="100000000535" />
+			<display value="Sweden"/> 
+          </coding>
+        </region>
+
+        <status> 
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072049" />
+            <code value="100000072099" /> 
+			<display value="Valid"/> 
+          </coding>
+        </status>
+
+        <statusDate value="1990-11-26" /> 
+		<!-- date of first authorisation--><!-- date for when "valid" above was declared, read "valid since YYYY-MM-DD-->
+
+
+        <holder> 
+		<!-- MAH, marketing authorisation holder-->
+
+			<identifier> 
+				<system value="https://spor.ema.europa.eu/v1/locations"/>
+				<value value="LOC-100001575"/>
+			</identifier>
+		
+		
+          <display value="Aspen Pharma Trading Limited" /> 
+		  <!-- name of MAH--> <!--this doesn't show up in the graphic presentation. possible solutions: either put it inside the identifier element or renaming the tag so that it's not a display value-->
+        </holder>
+
+		<case>
+			<type>
+				<coding>
+					<system value="http://ema.europa.eu/fhir/authorisationDateType"/>
+					<code value="dateOfFirstAuthorisation"/>
+					<display value="First Authorisation"/>
+				</coding>
+			</type>	
+			
+			<dateDateTime value="1990-11-26"/>
+			<!-- date of first authorisation-->
+		</case>
+		
+      </RegulatedAuthorization>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="RegulatedAuthorization/Xylocain-100mgml-cutspray-SE-AJ-RegulatedAuthorization" />
+    </request>
+  </entry> <!-- Entry 2: Regulated marketing authorisation--><!--STARTED-->
+  
+  
+  
+  <entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+ 
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />--> 
+    <resource>
+      <AdministrableProductDefinition>
+
+		<id value="Xylocain-100mgml-cutspray-SE-AJ-AdministrableProductDefinition"/>  
+		
+		<status value="active"/>
+		
+        <formOf> <!-- previously <Subject> -->
+          <reference value="MedicinalProductDefinition/Xylocain-100mgml-cutspray-SE-AJ-MedicinalProductDefinition" />  <!--refers to Medicinal Product Definition-->
+        </formOf><!-- previously </Subject> -->
+
+        <administrableDoseForm>
+		<!--pharmaceutical dose form for the administrable product, may or may not be the same as the product itself. Logic, EIRA, Ralf and SPOR can be used to figure this out-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" /> 
+            <code value="100000073729" /> 
+			<display value="Cutaneous spray, solution"/>
+          </coding>
+        </administrableDoseForm>
+
+		<producedFrom> 
+			<reference value="ManufacturedItemDefinition/Xylocain-100mgml-cutspray-SE-AJ-ManufacturedItemDefinition" /> <!-- refers to manufactured item(s)-->
+		</producedFrom>
+
+		
+        <routeOfAdministration>
+		<!--route of administration-->
+          <code>
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000073345" /> 
+              <code value="100000073566" /> 
+			 <display value="Cutaneous use"/>
+            </coding>
+          </code>
+        </routeOfAdministration>
+
+      </AdministrableProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="AdministrableProductDefinition/Xylocain-100mgml-cutspray-SE-AJ-AdministrableProductDefinition" />
+    </request>
+  </entry> <!-- Entry 3: Administrable product definition--><!--STARTED-->
+  
+  
+  
+  
+  <entry>  <!-- Entry 4: Packaged Product definition--><!--Spray bottle, 50 ml--><!--STARTED-->
+  <!-- one entry per package, several entries allowed-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" /> -->
+    <resource>
+
+      <PackagedProductDefinition>'
+	  <!--50 ml vial with spray pump-->
+		<id value="Xylocain-100mgml-cutspray-SE-AJ-PackagedProductDefinition"/> 
+
+        <extension url="http://ema.europa.eu/fhir/extension/containedItemQuantity">
+          <valueQuantity>
+            <value value="1" />
+			<unit value="vial"/> 
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002158" />
+          </valueQuantity>
+        </extension>
+		
+        <packageFor> <!--previously <subject>-->
+          <reference value="MedicinalProductDefinition/Xylocain-100mgml-cutspray-SE-AJ-MedicinalProductDefinition" /><!-- refers to Medicinal Product Definition -->
+        </packageFor><!--previously </subject>-->
+		
+        <description value="Flaska med pumpspray, 50 ml">
+          <extension url="http://ema.europa.eu/fhir/extension/language">
+            <valueCoding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072057" />
+              <code value="100000072288" />
+			  <display value="Swedish"/>
+            </valueCoding>
+          </extension>
+        </description>
+
+        <marketingStatus> 
+		<!-- if the package is marketed, or not, and why not-->
+		
+          <country> 
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000000002" />
+              <code value="100000000535" />
+			  <display value="Sweden"/>
+            </coding>
+          </country>
+		  
+          <status> 
+		  <!-- the actual status of the package-->
+            <coding>
+              <system value="http://spor.ema.europa.eu/v1/lists/100000072052" /> 
+              <code value="100000072083" /> 
+			  <display value="Marketed"/>
+            </coding>
+          </status>
+		  
+          <dateRange>
+            <start/>
+			<!-- date range for marketing. No swedish records exsist, so value will be unknown for all swedish products-->
+          </dateRange>
+        </marketingStatus>
+		
+        <package>
+		<!--outermost packaging layer start--> 
+	
+		  <type> <!-- type of packaging-->
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+			  <code value="100000073498"/>
+			  <display value="Box"/> 
+			</coding>
+		  </type>
+		  
+		  <quantity value="1"/>
+		  
+		  <material>
+		    <coding>
+			  <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+			  <code value="200000003529"/>
+			  <display value="Cardboard"/>
+			</coding>
+		  </material>
+		  
+            <shelfLifeStorage>
+                  <type>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073343"/>
+                        <code value="100000073403"/>
+                        <display value="Shelf life of the medicinal product as packaged for sale"/>
+                     </coding>
+                  </type>
+                  
+                  <periodDuration>
+                     <value value="3"/>
+                     <unit value="Year"/> 
+					<system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					<code value="200000003434" /> 
+                  </periodDuration>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073420"/>
+                        <display value="Do not freeze"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+                  
+                  <specialPrecautionsForStorage>
+                     <coding>
+                        <system value="https://spor.ema.europa.eu/v1/lists/100000073344"/>
+                        <code value="100000073419"/>
+                        <display value="Do not refrigerate"/>
+                     </coding>
+                  </specialPrecautionsForStorage>
+
+            </shelfLifeStorage>
+			   
+			<package>
+			<!--package layer two--> 
+			<!--This is a spray pump closure device, in reality attached to the vial-->
+			  <type>
+				<coding>
+				  <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				  <code value="100000073554"/>
+				  <display value="Spray pump"/> 
+				</coding>
+			  </type>
+			  
+			  <quantity value="1"/> 
+			  
+				<material>
+				  <coding>
+					<system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					<code value="200000003208"/>
+					<display value="Plastic"/>
+				  </coding>
+				</material>
+				<!-- the spray pump also contains elastomer(s) and metal(s) but the description wasn't more specific than that-->
+			</package>
+			<!-- endof package layer two-->	<!-- I'll try this and see if it validates-->
+			
+			      <package>
+				  <!--innermost packaging layer-->
+			        <type>
+				      <coding>
+				        <system value="https://spor.ema.europa.eu/v1/lists/100000073346"/>
+				        <code value="100000073563"/>
+				        <display value="Vial"/> 
+				      </coding>
+			        </type>
+			  
+			        <quantity value="1"/> 
+			  
+				    <material>
+					<!--material of package.--> 
+				      <coding>
+					    <system value="https://spor.ema.europa.eu/v1/lists/200000003199"/>
+					    <code value="200000003204"/>
+					    <display value="Glass type I"/>
+				      </coding>
+				    </material>
+					
+				      <containedItem>
+					    <item>
+						<reference>
+					      <reference value="ManufacturedItemDefinition/Xylocain-100mgml-cutspray-SE-AJ-ManufacturedItemDefinition" /><!-- refers to Manufactured Item-->
+						</reference>
+					    </item>
+
+					    <amount> <!-- previously <amountQuantity>-->
+					      <value value="50" /> 
+						  <unit value="millilitre(s)"/>
+					      <system value="http://spor.ema.europa.eu/v1/lists/100000110633" />
+					      <code value="100000110662" />
+					    </amount> <!-- previously </amountQuantity>-->
+
+					
+				      </containedItem>
+			      </package><!--end of innermost package-->
+
+        </package><!--end of outermost box-->
+      </PackagedProductDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="PackagedProductDefinition/Xylocain-100mgml-cutspray-SE-AJ-PackagedProductDefinition" />
+    </request>
+  </entry> <!-- Entry 4: Packaged Product definition--><!--STARTED-->
+  
+  
+  
+  
+  <entry> <!--Entry 5: Manufactured item definition--><!--STARTED-->
+  
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <ManufacturedItemDefinition>
+		<id value="Xylocain-100mgml-cutspray-SE-AJ-ManufacturedItemDefinition"/>
+
+		<status value="active" />
+		
+        <manufacturedDoseForm> 
+		<!-- pharmaceutical dose form of the manufactured item-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000004" />
+            <code value="100000073729" /> 
+			<display value="Cutaneous spray, solution"/>
+          </coding>
+        </manufacturedDoseForm>
+		
+        <unitOfPresentation> 
+		<!-- unit of the manufactured item, should be something that can hold itself together-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/200000000014" />
+            <code value="200000002158" /> 
+			<display value="vial"/> 
+          </coding>
+        </unitOfPresentation>
+		
+      </ManufacturedItemDefinition>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="ManufacturedItemDefinition/Xylocain-100mgml-cutspray-SE-AJ-ManufacturedItemDefinition" />
+    </request>
+  </entry><!-- Entry 5: Manufactured item definition--><!--STARTED-->
+  
+  
+  
+  <entry><!-- Entry 6: Ingredient --><!--lidocaine--><!--STARTED-->
+  <!--several entries allowed, one per ingredient-->
+    <!--<fullUrl value="urn:uuid:xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" />-->
+    <resource>
+      <Ingredient> 
+	  <!--lidocaine-->
+	  
+	  <id value="Xylocain-100mgml-cutspray-SE-AJ-Ingredient"/>
+	  
+		<status value="active" />
+
+          <for> <!--previously <valueReference> -->
+            <reference value="MedicinalProductDefinition/Xylocain-100mgml-cutspray-SE-AJ-MedicinalProductDefinition" /><!--refers to Medicinal Product Definition-->
+          </for> <!--previously <valueReference> -->
+		  
+		  <for> <!--new addition -->
+            <reference value="ManufacturedItemDefinition/Xylocain-100mgml-cutspray-SE-AJ-ManufacturedItemDefinition" /><!--refers to Manufactured Item-->
+          </for> <!--new addition -->
+		  
+          <for> <!--new addition -->
+            <reference value="AdministrableProductDefinitionXylocain-100mgml-cutspray-SE-AJ-AdministrableProductDefinition" /><!--refers to Administrable product-->
+          </for> <!--new addition -->
+
+        <role>
+		<!--the role of the substance-->
+          <coding>
+            <system value="http://spor.ema.europa.eu/v1/lists/100000072050" /> 
+            <code value="100000072072" /> 
+			<display value="Active"/> 
+          </coding>
+        </role>
+		
+        <substance>
+          <code>
+		  <concept>
+            <coding>
+              <system value="http://spor.azure-api.net/sms/api/v2/SubstanceDefinition" /> 
+              <code value="100000091713" /> 
+				<display value="Lidocaine"/>
+            </coding>
+	      </concept>
+          </code>
+		  
+          <strength> 
+		  <!--strength of the substance-->
+		  
+            <concentrationRatio>
+              <numerator>
+                <value value="100" />
+				<comparator> 
+					<extension url="http://ema.europa.eu/fhir/extension/comparator">
+						<valueCoding>
+							<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+							<code value="100000000049"/> 
+							<display value="equal to"/> 
+						</valueCoding>
+					</extension>
+				</comparator>				
+				<unit value="milligram(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110655" />
+              </numerator>
+              <denominator>
+                <value value="1" /> 
+				<unit value="millilitre(s)"/> 
+                <system value="http://spor.ema.europa.eu/v1/lists/100000110633" /> 
+                <code value="100000110662" /> 
+              </denominator>
+            </concentrationRatio>
+            
+     		<referenceStrength>
+				<substance> 
+					<concept>
+						<coding>
+							<system value="https://spor.ema.europa.eu/v2/SubstanceDefinition"/> 
+							<code value="100000091713"/> 
+							<display value="Lidocaine"/> 
+						</coding>
+					</concept>
+				</substance>
+				<strengthRatio>
+					<numerator>
+						<value value="100"/>
+						<comparator>
+							<extension url="http://ema.europa.eu/fhir/extension/comparator">
+								<valueCoding>
+									<system value="https://spor.ema.europa.eu/v1/lists/100000000008"/> 
+									<code value="100000000049"/>
+									<display value="equal to"/>
+								</valueCoding>
+							</extension>
+						</comparator>
+						<unit value="milligram(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110655" />
+					</numerator>
+					<denominator>
+						<value value="1"/>
+						<unit value="millilitre(s)"/>
+						<system value="https://spor.ema.europa.eu/v1/lists/100000110633"/>
+						<code value="100000110662" />
+					</denominator>
+				</strengthRatio>
+			</referenceStrength>
+
+          </strength>
+        </substance>
+      </Ingredient>
+    </resource>
+    <request>
+      <method value="PUT" />
+      <url value="Ingredient/Xylocain-100mgml-cutspray-SE-AJ-Ingredient" />
+    </request>
+  </entry><!--Entry 6: Ingredient--><!--STARTED-->
+
+
+</Bundle>
