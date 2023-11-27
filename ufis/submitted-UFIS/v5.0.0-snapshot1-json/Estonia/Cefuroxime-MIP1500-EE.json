@@ -1,0 +1,400 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "cefuroxime-mip1500-EE-bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Cefuroxime-MIP-1500mg-powder-for-solution-inj-inf-EE-MPD",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000116186",
+          "display" : "Powder for solution for injection/infusion"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pmsId",
+        "value" : "000000002"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "EE-100009199-27834"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        },
+        {
+          "system" : "http://hl7.org/fhir/publication-status",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal Product subject to medical prescription"
+        }]
+      },
+      "additionalMonitoringIndicator" : {
+        "coding" : [{
+          "system" : "http://ema.europa.eu/fhir/additionalMonitoringIndicator",
+          "code" : "False",
+          "display" : "False"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000096183",
+          "display" : "Cefuroxime"
+        },
+        {
+          "system" : "http://www.whocc.no/atc",
+          "code" : "J01DC02",
+          "display" : "cefuroxime"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Cefuroxime MIP 1500 mg, süste-/infusioonilahuse pulber"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Cefuroxime-MIP-1500mg-powder-for-solution-inj-inf-EE-MPD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-RA",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "805813"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Cefuroxime-MIP-1500mg-powder-for-solution-inj-inf-EE-MPD"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000388",
+          "display" : "Republic of Estonia"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "200000017708",
+          "display" : "Valid - Renewed/Varied"
+        }]
+      },
+      "statusDate" : "2017-12-06",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100009199"
+        },
+        "display" : "Mip Pharma GmbH"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-RA"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-APD",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Cefuroxime-MIP-1500mg-powder-for-solution-inj-inf-EE-MPD"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074038",
+          "display" : "Solution for injection/infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-MID"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073600",
+            "display" : "Intramuscular use"
+          }]
+        }
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-APD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-MID",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074038",
+          "display" : "Solution for injection/infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-MID"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-I",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Cefuroxime-MIP-1500mg-powder-for-solution-inj-inf-EE-MPD"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-MID"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-APD"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000091436",
+              "display" : "CEFUROXIME SODIUM"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 1578,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "vial",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002158"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000092667",
+                  "display" : "CEFUROXIME"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 1500,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "vial",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002158"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-I"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-PPD-1529940",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 1,
+          "unit" : "vial",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/example/pcid",
+        "value" : "EE-100009199-27834-1529940"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Cefuroxime-MIP-1500mg-powder-for-solution-inj-inf-EE-MPD"
+      }],
+      "description" : "I tüüpi klaasist viaal, mis on suletud klorobutüülkummist korgi ning flip-off kattega, 1 viaal",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072172",
+            "display" : "Estonian"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000388",
+            "display" : "Republic of Estonia"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-PPD-1529940"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-PPD-1529962",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 10,
+          "unit" : "vial",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Cefuroxime-MIP-1500mg-powder-for-solution-inj-inf-EE-MPD"
+      }],
+      "description" : "I tüüpi klaasist viaal, mis on suletud klorobutüülkummist korgi ning flip-off kattega, 1 viaal",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072172",
+            "display" : "Estonian"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000388",
+            "display" : "Republic of Estonia"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Cefuroxime-MIP-1500mg-Powder-for-solution-inj-inf-EE-PPD-1529962"
+    }
+  }]
+}

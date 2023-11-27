@@ -1,0 +1,306 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MPD",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074029",
+          "display" : "Powder for concentrate for solution for infusion"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pmsId",
+        "value" : "0000000015"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "EE-100010587-30651"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        },
+        {
+          "system" : "http://hl7.org/fhir/publication-status",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal Product subject to medical prescription"
+        }]
+      },
+      "additionalMonitoringIndicator" : {
+        "coding" : [{
+          "system" : "http://ema.europa.eu/fhir/additionalMonitoringIndicator",
+          "code" : "True",
+          "display" : "True"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "200000025822",
+          "display" : "Trastuzumab emtansine"
+        },
+        {
+          "system" : "http://www.whocc.no/atc",
+          "code" : "L01FD03",
+          "display" : "Trastuzumab emtansine "
+        }]
+      }],
+      "name" : [{
+        "productName" : "Kadcyla 100 mg infusioonilahuse kontsentraadi pulber."
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MPD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-RA",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "EU/1/13/885"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MPD"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000388",
+          "display" : "Republic of Estonia"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "200000017708",
+          "display" : "Valid - Renewed/Varied"
+        }]
+      },
+      "statusDate" : "2018-09-17",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100010587"
+        },
+        "display" : "Roche Registration GmbH"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-RA"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-APD",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MPD"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073870 ",
+          "display" : "Solution for infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MID"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-APD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MID",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074029",
+          "display" : "Powder for concentrate for solution for infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MID"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-I",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MPD"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MID"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-APD"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000128434",
+              "display" : "Trastuzumab emtansine"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 100,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "vial",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002158"
+            }
+          }
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-I"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-PPD-1633339",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 1,
+          "unit" : "vial",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/example/pcid",
+        "value" : "EE-100010587-30651-1633339"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-MPD"
+      }],
+      "description" : "Kadcyla on pakendatud 15 ml (100 mg) I tüüpi klaasist viaali, mis on suletud fluorovaiguga lamineeritud halli butüülkummist korgi, alumiiniumsulguri ja valge plastmassist eemaldatava kattega",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072172",
+            "display" : "Estonian"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000388",
+            "display" : "Republic of Estonia"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Kadcyla-100mg-Powder-for-concentrate-for-sol-inf-EE-PPD-1633339"
+    }
+  }]
+}

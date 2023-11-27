@@ -1,0 +1,338 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:79df7b0d-c027-4666-b335-6a2a257f8d99",
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000116186",
+          "display" : "Powder for solution for injection/infusion"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100000848-00051399"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "615"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Zinacef är avsett för behandling av nedanstående infektioner hos vuxna och barn, även nyfödda (från  födelsen). • Samhällsförvärvad pneumoni. • Akut exacerbation av kronisk bronkit. • Komplicerade urinvägsinfektioner, även pyelonefrit. • Mjukdelsinfektioner: cellulit, erysipelas och sårinfektioner. • Intraabdominella infektioner. • Profylax mot infektion inför gastrointestinal (även esofageal), ortopedisk, kardiovaskulär och  gynekologisk operation (även kejsarsnitt).  Vid behandling och förebyggande av infektioner då det är mycket troligt att anaeroba organismer påträffas  ska cefuroxim administreras tillsammans med ett lämpligt antianaerobt antibiotikum.  Hänsyn ska tas till officiella riktlinjer om lämplig användning av antibakteriella medel.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000116677",
+          "code" : "100000093533",
+          "display" : "J01DC02"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Zinacef 1,5 g Pulver till injektions-/infusionsvätska, lösning"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:166e2c4e-9342-42b5-99a8-2754ec722246",
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Zinacef-1.5g-Powder-SE-IS-RegulatedAuthorization",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "51399"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2015-03-19",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100001468"
+        },
+        "display" : "Sandoz A/S"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "2015-03-19"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Zinacef-1.5g-Powder-SE-IS-RegulatedAuthorization"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:3693574d-b87a-4642-8fce-a79c787e01fd",
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Zinacef-1.5g-Powder-SE-IS-AdministrableProductDefinition",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074038",
+          "display" : "Solution for injection/infusion"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073600",
+            "display" : "Intramuscular use"
+          },
+          {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Zinacef-1.5g-Powder-SE-IS-AdministrableProductDefinition"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:c06f6dbe-3e34-41f6-a546-ec3fd7964c79",
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Zinacef-1.5g-Powder-SE-IS-PackagedProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 1,
+          "unit" : "Vial",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"
+      }],
+      "description" : "Injektionsflaska, 5 st (5 x 1,5 g)",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Zinacef-1.5g-Powder-SE-IS-PackagedProductDefinition"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:55ce2867-d7b1-423c-bcb1-ffceba6ab3a7",
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000116186",
+          "display" : "Powder for solution for injection/infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:39e79b7d-9666-4548-9692-dbd64a9b39aa",
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Zinacef-1.5g-Powder-SE-IS-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Zinacef-1.5g-Powder-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Zinacef-1.5g-Powder-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Zinacef-1.5g-Powder-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000091436",
+              "display" : "cefuroxime sodium"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 1.58,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "gram(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110654"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "unit(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110756"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000092667",
+                  "display" : "cefuroxime"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 1.5,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "gram(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110654"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "unit(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110756"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Zinacef-1.5g-Powder-SE-IS-Ingredient"
+    }
+  }]
+}

@@ -1,0 +1,1033 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073681",
+          "display" : "Effervescent tablet"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100002766-00010151"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "851"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Opiodkänslig smärta när enbart perifert verkande analgetika inte räcker.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072085",
+          "display" : "Medicinal product subject to special medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000116677",
+          "code" : "100000093533",
+          "display" : "N02AJ06"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Citodon® 500 mg/30 mg Brustablett"
+      }],
+      "characteristic" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/200000003186",
+            "code" : "200000003187",
+            "display" : "combined therapeutic medicine / device"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-RegulatedAuthorization",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "10151"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "1985-02-01",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100016200"
+        },
+        "display" : "Evolan Pharma AB"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "1985-02-01"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Citodon-500mg30mg-EffTablet-SE-IS-RegulatedAuthorization"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073646",
+          "display" : "Oral solution"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-PackagedProductDefinition01",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 25,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      }],
+      "description" : "Rör, 100 (4 x 25) brustabletter",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-PackagedProductDefinition01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-PackagedProductDefinition02",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 25,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      }],
+      "description" : "Rör, 25 Brustabletter",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-PackagedProductDefinition02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-PackagedProductDefinition03",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 25,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      }],
+      "description" : "Rör, 50 (2 x 25) brustabletter",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-PackagedProductDefinition03"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073681",
+          "display" : "Effervescent tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient01",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000090270",
+              "display" : "Paracetamol"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 500,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "unit(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110756"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000090270",
+                  "display" : "Paracetamol"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 500,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "unit(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110756"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient02",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000090188",
+              "display" : "Codeine phosphate hemihydrate"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 30,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "unit(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110756"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000153319",
+                  "display" : "Codeine anhydrous"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 22.1,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "unit(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110756"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient03",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000079629",
+              "display" : "Anhydrous citric acid"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient03"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient04",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000128405",
+              "display" : "LEMON FLAVOUR \"K/S\" CODE 145"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient04"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient05",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000076148",
+              "display" : "Orange flavour"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient05"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient06",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000088586",
+              "display" : "Magnesium stearate"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient06"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient07",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000091382",
+              "display" : "Mannitol"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient07"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient08",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000092381",
+              "display" : "Povidone"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient08"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient09",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000078521",
+              "display" : "Saccharin sodium"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient09"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient10",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000078105",
+              "display" : "Sodium carbonate anhydrous"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient10"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient11",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000092115",
+              "display" : "Sodium chloride"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient11"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient12",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000127981",
+              "display" : "Sodium citrate anhydrous"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient12"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient13",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000085562",
+              "display" : "SODIUM DIHYDROGEN CITRATE (E331(A))"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient13"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient14",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000079337",
+              "display" : "Sodium hydrogen carbonate"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient14"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Citodon-500mg30mg-EffTablet-SE-IS-Ingredient15",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Citodon-500mg30mg-EffTablet-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Citodon-500mg30mg-EffTablet-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000135889",
+              "display" : "Sodium laurilsulfate"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Citodon-500mg30mg-EffTablet-SE-IS-Ingredient15"
+    }
+  }]
+}

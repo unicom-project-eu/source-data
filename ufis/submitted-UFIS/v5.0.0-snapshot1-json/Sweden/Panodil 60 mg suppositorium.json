@@ -1,0 +1,426 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Panodil60mgsuppositorium-SE-PLC-MedicinalProductDef",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008",
+          "code" : "100000073843",
+          "display" : "Suppository"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100004600-00009621"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "2289"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Huvudvärk, tandvärk, feber vid förkylningssjukdomar, menstruationssmärtor, muskel- och ledvärk, som analgetikum vid reumatiska smärtor, hyperpyrexi.  Suppositorier är lämpliga för feber och smärttillstånd vid sväljsvårigheter, illamående och kräkningar eller postoperativt.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072076",
+          "display" : "Medicinal product not subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000097305",
+          "display" : "N02BE01"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Panodil 60 mg suppositorium"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Panodil60mgsuppositorium-SE-PLC-MedicinalProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Panodil60mgsuppositorium-SE-PLC-RegAutho",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "9621"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Panodil60mgsuppositorium-SE-PLC-MedicinalProductDef"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "1981-03-13",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100005555"
+        },
+        "display" : "Perrigo Sverige AB"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "1981-03-13"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Panodil60mgsuppositorium-SE-PLC-RegAutho"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Panodil60mgsuppositorium-SE-PLC-AdminProductDef",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Panodil60mgsuppositorium-SE-PLC-MedicinalProductDef"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073843",
+          "display" : "Suppository"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Panodil60mgsuppositorium-SE-PLC-ManufacturedItemDef"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073628",
+            "display" : "Rectal use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Panodil60mgsuppositorium-SE-PLC-AdminProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Panodil60mgsuppositorium-SE-PLC-PackageProductDef",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 10,
+          "unit" : "Suppository",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002149"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Panodil60mgsuppositorium-SE-PLC-MedicinalProductDef"
+      }],
+      "description" : "Strip, 10 suppositorier",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Panodil60mgsuppositorium-SE-PLC-PackageProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Panodil60mgsuppositorium-SE-PLC-ManufacturedItemDef",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073843",
+          "display" : "Suppository"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002149",
+          "display" : "Suppository"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Panodil60mgsuppositorium-SE-PLC-ManufacturedItemDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Panodil60mgsuppositorium-SE-PLC-Ingredient01",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Panodil60mgsuppositorium-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Panodil60mgsuppositorium-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Panodil60mgsuppositorium-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000090270",
+              "display" : "Paracetamol"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 60,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Suppository",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002149"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000090270",
+                  "display" : "Paracetamol"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 60,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Suppository",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002149"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Panodil60mgsuppositorium-SE-PLC-Ingredient01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Panodil60mgsuppositorium-SE-PLC-Ingredient02",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Panodil60mgsuppositorium-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Panodil60mgsuppositorium-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Panodil60mgsuppositorium-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000080166",
+              "display" : "Hard fat"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 5,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Suppository",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002149"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000080166",
+                  "display" : "Hard fat"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 5,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Suppository",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002149"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Panodil60mgsuppositorium-SE-PLC-Ingredient02"
+    }
+  }]
+}

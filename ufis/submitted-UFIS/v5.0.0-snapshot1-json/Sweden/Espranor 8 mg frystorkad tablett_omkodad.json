@@ -1,0 +1,379 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Espranor-8mg-Lyophilisate-SE-BS-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073682",
+          "display" : "Oral lyophilisate"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-XXXXXXXXX-00051208"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "461"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Substitutionsbehandling för opioidberoende, inom ramen för en medicinsk, social och psykologisk behandling. Behandling med Espranor frystorkad tablett är avsedd för vuxna och ungdomar i åldern 15 år och äldre som har samtyckt till behandling av sitt beroende.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072085",
+          "display" : "Medicinal product subject to special medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000116677",
+          "code" : "100000097495",
+          "display" : "N07BC01"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Espranor 8 mg frystorkad tablett"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-MedicinalProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Espranor-8mg-Lyophilisate-SE-BS-RegulatedAuthorization",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "51208"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2015-07-16",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-XXXXXXXX"
+        },
+        "display" : "Etypharm"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "2015-07-16"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Espranor-8mg-Lyophilisate-SE-BS-RegulatedAuthorization"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Espranor-8mg-Lyophilisate-SE-BS-AdministrableProductDefinition",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073682",
+          "display" : "Oral lyophilisate"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Espranor-8mg-Lyophilisate-SE-BS-ManufacturedItemDefinition"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-AdministrableProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Espranor-8mg-Lyophilisate-SE-BS-PackagedProductDefinition01",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 28,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-MedicinalProductDefinition"
+      }],
+      "description" : "Blister, 28 tabletter (endos)",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-PackagedProductDefinition01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Espranor-8mg-Lyophilisate-SE-BS-PackagedProductDefinition02",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 7,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-MedicinalProductDefinition"
+      }],
+      "description" : "Blister, 7 tabletter (endos)",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-PackagedProductDefinition02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Espranor-8mg-Lyophilisate-SE-BS-ManufacturedItemDefinition",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073682",
+          "display" : "Oral lyophilisate"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Espranor-8mg-Lyophilisate-SE-BS-ManufacturedItemDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Espranor-8mg-Lyophilisate-SE-BS-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Espranor-8mg-Lyophilisate-SE-BS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Espranor-8mg-Lyophilisate-SE-BS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000092032",
+              "display" : "Buprenorphine hydrochloride"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 8.624,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "tablet",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000085263",
+                  "display" : "Buprenorphine"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 8,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "tablet",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Espranor-8mg-Lyophilisate-SE-BS-Ingredient"
+    }
+  }]
+}

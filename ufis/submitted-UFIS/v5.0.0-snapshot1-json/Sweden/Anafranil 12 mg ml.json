@@ -1,0 +1,332 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Anafranil-12mgml-Solution-SE-IS-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100013348-00008757"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "811"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Egentlig depression med melankoli. Djupa eller långvariga egentliga depressioner utan melankoli.  Paniksyndrom med eller utan agorafobi. Agorafobi. Tvångstillstånd. Associerade symtom vid  narkolepsi (speciellt kataplexi, sömnparalys och hypnagoga hallucinationer). Idiopatiskt smärtsyndrom  med depressiva symtom.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000116677",
+          "code" : "100000093533",
+          "display" : "N06AA04"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Anafranil® 12,5 mg/ml Injektionsvätska, lösning"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Anafranil-12mgml-Solution-SE-IS-MedicinalProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Anafranil-12mgml-Solution-SE-IS-RegulatedAuthorization",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "8757"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Anafranil-12mgml-Solution-SE-IS-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "1973-05-25",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100038931"
+        },
+        "display" : "Essential Pharma (M) Limited"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "1973-05-25"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Anafranil-12mgml-Solution-SE-IS-RegulatedAuthorization"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Anafranil-12mgml-Solution-SE-IS-AdministrableProductDefinition",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Anafranil-12mgml-Solution-SE-IS-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Anafranil-12mgml-Solution-SE-IS-ManufacturedItemDefinition"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073600",
+            "display" : "Intramuscular use"
+          },
+          {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Anafranil-12mgml-Solution-SE-IS-AdministrableProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Anafranil-12mgml-Solution-SE-IS-PackagedProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 10,
+          "unit" : "Ampoule",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002164"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Anafranil-12mgml-Solution-SE-IS-MedicinalProductDefinition"
+      }],
+      "description" : "Ampull, 10 x 2 ml",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Anafranil-12mgml-Solution-SE-IS-PackagedProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Anafranil-12mgml-Solution-SE-IS-ManufacturedItemDefinition",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002164",
+          "display" : "Ampoule"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Anafranil-12mgml-Solution-SE-IS-ManufacturedItemDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Anafranil-12mgml-Solution-SE-IS-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Anafranil-12mgml-Solution-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Anafranil-12mgml-Solution-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Anafranil-12mgml-Solution-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000090503",
+              "display" : "Clomipramine hydrochloride"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 12.5,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "millilitre(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110662"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000084546",
+                  "display" : "Clomipramine"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 11.2,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "millilitre(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110662"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Anafranil-12mgml-Solution-SE-IS-Ingredient"
+    }
+  }]
+}

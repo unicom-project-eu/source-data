@@ -1,0 +1,379 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Alvedon500mgBrustablett-SE-PLC-MedicinalProductDef",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008",
+          "code" : "100000073681",
+          "display" : "Effervescent tablet"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100000478-00009068"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "2289"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Alvedon 500 mg Brustablett är indicerat för huvudvärk, tandvärk, feber vid förkylningssjukdomar, menstruationssmärtor, muskel- och  ledvärk, som analgetikum vid reumatiska smärtor, hyperpyrexi. Används av vuxna och barn över 12 år.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "200000002239",
+          "display" : "Medicinal product subject to medical prescription exempt for some pack sizes"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000097305",
+          "display" : "N02BE01"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Alvedon 500 mg Brustablett"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Alvedon500mgBrustablett-SE-PLC-MedicinalProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Alvedon500mgBrustablett-SE-PLC-RegAutho",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "9068"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Alvedon500mgBrustablett-SE-PLC-MedicinalProductDef"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "1975-06-13",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100001462"
+        },
+        "display" : "GlaxoSmithKline Consumer Healthcare ApS"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "1975-06-13"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Alvedon500mgBrustablett-SE-PLC-RegAutho"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Alvedon500mgBrustablett-SE-PLC-AdminProductDef",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Alvedon500mgBrustablett-SE-PLC-MedicinalProductDef"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073646",
+          "display" : "Oral solution"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Alvedon500mgBrustablett-SE-PLC-ManufacturedItemDef"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Alvedon500mgBrustablett-SE-PLC-AdminProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Alvedon500mgBrustablett-SE-PLC-PackageProductDef01",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 20,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Alvedon500mgBrustablett-SE-PLC-MedicinalProductDef"
+      }],
+      "description" : "Rör, 20 brustabletter",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Alvedon500mgBrustablett-SE-PLC-PackageProductDef01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Alvedon500mgBrustablett-SE-PLC-PackageProductDef02",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 90,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Alvedon500mgBrustablett-SE-PLC-MedicinalProductDef"
+      }],
+      "description" : "Rör, 90 (3 x 30) brustabletter",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Alvedon500mgBrustablett-SE-PLC-PackageProductDef02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Alvedon500mgBrustablett-SE-PLC-ManufacturedItemDef",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073681",
+          "display" : "Effervescent tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Alvedon500mgBrustablett-SE-PLC-ManufacturedItemDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Alvedon500mgBrustablett-SE-PLC-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Alvedon500mgBrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Alvedon500mgBrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Alvedon500mgBrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000090270",
+              "display" : "Paracetamol"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 500,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Tablet",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000090270",
+                  "display" : "Paracetamol"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 500,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Tablet",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Alvedon500mgBrustablett-SE-PLC-Ingredient"
+    }
+  }]
+}

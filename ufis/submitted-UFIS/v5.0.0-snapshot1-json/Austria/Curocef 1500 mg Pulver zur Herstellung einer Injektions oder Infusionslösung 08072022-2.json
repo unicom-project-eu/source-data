@@ -1,0 +1,1019 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Curocef1500mgPulver-A-HL-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000116186",
+          "display" : "Powder for solution for injection/infusion"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "AT-16569"
+      }],
+      "domain" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "indication" : "Curocef wird angewendet zur Behandlung der nachfolgend genannten Infektionen bei Erwachsenen und Kindern, einschließlich Neugeborenen (von Geburt an) ...",
+      "_indication" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072178",
+            "display" : "German"
+          }
+        }]
+      },
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072079",
+          "display" : "Medicinal product on medical prescription for non-renewable delivery"
+        }]
+      },
+      "additionalMonitoringIndicator" : {
+        "coding" : [{
+          "system" : "http://ema.europa.eu/fhir/additionalMonitoringIndicator",
+          "code" : "True",
+          "display" : "True"
+        }]
+      },
+      "pediatricUseIndicator" : {
+        "coding" : [{
+          "system" : "http://ema.europa.eu/fhir/paediatricUseIndicator",
+          "code" : "True",
+          "display" : "True"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000324",
+          "code" : "200000003517",
+          "display" : "Other"
+        }]
+      },
+      {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000116045",
+          "code" : "100000116053",
+          "display" : "Well-established use application (Article 10a of Directive No 2001/83/EC)"
+        }]
+      },
+      {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000096183",
+          "display" : "J01DC02"
+        }]
+      },
+      {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000155526",
+          "code" : "100000155527",
+          "display" : "Chemical"
+        }]
+      }],
+      "attachedDocument" : [{
+        "reference" : "DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference01"
+      }],
+      "masterFile" : [{
+        "reference" : "#mfl1"
+      }],
+      "contact" : [{
+        "type" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000154441",
+            "code" : "100000155057",
+            "display" : "Qualified Person in the EEA for Pharmacovigilance"
+          }]
+        },
+        "contact" : {
+          "reference" : "#qppv1"
+        }
+      },
+      {
+        "type" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 3
+            }],
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000154441",
+            "code" : "200000017719"
+          }]
+        },
+        "contact" : {
+          "reference" : "#phvenq1"
+        }
+      }],
+      "name" : [{
+        "productName" : "Curocef 1500 mg Pulver zur Herstellung einer Injektions- oder Infusionslösung"
+      }],
+      "operation" : [{
+        "type" : {
+          "concept" : {
+            "coding" : [{
+              "extension" : [{
+                "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+                "valueInteger" : 1
+              }],
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000160406",
+              "code" : "100000160467",
+              "display" : "Manufacture of active substance"
+            }]
+          }
+        },
+        "effectiveDate" : {
+          "start" : "2016-07-17"
+        },
+        "organization" : [{
+          "identifier" : {
+            "system" : "https://spor.ema.europa.eu/v1/locations",
+            "value" : "LOC-100000004"
+          },
+          "display" : "Austrian Agency For Health And Food Safety"
+        }],
+        "confidentialityIndicator" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/200000004983",
+            "code" : "200000004984",
+            "display" : "Confidential"
+          }]
+        }
+      },
+      {
+        "type" : {
+          "concept" : {
+            "coding" : [{
+              "extension" : [{
+                "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+                "valueInteger" : 1
+              }],
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000160406",
+              "code" : "100000160407",
+              "display" : "Manufacturer responsible for batch certification"
+            }]
+          }
+        },
+        "effectiveDate" : {
+          "start" : "2010-12-22"
+        },
+        "organization" : [{
+          "identifier" : {
+            "system" : "https://spor.ema.europa.eu/v1/locations",
+            "value" : "LOC-100050477"
+          },
+          "display" : "Acs Dobfar S.P.A."
+        }],
+        "confidentialityIndicator" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/200000004983",
+            "code" : "200000004985",
+            "display" : "Public"
+          }]
+        }
+      },
+      {
+        "type" : {
+          "concept" : {
+            "coding" : [{
+              "extension" : [{
+                "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+                "valueInteger" : 1
+              }],
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000160406",
+              "code" : "100000160464",
+              "display" : "Secondary packaging"
+            }]
+          }
+        },
+        "effectiveDate" : {
+          "start" : "2020-03-09"
+        },
+        "organization" : [{
+          "identifier" : {
+            "system" : "https://spor.ema.europa.eu/v1/locations",
+            "value" : "LOC-100000004"
+          },
+          "display" : "Austrian Agency For Health And Food Safety"
+        }],
+        "confidentialityIndicator" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/200000004983",
+            "code" : "200000004984",
+            "display" : "Confidential"
+          }]
+        }
+      },
+      {
+        "type" : {
+          "concept" : {
+            "coding" : [{
+              "extension" : [{
+                "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+                "valueInteger" : 1
+              }],
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000160406",
+              "code" : "100000160463",
+              "display" : "Primary packaging"
+            }]
+          }
+        },
+        "effectiveDate" : {
+          "start" : "2020-03-09"
+        },
+        "organization" : [{
+          "identifier" : {
+            "system" : "https://spor.ema.europa.eu/v1/locations",
+            "value" : "LOC-100000004"
+          },
+          "display" : "Austrian Agency For Health And Food Safety"
+        }],
+        "confidentialityIndicator" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/200000004983",
+            "code" : "200000004984",
+            "display" : "Confidential"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "DocumentReference",
+      "id" : "Curocef1500mgPulver-A-HL-DocumentReference01",
+      "identifier" : [{
+        "system" : "https://spor.ema.europa.eu/v1/lists/100000000009/terms/200000024893",
+        "value" : "123"
+      }],
+      "status" : "current",
+      "type" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000155531",
+          "code" : "100000155532",
+          "display" : "Summary of Product Characteristics"
+        }]
+      },
+      "date" : "2017-07-01T00:00:00Z",
+      "content" : [{
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/documentLanguage",
+          "valueCoding" : {
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072178",
+            "display" : "German"
+          }
+        }],
+        "attachment" : {
+          "url" : "https://spor.ema.europa.eu/v2/documents/123"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "DocumentReference",
+      "id" : "Curocef1500mgPulver-A-HL-DocumentReference02",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/dateOfUpdate",
+        "valueDate" : "1900-01-01"
+      }],
+      "identifier" : [{
+        "system" : "https://spor.ema.europa.eu/v1/lists/100000000009/terms/CEP-number",
+        "value" : "Rn-CEP 1111-222-Rev 33"
+      }],
+      "status" : "current",
+      "type" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000070",
+          "code" : "X",
+          "display" : "Certificate of Suitability"
+        }]
+      },
+      "date" : "1900-01-01T00:00:00Z",
+      "content" : [{
+        "attachment" : {
+          "extension" : [{
+            "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
+            "valueCode" : "unsupported"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Curocef1500mgPulver-A-HL-RegulatedAuthorization01",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/manufacturingAuthorizationNumber",
+        "value" : "aM13/2021"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/authorisationTypeExample",
+          "code" : "220000000099",
+          "display" : "Manufacturing Authorisation"
+        }]
+      },
+      "regulator" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100000033"
+        },
+        "display" : "AIFA"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Curocef1500mgPulver-A-HL-RegulatedAuthorization01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Curocef1500mgPulver-A-HL-RegulatedAuthorization02",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/manufacturingAuthorizationNumber",
+        "value" : "aM13/2021"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/authorisationTypeExample",
+          "code" : "220000000099",
+          "display" : "Manufacturing Authorisation"
+        }]
+      },
+      "validityPeriod" : {
+        "start" : "2020-09-03"
+      },
+      "regulator" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100000033"
+        },
+        "display" : "AIFA"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Curocef1500mgPulver-A-HL-RegulatedAuthorization02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Curocef1500mgPulver-A-HL-RegulatedAuthorization03",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "16569"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000330",
+          "display" : "Austria"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2021-08-18",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100000004"
+        },
+        "display" : "Austrian Agency For Health And Food Safety"
+      },
+      "regulator" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-10000032"
+        },
+        "display" : "Health Products Regulatory Authority"
+      },
+      "case" : {
+        "identifier" : {
+          "system" : "http://ema.europa.eu/fhir/procedureIdentifierNumber",
+          "value" : "IE/H/0655/001"
+        },
+        "type" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000154442",
+            "code" : "100000155061",
+            "display" : "Mutual Recognition Procedure"
+          }]
+        },
+        "datePeriod" : {
+          "start" : "2009-10-29",
+          "end" : "2011-03-03"
+        },
+        "application" : [{
+          "identifier" : {
+            "system" : "http://ema.europa.eu/fhir/applicationIdentifierNumber",
+            "value" : "IE/H/0655/05/II/0015"
+          },
+          "type" : {
+            "coding" : [{
+              "extension" : [{
+                "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+                "valueInteger" : 1
+              }],
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000155688",
+              "code" : "100000155693",
+              "display" : "Variation Type II"
+            }]
+          },
+          "dateDateTime" : "2019-02-17"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Curocef1500mgPulver-A-HL-RegulatedAuthorization03"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Curocef1500mgPulver-A-HL-PackagedProductDefinition01",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pcId",
+        "value" : "128827001"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+      }],
+      "containedItemQuantity" : [{
+        "value" : 1,
+        "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+        "code" : "200000002164",
+        "_code" : {
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }]
+        }
+      }],
+      "description" : "Farblose Glasampulle mit einem Brombutylkautschuk-Stopfen und Aluminium-Verschluss mit aufklappbarem Kunststoffdeckel, die 1500 mg Cefuroxim (als Cefuroxim-Natrium) Pulver enthält ",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072178",
+            "display" : "German"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/riskOfSupplyShortage",
+          "valueCoding" : {
+            "system" : "http://ema.europa.eu/fhir/riskOfSupplyShortage",
+            "code" : "False",
+            "display" : "False"
+          }
+        }],
+        "country" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000330",
+            "display" : "Austria"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072074",
+            "display" : "Not Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "1979-09-13"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Curocef1500mgPulver-A-HL-PackagedProductDefinition01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Curocef1500mgPulver-A-HL-PackagedProductDefinition02",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pcId",
+        "value" : "128827002"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+      }],
+      "containedItemQuantity" : [{
+        "value" : 5,
+        "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+        "code" : "200000002164",
+        "_code" : {
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }]
+        }
+      }],
+      "description" : "Farblose Glasampulle mit einem Brombutylkautschuk-Stopfen und Aluminium-Verschluss mit aufklappbarem Kunststoffdeckel, die 1500 mg Cefuroxim (als Cefuroxim-Natrium) Pulver enthält ",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072178",
+            "display" : "German"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/riskOfSupplyShortage",
+          "valueCoding" : {
+            "system" : "http://ema.europa.eu/fhir/riskOfSupplyShortage",
+            "code" : "False",
+            "display" : "False"
+          }
+        }],
+        "country" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000330",
+            "display" : "Austria"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "1979-09-13"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Curocef1500mgPulver-A-HL-PackagedProductDefinition02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Curocef1500mgPulver-A-HL-PackagedProductDefinition03",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pcId",
+        "value" : "128827003"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+      }],
+      "containedItemQuantity" : [{
+        "value" : 1,
+        "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+        "code" : "200000002164",
+        "_code" : {
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 50
+          }]
+        }
+      }],
+      "description" : "Farblose Glasampulle mit einem Brombutylkautschuk-Stopfen und Aluminium-Verschluss mit aufklappbarem Kunststoffdeckel, die 1500 mg Cefuroxim (als Cefuroxim-Natrium) Pulver enthält ",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072178",
+            "display" : "German"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/riskOfSupplyShortage",
+          "valueCoding" : {
+            "system" : "http://ema.europa.eu/fhir/riskOfSupplyShortage",
+            "code" : "False",
+            "display" : "False"
+          }
+        }],
+        "country" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000330",
+            "display" : "Austria"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "extension" : [{
+              "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+              "valueInteger" : 1
+            }],
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072074",
+            "display" : "Not Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "1979-09-13"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Curocef1500mgPulver-A-HL-PackagedProductDefinition03"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Curocef1500mgPulver-A-HL-ManufacturedItemDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/subject",
+        "valueReference" : {
+          "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+        }
+      }],
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000116186",
+          "display" : "Powder for solution for injection/infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002164",
+          "display" : "Ampoule"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Curocef1500mgPulver-A-HL-ManufacturedItemDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Curocef1500mgPulver-A-HL-AdministrableProductDefinition",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074038",
+          "display" : "Solution for injection/infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002164",
+          "display" : "Ampoule"
+        }]
+      },
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073600",
+            "display" : "Intramuscular use"
+          }]
+        }
+      },
+      {
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Curocef1500mgPulver-A-HL-AdministrableProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ClinicalUseDefinition",
+      "id" : "Curocef1500mgPulver-A-HL-ClinicalUseDefinition",
+      "type" : "indication",
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+      }],
+      "indication" : {
+        "diseaseSymptomProcedure" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000000006",
+              "code" : "100000026489",
+              "display" : "Heartburn"
+            }]
+          }
+        },
+        "intendedEffect" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v1/lists/intendedEffect",
+              "code" : "X",
+              "display" : "Treatment"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ClinicalUseDefinition/Curocef1500mgPulver-A-HL-ClinicalUseDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Curocef1500mgPulver-A-HL-Ingredient",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/masterFile",
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/masterFileManufacturer",
+          "valueIdentifier" : {
+            "system" : "https://spor.ema.europa.eu/v1/locations",
+            "value" : "LOC-100002256"
+          }
+        }],
+        "valueReference" : {
+          "reference" : "DocumentReference/Curocef1500mgPulver-A-HL-DocumentReference02"
+        }
+      },
+      {
+        "url" : "http://ema.europa.eu/fhir/extension/subject",
+        "valueReference" : {
+          "reference" : "MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"
+        }
+      }],
+      "status" : "active",
+      "role" : {
+        "coding" : [{
+          "extension" : [{
+            "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+            "valueInteger" : 1
+          }],
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "extension" : [{
+                "url" : "http://ema.europa.eu/fhir/extension/substanceVersion",
+                "valueInteger" : 20
+              }],
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000091436",
+              "display" : "CEFUROXIME SODIUM"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 1578,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "extension" : [{
+                      "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+                      "valueInteger" : 1
+                    }],
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655",
+              "_code" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/termVersion",
+                  "valueInteger" : 1
+                }]
+              }
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "ampoule",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002164"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000092667",
+                  "display" : "Cefuroxime"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 1500,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "ampoule",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002164"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Curocef1500mgPulver-A-HL-Ingredient"
+    }
+  }]
+}

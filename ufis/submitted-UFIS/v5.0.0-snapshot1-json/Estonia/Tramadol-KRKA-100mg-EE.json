@@ -1,0 +1,325 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MPD",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073683",
+          "display" : "Prolonged-release tablet"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "EE-100009540-12260"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000035",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000097261",
+          "display" : "Tramadol"
+        },
+        {
+          "system" : "http://www.whocc.no/atc",
+          "code" : "N02AX02",
+          "display" : "Tramadol"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Tramadol Krka, 100 mg toimeainet prolongeeritult vabastavad tabletid"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MPD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-RA",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "331200"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MPD"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000388",
+          "display" : "Republic of Estonia"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "200000017708",
+          "display" : "Valid - Renewed/Varied"
+        }]
+      },
+      "statusDate" : "2022-06-28",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100009540"
+        },
+        "display" : "KRKA, d.d., Novo mesto"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-RA"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-APD",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MPD"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073683",
+          "display" : "Prolonged-release tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MID"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-APD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MID",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073683",
+          "display" : "Prolonged-release tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MID"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-I",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MPD"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MID"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-APD"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000093275",
+              "display" : "Tramadol hydrochloride"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 100,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "tablet",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000077198",
+                  "display" : "Tramadol"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 87.84,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "tablet",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-I"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-PPD-1043525",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 30,
+          "unit" : "tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/example/pcid",
+        "value" : "EE-100009540-12260-1043525"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-MPD"
+      }],
+      "description" : "100 mg toimeainet prolongeeritult vabastavad tabletid Al/PVC blisterpakendis – 30 tk.",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072172",
+            "display" : "Estonian"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000388",
+            "display" : "Republic of Estonia"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Tramadol-KRKA-100mg-Prolonged-release-tablet-EE-PPD-1043525"
+    }
+  }]
+}

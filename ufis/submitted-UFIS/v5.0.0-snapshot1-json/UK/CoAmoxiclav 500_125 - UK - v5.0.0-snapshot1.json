@@ -1,0 +1,490 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "241f0c57-0281-46f9-b6a7-c709b8f19f01",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "JMJ-Co-amoxiclav-product-example",
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/medicinal-product-type",
+          "code" : "MedicinalProduct",
+          "display" : "Medicinal Product"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000025915",
+          "code" : "200000025916",
+          "display" : "Authorised Medicinal Product"
+        }]
+      },
+      "domain" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/medicinal-product-domain",
+          "code" : "Human",
+          "display" : "Human use"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/publication-status",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "statusDate" : "2022-02-21",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/legal-status-of-supply",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "https://www.whocc.no/atc_ddd_index/",
+          "code" : "J01CR02",
+          "display" : "amoxicillin and beta-lactamase inhibitor"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000096162",
+          "display" : "amoxicillin and beta-lactamase inhibitor"
+        }]
+      }],
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "GB",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000556",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "xx",
+            "code" : "xx",
+            "display" : "xx"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "2009-03-25"
+        }
+      }],
+      "name" : [{
+        "productName" : "Co-amoxiclav 500 mg/125 mg film-coated tablets"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/JMJ-Co-amoxiclav-product-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "JMJ-Co-amoxiclav-authorisation-example",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "la-la-la-la"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/JMJ-Co-amoxiclav-product-example"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072055",
+          "code" : "100000072062",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000556",
+          "display" : "United Kingdom of Great Britain and Northern Ireland"
+        },
+        {
+          "system" : "http://terminology.hl7.org/CodeSystem/iso3166-1edition2",
+          "code" : "GBR",
+          "display" : "United Kingdom of Great Britain and Northern Ireland"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2021-03-25",
+      "holder" : {
+        "display" : "Reference for Aurobindo Pharma - Milpharm Ltd"
+      },
+      "regulator" : {
+        "display" : "Reference for Medicines and Healthcare products Regulatory Agency"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/JMJ-Co-amoxiclav-authorisation-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "JMJ-Co-amoxiclav-package-example",
+      "name" : "Co-amoxiclav 500 mg/125 mg film-coated tablets Milpharm Limited; pack of 21 tablets",
+      "packageFor" : [{
+        "reference" : "ManufacturedItemDefinition/JMJ-Co-amoxiclav-product-example"
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/publication-status",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "statusDate" : "2022-02-21",
+      "containedItemQuantity" : [{
+        "value" : 21
+      }],
+      "legalStatusOfSupply" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/legal-status-of-supply",
+            "code" : "100000072084",
+            "display" : "Medicinal product subject to medical prescription"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+            "code" : "100000072084",
+            "display" : "Medicinal product subject to medical prescription"
+          }]
+        }
+      }],
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "GB",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000556",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "xx",
+            "code" : "xx",
+            "display" : "xx"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "2009-03-25"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/JMJ-Co-amoxiclav-package-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "JMJ-Co-amoxiclav-manufactured-item-example",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "10221000",
+          "display" : "Film-coated tablet"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073665",
+          "display" : "Film-coated tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "15054000",
+          "display" : "Tablet"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/JMJ-Co-amoxiclav-manufactured-item-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "JMJ-Co-amoxiclav-ingredient-example",
+      "status" : "active",
+      "for" : [{
+        "reference" : "JMJ_Co-amoxiclav_manufactured_item_example"
+      },
+      {
+        "reference" : "JMJ_Co-amoxiclav_AdminProduct_example"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/ingredient-role",
+          "code" : "100000072072",
+          "display" : "Active"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000092629",
+              "display" : "amoxicillin trihydrate"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "96068000",
+              "display" : "amoxicillin trihydrate (substance)"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 574,
+              "unit" : "mg",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "mg"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Tablet",
+              "system" : "https://standardterms.edqm.eu/",
+              "code" : "15054000"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000091596",
+                  "display" : "amoxicillin (anhydrous)"
+                },
+                {
+                  "system" : "http://snomed.info/sct",
+                  "code" : "785686003",
+                  "display" : "amoxicillin anhydrous (substance)"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 500,
+                "unit" : "mg",
+                "system" : "http://unitsofmeasure.org",
+                "code" : "mg"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Tablet",
+                "system" : "https://standardterms.edqm.eu/",
+                "code" : "15054000"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/JMJ-Co-amoxiclav-ingredient-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "JMJ-Co-amoxiclav-ingredient-example-2",
+      "status" : "active",
+      "for" : [{
+        "reference" : "JMJ-Co-amoxiclav-manufactured-item-example"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/ingredient-role",
+          "code" : "100000072072",
+          "display" : "Active"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000093061",
+              "display" : "potassium clavunate"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "395938000",
+              "display" : "clavunate potassium (substance)"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 298,
+              "unit" : "mg",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "mg"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Tablet",
+              "system" : "https://standardterms.edqm.eu/",
+              "code" : "15054000"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000089842",
+                  "display" : "clavulanic acid"
+                },
+                {
+                  "system" : "http://snomed.info/sct",
+                  "code" : "395939008",
+                  "display" : "clavulanic acid (substance)"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 125,
+                "unit" : "mg",
+                "system" : "http://unitsofmeasure.org",
+                "code" : "mg"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Tablet",
+                "system" : "https://standardterms.edqm.eu/",
+                "code" : "15054000"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/JMJ-Co-amoxiclav-ingredient-example-2"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "JMJ-Co-amoxiclav-AdminProduct-example",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "ManufacturedItemDefinition/JMJ-Co-amoxiclav-product-example"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "10221000",
+          "display" : "Film-coated tablet"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073665",
+          "display" : "Film-coated tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "15054000",
+          "display" : "Tablet"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/JMJ-Co-amoxiclav-manufactured-item-example"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://standardterms.edqm.eu/",
+            "code" : "20053000",
+            "display" : "Oral use"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/JMJ-Co-amoxiclav-AdminProduct-example"
+    }
+  }]
+}

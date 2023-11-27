@@ -1,0 +1,332 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "EnoxaparinLedraxen2000IEinjektion-SE-PLC-MedicinalProductDef",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008",
+          "code" : "100000074047",
+          "display" : "Solution for injection in pre-filled syringe"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100003311-00054214"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "10833"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Enoxaparin Becat är avsett för vuxna för:  Profylax mot venös tromboembolism, hos patienter med måttlig och hög risk särskilt i samband med ortopedisk, allmän eller onkologisk kirurgi  Profylax av venös tromboembolism hos patienter i sängläge på grund av akut sjukdom som till exempel akut hjärtsvikt, akut andningssvikt, allvarlig infektion samt förvärrad reumatoid sjukdom som orsakar immobilisering av patienten  Behandling av djup ventrombos (DVT) och lungemboli med undantag av lungemboli (LE) som förutsätter trombolytisk terapi eller kirurgi  Trombosprofylax i den extrakorporeala cirkulationen under hemodialys  Akut kranskärlssjukdom:  Behandling av instabil angina och myokardinfarkt med icke ST-höjning (NSTEMI) i kombination med per oral ASA (acetylsalicylsyra).  Behandling av akut hjärtinfarkt med ST-höjning (STEMI), inkluderande patienter som ska få konservativ behandling eller som senare ska behandlas med koronarangioplastik (PCI).",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000094266",
+          "display" : "B01AB05"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Enoxaparin Ledraxen 2000 IE (20 mg)/0,2 ml injektionsvätska, lösning i förfylld spruta"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-MedicinalProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "EnoxaparinLedraxen2000IEinjektion-SE-PLC-RegAutho",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "54214"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-MedicinalProductDef"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2019-04-09",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100002081"
+        },
+        "display" : "VENIPHARM"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "2019-04-09"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/EnoxaparinLedraxen2000IEinjektion-SE-PLC-RegAutho"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "EnoxaparinLedraxen2000IEinjektion-SE-PLC-AdminProductDef",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-MedicinalProductDef"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-ManufacturedItemDef"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          },
+          {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073633",
+            "display" : "Subcutaneous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-AdminProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "EnoxaparinLedraxen2000IEinjektion-SE-PLC-PackageProductDef",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 10,
+          "unit" : "Syringe",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002150"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-MedicinalProductDef"
+      }],
+      "description" : "Förfylld spruta, 10 st (utan säkerhetssystem)",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-PackageProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "EnoxaparinLedraxen2000IEinjektion-SE-PLC-ManufacturedItemDef",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002150",
+          "display" : "Syringe"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-ManufacturedItemDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "EnoxaparinLedraxen2000IEinjektion-SE-PLC-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/EnoxaparinLedraxen2000IEinjektion-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000090152",
+              "display" : "Enoxaparin sodium"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 20,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 0.2,
+              "unit" : "millilitre(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110662"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000085598",
+                  "display" : "Enoxaparin"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 2000,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "international unit(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 0.2,
+                "unit" : "millilitre(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110662"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/EnoxaparinLedraxen2000IEinjektion-SE-PLC-Ingredient"
+    }
+  }]
+}

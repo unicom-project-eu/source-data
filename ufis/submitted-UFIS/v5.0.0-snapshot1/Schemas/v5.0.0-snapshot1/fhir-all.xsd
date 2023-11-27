@@ -54,7 +54,7 @@ Copyright (c) 2011+, HL7, Inc
   <xs:include schemaLocation="claimresponse.xsd"/>
   <xs:include schemaLocation="clinicalimpression.xsd"/>
   <xs:include schemaLocation="clinicalusedefinition.xsd"/>
-  <xs:include schemaLocation="clinicaluseissue.xsd"/>
+  <xs:include schemaLocation="ClinicalUseDefinition.xsd"/>
   <xs:include schemaLocation="codesystem.xsd"/>
   <xs:include schemaLocation="communication.xsd"/>
   <xs:include schemaLocation="communicationrequest.xsd"/>

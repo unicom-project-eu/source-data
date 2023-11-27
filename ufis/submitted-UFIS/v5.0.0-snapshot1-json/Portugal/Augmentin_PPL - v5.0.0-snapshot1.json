@@ -1,0 +1,366 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "0a95e4d8-a8e1-464c-ac0b-a72be30e129b",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "bb8c2306-04c5-42df-94c9-aa6d6e68050b",
+      "classification" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533/terms/100000096162",
+          "code" : "100000096162",
+          "display" : "amoxicillin and beta-lactamase inhibitor"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Augmentin 500 mg + 125 mg Comprimido revestido por película"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "e571fcab-5886-473a-b627-f72238cd4cdd",
+      "contained" : [{
+        "resourceType" : "Organization",
+        "id" : "1",
+        "identifier" : [{
+          "system" : "https://spor.ema.europa.eu/v1/locations/LOC-100002296",
+          "value" : "LOC-100002296"
+        }]
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060/terms/220000000061",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "holder" : {
+        "reference" : "#1",
+        "display" : "Glaxosmithkline Produtos Farmaceuticos Lda."
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/e571fcab-5886-473a-b627-f72238cd4cdd"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "0cf52436-fced-4094-bc1f-01ad656685b6",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/subject",
+        "valueReference" : {
+          "reference" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+        }
+      }],
+      "status" : "active",
+      "for" : [{
+        "reference" : "AdministrableProductDefinition/441340e6-207a-4c61-b22d-de5c482c7090"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/cade57d9-734e-4b1a-83a0-743b8af67174"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050/terms/100000072072",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000092629",
+              "display" : "Amoxicilina tri-hidratada"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 573.96,
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1.0,
+              "unit" : "Tablet",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000091596",
+                  "display" : "Amoxicilina"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 500.0,
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1.0,
+                "unit" : "Tablet",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/0cf52436-fced-4094-bc1f-01ad656685b6"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "2610c7f0-08df-4c37-b09b-1ed6fdad5389",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/subject",
+        "valueReference" : {
+          "reference" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+        }
+      }],
+      "status" : "active",
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050/terms/100000072072",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000093061",
+              "display" : "Clavulanato de potássio"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 148.91,
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1.0,
+              "unit" : "Tablet",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000089842",
+                  "display" : "Ácido Clavulânico"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 125.0,
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633/terms/100000110655",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1.0,
+                "unit" : "Tablet",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/2610c7f0-08df-4c37-b09b-1ed6fdad5389"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "cade57d9-734e-4b1a-83a0-743b8af67174",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004/terms/100000073665",
+          "code" : "100000073665",
+          "display" : "Film-coated tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/cade57d9-734e-4b1a-83a0-743b8af67174"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "e90fb5fe-5531-4280-865e-745865deb686",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 12,
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+      }],
+      "description" : "12 comprimido blister",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072057/terms/100000072251",
+            "code" : "100000072251",
+            "display" : "Portuguese"
+          }
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/e90fb5fe-5531-4280-865e-745865deb686"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "b50a5d28-02bd-4a16-9715-3e227a4be7d7",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 16,
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+      }],
+      "description" : "16 comprimido blister",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072057/terms/100000072251",
+            "code" : "100000072251",
+            "display" : "Portuguese"
+          }
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/b50a5d28-02bd-4a16-9715-3e227a4be7d7"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "c03f532c-7506-412b-8b8d-518b6205970d",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 30,
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+      }],
+      "description" : "30 comprimido blister",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072057/terms/100000072251",
+            "code" : "100000072251",
+            "display" : "Portuguese"
+          }
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/c03f532c-7506-412b-8b8d-518b6205970d"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "441340e6-207a-4c61-b22d-de5c482c7090",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/bb8c2306-04c5-42df-94c9-aa6d6e68050b"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004/terms/100000073665",
+          "code" : "100000073665",
+          "display" : "Film-coated tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014/terms/200000002152",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      },
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345/terms/100000073619",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/441340e6-207a-4c61-b22d-de5c482c7090"
+    }
+  }]
+}

@@ -1,0 +1,355 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "ABASAGLAR-100eml-Solution-SE-IS-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "200000016493",
+          "display" : "Solution for injection in cartridge"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100000426-00049703"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "1751"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Behandling av diabetes mellitus hos vuxna, ungdomar och barn från 2 års ålder.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000116677",
+          "code" : "100000093533",
+          "display" : "A10AE04"
+        }]
+      },
+      {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000154442",
+          "code" : "100000155059",
+          "display" : "Centralised procedure"
+        }]
+      },
+      {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000160962",
+          "code" : "200000027129",
+          "display" : "CHMP Rapporteur"
+        },
+        {
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000160962",
+          "code" : "200000027126",
+          "display" : "PRAC Co-Rapporteur"
+        }]
+      }],
+      "name" : [{
+        "productName" : "ABASAGLAR 100 enheter/ml Injektionsvätska, lösning i cylinderampull"
+      }],
+      "characteristic" : [{
+        "type" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000155526",
+            "code" : "100000155530",
+            "display" : "Biological Medicinal Product"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-MedicinalProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "ABASAGLAR-100eml-Solution-SE-IS-RegulatedAuthorization",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "49703"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2014-09-09",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100005434"
+        },
+        "display" : "Eli Lilly Nederland B.V."
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "2014-09-09"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/ABASAGLAR-100eml-Solution-SE-IS-RegulatedAuthorization"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "ABASAGLAR-100eml-Solution-SE-IS-AdministrableProductDefinition",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/ABASAGLAR-100eml-Solution-SE-IS-ManufacturedItemDefinition"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073633",
+            "display" : "Subcutaneous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-AdministrableProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "ABASAGLAR-100eml-Solution-SE-IS-PackagedProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 5,
+          "unit" : "Cartridge",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002114"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-MedicinalProductDefinition"
+      }],
+      "description" : "Cylinderampull, 5 st (5 x 3 ml)",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-PackagedProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "ABASAGLAR-100eml-Solution-SE-IS-ManufacturedItemDefinition",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "200000016493",
+          "display" : "Solution for injection in cartridge"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002114",
+          "display" : "Cartridge"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/ABASAGLAR-100eml-Solution-SE-IS-ManufacturedItemDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "ABASAGLAR-100eml-Solution-SE-IS-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/ABASAGLAR-100eml-Solution-SE-IS-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/ABASAGLAR-100eml-Solution-SE-IS-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000085460",
+              "display" : "Insulin glargine"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 100,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "unit(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110756"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "millilitre(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110662"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000085460",
+                  "display" : "Insulin glargine"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 100,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "unit(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110756"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "millilitre(s)",
+                "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110662"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/ABASAGLAR-100eml-Solution-SE-IS-Ingredient"
+    }
+  }]
+}

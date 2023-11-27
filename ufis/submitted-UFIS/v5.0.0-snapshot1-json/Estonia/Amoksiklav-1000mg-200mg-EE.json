@@ -1,0 +1,424 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MPD",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000116186",
+          "display" : "Powder for solution for injection/infusion"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "EE-100002893-9157"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000096162",
+          "display" : "amoxicillin and beta-lactamase inhibitor"
+        },
+        {
+          "system" : "http://www.whocc.no/atc",
+          "code" : "J01CR02",
+          "display" : "Amoxicillin and beta-lactamase inhibitor"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Amoksiklav, 1000 mg/200 mg süste-/infusioonilahuse pulber"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MPD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-RA",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "149896"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MPD"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000388",
+          "display" : "Republic of Estonia"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "200000017708",
+          "display" : "Valid - Renewed/Varied"
+        }]
+      },
+      "statusDate" : "2013-02-05",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100002893"
+        },
+        "display" : "Sandoz Pharmaceuticals d.d."
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-RA"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-APD",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MPD"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074038",
+          "display" : "Solution for injection/infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MID"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-APD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MID",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000074038",
+          "display" : "Solution for injection/infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MID"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-I-90113",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MPD"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MID"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-APD"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000090113",
+              "display" : "Amoxicillin sodium"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 1000,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000051",
+                    "display" : "more than"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "vial",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002158"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000091596",
+                  "display" : "Amoxicillin"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 1000,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Vial",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002158"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-I-90113"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-I-93061",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MPD"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MID"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-APD"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000093061",
+              "display" : "Potassium clavulanate"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 200,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000051",
+                    "display" : "more than"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "vial",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002158"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000089842",
+                  "display" : "CLAVULANIC ACID"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 200,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Vial",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002158"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-I-93061"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-PPD",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 5,
+          "unit" : "vial",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/example/pcid",
+        "value" : "EE-100002893-9157-1017694"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-MPD"
+      }],
+      "description" : "Amoksiklav’i süste-/infusioonilahuse pulber on pakendatud värvitust klaasist viaalidesse ning suletud  kummikorgi ja alumiiniumist korgikaitsega.  Viaalid on pakendatud karpi. 5 viaali karbis.",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072172",
+            "display" : "Estonian"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000388",
+            "display" : "Republic of Estonia"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Amoksiklav-1000mg-200mg-powder-for-solution-inj-inf-EE-PPD"
+    }
+  }]
+}

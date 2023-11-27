@@ -1673,10 +1673,10 @@
           <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ClinicalUseIssue">
+      <xs:enumeration value="ClinicalUseDefinition">
         <xs:annotation>
-          <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>
-          <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>
+          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
+          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Communication">
@@ -2984,7 +2984,7 @@
       <xs:element ref="ClaimResponse"/>
       <xs:element ref="ClinicalImpression"/>
       <xs:element ref="ClinicalUseDefinition"/>
-      <xs:element ref="ClinicalUseIssue"/>
+      <xs:element ref="ClinicalUseDefinition"/>
       <xs:element ref="CodeSystem"/>
       <xs:element ref="Communication"/>
       <xs:element ref="CommunicationRequest"/>

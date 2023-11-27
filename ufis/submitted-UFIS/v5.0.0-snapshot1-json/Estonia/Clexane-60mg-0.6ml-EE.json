@@ -1,0 +1,290 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Clexane-60mg-0.6ml-sol-inj-EE-MPD",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection "
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "EE-100001368-34217"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000027",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000094266",
+          "display" : "Enoxaparin"
+        },
+        {
+          "system" : "http://www.whocc.no/atc",
+          "code" : "B01AB05",
+          "display" : "Enoxaparin"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Clexane, 6000 RÜ (60 mg)/0,6 ml süstelahus süstlis"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MPD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Clexane-60mg-0.6ml-sol-inj-EE-RA",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "940517"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MPD"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000388",
+          "display" : "Republic of Estonia"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "200000017708",
+          "display" : "Valid - Renewed/Varied"
+        }]
+      },
+      "statusDate" : "2022-06-28",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100001368"
+        },
+        "display" : "Sanofi-Aventis Groupe"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Clexane-60mg-0.6ml-sol-inj-EE-RA"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Clexane-60mg-0.6ml-sol-inj-EE-APD",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MPD"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002150",
+          "display" : "Syringe"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MID"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073633",
+            "display" : "Subcutaneous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-APD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Clexane-60mg-0.6ml-sol-inj-EE-MID",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073863",
+          "display" : "Solution for injection"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002150",
+          "display" : "Syringe"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MID"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Clexane-60mg-0.6ml-sol-inj-EE-I",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MPD"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MID"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-APD"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000090152",
+              "display" : "Enoxaparin sodium"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 60,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : " milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 0.6,
+              "unit" : "millilitre(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110662"
+            }
+          }
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Clexane-60mg-0.6ml-sol-inj-EE-I"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Clexane-60mg-0.6ml-sol-inj-EE-PPD-1065552",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 2,
+          "unit" : "Syringe",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002150"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/example/pcid",
+        "value" : "EE-100001368-34217-1065552"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-MPD"
+      }],
+      "description" : "CLEXANE 6000 RÜ (60 mg)/0,6 ml: süstelahus süstlites (I tüüpi klaas), mis on varustatud kummikorgiga (klorobutüül ja bromobutüül) ning süstimisnõelaga (automaatse ohutussüsteemiga ERIS™ või PREVENTIS™ või ilma). ",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072172",
+            "display" : "Estonian"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000388",
+            "display" : "Republic of Estonia"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Clexane-60mg-0.6ml-sol-inj-EE-PPD-1065552"
+    }
+  }]
+}

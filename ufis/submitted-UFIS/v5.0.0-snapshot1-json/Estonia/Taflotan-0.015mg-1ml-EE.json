@@ -1,0 +1,332 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073759",
+          "display" : "Eye drops, solution "
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pmsId",
+        "value" : "0000000000031"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "EE-100003380-34660"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        },
+        {
+          "system" : "http://hl7.org/fhir/publication-status",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal Product subject to medical prescription"
+        }]
+      },
+      "additionalMonitoringIndicator" : {
+        "coding" : [{
+          "system" : "http://ema.europa.eu/fhir/additionalMonitoringIndicator",
+          "code" : "False",
+          "display" : "False"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000098531",
+          "display" : "Tafluprost"
+        },
+        {
+          "system" : "http://www.whocc.no/atc",
+          "code" : "S01EE05",
+          "display" : "Tafluprost "
+        }]
+      }],
+      "name" : [{
+        "productName" : "Taflotan, 15 mikrogrammi/ml silmatilgad, lahus"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Taflotan-0.015mg-1ml-eye-drops-solution-EE-RA",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "963218"
+      }],
+      "subject" : [{
+        "reference" : "Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000388",
+          "display" : "Republic of Estonia"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2018-04-03",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100003380"
+        },
+        "display" : "Santen Oy"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Taflotan-0.015mg-1ml-eye-drops-solution-EE-RA"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Taflotan-0.015mg-1ml-eye-drops-solution-EE-APD",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073759",
+          "display" : "Eye drops, solution"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002121",
+          "display" : "Drop"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073617",
+            "display" : "Ocular use "
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-APD"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073759",
+          "display" : "Eye drops, solution"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002111",
+          "display" : "Bottle"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Taflotan-0.015mg-1ml-eye-drops-solution-EE-I",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MID"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-APD"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000115886",
+              "display" : "Tafluprost"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 0.45,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "microgram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110656"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Drop",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002121"
+            }
+          }
+        },
+        {
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 15,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "microgram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110656"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "millilitre(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110662"
+            }
+          }
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Taflotan-0.015mg-1ml-eye-drops-solution-EE-I"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Taflotan-0.015mg-1ml-eye-drops-solution-EE-PPD-1753703",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 1,
+          "unit" : "Bottle",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002111"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/example/pcid",
+        "value" : "EE-EE-100003380-34660-1753703"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-MPD"
+      }],
+      "description" : "Läbipaistvad väikese tihedusega polüetüleenpudelid (LDPE) valge Aptari tilgutiga (polüetüleen, polüpropüleen, tsükliline olefiin-kopolümeer), mis on kaetud sinise polüetüleenkorgiga. Iga pudel  sisaldab 3 ml, 5 ml või 7 ml lahust.",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072172",
+            "display" : "Estonian"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000388",
+            "display" : "Republic of Estonia"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Taflotan-0.015mg-1ml-eye-drops-solution-EE-PPD-1753703"
+    }
+  }]
+}

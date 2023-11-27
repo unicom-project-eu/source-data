@@ -1,0 +1,467 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "20131217000072",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "7f81d47e-9a74-44b3-8ed7-07990093d878",
+      "language" : "EN",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073665",
+          "display" : "Film-coated tablet"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pmsId",
+        "value" : "???????"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100002602-00000001"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "188"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "indication" : "Betaklav är indicerat för behandling av nedanstående infektioner hos vuxna och barn (se avsnitt 4.2,  4.4 och 5.1): - akut bakteriell sinuit (adekvat diagnostiserad) - akut otitis media - akuta exacerbationer av kronisk bronkit (adekvat diagnostiserad) - samhällsförvärvad pneumoni - cystit - pyelonefrit - hud- och mjukdelsinfektioner, särskilt cellulit, djurbett, allvarlig dental abscess med spridande  cellulit - skelett- och ledinfektioner, särskilt osteomyelit Hänsyn ska tas till officiella riktlinjer för lämplig användning av antibiotika.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000096162",
+          "display" : "J01CR02"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Betaklav 500 mg/125 mg Filmdragerad tablett"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "33c2e253-9fa1-4e25-a139-421b08cec073",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "50618"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2015-08-20",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100000551"
+        },
+        "display" : "KRKA Sverige AB"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "2015-08-20"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/33c2e253-9fa1-4e25-a139-421b08cec073"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "20170630100099",
+      "language" : "EN",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 30,
+          "unit" : "tablets"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pcId",
+        "value" : "SE-100002602-00000001-001"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+      }],
+      "description" : "Blister, 30 tabletter",
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "2017-06-15"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/20170630100099"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "36b84906-a340-4af5-9225-4cab812e8003",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/subject",
+        "valueReference" : {
+          "reference" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+        }
+      }],
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073665",
+          "display" : "Film-coated tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/36b84906-a340-4af5-9225-4cab812e8003"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "aec1db58-eecd-4e7b-a93f-2bab1ad8f768",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/subject",
+        "valueReference" : {
+          "reference" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+        }
+      }],
+      "status" : "active",
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000092629",
+              "display" : "amoxicillin trihydrate"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 573.9,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "tablet",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000091596",
+                  "display" : "amoxicillin (anhydrous)"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 500,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "tablet",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/aec1db58-eecd-4e7b-a93f-2bab1ad8f768"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "231a6723-8958-4ea9-adbc-53708a41d62c",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/subject",
+        "valueReference" : {
+          "reference" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+        }
+      }],
+      "status" : "active",
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000093061",
+              "display" : "potassium clavulanate"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 148.9,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "tablet",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000089842",
+                  "display" : "clavulanic acid"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 125,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "tablet",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/231a6723-8958-4ea9-adbc-53708a41d62c"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "20170630100020",
+      "language" : "EN",
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/5.0/StructureDefinition/extension-PackagedProductDefinition.containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 10,
+          "unit" : "tablets"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/pcId",
+        "value" : "SE-100002602-00000001-002"
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+      }],
+      "description" : "Blister 10 tablets",
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072074",
+            "display" : "Not marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "2017-06-15"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/20170630100020"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "5518a708-50e4-46eb-bd47-fc7915290566",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/7f81d47e-9a74-44b3-8ed7-07990093d878"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073665",
+          "display" : "Film-coated tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      },
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/5518a708-50e4-46eb-bd47-fc7915290566"
+    }
+  }]
+}

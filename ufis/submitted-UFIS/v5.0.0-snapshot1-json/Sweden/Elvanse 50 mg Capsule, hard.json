@@ -1,0 +1,398 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Elvanse-50mg-Capsule-SE-AJ-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073375",
+          "display" : "Capsule, hard"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100000607-00047383"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "10289"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Elvanse är indicerat som en del i ett omfattande behandlingsprogram anpassat för ADHD (Attention Deficit Hyperactivity Disorder, Uppmärksamhetsstörning/Hyperaktivitet)  hos barn i åldern 6 år och äldre, när svar på tidigare behandling med metylfenidat bedöms vara kliniskt otillräckligt. Behandlingen ska ske under överinseende av specialist på beteendestörningar hos barn och/eller ungdomar.  Diagnos ska ställas enligt kriterierna i DSM eller riktlinjerna i ICD och ska grundas på fullständig anamnes och utvärdering av patienten.  Diagnos kan inte ställas enbart på närvaro av ett eller flera symtom. Den specifika etiologin för detta syndrom är okänd, och det finns inget enstaka diagnostiskt test.  Adekvat diagnos kräver användning av såväl medicinska som specialiserade psykologiska, pedagogiska och sociala resurser.  Ett omfattande behandlingsprogram karaktäriseras av psykologiska, pedagogiska och sociala åtgärder såväl som farmakoterapi och har som målsättning att  stabilisera barn med ett beteendesyndrom karaktäriserat av symtom som kan inkludera kronisk anamnes av kort uppmärksamhetsperiod, distraherbarhet, emotionell labilitet,  impulsivitet, måttlig till svår hyperaktivitet, mindre uttalade neurologiska tecken och onormalt EEG. Syndromet kan förekomma både med och utan inlärningssvårigheter. Behandling med Elvanse är inte indicerat för alla barn med ADHD och beslutet att använda läkemedlet måste grundas på en mycket noggrann bedömning av  svårighetsgrad och kronicitet av barnets symtom i förhållande till barnets ålder och risk för missbruk, felanvändning eller avvikande användning. Tillgång till lämplig undervisningsform är väsentlig, och psykosocial intervention är i allmänhet nödvändigt.  Användning av Elvanse ska alltid ske på detta sätt enligt godkänd indikation.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072085",
+          "display" : "Medicinal product subject to special medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000125051",
+          "display" : "N06BA12"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Elvanse 50 mg Kapsel, hård"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Elvanse-50mg-Capsule-SE-AJ-MedicinalProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Elvanse-50mg-Capsule-SE-AJ-RegulatedAuthorization",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "47383"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Elvanse-50mg-Capsule-SE-AJ-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2013-07-22",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100011567"
+        },
+        "display" : "Shire Pharmaceuticals Ireland Limited"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "2013-07-22"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Elvanse-50mg-Capsule-SE-AJ-RegulatedAuthorization"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Elvanse-50mg-Capsule-SE-AJ-AdministrableProductDefinition01",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Elvanse-50mg-Capsule-SE-AJ-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073375",
+          "display" : "Capsule, hard"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Elvanse-50mg-Capsule-SE-AJ-ManufacturedItemDefinition"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Elvanse-50mg-Capsule-SE-AJ-AdministrableProductDefinition01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Elvanse-50mg-Capsule-SE-AJ-AdministrableProductDefinition02",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Elvanse-50mg-Capsule-SE-AJ-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073646",
+          "display" : "Oral solution"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Elvanse-50mg-Capsule-SE-AJ-ManufacturedItemDefinition"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Elvanse-50mg-Capsule-SE-AJ-AdministrableProductDefinition02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Elvanse-50mg-Capsule-SE-AJ-PackagedProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 30,
+          "unit" : "Capsule",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002113"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Elvanse-50mg-Capsule-SE-AJ-MedicinalProductDefinition"
+      }],
+      "description" : "Burk, 30 kapslar",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Elvanse-50mg-Capsule-SE-AJ-PackagedProductDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Elvanse-50mg-Capsule-SE-AJ-ManufacturedItemDefinition",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073375",
+          "display" : "Capsule, hard"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002113",
+          "display" : "Capsule"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Elvanse-50mg-Capsule-SE-AJ-ManufacturedItemDefinition"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Elvanse-50mg-Capsule-SE-AJ-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Elvanse-50mg-Capsule-SE-AJ-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Elvanse-50mg-Capsule-SE-AJ-ManufacturedItemDefinition"
+      },
+      {
+        "reference" : "AdministrableProductDefinitionElvanse-50mg-Capsule-SE-AJ-AdministrableProductDefinition01"
+      },
+      {
+        "reference" : "AdministrableProductDefinitionElvanse-50mg-Capsule-SE-AJ-AdministrableProductDefinition02"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000124520",
+              "display" : "lisdexamfetamine dimesylate"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 50,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Capsule",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002113"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000124476",
+                  "display" : "lisdexamfetamine"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 28.83,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Capsule",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002113"
+              }
+            }
+          },
+          {
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000088421",
+                  "display" : "dexamfetamine"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 14.8,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Capsule",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "200000002113"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Elvanse-50mg-Capsule-SE-AJ-Ingredient"
+    }
+  }]
+}

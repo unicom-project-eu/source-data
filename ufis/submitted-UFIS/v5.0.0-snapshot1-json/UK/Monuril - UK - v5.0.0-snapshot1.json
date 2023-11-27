@@ -1,0 +1,461 @@
+{
+  "resourceType" : "Bundle",
+  "id" : "241f0c57-0281-46f9-b6a7-c709b8f19f01",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "JMJ-Monuril-product-example",
+      "type" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/medicinal-product-type",
+          "code" : "MedicinalProduct",
+          "display" : "Medicinal Product"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000025915",
+          "code" : "200000025916",
+          "display" : "Authorised Medicinal Product"
+        }]
+      },
+      "domain" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/medicinal-product-domain",
+          "code" : "Human",
+          "display" : "Human use"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/publication-status",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "statusDate" : "2022-02-21",
+      "route" : [{
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "20053000",
+          "display" : "Oral use"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+          "code" : "100000073619",
+          "display" : "Oral use"
+        }]
+      }],
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/legal-status-of-supply",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "https://www.whocc.no/atc_ddd_index/",
+          "code" : "J01XX01",
+          "display" : "fosfomycin"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000096354",
+          "display" : "fosfomycin"
+        }]
+      }],
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "GB",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000556",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "xx",
+            "code" : "xx",
+            "display" : "xx"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "1994-03-18"
+        }
+      }],
+      "name" : [{
+        "productName" : "Monuril 3g granules for oral solution"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/JMJ-Monuril-product-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "JMJ-Monuril-UK-authorisation-example",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/marketingAuthorizationNumber",
+        "value" : "PL 31654/0006"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/JMJ-Monuril-product-example"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072055",
+          "code" : "100000072062",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000556",
+          "display" : "United Kingdom of Great Britain and Northern Irelan"
+        },
+        {
+          "system" : "http://terminology.hl7.org/CodeSystem/iso3166-1edition2",
+          "code" : "GBR",
+          "display" : "United Kingdom of Great Britain and Northern Ireland"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2021-05-17",
+      "holder" : {
+        "display" : "Zambon UK Limited (formerly Profile Pharma)"
+      },
+      "regulator" : {
+        "display" : "Medicines and Healthcare products Regulatory Agency"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/JMJ-Monuril-UK-authorisation-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "JMJ-Monuril-UK-package",
+      "name" : "Monuril 3g granules for solution; pack of 1 sachet",
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/JMJ-Monuril-product-example"
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/publication-status",
+          "code" : "active",
+          "display" : "Active"
+        }]
+      },
+      "statusDate" : "2022-02-21",
+      "containedItemQuantity" : [{
+        "value" : 1
+      }],
+      "legalStatusOfSupply" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://hl7.org/fhir/legal-status-of-supply",
+            "code" : "100000072084",
+            "display" : "Medicinal product subject to medical prescription"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072051",
+            "code" : "100000072084",
+            "display" : "Medicinal product subject to medical prescription"
+          }]
+        }
+      }],
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "urn:iso:std:iso:3166",
+            "code" : "GB",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000556",
+            "display" : "United Kingdom of Great Britain and Northern Ireland"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "xx",
+            "code" : "xx",
+            "display" : "xx"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          "start" : "1994-03-18"
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/JMJ-Monuril-UK-package"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "JMJ-Monuril-UK-manufacturedItem-example",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "10112000",
+          "display" : "Granules for oral solution"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073365",
+          "display" : "Granules for oral solution"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "15045000",
+          "display" : "Sachet"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002143",
+          "display" : "Sachet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/JMJ-Monuril-UK-manufacturedItem-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "JMJ-Monuril-ingredient-example",
+      "status" : "active",
+      "for" : [{
+        "reference" : "JMJ-Monuril-UK-manufacturedItem-example"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/ingredient-role",
+          "code" : "100000072072",
+          "display" : "Active"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000098972",
+              "display" : "fosfomycin trometamol"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "108721005",
+              "display" : "fosfomycin tromethamine (substance)"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 5.631,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Sachet",
+              "system" : "https://standardterms.edqm.eu/",
+              "code" : "15045000"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000091596",
+                  "display" : "fosfomycin"
+                },
+                {
+                  "system" : "http://snomed.info/sct",
+                  "code" : "372534005",
+                  "display" : "fosfomycin (substance)"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 3,
+                "unit" : "g",
+                "system" : "http://unitsofmeasure.org",
+                "code" : "g"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Sachet",
+                "system" : "https://standardterms.edqm.eu/",
+                "code" : "15045000"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/JMJ-Monuril-ingredient-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "JMJ-Monuril-adminProduct-ingredient-example",
+      "status" : "active",
+      "for" : [{
+        "reference" : "JMJ-Monuril-AdminProduct-example"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://hl7.org/fhir/ingredient-role",
+          "code" : "100000072072",
+          "display" : "Active"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000091596",
+              "display" : "fosfomycin"
+            },
+            {
+              "system" : "http://snomed.info/sct",
+              "code" : "372534005",
+              "display" : "fosfomycin (substance)"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 3,
+              "unit" : "g",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "g"
+            },
+            "denominator" : {
+              "value" : 250,
+              "unit" : "ml",
+              "system" : "http://unitsofmeasure.org",
+              "code" : "ml"
+            }
+          }
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/JMJ-Monuril-adminProduct-ingredient-example"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "JMJ-Monuril-AdminProduct-example",
+      "identifier" : [{
+        "system" : "https://who-umc.org/phpid",
+        "value" : "0xE857DA811B4A6F3BD57810C45D2EA1ED"
+      }],
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "ManufacturedItemDefinition/JMJ-Monuril-product-example"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "https://standardterms.edqm.eu/",
+          "code" : "10105000",
+          "display" : "Oral Solution"
+        },
+        {
+          "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "100000073646",
+          "display" : "Oral Solution"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/JMJ-Monuril-UK-manufacturedItem-example"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "https://standardterms.edqm.eu/",
+            "code" : "20053000",
+            "display" : "Oral use"
+          },
+          {
+            "system" : "https://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/JMJ-Monuril-AdminProduct-example"
+    }
+  }]
+}

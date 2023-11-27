@@ -1,0 +1,859 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004~200000000006~200000000007~200000000008",
+          "code" : "100000073681",
+          "display" : "Effervescent tablet"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100002566-00014106"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "3002"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Måttlig till svår akut och kronisk smärta.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000097261",
+          "display" : "N02AX02"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Tiparol 50 mg brustablett"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-RegAutho",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "14106"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "1998-12-18",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100007939"
+        },
+        "display" : "Bluefish Pharmaceuticals AB"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "1998-12-18"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Tiparol50mgbrustablett-SE-PLC-RegAutho"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-AdminProductDef",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073681",
+          "display" : "Effervescent tablet"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073619",
+            "display" : "Oral use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-PackageProductDef",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 60,
+          "unit" : "Tablet",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      }],
+      "description" : "Rör, 4 x 15 brustabletter",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Tiparol50mgbrustablett-SE-PLC-PackageProductDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073681",
+          "display" : "Effervescent tablet"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002152",
+          "display" : "Tablet"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient01",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000093275",
+              "display" : "Tramadol hydrochloride"
+            }]
+          }
+        },
+        "strength" : [{
+          "presentationRatio" : {
+            "numerator" : {
+              "value" : 50,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "milligram(s)",
+              "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110655"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "Tablet",
+              "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+              "code" : "200000002152"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000077198",
+                  "display" : "Tramadol"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 44,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "milligram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/200000000014",
+                "code" : "100000110655"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "Tablet",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "200000002152"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient01"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient02",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000139218",
+              "display" : "Aspartame"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient02"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient03",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000092612",
+              "display" : "Citric acid (anhydrous)"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient03"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient04",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000090171",
+              "display" : "Dimeticone"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient04"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient05",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000093305",
+              "display" : "Lactose monohydrate"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient05"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient06",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000115769",
+              "display" : "Macrogol"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient06"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient07",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000076793",
+              "display" : "Macrogol stearate"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient07"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient08",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000076148",
+              "display" : "Orange flavour"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient08"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient09",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000092381",
+              "display" : "Povidone"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient09"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient10",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000092242",
+              "display" : "Silica, colloidal anhydrous"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient10"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient11",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000078105",
+              "display" : "Sodium carbonate anhydrous"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient11"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient12",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000083527",
+              "display" : "Sodium cyclamate"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient12"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient13",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000079337",
+              "display" : "Sodium hydrogen carbonate"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient13"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient14",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000078144",
+              "display" : "Sodium sulfate anhydrous"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient14"
+    }
+  },
+  {
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Tiparol50mgbrustablett-SE-PLC-Ingredient15",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Tiparol50mgbrustablett-SE-PLC-MedicinalProductDef"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Tiparol50mgbrustablett-SE-PLC-ManufacturedItemDef"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Tiparol50mgbrustablett-SE-PLC-AdminProductDef"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "https://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072082",
+          "display" : "Excipient"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+              "code" : "100000077796",
+              "display" : "Sorbic acid"
+            }]
+          }
+        }
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Tiparol50mgbrustablett-SE-PLC-Ingredient15"
+    }
+  }]
+}

@@ -149,7 +149,7 @@
               <xs:documentation xml:lang="en">Information that only applies to packages (not products).</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="clinicalUseIssue" minOccurs="0" maxOccurs="unbounded" type="Reference">
+          <xs:element name="ClinicalUseDefinition" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
               <xs:documentation xml:lang="en">Potential clinical issue with or between medication(s) (for example, drug-drug interaction, drug-disease contraindication, drug-allergy interaction, etc.).</xs:documentation>
            </xs:annotation>

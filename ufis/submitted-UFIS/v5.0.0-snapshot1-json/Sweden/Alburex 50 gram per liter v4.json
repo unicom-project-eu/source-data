@@ -1,0 +1,418 @@
+{
+  "resourceType" : "Bundle",
+  "type" : "transaction",
+  "entry" : [{
+    "fullUrl" : "urn:uuid:6ee137ce-e761-43d0-a538-fc18214b518b",
+    "resource" : {
+      "resourceType" : "MedicinalProductDefinition",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/authorisedDoseForm",
+        "valueCoding" : {
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073870",
+          "display" : "solution for infusion"
+        }
+      }],
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/mpId",
+        "value" : "SE-100000398-00050242"
+      },
+      {
+        "system" : "http://ema.europa.eu/fhir/eurdId",
+        "value" : "10836"
+      }],
+      "domain" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000004",
+          "code" : "100000000012",
+          "display" : "Human use"
+        }]
+      },
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000005003",
+          "code" : "200000005004",
+          "display" : "Current"
+        }]
+      },
+      "indication" : "Återställande och upprätthållande av cirkulerande blodvolym vid volymbrist och när användning av en kolloid är lämpligt. Val av albumin istället för en artificiell kolloid kan göras med hänsyn till patientens kliniska tillstånd och aktuella behandlingsrekommendationer.",
+      "legalStatusOfSupply" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072051",
+          "code" : "100000072084",
+          "display" : "Medicinal product subject to medical prescription"
+        }]
+      },
+      "classification" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000093533",
+          "code" : "100000094427",
+          "display" : "B05AA01"
+        }]
+      }],
+      "name" : [{
+        "productName" : "Alburex 50 g/l infusionsvätska, lösning"
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:55d42830-dee1-48dd-8fa5-a164be420d34",
+    "resource" : {
+      "resourceType" : "RegulatedAuthorization",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-RegulatedAuthorization",
+      "identifier" : [{
+        "system" : "http://ema.europa.eu/fhir/MarketingAuthorizationNumber",
+        "value" : "50242"
+      }],
+      "subject" : [{
+        "reference" : "MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"
+      }],
+      "type" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/220000000060",
+          "code" : "220000000061",
+          "display" : "Marketing Authorisation"
+        }]
+      },
+      "region" : [{
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+          "code" : "100000000535",
+          "display" : "Sweden"
+        }]
+      }],
+      "status" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072049",
+          "code" : "100000072099",
+          "display" : "Valid"
+        }]
+      },
+      "statusDate" : "2014-03-28",
+      "holder" : {
+        "identifier" : {
+          "system" : "https://spor.ema.europa.eu/v1/locations",
+          "value" : "LOC-100004673"
+        },
+        "display" : "CSL Behring GmBH"
+      },
+      "case" : {
+        "type" : {
+          "coding" : [{
+            "system" : "http://ema.europa.eu/fhir/authorisationDateType",
+            "code" : "dateOfFirstAuthorisation",
+            "display" : "First Authorisation"
+          }]
+        },
+        "dateDateTime" : "2014-03-28"
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "RegulatedAuthorization/Alburex-50g-L-Solution-SE-AJ-RegulatedAuthorization"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:8a6162a6-0ac1-4774-9061-796604babc72",
+    "resource" : {
+      "resourceType" : "AdministrableProductDefinition",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-AdministrableProductDefinition",
+      "status" : "active",
+      "formOf" : [{
+        "reference" : "MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"
+      }],
+      "administrableDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073870",
+          "display" : "solution for infusion"
+        }]
+      },
+      "producedFrom" : [{
+        "reference" : "ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"
+      }],
+      "routeOfAdministration" : [{
+        "code" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000073345",
+            "code" : "100000073611",
+            "display" : "Intravenous use"
+          }]
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "AdministrableProductDefinition/Alburex-50g-L-Solution-SE-AJ-AdministrableProductDefinition"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:532b1a24-9fad-41c6-9ed6-1428ebc2b620",
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition01",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 1,
+          "unit" : "Vial",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"
+      }],
+      "description" : "injektionsflaska, 250 ml",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition01"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:09cd9f0f-7ed1-4036-aadb-4c32d368fe45",
+    "resource" : {
+      "resourceType" : "PackagedProductDefinition",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition02",
+      "extension" : [{
+        "url" : "http://ema.europa.eu/fhir/extension/containedItemQuantity",
+        "valueQuantity" : {
+          "value" : 1,
+          "unit" : "Vial",
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158"
+        }
+      }],
+      "packageFor" : [{
+        "reference" : "MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"
+      }],
+      "description" : "injektionsflaska, 500 ml",
+      "_description" : {
+        "extension" : [{
+          "url" : "http://ema.europa.eu/fhir/extension/language",
+          "valueCoding" : {
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072057",
+            "code" : "100000072288",
+            "display" : "Swedish"
+          }
+        }]
+      },
+      "marketingStatus" : [{
+        "country" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000000002",
+            "code" : "100000000535",
+            "display" : "Sweden"
+          }]
+        },
+        "status" : {
+          "coding" : [{
+            "system" : "http://spor.ema.europa.eu/v1/lists/100000072052",
+            "code" : "100000072083",
+            "display" : "Marketed"
+          }]
+        },
+        "dateRange" : {
+          
+        }
+      }]
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "PackagedProductDefinition/Alburex-50g-L-Solution-SE-AJ-PackagedProductDefinition02"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:e4695861-3bcf-411b-b57e-0585a96ebacd",
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073870",
+          "display" : "Solution for infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:8cf29912-91d0-4454-ae9c-137bfd414b34",
+    "resource" : {
+      "resourceType" : "ManufacturedItemDefinition",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02",
+      "status" : "active",
+      "manufacturedDoseForm" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000004",
+          "code" : "100000073870",
+          "display" : "Solution for infusion"
+        }]
+      },
+      "unitOfPresentation" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/200000000014",
+          "code" : "200000002158",
+          "display" : "Vial"
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"
+    }
+  },
+  {
+    "fullUrl" : "urn:uuid:29e944f8-ff1c-430c-9268-55e903ac4561",
+    "resource" : {
+      "resourceType" : "Ingredient",
+      "id" : "Alburex-50g-L-Solution-SE-AJ-Ingredient",
+      "status" : "active",
+      "for" : [{
+        "reference" : "MedicinalProductDefinition/Alburex-50g-L-Solution-SE-AJ-MedicinalProductDefinition"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition01"
+      },
+      {
+        "reference" : "ManufacturedItemDefinition/Alburex-50g-L-Solution-SE-AJ-ManufacturedItemDefinition02"
+      },
+      {
+        "reference" : "AdministrableProductDefinition/Alburex-50g-L-Solution-SE-AJ-AdministrableProductDefinition"
+      }],
+      "role" : {
+        "coding" : [{
+          "system" : "http://spor.ema.europa.eu/v1/lists/100000072050",
+          "code" : "100000072072",
+          "display" : "Active"
+        }]
+      },
+      "substance" : {
+        "code" : {
+          "concept" : {
+            "coding" : [{
+              "system" : "http://spor.azure-api.net/sms/api/v2/SubstanceDefinition",
+              "code" : "100000089024",
+              "display" : "human serum albumin"
+            }]
+          }
+        },
+        "strength" : [{
+          "concentrationRatio" : {
+            "numerator" : {
+              "value" : 50,
+              "_comparator" : {
+                "extension" : [{
+                  "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                  "valueCoding" : {
+                    "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                    "code" : "100000000049",
+                    "display" : "equal to"
+                  }
+                }]
+              },
+              "unit" : "gram(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110654"
+            },
+            "denominator" : {
+              "value" : 1,
+              "unit" : "litre(s)",
+              "system" : "http://spor.ema.europa.eu/v1/lists/100000110633",
+              "code" : "100000110661"
+            }
+          },
+          "referenceStrength" : [{
+            "substance" : {
+              "concept" : {
+                "coding" : [{
+                  "system" : "https://spor.ema.europa.eu/v2/SubstanceDefinition",
+                  "code" : "100000089024",
+                  "display" : "human serum albumin"
+                }]
+              }
+            },
+            "strengthRatio" : {
+              "numerator" : {
+                "value" : 50,
+                "_comparator" : {
+                  "extension" : [{
+                    "url" : "http://ema.europa.eu/fhir/extension/comparator",
+                    "valueCoding" : {
+                      "system" : "https://spor.ema.europa.eu/v1/lists/100000000008",
+                      "code" : "100000000049",
+                      "display" : "equal to"
+                    }
+                  }]
+                },
+                "unit" : "gram(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110654"
+              },
+              "denominator" : {
+                "value" : 1,
+                "unit" : "litre(s)",
+                "system" : "https://spor.ema.europa.eu/v1/lists/100000110633",
+                "code" : "100000110661"
+              }
+            }
+          }]
+        }]
+      }
+    },
+    "request" : {
+      "method" : "PUT",
+      "url" : "Ingredient/Alburex-50g-L-Solution-SE-AJ-Ingredient"
+    }
+  }]
+}

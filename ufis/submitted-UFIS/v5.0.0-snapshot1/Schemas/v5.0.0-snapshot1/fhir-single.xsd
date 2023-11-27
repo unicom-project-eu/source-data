@@ -1668,10 +1668,10 @@
           <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ClinicalUseIssue">
+      <xs:enumeration value="ClinicalUseDefinition">
         <xs:annotation>
-          <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>
-          <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>
+          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
+          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Communication">
@@ -2978,7 +2978,7 @@
       <xs:element ref="ClaimResponse"/>
       <xs:element ref="ClinicalImpression"/>
       <xs:element ref="ClinicalUseDefinition"/>
-      <xs:element ref="ClinicalUseIssue"/>
+      <xs:element ref="ClinicalUseDefinition"/>
       <xs:element ref="CodeSystem"/>
       <xs:element ref="Communication"/>
       <xs:element ref="CommunicationRequest"/>
@@ -14708,7 +14708,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Business identifier for this issue.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ClinicalUseIssueType">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ClinicalUseDefinitionType">
             <xs:annotation>
               <xs:documentation xml:lang="en">indication | contraindication | interaction | undesirable-effect | warning.</xs:documentation>
            </xs:annotation>
@@ -14966,7 +14966,7 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:simpleType name="ClinicalUseIssueTypeEnum">
+  <xs:simpleType name="ClinicalUseDefinitionTypeEnum">
     <xs:restriction base="code-primitive">
       <xs:enumeration value="indication">
         <xs:annotation>
@@ -14995,23 +14995,23 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:enumeration>
     </xs:restriction>
   </xs:simpleType>
-  <xs:complexType name="ClinicalUseIssueType">
+  <xs:complexType name="ClinicalUseDefinitionType">
     <xs:annotation>
       <xs:documentation xml:lang="en"></xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="Element">
-        <xs:attribute name="value" type="ClinicalUseIssueTypeEnum" use="optional"/>
+        <xs:attribute name="value" type="ClinicalUseDefinitionTypeEnum" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="ClinicalUseIssue" type="ClinicalUseIssue">
+  <xs:element name="ClinicalUseDefinition" type="ClinicalUseDefinition">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="ClinicalUseIssue">
+  <xs:complexType name="ClinicalUseDefinition">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
       <xs:documentation xml:lang="en">If the element is present, it must have either a @value, an @id, or extensions</xs:documentation>
@@ -15024,7 +15024,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">Business identifier for this issue.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ClinicalUseIssueType">
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ClinicalUseDefinitionType">
             <xs:annotation>
               <xs:documentation xml:lang="en">indication | contraindication | interaction | undesirable-effect | warning.</xs:documentation>
            </xs:annotation>
@@ -15049,17 +15049,17 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">General description of an effect (particularly for a general warning, rather than any of the more specific types such as indication) for when a distinct coded or textual description is not appropriate using  Indication.diseaseSymptomProcedure.text, Contraindication.diseaseSymptomProcedure.text etc. For example &quot;May affect ability to drive&quot;.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="contraindication" type="ClinicalUseIssue.Contraindication" minOccurs="0" maxOccurs="1">
+          <xs:element name="contraindication" type="ClinicalUseDefinition.Contraindication" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifics for when this is a contraindication.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="indication" type="ClinicalUseIssue.Indication" minOccurs="0" maxOccurs="1">
+          <xs:element name="indication" type="ClinicalUseDefinition.Indication" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifics for when this is an indication.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="interaction" type="ClinicalUseIssue.Interaction" minOccurs="0" maxOccurs="1">
+          <xs:element name="interaction" type="ClinicalUseDefinition.Interaction" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Specifics for when this is an interaction.</xs:documentation>
            </xs:annotation>
@@ -15069,7 +15069,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The population group to which this applies.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="undesirableEffect" type="ClinicalUseIssue.UndesirableEffect" minOccurs="0" maxOccurs="1">
+          <xs:element name="undesirableEffect" type="ClinicalUseDefinition.UndesirableEffect" minOccurs="0" maxOccurs="1">
             <xs:annotation>
               <xs:documentation xml:lang="en">Describe the undesirable effects of the medicinal product.</xs:documentation>
            </xs:annotation>
@@ -15078,7 +15078,7 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ClinicalUseIssue.Contraindication">
+  <xs:complexType name="ClinicalUseDefinition.Contraindication">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
@@ -15105,7 +15105,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The indication which this is a contraidication for.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="otherTherapy" type="ClinicalUseIssue.OtherTherapy" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="otherTherapy" type="ClinicalUseDefinition.OtherTherapy" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Information about the use of the medicinal product in relation to other therapies described as part of the contraindication.</xs:documentation>
            </xs:annotation>
@@ -15114,7 +15114,7 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ClinicalUseIssue.OtherTherapy">
+  <xs:complexType name="ClinicalUseDefinition.OtherTherapy">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
@@ -15135,7 +15135,7 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ClinicalUseIssue.Indication">
+  <xs:complexType name="ClinicalUseDefinition.Indication">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
@@ -15172,7 +15172,7 @@ into another (possibly the same) biological entity.</xs:documentation>
               <xs:documentation xml:lang="en">The specific undesirable effects of the medicinal product.</xs:documentation>
            </xs:annotation>
           </xs:element>
-          <xs:element name="otherTherapy" type="ClinicalUseIssue.OtherTherapy" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="otherTherapy" type="ClinicalUseDefinition.OtherTherapy" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Information about the use of the medicinal product in relation to other therapies described as part of the indication.</xs:documentation>
            </xs:annotation>
@@ -15181,14 +15181,14 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ClinicalUseIssue.Interaction">
+  <xs:complexType name="ClinicalUseDefinition.Interaction">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="BackboneElement">
         <xs:sequence>
-          <xs:element name="interactant" type="ClinicalUseIssue.Interactant" minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="interactant" type="ClinicalUseDefinition.Interactant" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">The specific medication, food, substance or laboratory test that interacts.</xs:documentation>
            </xs:annotation>
@@ -15217,7 +15217,7 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ClinicalUseIssue.Interactant">
+  <xs:complexType name="ClinicalUseDefinition.Interactant">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
@@ -15235,7 +15235,7 @@ into another (possibly the same) biological entity.</xs:documentation>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ClinicalUseIssue.UndesirableEffect">
+  <xs:complexType name="ClinicalUseDefinition.UndesirableEffect">
     <xs:annotation>
       <xs:documentation xml:lang="en">A single issue - either an indication, contraindication, interaction or an undesirable effect for a medicinal product, medication, device or procedure.</xs:documentation>
     </xs:annotation>
@@ -33621,10 +33621,10 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
-      <xs:enumeration value="ClinicalUseIssue">
+      <xs:enumeration value="ClinicalUseDefinition">
         <xs:annotation>
-          <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>
-          <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>
+          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
+          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
         </xs:annotation>
       </xs:enumeration>
       <xs:enumeration value="Communication">
@@ -35155,7 +35155,9 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
         <xs:sequence>
           <xs:element name="text" minOccurs="0" maxOccurs="1" type="string">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.The dosage instructions should reflect the dosage of the medication that was administered.</xs:documentation>
+              <xs:documentation xml:lang="en">Free text dosage can be used for cases where the dosage administered is too complex to code. When coded dosage is present, the free text dosage may still be present for display to humans.
+
+The dosage instructions should reflect the dosage of the medication that was administered.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="site" minOccurs="0" maxOccurs="1" type="CodeableConcept">
@@ -35599,7 +35601,7 @@ RegisteredName | UserFriendlyName | PatientReportedName.</xs:documentation>
           <xs:element name="packaging" type="MedicationKnowledge.Packaging" minOccurs="0" maxOccurs="unbounded">
             <xs:annotation>
               <xs:documentation xml:lang="en">Information that only applies to packages (not products).</xs:documentation>
-           </xs:annotation>
+           </xs:annotation>ClinicalUseDefinition
           </xs:element>
           <xs:element name="clinicalUseIssue" minOccurs="0" maxOccurs="unbounded" type="Reference">
             <xs:annotation>
@@ -42470,7 +42472,8 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
           </xs:choice>
           <xs:element name="address" minOccurs="0" maxOccurs="unbounded" type="Address">
             <xs:annotation>
-              <xs:documentation xml:lang="en">Address(es) of the practitioner that are not role specific (typically home address). Work addresses are not typically entered in this property as they are usually role dependent.</xs:documentation>
+              <xs:documentation xml:lang="en">Address(es) of the practitioner that are not role specific (typically home address). 
+Work addresses are not typically entered in this property as they are usually role dependent.</xs:documentation>
            </xs:annotation>
           </xs:element>
           <xs:element name="gender" minOccurs="0" maxOccurs="1" type="AdministrativeGender">
@@ -52644,10 +52647,10 @@ Deceased patients may also be marked as inactive for the same reasons, but may b
       <xs:enumeration value="ClinicalUseDefinition">
         <xs:annotation>
           <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
-          <xs:documentation xml:lang="en">ClinicalUseDefinition</xs:documentation>
+          <xs:documentation xClinicalUseDefinitionnicalUseDefinition</xs:documentation>
         </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ClinicalUseIssue">
+      </xs:enumeration>ClinicalUseDefinition
+      <xs:enumeration value="ClinicalUseIsClinicalUseDefinition
         <xs:annotation>
           <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>
           <xs:documentation xml:lang="en">ClinicalUseIssue</xs:documentation>

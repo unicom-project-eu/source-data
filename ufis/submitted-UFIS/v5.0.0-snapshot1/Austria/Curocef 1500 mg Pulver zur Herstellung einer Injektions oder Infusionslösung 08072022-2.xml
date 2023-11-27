@@ -12,7 +12,7 @@
 <!-- c6a838d9-27ca-49a4-a6ba-216448f82008c Curocef1500mgPulver-A-HL-PackagedProductDefinition03 -->
 <!-- c6a838d9-27ca-49a4-a6ba-216448f82009 Curocef1500mgPulver-A-HL-ManufacturedItemDefinition -->
 <!-- c6a838d9-27ca-49a4-a6ba-216448f82014 Curocef1500mgPulver-A-HL-AdministrableProductDefinition -->
-<!-- c6a838d9-27ca-49a4-a6ba-216448f82015 Curocef1500mgPulver-A-HL-ClinicalUseIssue -->
+<!-- c6a838d9-27ca-49a4-a6ba-216448f82015 Curocef1500mgPulver-A-HL-ClinicalUseDefinition -->
 <!-- c6a838d9-27ca-49a4-a6ba-216448f82010 Curocef1500mgPulver-A-HL-Ingredient -->
 
 
@@ -1460,8 +1460,8 @@
 		<!-- Not part of the EU IG -->
 		<!-- <fullUrl value="urn:uuid:c6a838d9-27ca-49a4-a6ba-216448f82015"/> -->
 		<resource>
-			<ClinicalUseIssue>
-				<id value="Curocef1500mgPulver-A-HL-ClinicalUseIssue"/>
+			<ClinicalUseDefinition>
+				<id value="Curocef1500mgPulver-A-HL-ClinicalUseDefinition"/>
 				<type value="indication"/>
 				<subject>
 					<reference value="MedicinalProductDefinition/Curocef1500mgPulver-A-HL-MedicinalProductDefinition"/>
@@ -1486,11 +1486,11 @@
 						</concept>
 					</intendedEffect>
 				</indication>
-			</ClinicalUseIssue>
+			</ClinicalUseDefinition>
 		</resource>
 		<request>
 			<method value="PUT"/>
-			<url value="ClinicalUseIssue/Curocef1500mgPulver-A-HL-ClinicalUseIssue"/>
+			<url value="ClinicalUseDefinition/Curocef1500mgPulver-A-HL-ClinicalUseDefinition"/>
 		</request>
 	</entry>
 
